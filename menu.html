@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -34,7 +35,7 @@
       border-bottom: 1px dashed rgba(48, 32, 27, 0.2);
       transition: all 0.3s ease;
     }
-    
+
     .menu-item:hover {
       border-bottom-color: var(--mora-clay);
       transform: translateX(4px);
@@ -44,7 +45,7 @@
       color: var(--mora-clay);
       font-weight: 600;
     }
-    
+
     .menu-section {
       opacity: 0;
       transform: translateY(20px);
@@ -59,9 +60,13 @@
     }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css" rel="stylesheet" />
 </head>
+
 <body>
-  <header aria-label="Primary navigation" class="absolute inset-x-0 top-0 z-50 pt-6 px-5 sm:px-8 lg:px-12 text-[#f5e6c8]">
+  <header aria-label="Primary navigation"
+    class="absolute inset-x-0 top-0 z-50 pt-6 px-5 sm:px-8 lg:px-12 text-[#f5e6c8]">
     <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-center relative">
       <div class="absolute left-0 flex items-center">
         <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="index.html">
@@ -69,14 +74,22 @@
           <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
         </a>
       </div>
-      <nav aria-label="Main links" class="hidden items-center gap-1 rounded-full bg-black/30 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10">
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="./index.html">Home</a>
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-white bg-white/20 transition-colors" href="menu.html">Menu</a>
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="about.html">About</a>
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="index.html#bar">Bar</a>
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="index.html#experience">Experience</a>
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="gallery.html">Gallery</a>
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="contact.html">Contact</a>
+      <nav aria-label="Main links"
+        class="hidden items-center gap-1 rounded-full bg-black/30 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10">
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="./index.html">Home</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-white bg-white/20 transition-colors"
+          href="menu.html">Menu</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="about.html">About</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="bar.html">Bar</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="index.html#experience">Experience</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="gallery.html">Gallery</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -85,62 +98,98 @@
     <!-- Hero Header -->
     <section class="relative pt-40 pb-24 px-5 bg-black text-[#f5e6c8] flex flex-col items-center justify-center">
       <div class="absolute inset-0 z-0">
-        <img alt="Menu hero" class="h-full w-full object-cover opacity-30" decoding="async" loading="lazy" src="gallery/food.png"/>
+        <img alt="Menu hero" class="h-full w-full object-cover opacity-30" decoding="async" loading="lazy"
+          src="gallery/food.png" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
       </div>
       <div class="relative z-10 text-center max-w-3xl mx-auto">
         <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4">C HOUSE Selection</p>
         <h1 class="mora-serif text-5xl md:text-7xl mb-6">The Menu</h1>
-        <p class="text-sm md:text-base text-gray-300 tracking-wide font-light">Explore our curated selection of Italian classics, prime cuts, and signature beverages crafted for a memorable dining experience.</p>
+        <p class="text-sm md:text-base text-gray-300 tracking-wide font-light mb-10">Explore our curated selection of
+          Italian classics, prime cuts, and signature beverages crafted for a memorable dining experience.</p>
+        <a href="./assets/C-House-Food-Menu.pdf" download="C_House_Food_Menu.pdf"
+          class="inline-flex items-center gap-2 rounded-full bg-[#AA8243] px-8 py-3 text-sm tracking-widest uppercase text-white transition-colors hover:bg-white hover:text-black font-semibold shadow-lg">
+          <i class="ti ti-download text-lg"></i> Download PDF Menu
+        </a>
       </div>
     </section>
 
     <!-- Menu Content -->
     <section class="py-24 px-5 lg:px-12 max-w-[1360px] mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
-        
+
         <!-- ANTIPASTI -->
         <div class="menu-section" style="animation-delay: 0.1s">
-          <h2 class="mora-serif text-4xl mb-2">Antipasti</h2>
-          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Tapas & Small Bites</p>
+          <div class="relative mb-2 flex items-center justify-between">
+            <h2 class="mora-serif text-4xl mb-0">Antipasti</h2>
+            <img src="gallery/calamari-fritti.png" alt="Antipasti"
+              class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
+          </div>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Tapas & Small Bites
+          </p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Burrata Caprese (V)</span><span class="menu-price">79</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Arancini (V)</span><span class="menu-price">59</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Artisanal Cheese Board</span><span class="menu-price">85</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Bruschetta Trio (V)</span><span class="menu-price">59</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Grilled Herb Prawns (S)</span><span class="menu-price">85</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Calamari Fritti (S)</span><span class="menu-price">79</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Signature Dynamite Chicken (NV)</span><span class="menu-price">85</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken Croquettes (NV)</span><span class="menu-price">59</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Loaded Nachos Grande (V)</span><span class="menu-price">65</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Zesty Chicken or Prawn Tacos (NV/S)</span><span class="menu-price">59 / 72</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Grilled Cajun Chicken (NV)</span><span class="menu-price">89</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Burrata Caprese
+                (V)</span><span class="menu-price">79</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Arancini
+                (V)</span><span class="menu-price">59</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Artisanal Cheese
+                Board</span><span class="menu-price">85</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Bruschetta Trio
+                (V)</span><span class="menu-price">59</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Grilled Herb Prawns
+                (S)</span><span class="menu-price">85</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Calamari Fritti
+                (S)</span><span class="menu-price">79</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Signature Dynamite
+                Chicken (NV)</span><span class="menu-price">85</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken Croquettes
+                (NV)</span><span class="menu-price">59</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Loaded Nachos Grande
+                (V)</span><span class="menu-price">65</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Zesty Chicken or Prawn
+                Tacos (NV/S)</span><span class="menu-price">59 / 72</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Grilled Cajun Chicken
+                (NV)</span><span class="menu-price">89</span></div>
           </div>
         </div>
 
         <!-- ZUPPE E INSALATE -->
         <div class="menu-section" style="animation-delay: 0.2s">
           <h2 class="mora-serif text-4xl mb-2">Zuppe e Insalate</h2>
-          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Soups & Fresh Salads</p>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Soups & Fresh Salads
+          </p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Tuscan Seafood Soup (S)</span><span class="menu-price">65</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Wild Mushroom Cream Soup (V)</span><span class="menu-price">55</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Creamy Burrata Salad (V)</span><span class="menu-price">85</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic Caesar Salad (V/NV/P)</span><span class="menu-price">59 / 75 / 89</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Greek Salad (V)</span><span class="menu-price">69</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Roasted Beetroot & Goat Cheese Salad (V)</span><span class="menu-price">75</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Tuscan Seafood Soup
+                (S)</span><span class="menu-price">65</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Wild Mushroom Cream
+                Soup (V)</span><span class="menu-price">55</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Creamy Burrata Salad
+                (V)</span><span class="menu-price">85</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic Caesar Salad
+                (V/NV/P)</span><span class="menu-price">59 / 75 / 89</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Greek Salad
+                (V)</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Roasted Beetroot &
+                Goat Cheese Salad (V)</span><span class="menu-price">75</span></div>
           </div>
 
           <h2 class="mora-serif text-4xl mb-2 mt-12">Fries & Savories</h2>
           <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Sides & Sharables</p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Jalapeño Chili Cheese Toast</span><span class="menu-price">49</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Truffle & Parmesan Fries</span><span class="menu-price">55</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Spicy Peri-Peri Fries</span><span class="menu-price">48</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Cheese Garlic Bread</span><span class="menu-price">45</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic French Fries</span><span class="menu-price">45</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken Wings (BBQ or Peri Peri) (NV)</span><span class="menu-price">75</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Crispy Herb-Crusted Fish Bites (S)</span><span class="menu-price">72</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Jalapeño Chili Cheese
+                Toast</span><span class="menu-price">49</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Truffle & Parmesan
+                Fries</span><span class="menu-price">55</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Spicy Peri-Peri
+                Fries</span><span class="menu-price">48</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Cheese Garlic
+                Bread</span><span class="menu-price">45</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic French
+                Fries</span><span class="menu-price">45</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken Wings (BBQ or
+                Peri Peri) (NV)</span><span class="menu-price">75</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Crispy Herb-Crusted
+                Fish Bites (S)</span><span class="menu-price">72</span></div>
           </div>
         </div>
 
@@ -149,59 +198,98 @@
           <h2 class="mora-serif text-4xl mb-2">Le Pizze</h2>
           <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Pizza Paradise</p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Margherita Classica (V)</span><span class="menu-price">75</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Garden Pizza (Giardino) (V)</span><span class="menu-price">79</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Quattro Formaggi (V)</span><span class="menu-price">99</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Spicy Pepperoni Pizza (Diavola) (NV)</span><span class="menu-price">95</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Butter Chicken Fusion Pizza (NV)</span><span class="menu-price">95</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Burrata & Rocket Pizza (V)</span><span class="menu-price">99</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">C HOUSE Star Pizza (V)</span><span class="menu-price">99</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Truffle Mushroom Pizza (V)</span><span class="menu-price">105</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Pollo Pesto Pizza (NV)</span><span class="menu-price">99</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Frutti di Mare Pizza (S)</span><span class="menu-price">109</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Margherita Classica
+                (V)</span><span class="menu-price">75</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Garden Pizza
+                (Giardino) (V)</span><span class="menu-price">79</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Quattro Formaggi
+                (V)</span><span class="menu-price">99</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Spicy Pepperoni Pizza
+                (Diavola) (NV)</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Butter Chicken Fusion
+                Pizza (NV)</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Burrata & Rocket Pizza
+                (V)</span><span class="menu-price">99</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">C HOUSE Star Pizza
+                (V)</span><span class="menu-price">99</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Truffle Mushroom Pizza
+                (V)</span><span class="menu-price">105</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Pollo Pesto Pizza
+                (NV)</span><span class="menu-price">99</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Frutti di Mare Pizza
+                (S)</span><span class="menu-price">109</span></div>
           </div>
         </div>
 
         <!-- PRIMI -->
         <div class="menu-section" style="animation-delay: 0.4s">
-          <h2 class="mora-serif text-4xl mb-2">Primi</h2>
-          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Traditional Pasta & Risotto</p>
+          <div class="relative mb-2 flex items-center justify-between">
+            <h2 class="mora-serif text-4xl mb-0">Primi</h2>
+            <img src="gallery/fettuccine-alfredo.png" alt="Primi"
+              class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
+          </div>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Traditional Pasta &
+            Risotto</p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Lasagna Classica (NV)</span><span class="menu-price">89</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Penne all' Arrabbiata (V/NV)</span><span class="menu-price">75 / 89</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Spaghetti Pomodoro & Burrata (V)</span><span class="menu-price">95</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Fettuccine Alfredo (Veg/Chicken/Prawns)</span><span class="menu-price">79 / 95 / 105</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Fettuccine Pollo ai Funghi (NV)</span><span class="menu-price">95</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Fettuccine al Ragu Bolognese (NV)</span><span class="menu-price">95</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Tagliatelle ai Frutti di Mare (S)</span><span class="menu-price">115</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Risotto al Funghi Porcini (V)</span><span class="menu-price">95</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Seafood Risotto (S)</span><span class="menu-price">125</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Lasagna Classica
+                (NV)</span><span class="menu-price">89</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Penne all' Arrabbiata
+                (V/NV)</span><span class="menu-price">75 / 89</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Spaghetti Pomodoro &
+                Burrata (V)</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Fettuccine Alfredo
+                (Veg/Chicken/Prawns)</span><span class="menu-price">79 / 95 / 105</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Fettuccine Pollo ai
+                Funghi (NV)</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Fettuccine al Ragu
+                Bolognese (NV)</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Tagliatelle ai Frutti
+                di Mare (S)</span><span class="menu-price">115</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Risotto al Funghi
+                Porcini (V)</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Seafood Risotto
+                (S)</span><span class="menu-price">125</span></div>
           </div>
         </div>
 
         <!-- SECONDI & GRIGLIA -->
         <div class="menu-section" style="animation-delay: 0.5s">
           <h2 class="mora-serif text-4xl mb-2">Secondi</h2>
-          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Handcrafted Burgers & Sandwiches</p>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Handcrafted Burgers &
+            Sandwiches</p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">The Ultimate Beef Burger (NV)</span><span class="menu-price">99</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Zesty Buttermilk Chicken Burger (NV)</span><span class="menu-price">89</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Portobello & Truffle Burger (V)</span><span class="menu-price">79</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic C HOUSE Club Sandwich (NV)</span><span class="menu-price">85</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken Tikka Sandwich (NV)</span><span class="menu-price">89</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Prime Steak Sandwich (NV)</span><span class="menu-price">110</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">The Ultimate Beef
+                Burger (NV)</span><span class="menu-price">99</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Zesty Buttermilk
+                Chicken Burger (NV)</span><span class="menu-price">89</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Portobello & Truffle
+                Burger (V)</span><span class="menu-price">79</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic C HOUSE Club
+                Sandwich (NV)</span><span class="menu-price">85</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken Tikka Sandwich
+                (NV)</span><span class="menu-price">89</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Prime Steak Sandwich
+                (NV)</span><span class="menu-price">110</span></div>
           </div>
 
           <h2 class="mora-serif text-4xl mb-2 mt-12">Griglia</h2>
-          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Signature Main Courses</p>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Signature Main
+            Courses</p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Baked Eggplant Parmigiana (V)</span><span class="menu-price">85</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Lemon Herb Grilled Chicken (NV)</span><span class="menu-price">99</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Teriyaki Glazed Salmon (S)</span><span class="menu-price">135</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Pan-Seared Sea Bass (S)</span><span class="menu-price">145</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Signature Lamb Chops (NV)</span><span class="menu-price">145</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Grilled Beef Tenderloin (NV)</span><span class="menu-price">165</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Prime Ribeye Steak (NV)</span><span class="menu-price">175</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Baked Eggplant
+                Parmigiana (V)</span><span class="menu-price">85</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Lemon Herb Grilled
+                Chicken (NV)</span><span class="menu-price">99</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Teriyaki Glazed Salmon
+                (S)</span><span class="menu-price">135</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Pan-Seared Sea Bass
+                (S)</span><span class="menu-price">145</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Signature Lamb Chops
+                (NV)</span><span class="menu-price">145</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Grilled Beef
+                Tenderloin (NV)</span><span class="menu-price">165</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Prime Ribeye Steak
+                (NV)</span><span class="menu-price">175</span></div>
           </div>
         </div>
 
@@ -210,58 +298,94 @@
           <h2 class="mora-serif text-4xl mb-2">Dolci</h2>
           <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Desserts</p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Traditional Tiramisu</span><span class="menu-price">45</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Pistachio Panna Cotta (V)</span><span class="menu-price">55</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chocolate Brownie & Vanilla Dream</span><span class="menu-price">59</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Saffron Milk Cake</span><span class="menu-price">69</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Premium Ice Cream (2 Scoops)</span><span class="menu-price">35</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-[14px] text-gray-500 italic ml-4">Additional Scoop</span><span class="menu-price">14</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Traditional
+                Tiramisu</span><span class="menu-price">45</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Pistachio Panna Cotta
+                (V)</span><span class="menu-price">55</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chocolate Brownie &
+                Vanilla Dream</span><span class="menu-price">59</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Saffron Milk
+                Cake</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Premium Ice Cream (2
+                Scoops)</span><span class="menu-price">35</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span
+                class="text-[14px] text-gray-500 italic ml-4">Additional Scoop</span><span class="menu-price">14</span>
+            </div>
           </div>
 
           <h2 class="mora-serif text-4xl mb-2 mt-12">Non Alcohol Sips</h2>
-          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Mocktails & Refreshers</p>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Mocktails &
+            Refreshers</p>
           <div class="flex flex-col gap-5">
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Lychee Rose Cooler</span><span class="menu-price">45</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Dragonfruit Bliss</span><span class="menu-price">45</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Minted Mango Cooler</span><span class="menu-price">42</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Peachy Ginger Fizz</span><span class="menu-price">42</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Tropical Herb Tonic</span><span class="menu-price">42</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Refreshing Harmony</span><span class="menu-price">40</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Passionate Spark</span><span class="menu-price">40</span></div>
-            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic CH Lemonade</span><span class="menu-price">38</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Lychee Rose
+                Cooler</span><span class="menu-price">45</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Dragonfruit
+                Bliss</span><span class="menu-price">45</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Minted Mango
+                Cooler</span><span class="menu-price">42</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Peachy Ginger
+                Fizz</span><span class="menu-price">42</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Tropical Herb
+                Tonic</span><span class="menu-price">42</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Refreshing
+                Harmony</span><span class="menu-price">40</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Passionate
+                Spark</span><span class="menu-price">40</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic CH
+                Lemonade</span><span class="menu-price">38</span></div>
           </div>
         </div>
 
-        <div class="menu-section lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 pt-12 border-t border-[var(--mora-espresso)]/20" style="animation-delay: 0.7s">
+        <div
+          class="menu-section lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 pt-12 border-t border-[var(--mora-espresso)]/20"
+          style="animation-delay: 0.7s">
           <div>
             <h3 class="mora-serif text-2xl mb-6">Rich & Creamy Shakes</h3>
             <div class="flex flex-col gap-4">
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Nutella Ferrero Shake</span><span class="menu-price">48</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Lotus Milkshake</span><span class="menu-price">48</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Vanilla / Strawberry / Chocolate</span><span class="menu-price">40</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Nutella Ferrero
+                  Shake</span><span class="menu-price">48</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Lotus
+                  Milkshake</span><span class="menu-price">48</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span
+                  class="text-base text-[14px]">Vanilla / Strawberry / Chocolate</span><span
+                  class="menu-price">40</span></div>
             </div>
-            
+
             <h3 class="mora-serif text-2xl mb-6 mt-10">Hot & Chilled Brews</h3>
             <div class="flex flex-col gap-4">
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Iced Tea (Peach / Lemon / Passion Fruit)</span><span class="menu-price">38</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Flavored Iced / Blended Coffee</span><span class="menu-price">39</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Cappuccino / Café Latte</span><span class="menu-price">35</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Hot Chocolate</span><span class="menu-price">38</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Masala Chai</span><span class="menu-price">20</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Espresso (Single / Double)</span><span class="menu-price">20 / 30</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Iced
+                  Tea (Peach / Lemon / Passion Fruit)</span><span class="menu-price">38</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span
+                  class="text-base text-[14px]">Flavored Iced / Blended Coffee</span><span class="menu-price">39</span>
+              </div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Cappuccino / Café
+                  Latte</span><span class="menu-price">35</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Hot
+                  Chocolate</span><span class="menu-price">38</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Masala
+                  Chai</span><span class="menu-price">20</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Espresso (Single /
+                  Double)</span><span class="menu-price">20 / 30</span></div>
             </div>
           </div>
-          
+
           <div class="md:col-span-2">
             <h3 class="mora-serif text-2xl mb-6">Cooling Refreshments</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">RedBull</span><span class="menu-price">35</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Fresh Juice / Organic Coconut Water</span><span class="menu-price">32</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Traditional Lassi (Sweet / Salted)</span><span class="menu-price">30</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Butter Milk (Chaas)</span><span class="menu-price">28</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[13px]">Pepsi, Diet Pepsi, 7up, Mirinda, Soda, Tonic</span><span class="menu-price">19</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Still Water (S) or (L)</span><span class="menu-price">18 / 28</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Sparkling Water (S) or (L)</span><span class="menu-price">28 / 38</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span
+                  class="text-base">RedBull</span><span class="menu-price">35</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Fresh
+                  Juice / Organic Coconut Water</span><span class="menu-price">32</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Traditional Lassi
+                  (Sweet / Salted)</span><span class="menu-price">30</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Butter Milk
+                  (Chaas)</span><span class="menu-price">28</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[13px]">Pepsi,
+                  Diet Pepsi, 7up, Mirinda, Soda, Tonic</span><span class="menu-price">19</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Still Water (S) or
+                  (L)</span><span class="menu-price">18 / 28</span></div>
+              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Sparkling Water
+                  (S) or (L)</span><span class="menu-price">28 / 38</span></div>
             </div>
           </div>
         </div>
@@ -270,10 +394,16 @@
 
       <div class="mt-24 pt-8 border-t border-[var(--mora-espresso)]/20 text-center text-sm font-semibold opacity-70">
         Prices are in AED and include 5% VAT and 7% Municipality Fee. <br>
-        <span class="font-normal text-gray-600 mt-2 block">(V) Vegetarian &nbsp;|&nbsp; (NV) Non-Vegetarian &nbsp;|&nbsp; (S) Seafood &nbsp;|&nbsp; (P) Prawns</span>
+        <span class="font-normal text-gray-600 mt-2 block">(V) Vegetarian &nbsp;|&nbsp; (NV) Non-Vegetarian
+          &nbsp;|&nbsp; (S) Seafood &nbsp;|&nbsp; (P) Prawns</span>
       </div>
     </section>
 
   </main>
+  <a href="https://wa.me/971522185569" target="_blank"
+    class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+    <i class="ti ti-brand-whatsapp text-2xl"></i>
+  </a>
 </body>
+
 </html>

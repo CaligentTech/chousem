@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Gallery &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
+    <title>Contact Us &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
     <meta name="description"
         content="Contacts of C HOUSE &mdash; Italian Bistro, Bar &amp; Lounge in Dubai Jebel Ali." />
 
@@ -33,6 +33,11 @@
             font-family: 'Manrope', sans-serif;
             background-color: #AA8243;
             color: #30201B;
+        }
+
+        select option {
+            color: #30201B;
+            background-color: #F2E7D4;
         }
 
         .mora-serif {
@@ -66,6 +71,15 @@
         .logo-dark-brown {
             filter: brightness(0) sepia(1) hue-rotate(-50deg) saturate(4) brightness(0.65);
         }
+
+        .mora-menu-link {
+            transition: color .25s ease, border-color .25s ease;
+        }
+
+        .mora-menu-link:hover {
+            color: #C76D4D;
+            border-color: #C76D4D;
+        }
     </style>
 </head>
 
@@ -95,9 +109,9 @@
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
                         href="./about.html">About</a>
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="./index.html#bar">Bar</a>
+                        href="bar.html">Bar</a>
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="./index.html#experience">Experience</a>
+                        href="./experience.html">Experience</a>
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
                         href="./gallery.html">Gallery</a>
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-[#30201B] text-[#EBDDCB] font-semibold shadow-sm"
@@ -107,7 +121,7 @@
                 <!-- Right: Reserve a Table Button -->
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="./contact.html"
-                        class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-white/90 transition-colors shadow-md border border-[#30201B]/10">
+                        class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
                         <span>Reserve a Table</span>
                         <i class="ti ti-arrow-up-right text-base"></i>
                     </a>
@@ -128,11 +142,11 @@
                     <a class="text-[13px] tracking-widest uppercase text-[#30201B]/80 py-2 border-b border-[#30201B]/10"
                         href="./index.html">Home</a>
                     <a class="text-[13px] tracking-widest uppercase text-[#30201B]/80 py-2 border-b border-[#30201B]/10"
-                        href="menu.html">Menu</a>
+                        href="./menu.html">Menu</a>
                     <a class="text-[13px] tracking-widest uppercase text-[#30201B]/80 py-2 border-b border-[#30201B]/10"
                         href="./about.html">About</a>
                     <a class="text-[13px] tracking-widest uppercase text-[#30201B]/80 py-2 border-b border-[#30201B]/10"
-                        href="./index.html#bar">Bar</a>
+                        href="bar.html">Bar</a>
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
                         href="./gallery.html">Gallery</a>
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-[#30201B] text-[#EBDDCB] font-semibold shadow-sm"
@@ -157,11 +171,7 @@
                     <div class="mora-reveal is-visible" data-kid="2-2-8-1-1" data-name="contact info block"
                         data-reveal="">
 
-                        <!-- <h2 class="mora-serif mt-12 text-[clamp(3.4rem,6.6vw,6.6rem)] leading-[.88] tracking-[-.045em]"
-                            data-kid="2-2-8-1-1-2" data-name="contact heading" id="contact-heading">
-                            Find the long table.
-                        </h2> -->
-                        <div class="mt-14 border-y border-[var(--mora-espresso)]/28 py-7 text-sm leading-7"
+                        <div class="mt-4 border-y border-[var(--mora-espresso)]/28 py-7 text-sm leading-7"
                             data-kid="2-2-8-1-1-3" data-name="contact details list">
                             <p class="flex items-start gap-3" data-kid="2-2-8-1-1-3-1" data-name="contact location">
                                 <i aria-hidden="true" class="ti ti-map-pin mt-1 text-base text-[var(--mora-clay)]"
@@ -173,9 +183,9 @@
                                         C HOUSE
                                     </strong>
                                     <br data-kid="2-2-8-1-1-3-1-2-2" data-name="line break" />
-                                    Jebel Ali Recreation Club
+                                    H Rd, Jebel Ali Recreation Club, Jebel Ali Village
                                     <br data-kid="2-2-8-1-1-3-1-2-3" data-name="location address lines" />
-                                    Dubai, United Arab Emirates
+                                    Behind IBN Batuta Mall, Dubai
                                 </span>
                             </p>
                             <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-2" data-name="contact hours">
@@ -184,10 +194,10 @@
                                 </i>
                                 <span data-kid="2-2-8-1-1-3-2-2" data-name="hours block">
                                     <strong class="font-semibold" data-kid="2-2-8-1-1-3-2-2-1" data-name="hours title">
-                                        Open daily
+                                        Hours Of Operations
                                     </strong>
                                     <br data-kid="2-2-8-1-1-3-2-2-2" data-name="line break" />
-                                    12:00–01:00
+                                    Sun - Thu 12:00PM - 00:00AM & Fri-Sat 12:00PM - 2:00AM
                                 </span>
                             </p>
                             <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-3" data-name="contact methods">
@@ -196,8 +206,8 @@
                                 </i>
                                 <span data-kid="2-2-8-1-1-3-3-2" data-name="methods block">
                                     <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">
-                                        +971 52 218 5569
+                                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">
+                                        052 218 5569 / 050 460 3469 / (04) 880 3320
                                     </a>
                                     <br data-kid="2-2-8-1-1-3-3-2-2" data-name="line break" />
                                     <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
@@ -208,9 +218,21 @@
                                 </span>
                             </p>
                         </div>
+                        <!-- ADD MESSAGE US BUTTON HERE -->
+                        <div class="mt-6">
+                            <p class="text-[10px] uppercase tracking-[.16em] text-[var(--mora-espresso)]/60 mb-2">
+                                WhatsApp</p>
+                            <p class="text-sm mb-3">+971 52 218 5569</p>
+                            <a href="https://wa.me/971522185569" target="_blank"
+                                class="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-full font-semibold text-sm hover:bg-[#1ebe57] transition-colors">
+                                <i class="ti ti-brand-whatsapp text-lg"></i>
+                                Message Us
+                            </a>
+                        </div>
+
                         <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
                             data-name="contact buttons container">
-                            <a class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                            <a class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]"
                                 data-kid="2-2-8-1-1-4-1" data-name="directions link"
                                 href="https://www.google.com/maps/search/?api=1&amp;query=Jebel+Ali+Recreation+Club+Dubai"
                                 rel="noreferrer" target="_blank">
@@ -220,7 +242,7 @@
                                 </i>
                             </a>
                             <button
-                                class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                                class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]"
                                 data-kid="2-2-8-1-1-4-2" data-name="reserve button" data-open-reservation=""
                                 type="button">
                                 Reserve a table
@@ -273,7 +295,7 @@
                 <h2 class="mora-serif text-3xl mb-2">Reserve or Enquire</h2>
                 <p class="text-[#F2E7D4]/60 text-sm mb-8">Tell us what you're looking for and we'll get back to you.</p>
 
-                <form action="https://formspree.io/f/xjykrdra" method="POST" class="space-y-5">
+                <form id="contactForm" class="space-y-5">
 
                     <div>
                         <label class="block text-xs uppercase tracking-wide mb-2">Name *</label>
@@ -304,9 +326,9 @@
                         </select>
                     </div>
 
-                    <button type="submit"
+                    <button type="submit" form="contact-form"
                         class="w-full bg-[#AA8243] text-[#30201B] font-semibold uppercase text-xs tracking-widest py-4 rounded-lg hover:bg-[#F2E7D4] transition-colors mt-4">
-                        Submit →
+                        Send Message →
                     </button>
 
                 </form>
@@ -355,13 +377,13 @@
                         </p>
                         <div class="mt-5 leading-7 text-[#F2E7D4]/68" data-kid="2-3-1-2-1-2">
                             <p data-kid="2-3-1-2-1-2-1">
-                                Jebel Ali Recreation Club
+                                H Rd, Jebel Ali Recreation Club
                             </p>
                             <p data-kid="2-3-1-2-1-2-2">
-                                Daily · 12:00–01:00
+                                Sun - Thu 12:00PM - 00:00AM & Fri-Sat 12:00PM - 2:00AM
                             </p>
                             <p data-kid="2-3-1-2-1-2-3">
-                                Dubai, UAE
+                                Behind IBN Batuta Mall, Dubai
                             </p>
                             <a class="mora-menu-link mt-4 inline-block border-b border-[#F2E7D4]/35 pb-1 text-[11px] uppercase tracking-[.12em] hover:text-white"
                                 data-kid="2-3-1-2-1-2-4"
@@ -379,24 +401,19 @@
                             Explore
                         </p>
                         <div class="mt-5 grid gap-3 leading-6 text-[#F2E7D4]/68" data-kid="2-3-1-2-2-2">
-                            <a class="mora-menu-link w-fit hover:text-white" data-kid="2-3-1-2-2-2-1"
-                                href="menu.html">
+                            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-1" href="./menu.html">
                                 Menu
                             </a>
-                            <a class="mora-menu-link w-fit hover:text-white" data-kid="2-3-1-2-2-2-2"
-                                href="./about.html">
+                            <a class="mora-menu-link w-fit data-kid=" 2-3-1-2-2-2-2" href="./about.html">
                                 About
                             </a>
-                            <a class="mora-menu-link w-fit hover:text-white" data-kid="2-3-1-2-2-2-3"
-                                href="./index.html#bar">
+                            <a class="mora-menu-link w-fit data-kid=" 2-3-1-2-2-2-3" href="./bar.html">
                                 Bar experience
                             </a>
-                            <a class="mora-menu-link w-fit hover:text-white" data-kid="2-3-1-2-2-2-4"
-                                href="./gallery.html">
+                            <a class="mora-menu-link w-fit data-kid=" 2-3-1-2-2-2-4" href="./gallery.html">
                                 Gallery
                             </a>
-                            <a class="mora-menu-link w-fit hover:text-white" data-kid="2-3-1-2-2-2-5"
-                                href="./contact.html">
+                            <a class="mora-menu-link w-fit data-kid=" 2-3-1-2-2-2-5" href="./contact.html">
                                 Private celebrations
                             </a>
                         </div>
@@ -407,18 +424,16 @@
                             Keep in touch
                         </p>
                         <div class="mt-5 grid gap-3 leading-6 text-[#F2E7D4]/68" data-kid="2-3-1-2-3-2">
-                            <a class="mora-menu-link w-fit hover:text-white" data-kid="2-3-1-2-3-2-1"
+                            <a class="mora-menu-link w-fit " data-kid="2-3-1-2-3-2-1"
                                 href="https://www.instagram.com/chouseuae/" rel="noreferrer" target="_blank">
                                 Instagram
                                 <i aria-hidden="true" class="ti ti-instagram ml-1" data-kid="2-3-1-2-3-2-1-1">
                                 </i>
                             </a>
-                            <a class="mora-menu-link w-fit hover:text-white" data-kid="2-3-1-2-3-2-2"
-                                href="tel:+971522185569">
-                                +971 52 218 5569
+                            <a class="mora-menu-link w-fit " data-kid="2-3-1-2-3-2-2" href="tel:+97148803320">
+                                052 218 5569 / 050 460 3469 / (04) 880 3320
                             </a>
-                            <a class="mora-menu-link w-fit hover:text-white" data-kid="2-3-1-2-3-2-3"
-                                href="mailto:hello@moradubai.ae">
+                            <a class="mora-menu-link w-fit " data-kid="2-3-1-2-3-2-3" href="mailto:hello@moradubai.ae">
                                 hello@moradubai.ae
                             </a>
                         </div>
@@ -464,6 +479,22 @@
                 }
             }
 
+            // WhatsApp form code (yours, new)
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.querySelector('[name="name"]').value;
+                const email = document.querySelector('[name="email"]').value;
+                const phone = document.querySelector('[name="phone"]').value;
+                const service = document.querySelector('[name="service"]').value;
+
+                const message = `New Enquiry from C HOUSE website:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}`;
+
+                const whatsappURL = `https://wa.me/971522185569?text=${message}`;
+
+                window.open(whatsappURL, '_blank');
+            });
+
             // Mobile menu toggle
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -474,6 +505,10 @@
             }
         </script>
     </div>
+    <a href="https://wa.me/971522185569" target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+        <i class="ti ti-brand-whatsapp text-2xl"></i>
+    </a>
 </body>
 
 </html>
