@@ -73,7 +73,7 @@
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="./index.html">Home</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-white bg-white/20 transition-colors" href="menu.html">Menu</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="about.html">About</a>
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="index.html#bar">Bar</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="bar.html">Bar</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="index.html#experience">Experience</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="gallery.html">Gallery</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="contact.html">Contact</a>
@@ -91,7 +91,10 @@
       <div class="relative z-10 text-center max-w-3xl mx-auto">
         <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4">C HOUSE Selection</p>
         <h1 class="mora-serif text-5xl md:text-7xl mb-6">The Menu</h1>
-        <p class="text-sm md:text-base text-gray-300 tracking-wide font-light">Explore our curated selection of Italian classics, prime cuts, and signature beverages crafted for a memorable dining experience.</p>
+        <p class="text-sm md:text-base text-gray-300 tracking-wide font-light mb-10">Explore our curated selection of Italian classics, prime cuts, and signature beverages crafted for a memorable dining experience.</p>
+        <a href="./assets/C-House-Food-Menu.pdf" download="C_House_Food_Menu.pdf" class="inline-flex items-center gap-2 rounded-full bg-[#AA8243] px-8 py-3 text-sm tracking-widest uppercase text-white transition-colors hover:bg-white hover:text-black font-semibold shadow-lg">
+          <i class="ti ti-download text-lg"></i> Download PDF Menu
+        </a>
       </div>
     </section>
 
@@ -101,7 +104,10 @@
         
         <!-- ANTIPASTI -->
         <div class="menu-section" style="animation-delay: 0.1s">
-          <h2 class="mora-serif text-4xl mb-2">Antipasti</h2>
+          <div class="relative mb-2 flex items-center justify-between">
+            <h2 class="mora-serif text-4xl mb-0">Antipasti</h2>
+            <img src="gallery/calamari-fritti.png" alt="Antipasti" class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
+          </div>
           <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Tapas & Small Bites</p>
           <div class="flex flex-col gap-5">
             <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Burrata Caprese (V)</span><span class="menu-price">79</span></div>
@@ -164,7 +170,10 @@
 
         <!-- PRIMI -->
         <div class="menu-section" style="animation-delay: 0.4s">
-          <h2 class="mora-serif text-4xl mb-2">Primi</h2>
+          <div class="relative mb-2 flex items-center justify-between">
+            <h2 class="mora-serif text-4xl mb-0">Primi</h2>
+            <img src="gallery/fettuccine-alfredo.png" alt="Primi" class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
+          </div>
           <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Traditional Pasta & Risotto</p>
           <div class="flex flex-col gap-5">
             <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Lasagna Classica (NV)</span><span class="menu-price">89</span></div>

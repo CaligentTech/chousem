@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>C HOUSE - Bar Menu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --mora-clay: #A84F37;
+      --mora-terracotta: #C76D4D;
+      --mora-olive: #29372D;
+      --mora-espresso: #30201B;
+      --mora-stone: #B7A48E;
+      --mora-parchment: #E7D8C0;
+      --mora-brass: #AA8243;
+      --mora-candle: #F2E7D4;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--mora-parchment);
+      color: var(--mora-espresso);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .mora-serif {
+      font-family: 'DM Serif Display', Georgia, serif;
+    }
+
+    .menu-item {
+      border-bottom: 1px dashed rgba(48, 32, 27, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .menu-item:hover {
+      border-bottom-color: var(--mora-clay);
+      transform: translateX(4px);
+    }
+
+    .menu-price {
+      color: var(--mora-clay);
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+    
+    .menu-section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <header aria-label="Primary navigation" class="absolute inset-x-0 top-0 z-50 pt-6 px-5 sm:px-8 lg:px-12 text-[#f5e6c8]">
+    <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-center relative">
+      <div class="absolute left-0 flex items-center">
+        <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="index.html">
+          <img src="gallery/logo.png" class="h-28 w-auto object-contain -ml-4" alt="Logo">
+          <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
+        </a>
+      </div>
+      <nav aria-label="Main links" class="hidden items-center gap-1 rounded-full bg-black/30 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10">
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="index.html">Home</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="menu.html">Menu</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="about.html">About</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-white bg-white/20 transition-colors" href="bar.html">Bar</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="index.html#experience">Experience</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="gallery.html">Gallery</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Header -->
+    <section class="relative pt-40 pb-24 px-5 bg-black text-[#f5e6c8] flex flex-col items-center justify-center">
+      <div class="absolute inset-0 z-0">
+        <img alt="Bar menu hero" class="h-full w-full object-cover opacity-30" decoding="async" loading="lazy" src="gallery/food.png"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+      </div>
+      <div class="relative z-10 text-center max-w-3xl mx-auto">
+        <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4">C HOUSE Selection</p>
+        <h1 class="mora-serif text-5xl md:text-7xl mb-6">The Bar</h1>
+        <p class="text-sm md:text-base text-gray-300 tracking-wide font-light mb-10">Explore our curated Bar Food Menu and signature drinks.</p>
+        <a href="./assets/C-House-Indo-Chinese-Menu.pdf" download="C_House_Bar_Food_Menu.pdf" class="inline-flex items-center gap-2 rounded-full bg-[#AA8243] px-8 py-3 text-sm tracking-widest uppercase text-white transition-colors hover:bg-white hover:text-black font-semibold shadow-lg">
+          <i class="ti ti-download text-lg"></i> Download Bar Food Menu
+        </a>
+      </div>
+    </section>
+
+    <!-- SPECIAL OFFERS SECTION -->
+    <section class="py-16 px-5 lg:px-12 bg-[#30201B] text-[#f5e6c8]">
+      <div class="max-w-[1360px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+        <div>
+          <h3 class="mora-serif text-4xl mb-2 text-[#AA8243]">Happy Hour</h3>
+          <p class="text-sm text-gray-400 mb-8 font-light uppercase tracking-widest">Sun - Thu 12 PM - 8 PM | Fri - Sat 12 PM - 7 PM</p>
+          <div class="flex flex-col gap-5">
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-lg text-white">All-Day Hero: Carlsberg Draught 500ml</span>
+              <span class="text-[#AA8243] font-bold ml-4">35</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-lg text-white">Draught Beer (Budweiser, Heineken, Stella)</span>
+              <span class="text-[#AA8243] font-bold ml-4">From 37</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-lg text-white">Bottled Beer (Budweiser, Heineken, Corona)</span>
+              <span class="text-[#AA8243] font-bold ml-4">From 29</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-lg text-white">Classic Cocktails</span>
+              <span class="text-[#AA8243] font-bold ml-4">42</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-lg text-white">C House Signatures</span>
+              <span class="text-[#AA8243] font-bold ml-4">45</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-white/10">
+              <span class="text-lg text-white">House Spirits & Wines</span>
+              <span class="text-[#AA8243] font-bold ml-4">From 32</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="mora-serif text-4xl mb-2 text-[#AA8243]">Bundles & Offers</h3>
+          <p class="text-sm text-gray-400 mb-8 font-light uppercase tracking-widest">Unbeatable Value</p>
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-col pb-4 border-b border-white/10">
+              <span class="text-xl font-medium text-white mb-1">The C House Beer Tower</span>
+              <span class="text-sm text-gray-300">3L Tower & 1 Starter at AED 289</span>
+            </div>
+            <div class="flex flex-col pb-4 border-b border-white/10">
+              <span class="text-xl font-medium text-white mb-1">Cocktail & Food</span>
+              <span class="text-sm text-gray-300">2 Cocktails & 1 Starter at 119 | 4 Cocktails & 1 Starter at 179</span>
+            </div>
+            <div class="flex flex-col pb-4 border-b border-white/10">
+              <span class="text-xl font-medium text-white mb-1">Italian Family Feast</span>
+              <span class="text-sm text-gray-300">2 Pizzas, 1 Pasta, Garlic Bread, 5 Beers/1 Wine Bottle for 349</span>
+            </div>
+            <div class="flex flex-col pb-4 border-b border-white/10">
+              <span class="text-xl font-medium text-white mb-1">Ladies Privilege Night (Tues 8-11:30 PM)</span>
+              <span class="text-sm text-gray-300">3 House Drinks/Cocktails per guest & 25% Off Starters</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drinks Menu Section -->
+    <section class="py-24 px-5 lg:px-12 max-w-[1360px] mx-auto border-b border-[var(--mora-espresso)]/20">
+      <div class="text-center mb-16">
+        <h2 class="mora-serif text-5xl mb-4">Drinks Menu</h2>
+        <p class="text-[13px] uppercase tracking-[.15em] text-[var(--mora-clay)] font-bold">Signatures, Classics & Spirits</p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
+        
+        <!-- C HOUSE ORIGINALS -->
+        <div class="menu-section" style="animation-delay: 0.1s">
+          <h2 class="mora-serif text-4xl mb-2">C House Originals</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Signature Cocktails</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1"><span class="text-lg">Caribbean Blue</span><span class="menu-price">75</span></div>
+              <p class="text-[13px] text-gray-600 font-light">Rum, Blue Curacao, citrus & tropical fruit juices.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1"><span class="text-lg">C HOUSE Cooler</span><span class="menu-price">75</span></div>
+              <p class="text-[13px] text-gray-600 font-light">Premium gin, cucumber, jaljeera, fresh citrus & soda.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1"><span class="text-lg">Golden Palm Julep</span><span class="menu-price">75</span></div>
+              <p class="text-[13px] text-gray-600 font-light">Bourbon, mint, palm syrup, citrus & ginger ale.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1"><span class="text-lg">Recreation Mule</span><span class="menu-price">75</span></div>
+              <p class="text-[13px] text-gray-600 font-light">Vodka, guava, lime, exotic spices & ginger ale.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1"><span class="text-lg">Heat Wave</span><span class="menu-price">75</span></div>
+              <p class="text-[13px] text-gray-600 font-light">Tequila, chili, passion fruit, citrus & agave.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1"><span class="text-lg">Italian Sunset</span><span class="menu-price">75</span></div>
+              <p class="text-[13px] text-gray-600 font-light">Gin, limoncello, blood orange, citrus & rosemary.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1"><span class="text-lg">Hot Honey Picante</span><span class="menu-price">79</span></div>
+              <p class="text-[13px] text-gray-600 font-light">Tequila, hot honey, lime, jalapeño & agave.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1"><span class="text-lg">Jebel Garden Highball</span><span class="menu-price">69</span></div>
+              <p class="text-[13px] text-gray-600 font-light">Gin, cucumber, basil, lime & tonic.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERNATIONAL CLASSICS & SPRITZ -->
+        <div class="menu-section" style="animation-delay: 0.2s">
+          <h2 class="mora-serif text-4xl mb-2">Spritz & Aperitivo</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Refreshing Starts</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Classic Aperol Spritz</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Pink Spritz</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Hugo Spritz</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Limoncello Spritz</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Grapefruit & Basil Spritz</span><span class="menu-price">75</span></div>
+          </div>
+
+          <h2 class="mora-serif text-4xl mb-2 mt-12">International Classics</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Timeless Cocktails</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Mojito / Cosmopolitan / Negroni</span><span class="menu-price">59</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Margarita / Whiskey Sour / Bloody Mary</span><span class="menu-price">59</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Old Fashioned / Espresso Martini</span><span class="menu-price">65</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Pornstar Martini</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Long Island Iced Tea</span><span class="menu-price">75</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Bull Frog</span><span class="menu-price">79</span></div>
+          </div>
+        </div>
+
+        <!-- BEERS -->
+        <div class="menu-section" style="animation-delay: 0.3s">
+          <h2 class="mora-serif text-4xl mb-2">Draught Beer</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Full / Half Pint</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Carlsberg</span><span class="menu-price">49 / 29</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Budweiser</span><span class="menu-price">52 / 32</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Stella Artois</span><span class="menu-price">55 / 33</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Heineken</span><span class="menu-price">55 / 33</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Corona</span><span class="menu-price">62 / 42</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Hoegaarden</span><span class="menu-price">62 / 42</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Guinness</span><span class="menu-price">62 / 42</span></div>
+          </div>
+
+          <h2 class="mora-serif text-4xl mb-2 mt-12">Bottled Beer</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Bottle / Bucket of 5</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Budweiser / Heineken</span><span class="menu-price">40 / 145</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Corona</span><span class="menu-price">45 / 155</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Magners</span><span class="menu-price">62</span></div>
+          </div>
+        </div>
+        
+        <!-- SPIRITS & WINE -->
+        <div class="menu-section" style="animation-delay: 0.4s">
+          <h2 class="mora-serif text-4xl mb-2">Premium Spirits</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Selected Pours</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Blended Whisky (JW Red/Black, Chivas)</span><span class="menu-price">From 35</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Single Malt (Glenfiddich, Macallan)</span><span class="menu-price">From 55</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Vodka (Smirnoff, Grey Goose, Ciroc)</span><span class="menu-price">From 35</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Gin (Bombay, Hendrick's, Roku)</span><span class="menu-price">From 35</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Rum & Tequila (Bacardi, Patron, Don Julio)</span><span class="menu-price">From 35</span></div>
+          </div>
+
+          <h2 class="mora-serif text-4xl mb-2 mt-12">Wine Selection</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Glass / Bottle</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Sparkling (Perlant Brut NV)</span><span class="menu-price">49 / 185</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">White (Pinot Grigio, Sauv Blanc)</span><span class="menu-price">49 / 185</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Red (Argento Malbec, Cab Sauv)</span><span class="menu-price">49 / 185</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Rosé (Frontera Rosé)</span><span class="menu-price">49 / 185</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Food Menu Content -->
+    <section class="py-24 px-5 lg:px-12 max-w-[1360px] mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="mora-serif text-5xl mb-4">Bar Food Menu</h2>
+        <p class="text-[13px] uppercase tracking-[.15em] text-[var(--mora-clay)] font-bold">Indian & Oriental Favourites</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
+        
+        <!-- SHARING PLATTERS -->
+        <div class="menu-section" style="animation-delay: 0.1s">
+          <h2 class="mora-serif text-4xl mb-2">Sharing Platters</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Chef's Sharing Specials</p>
+          <div class="flex flex-col gap-6">
+            <div class="menu-item flex flex-col pb-3">
+              <div class="flex justify-between items-baseline mb-1">
+                <span class="text-lg font-medium">The Royal Tandoori Collection (Signature) (NV)</span>
+                <span class="menu-price">299</span>
+              </div>
+              <p class="text-[13px] text-gray-600 font-light leading-relaxed">Full Tandoori Chicken, Chicken Tikka, Mutton Seekh Kebab and Fish Tikka. Served with Mint Chutney, Laccha Onion and 2 Butter Naans.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-3">
+              <div class="flex justify-between items-baseline mb-1">
+                <span class="text-lg font-medium">The "Dragon" Wok-Tossed Platter (NV) / (S)</span>
+                <span class="menu-price">199</span>
+              </div>
+              <p class="text-[13px] text-gray-600 font-light leading-relaxed">Chicken Lollipop (Drums of Heaven), Chilli Chicken, Chilli garlic prawns & veg manchurian Served with a side of Veg / Chicken Fried Rice.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-3">
+              <div class="flex justify-between items-baseline mb-1">
+                <span class="text-lg font-medium">The C House "Fusion" Party Platter (NV)</span>
+                <span class="menu-price">179</span>
+              </div>
+              <p class="text-[13px] text-gray-600 font-light leading-relaxed">Chicken Wings (BBQ), Chilli Chicken, Signature Dynamite Chicken and Chicken Tikka.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-3">
+              <div class="flex justify-between items-baseline mb-1">
+                <span class="text-lg font-medium">The Vegetarian Harvest Platter (V)</span>
+                <span class="menu-price">149</span>
+              </div>
+              <p class="text-[13px] text-gray-600 font-light leading-relaxed">Paneer Tikka, Mushroom Tikka, Veg Seekh Kebab and Kamal Kakdi (Lotus Stem) Tikki. Served with Mint Chutney</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ASIAN SMALL PLATES -->
+        <div class="menu-section" style="animation-delay: 0.2s">
+          <h2 class="mora-serif text-4xl mb-2">Asian Small Plates</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Bites & Appetizers</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex flex-col pb-2">
+              <div class="flex justify-between items-baseline mb-1">
+                <span class="text-lg">Hand-Folded MOMOS (8 pcs) (V) / (NV)</span>
+                <span class="menu-price">69 / 79</span>
+              </div>
+              <p class="text-[13px] text-gray-600 font-light">(Steamed or Pan-Tossed, Wok-tossed in choice of: Schezwan, Makhani, Teriyaki or Peri-Peri)</p>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Lotus Stem Crisps (Kamal Kakdi) (V)</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Ginger-Soy Chilli Chicken (NV)</span><span class="menu-price">85</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chilli Garlic Prawns (S)</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken 65 (South-Coast Spiced) (NV)</span><span class="menu-price">75</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Drums of Heaven / Chicken Lollipop (NV)</span><span class="menu-price">75</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken or Mutton Keema Pav (NV)</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Garden Manchurian</span><span class="menu-price">69</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chilli Paneer</span><span class="menu-price">75</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Masala Peanut (Chaat Style) (V)</span><span class="menu-price">49</span></div>
+          </div>
+        </div>
+
+        <!-- TANDOORI SPECIALS -->
+        <div class="menu-section" style="animation-delay: 0.3s">
+          <h2 class="mora-serif text-4xl mb-2">Tandoori Specials</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">From The Clay Oven</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Tandoori Murgh (Half / Full) (NV)</span><span class="menu-price">79 / 145</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Mutton Seekh Kebab</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Chicken Tikka / Hariyali Tikka (NV)</span><span class="menu-price">85</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Paneer Tikka Multani / Mushroom Tikka (V)</span><span class="menu-price">75</span></div>
+          </div>
+          
+          <h2 class="mora-serif text-4xl mb-2 mt-12">Tandoori Breads</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Freshly Baked</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Cheese Garlic Naan</span><span class="menu-price">29</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Garlic / Butter Naan</span><span class="menu-price">25</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Tandoori Roti (Plain / Butter)</span><span class="menu-price">15 / 18</span></div>
+          </div>
+        </div>
+
+        <!-- CURRIES & RICE -->
+        <div class="menu-section" style="animation-delay: 0.4s">
+          <h2 class="mora-serif text-4xl mb-2">Curries & Rice</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Mains & Staples</p>
+          <div class="flex flex-col gap-6">
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Butter Chicken (NV)</span><span class="menu-price">95</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Mutton Rogan Josh / Bhuna Ghosht (NV)</span><span class="menu-price">115</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Paneer Butter Masala / Paneer Tikka Masala (V)</span><span class="menu-price">79</span></div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Dal Bukhara (Slow-cooked 24 Hours) (V)</span><span class="menu-price">75</span></div>
+            <div class="menu-item flex flex-col pb-3">
+              <div class="flex justify-between items-baseline mb-1">
+                <span class="text-lg">Biryani (Veg / Chicken / Mutton)</span>
+                <span class="menu-price">69 / 79 / 95</span>
+              </div>
+              <p class="text-[13px] text-gray-600 font-light leading-relaxed">Fragrant saffron-infused basmati cooked with veg or tender meat and traditional aromatic spices.</p>
+            </div>
+            <div class="menu-item flex flex-col pb-3">
+              <div class="flex justify-between items-baseline mb-1">
+                <span class="text-lg">Triple Schezwan Fusion Rice (V) / (NV)</span>
+                <span class="menu-price">79 / 95</span>
+              </div>
+              <p class="text-[13px] text-gray-600 font-light leading-relaxed">Combination of Fried Rice, Crispy Noodles and Spicy Schezwan gravy</p>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-lg">Fried Rice or Hakka Noodles (V) / (NV) / (S) / (Mixed)</span><span class="menu-price">59 / 69 / 85 / 95</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-24 pt-8 border-t border-[var(--mora-espresso)]/20 text-center text-sm font-semibold opacity-70">
+        Prices are in AED and include 5% VAT and 7% Municipality Fee. <br>
+        Kindly inform your server of any food allergies or dietary preferences before placing your order. <br>
+        <span class="font-normal text-gray-600 mt-2 block">(*) Chef's Signature Dish &nbsp;|&nbsp; (V) Vegetarian &nbsp;|&nbsp; (NV) Non-Vegetarian &nbsp;|&nbsp; (S) Seafood</span>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
