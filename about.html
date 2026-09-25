@@ -29,8 +29,23 @@
       color: #fff;
     }
 
+    #mora-page .mora-text-action:hover {
+      color: var(--mora-clay);
+    }
+
+    #mora-page a:hover,
+    #mora-page button:hover {
+      text-decoration-color: #AA8243 !important;
+      color: #AA8243;
+    }
+
     .mora-serif {
       font-family: 'DM Serif Display', Georgia, serif;
+    }
+
+    .mora-menu-link:hover {
+      color: #C76D4D;
+      border-color: #C76D4D;
     }
   </style>
 </head>
@@ -66,13 +81,13 @@
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
             href="./index.html">Home</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="menu.html">Menu</a>
+            href="./menu.html">Menu</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-white/20 text-white font-semibold"
             href="./about.html" aria-current="page">About</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="bar.html">Bar</a>
+            href="./bar.html">Bar</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="./index.html#experience">Experience</a>
+            href="./experience.html">Experience</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
             href="./gallery.html">Gallery</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
@@ -145,7 +160,10 @@
           Our Story
         </h2>
         <p class="text-base sm:text-[17px] text-[#4a3e39] leading-[1.85] font-normal">
-          C HOUSE is an Italian Bistro, Bar & Lounge in Jebel Ali, Dubai, bringing together contemporary Italian favourites, an Asian Kitchen, crafted cocktails and relaxed social dining. From casual lunches and aperitivo to lively evenings, live entertainment and outdoor dining, C HOUSE is designed as a neighbourhood destination for good food, great drinks and memorable times.
+          C HOUSE is an Italian Bistro, Bar & Lounge in Jebel Ali, Dubai, bringing together contemporary Italian
+          favourites, an Asian Kitchen, crafted cocktails and relaxed social dining. From casual lunches and aperitivo
+          to lively evenings, live entertainment and outdoor dining, C HOUSE is designed as a neighbourhood destination
+          for good food, great drinks and memorable times.
         </p>
       </div>
 
@@ -710,6 +728,11 @@
       });
     })();
   </script>
+
+  <a href="https://wa.me/971522185569" target="_blank"
+    class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+    <i class="ti ti-brand-whatsapp text-2xl"></i>
+  </a>
 </body>
 
 </html>
