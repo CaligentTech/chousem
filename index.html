@@ -7,10 +7,32 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>C HOUSE - Italian bistro · bar · lounge</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
     [hidden] {
       display: none !important;
+    }
+
+    @font-face {
+      font-family: 'Agraham';
+      src: url('./Agraham.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Italianno';
+      src: url('./Italianno-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .font-agraham {
+      font-family: 'Agraham', serif;
+    }
+
+    .font-italianno {
+      font-family: 'Italianno', cursive;
     }
 
     #mora-page {
@@ -572,7 +594,7 @@
           data-name="navigation bar layout container">
           <div class="absolute left-0 flex items-center">
             <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="#">
-              <img src="gallery/logo.png" class="h-28 w-auto object-contain -ml-4" alt="Logo">
+              <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="Logo">
               <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
             </a>
           </div>
@@ -587,8 +609,7 @@
               href="./about.html">About</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
               href="bar.html">Bar</a>
-            <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./experience.html">Experience</a>
+
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
               href="./gallery.html">Gallery</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
@@ -601,34 +622,16 @@
           class="relative h-[calc(100svh-16px)] overflow-hidden bg-black text-[#f5e6c8] flex flex-col items-center justify-center border-2 border-[#FFFDD0] rounded-3xl"
           data-kid="2-2-1" data-name="hero section" id="home">
           <div class="absolute inset-0" data-kid="2-2-1-1" data-name="hero image background container">
-            <style>
-              @keyframes hero-crossfade {
-
-                0%,
-                45% {
-                  opacity: 1;
-                }
-
-                50%,
-                95% {
-                  opacity: 0;
-                }
-
-                100% {
-                  opacity: 1;
-                }
-              }
-
-              .hero-day {
-                animation: hero-crossfade 16s ease-in-out infinite;
-              }
-            </style>
             <img alt="Hero Night" class="absolute inset-0 h-full w-full object-cover" decoding="async" loading="lazy"
               src="./gallery/heronight.png" />
-            <img alt="Hero Day" class="absolute inset-0 h-full w-full object-cover hero-day" decoding="async"
-              loading="lazy" src="./gallery/heroday.png" />
             <div class="absolute inset-0 bg-black/20"></div>
           </div>
+          <h1 id="hero-heading"
+            class="font-agraham absolute z-10 w-full top-1/2 -translate-y-1/2 mt-8 lg:mt-12 text-left px-6 lg:px-12 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4rem] text-white leading-none tracking-wide"
+            style="text-shadow: 0 10px 50px rgba(0,0,0,0.7);">
+            Italian Bistro
+          </h1>
+
           <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
             <a class="text-[#f5e6c8] hover:text-white transition-colors mt-2" href="menu.html">
               <svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -644,10 +647,10 @@
                     class="text-yellow-500 text-[26px] align-baseline"><b>&#9733;</b></span></span>
                 <span class="text-gray-300 text-[13px]">Google Rating</span>
               </div>
-              <div class="flex flex-col gap-2 text-white text-[15px] font-medium tracking-wide">
-                <p>Italian Bistro &nbsp;<span class="text-gray-400 font-light">|</span>&nbsp; Crafted Cocktails
-                  &nbsp;<span class="text-gray-400 font-light">|</span>&nbsp; Shisha</p>
-                <p>Live Entertainment &nbsp;<span class="text-gray-400 font-light">|</span>&nbsp; Chef's Specials</p>
+              <div class="flex flex-col gap-2 text-white mora-serif text-base md:text-lg tracking-wide">
+                <p>Crafted Cocktails &nbsp;<span class="text-gray-400 font-sans text-base">|</span>&nbsp; Shisha</p>
+                <p>Live Entertainment &nbsp;<span class="text-gray-400 font-sans text-base">|</span>&nbsp; Chef's
+                  Specials</p>
               </div>
             </div>
             <div class="flex items-center gap-6">
@@ -661,16 +664,13 @@
                   <i class="ti ti-arrow-up-right text-lg"></i>
                 </a>
               </div>
-              <p class="text-gray-300 text-[12px] leading-relaxed">
-                Experience authentic Italian dining that brings people together - your gateway to memorable evenings.
-              </p>
             </div>
           </div>
           <div class="hidden lg:flex absolute bottom-12 right-4 z-20 flex-col items-start gap-4">
             <div class="flex gap-4">
               <div
                 class="flex-none flex items-center gap-4 p-3 rounded-[24px] bg-white/10 backdrop-blur-xl border border-white/20 w-[380px] shadow-2xl">
-                <img src="gallery/food.png" class="w-[120px] h-[140px] rounded-[16px] object-cover"
+                <img src="gallery/food.webp" class="w-[120px] h-[140px] rounded-[16px] object-cover"
                   alt="Truffle Tagliatelle">
                 <div class="flex flex-col gap-2">
                   <h3 class="text-white text-lg font-semibold leading-tight">Truffle Tagliatelle</h3>
@@ -690,32 +690,20 @@
         </section>
 
         <section aria-labelledby="food-heading"
-          class="border-y border-[var(--mora-espresso)]/10 bg-[var(--mora-clay)] px-5 py-24 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-36"
+          class="border-y border-[var(--mora-espresso)]/10 bg-[var(--mora-clay)] px-5 py-12 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-20"
           data-kid="2-2-3" data-name="food menu section" id="food">
           <div class="mx-auto grid max-w-[1360px] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-16" data-kid="2-2-3-1"
             data-name="food menu container">
-            <figure aria-live="polite"
-              class="order-first relative h-[min(126vw,620px)] overflow-hidden border border-[var(--mora-espresso)] bg-[var(--mora-espresso)] lg:order-last lg:mt-20 lg:h-[710px]"
+            <div
+              class="order-first relative h-[min(126vw,620px)] lg:order-last lg:mt-20 lg:h-[710px] flex items-center justify-center"
               data-kid="2-2-3-1-1" data-name="food display stage" id="food-stage">
-              <img
-                alt="Handmade pasta twirled on a white ceramic plate with tomato and parmesan, Erwan Hesry on Unsplash"
-                class="h-full w-full object-cover" data-dynamic="true" data-kid="2-2-3-1-1-1"
-                data-name="dish featured image" data-reason="src, alt, name, and meta text updated by interaction"
-                decoding="async" id="food-image" loading="lazy" src="gallery/food.png" />
-              <figcaption
-                class="mora-fold mora-fold-clay absolute bottom-0 left-0 max-w-[88%] bg-[var(--mora-candle)] px-5 py-4 text-[var(--mora-espresso)]"
-                data-kid="2-2-3-1-1-2" data-name="dish information overlay">
-                <p class="mora-serif text-2xl leading-none" data-dynamic="true" data-kid="2-2-3-1-1-2-1"
-                  data-name="dish name text" data-reason="updated by interaction" id="food-dish-name">
-                  Truffle tagliatelle
-                </p>
-                <p class="mt-2 text-[10px] uppercase tracking-[.14em] text-[var(--mora-espresso)]/65"
-                  data-dynamic="true" data-kid="2-2-3-1-1-2-2" data-name="dish meta text"
-                  data-reason="updated by interaction" id="food-dish-meta">
-                  Warm parmesan · handmade pasta
-                </p>
-              </figcaption>
-            </figure>
+              <img id="scroll-glass" alt="Mocktail"
+                class="absolute origin-bottom w-[40%] h-[45%] lg:w-[35%] lg:h-[40%] object-cover rounded-[2rem] -rotate-6 -translate-x-[211%] -translate-y-[92%] z-50"
+                decoding="async" loading="lazy" src="gallery/mocktailindex.png" style="transition: none;" />
+              <img alt="Pizza"
+                class="absolute origin-bottom w-[85%] h-[90%] lg:w-[80%] lg:h-[85%] object-cover rounded-[2rem] rotate-3 translate-x-4 transition-all duration-500 hover:rotate-6 hover:translate-x-6 hover:scale-105 z-10"
+                decoding="async" loading="lazy" src="gallery/pizzaindex.png" />
+            </div>
             <div class="order-last flex flex-col lg:order-first" data-kid="2-2-3-1-2"
               data-name="food description container">
               <div class="flex items-center justify-between" data-kid="2-2-3-1-2-1" data-name="food section header">
@@ -855,7 +843,7 @@
           </div>
         </section>
         <section aria-labelledby="bar-heading"
-          class="relative overflow-hidden bg-[var(--mora-olive)] px-5 py-28 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-36"
+          class="relative overflow-hidden bg-[var(--mora-olive)] px-5 py-16 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-20"
           data-kid="2-2-4" data-name="bar section" id="bar">
           <svg aria-hidden="true"
             class="pointer-events-none absolute right-[7%] top-12 hidden h-[520px] w-[420px] lg:block"
@@ -872,74 +860,61 @@
             data-kid="2-2-4-2" data-name="bar container">
             <div class="mora-reveal lg:pt-5 is-visible" data-kid="2-2-4-2-1" data-name="bar image container"
               data-reveal="">
-              <figure
-                class="relative h-[520px] w-[88%] overflow-hidden border border-[var(--mora-espresso)] lg:h-[650px] lg:w-[86%]"
-                data-kid="2-2-4-2-1-1" data-name="bar image frame">
-                <style>
-                  @keyframes barSlideshow {
-
-                    0%,
-                    15% {
-                      opacity: 1;
-                      transform: scale(1);
-                    }
-
-                    20%,
-                    95% {
-                      opacity: 0;
-                      transform: scale(1.05);
-                    }
-
-                    100% {
-                      opacity: 1;
-                      transform: scale(1);
-                    }
-                  }
-
-                  .bar-slide {
-                    position: absolute;
-                    inset: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    opacity: 0;
-                    animation: barSlideshow 25s ease-in-out infinite;
-                  }
-
-                  .bar-slide:nth-child(1) {
-                    animation-delay: 0s;
-                  }
-
-                  .bar-slide:nth-child(2) {
-                    animation-delay: 5s;
-                  }
-
-                  .bar-slide:nth-child(3) {
-                    animation-delay: 10s;
-                  }
-
-                  .bar-slide:nth-child(4) {
-                    animation-delay: 15s;
-                  }
-
-                  .bar-slide:nth-child(5) {
-                    animation-delay: 20s;
-                  }
-                </style>
-                <div class="absolute inset-0 w-full h-full">
-                  <img alt="Blueberry Drink" class="bar-slide" decoding="async" loading="lazy"
-                    src="gallery/Blueberrydrink.jpeg" />
-                  <img alt="Dragonfruit Drink" class="bar-slide" decoding="async" loading="lazy"
-                    src="gallery/dragonfruitdrink.jpeg" />
-                  <img alt="Cocktails" class="bar-slide" decoding="async" loading="lazy" src="gallery/cocktails.png" />
-                  <img alt="Mocktail" class="bar-slide" decoding="async" loading="lazy" src="gallery/Mocktail.jpeg" />
-                  <img alt="Burger and Beer" class="bar-slide" decoding="async" loading="lazy"
-                    src="gallery/burger.jpeg" />
-                </div>
-                <span class="absolute right-0 top-1/2 h-px w-14 bg-[var(--mora-brass)] z-10" data-kid="2-2-4-2-1-1-2"
-                  data-name="bar image side accent">
-                </span>
-              </figure>
+              <div id="bar-image-stack"
+                class="relative h-[480px] w-full max-w-[400px] mx-auto lg:h-[600px] lg:w-full flex items-center justify-center"
+                data-kid="2-2-4-2-1-1" data-name="bar stacked images">
+                <img alt="Dragonfruit Drink"
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-12 -translate-x-6 transition-all duration-500"
+                  style="z-index: 5" decoding="async" loading="lazy" src="gallery/dragonfruitdrink.webp" />
+                <img alt="Blueberry Drink"
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-6 translate-x-6 transition-all duration-500"
+                  style="z-index: 4" decoding="async" loading="lazy" src="gallery/Blueberrydrink.webp" />
+                <img alt="Orange Cocktail"
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-6 -translate-x-8 transition-all duration-500"
+                  style="z-index: 3" decoding="async" loading="lazy" src="gallery/drinks/DSC05172.webp" />
+                <img alt="Blue Cocktail"
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-12 translate-x-8 transition-all duration-500"
+                  style="z-index: 2" decoding="async" loading="lazy" src="gallery/drinks/DSC05178.webp" />
+                <img alt="Yellow Cocktail"
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-3 translate-x-0 transition-all duration-500"
+                  style="z-index: 1" decoding="async" loading="lazy" src="gallery/drinks/DSC05189.webp" />
+              </div>
+              <script>
+                (function() {
+                  const stack = document.getElementById('bar-image-stack');
+                  if (!stack) return;
+                  const images = Array.from(stack.querySelectorAll('img'));
+                  
+                  setInterval(() => {
+                    let maxZ = -1;
+                    let topImg = null;
+                    images.forEach(img => {
+                      let z = parseInt(img.style.zIndex) || 0;
+                      if (z > maxZ) { maxZ = z; topImg = img; }
+                    });
+                    if (!topImg) return;
+                    
+                    // Fade out the front image
+                    topImg.style.opacity = '0';
+                    topImg.style.transform = 'scale(1.05)';
+                    
+                    setTimeout(() => {
+                      // Send it to the back
+                      topImg.style.zIndex = '0';
+                      // Bring all others forward
+                      images.forEach(img => {
+                        if (img !== topImg) {
+                          let z = parseInt(img.style.zIndex) || 0;
+                          img.style.zIndex = (z + 1).toString();
+                        }
+                      });
+                      // Fade it back in at the back
+                      topImg.style.opacity = '1';
+                      topImg.style.transform = '';
+                    }, 500); // matches the 500ms duration-500 transition
+                  }, 3000); // shuffle every 3 seconds
+                })();
+              </script>
               <p class="mt-4 text-[10px] uppercase tracking-[.17em] text-[var(--mora-candle)]/55" data-kid="2-2-4-2-1-2"
                 data-name="bar image caption">
                 Drinks from noon · aperitivo starts whenever you do
@@ -1007,11 +982,11 @@
           </div>
         </section>
         <section aria-labelledby="gallery-heading"
-          class="mora-gallery bg-[var(--mora-parchment)] px-5 py-28 sm:px-8 lg:px-10 lg:py-40" data-kid="2-2-5"
+          class="mora-gallery bg-[var(--mora-clay)] text-[var(--mora-candle)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-5"
           data-name="gallery section" id="gallery">
           <div class="mx-auto max-w-[1360px]" data-kid="2-2-5-1" data-name="gallery content container">
             <div
-              class="flex flex-col gap-7 border-b border-[var(--mora-espresso)]/28 pb-8 lg:flex-row lg:items-end lg:justify-between"
+              class="flex flex-col gap-7 border-b border-[var(--mora-candle)]/25 pb-8 lg:flex-row lg:items-end lg:justify-between"
               data-kid="2-2-5-1-1" data-name="gallery header">
               <div data-kid="2-2-5-1-1-1" data-name="gallery title container">
 
@@ -1022,88 +997,74 @@
                   A table in motion.
                 </h2>
               </div>
-              <p class="mora-reveal max-w-[270px] text-sm leading-6 text-[var(--mora-espresso)]/70 lg:pb-2 is-visible"
+              <p class="mora-reveal max-w-[270px] text-sm leading-6 text-[var(--mora-candle)]/75 lg:pb-2 is-visible"
                 data-kid="2-2-5-1-1-2" data-name="gallery description" data-reveal="" style="--mora-delay:170ms">
                 Plates, pours, people, and the in-between.
               </p>
             </div>
             <div
-              class="mora-gallery-scroller mt-14 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 lg:grid lg:grid-cols-12 lg:gap-x-3 lg:gap-y-3 lg:overflow-visible lg:pb-0"
+              class="mora-gallery-scroller mt-14 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 lg:grid lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:pb-0"
               data-kid="2-2-5-1-2" data-name="gallery items scroller">
               <button aria-label="Open gallery image: 19:42 second round"
-                class="mora-gallery-item mora-reveal mora-fold-clay min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:col-span-4 lg:col-start-1 lg:mt-0 lg:min-w-0 is-visible"
+                class="mora-gallery-item mora-reveal mora-fold-clay min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
                 data-gallery-index="0" data-kid="2-2-5-1-2-1" data-name="gallery item 1" data-reveal="" type="button">
                 <img alt="Interior dining booths with a decorative golden ring divider"
-                  class="h-[350px] w-full object-cover lg:h-[380px]" data-kid="2-2-5-1-2-1-1"
-                  data-name="gallery image 1" decoding="async" loading="lazy" src="./gallery/1.png" />
-
+                  class="h-[350px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-1-1"
+                  data-name="gallery image 1" decoding="async" loading="lazy" src="./gallery/1.webp" />
               </button>
               <button aria-label="Open gallery image: 21:07 glasses raised"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:col-span-2 lg:col-start-5 lg:mt-20 lg:min-w-0 is-visible"
+                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
                 data-gallery-index="1" data-kid="2-2-5-1-2-2" data-name="gallery item 2" data-reveal=""
                 style="--mora-delay:70ms" type="button">
                 <img alt="Interior dining space with elegantly set tables"
-                  class="h-[300px] w-full object-cover lg:h-[270px]" data-kid="2-2-5-1-2-2-1"
-                  data-name="gallery image 2" decoding="async" loading="lazy" src="./gallery/2.png" />
-
+                  class="h-[300px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-2-1"
+                  data-name="gallery image 2" decoding="async" loading="lazy" src="./gallery/2.webp" />
               </button>
               <button aria-label="Open gallery image: 12:18 lunch table"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:col-span-3 lg:col-start-7 lg:mt-3 lg:min-w-0 is-visible"
+                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
                 data-gallery-index="2" data-kid="2-2-5-1-2-3" data-name="gallery item 3" data-reveal=""
                 style="--mora-delay:130ms" type="button">
                 <img alt="Outdoor patio setting with woven chairs and a marble table"
-                  class="h-[350px] w-full object-cover lg:h-[430px]" data-kid="2-2-5-1-2-3-1"
-                  data-name="gallery image 3" decoding="async" loading="lazy" src="./gallery/3.png" />
-
+                  class="h-[350px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-3-1"
+                  data-name="gallery image 3" decoding="async" loading="lazy" src="./gallery/3.webp" />
               </button>
               <button aria-label="Open gallery image: 18:36 first pour"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:col-span-3 lg:col-start-10 lg:mt-12 lg:min-w-0 is-visible"
+                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
                 data-gallery-index="3" data-kid="2-2-5-1-2-4" data-name="gallery item 4" data-reveal=""
                 style="--mora-delay:190ms" type="button">
                 <img alt="Interior dining booths beside warm golden lighting"
                   class="h-[300px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-4-1"
-                  data-name="gallery image 4" decoding="async" loading="lazy" src="./gallery/4.png" />
-
+                  data-name="gallery image 4" decoding="async" loading="lazy" src="./gallery/4.webp" />
               </button>
-              <button aria-label="Open gallery image: 20:14 at the corner table"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:col-span-3 lg:col-start-2 lg:mt-8 lg:min-w-0 is-visible"
-                data-gallery-index="4" data-kid="2-2-5-1-2-5" data-name="gallery item 5" data-reveal=""
-                style="--mora-delay:90ms" type="button">
-                <img alt="Elegant crystal chandelier hanging in the dining area"
-                  class="h-[290px] w-full object-cover lg:h-[280px]" data-kid="2-2-5-1-2-5-1"
-                  data-name="gallery image 5" decoding="async" loading="lazy" src="./gallery/6.png" />
 
-              </button>
               <button aria-label="Open gallery image: 21:07 pasta passed around"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:col-span-4 lg:col-start-5 lg:mt-20 lg:min-w-0 is-visible"
-                data-gallery-index="5" data-kid="2-2-5-1-2-6" data-name="gallery item 6" data-reveal=""
+                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
+                data-gallery-index="4" data-kid="2-2-5-1-2-6" data-name="gallery item 6" data-reveal=""
                 style="--mora-delay:150ms" type="button">
                 <img alt="Outdoor restaurant seating area with a large canopy at sunset"
-                  class="h-[330px] w-full object-cover lg:h-[330px]" data-kid="2-2-5-1-2-6-1"
-                  data-name="gallery image 6" decoding="async" loading="lazy" src="./gallery/5.png" />
-
+                  class="h-[330px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-6-1"
+                  data-name="gallery image 6" decoding="async" loading="lazy" src="./gallery/5.webp" />
               </button>
               <button aria-label="Open gallery image: 19:04 the little details"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:col-span-3 lg:col-start-10 lg:mt-3 lg:min-w-0 is-visible"
-                data-gallery-index="6" data-kid="2-2-5-1-2-7" data-name="gallery item 7" data-reveal=""
+                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
+                data-gallery-index="5" data-kid="2-2-5-1-2-7" data-name="gallery item 7" data-reveal=""
                 style="--mora-delay:220ms" type="button">
                 <img alt="Interior dining lounge with white booths and wood paneled walls"
                   class="h-[280px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-7-1"
                   data-name="gallery image 7" decoding="async" loading="lazy"
-                  src="./gallery/ambience/Ambiance 6.jpg.jpeg" />
-
+                  src="./gallery/ambience/Ambiance 6.jpg.webp" />
               </button>
             </div>
             <div
-              class="mt-4 flex items-center justify-between border-t border-[var(--mora-espresso)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-espresso)]/62"
+              class="mt-4 flex items-center justify-between border-t border-[var(--mora-candle)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-candle)]/65"
               data-kid="2-2-5-1-3" data-name="gallery footer controls">
               <span data-kid="2-2-5-1-3-1" data-name="gallery tap instructions">
                 Tap a frame to enlarge
               </span>
               <span class="lg:hidden" data-kid="2-2-5-1-3-2" data-name="gallery counter">
-                1 / 7
+                1 / 6
               </span>
-              <a class="mora-text-action hidden text-[var(--mora-espresso)] lg:inline-flex" data-kid="2-2-5-1-3-3"
+              <a class="mora-text-action hidden text-[var(--mora-candle)] lg:inline-flex" data-kid="2-2-5-1-3-3"
                 data-name="gallery link" href="gallery.html">
                 See the gallery
                 <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-5-1-3-3-1"
@@ -1114,7 +1075,7 @@
           </div>
         </section>
         <section aria-labelledby="occasions-heading"
-          class="hidden bg-[var(--mora-stone)] px-5 py-28 sm:px-8 lg:px-10 lg:py-36" data-kid="2-2-6"
+          class="hidden bg-[var(--mora-stone)] px-5 py-16 sm:px-8 lg:px-10 lg:py-20" data-kid="2-2-6"
           data-name="occasions section" id="occasions">
           <div class="mx-auto max-w-[1360px]" data-kid="2-2-6-1" data-name="occasions content container">
             <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between" data-kid="2-2-6-1-1"
@@ -1136,7 +1097,7 @@
                 One room, six good reasons to arrive.
               </p>
             </div>
-            <div class="mt-16 grid gap-12 lg:mt-24 lg:grid-cols-[.82fr_1.18fr] lg:gap-16" data-kid="2-2-6-1-2"
+            <div class="mt-10 grid gap-8 lg:mt-16 lg:grid-cols-[.82fr_1.18fr] lg:gap-12" data-kid="2-2-6-1-2"
               data-name="occasions layout grid">
               <div class="order-last lg:order-first" data-kid="2-2-6-1-2-1" data-name="occasions selection column">
                 <div aria-label="Ways to spend time at C HOUSE" class="flex snap-x gap-0 overflow-x-auto pb-1 lg:block"
@@ -1314,12 +1275,14 @@
                     data-name="occasion feature image" data-reason="src, alt, and content updated by interaction"
                     decoding="async" id="occasion-image" loading="lazy"
                     src="https://images.pexels.com/photos/17086329/pexels-photo-17086329.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100&amp;q=80" />
-                  <figcaption
-                    class="mora-fold-clay mora-fold absolute bottom-0 left-0 max-w-[88%] bg-[var(--mora-candle)] px-4 py-3 text-[10px] uppercase tracking-[.14em] text-[var(--mora-espresso)]"
-                    data-dynamic="true" data-kid="2-2-6-1-2-2-1-2" data-name="occasion image caption"
-                    data-reason="text updated by interaction" id="occasion-caption">
-                    Lunch at C HOUSE · easy plates, second espresso
-                  </figcaption>
+                  <div class="absolute bottom-0 left-0 max-w-[88%] z-10">
+                    <figcaption
+                      class="mora-fold-clay mora-fold bg-[var(--mora-candle)] px-4 py-3 text-[10px] uppercase tracking-[.14em] text-[var(--mora-espresso)]"
+                      data-dynamic="true" data-kid="2-2-6-1-2-2-1-2" data-name="occasion image caption"
+                      data-reason="text updated by interaction" id="occasion-caption">
+                      Lunch at C HOUSE · easy plates, second espresso
+                    </figcaption>
+                  </div>
                 </figure>
                 <p class="mora-serif mt-7 max-w-[620px] text-3xl leading-[1.05] text-[var(--mora-espresso)]"
                   data-dynamic="true" data-kid="2-2-6-1-2-2-2" data-name="occasion copy text"
@@ -1330,91 +1293,9 @@
             </div>
           </div>
         </section>
-        <section aria-labelledby="social-heading" class="bg-[var(--mora-stone)] px-5 py-28 sm:px-8 lg:px-10 lg:py-36"
-          data-kid="2-2-7" data-name="social section" id="social">
-          <div class="mx-auto flex max-w-[1360px] flex-col gap-12 lg:gap-16" data-kid="2-2-7-1"
-            data-name="social content container">
-            <div class="pt-5" data-kid="2-2-7-1-1" data-name="social top header">
 
-              <h2
-                class="mora-serif mora-reveal mt-12 text-[clamp(3rem,5.6vw,5.4rem)] leading-[.91] tracking-[-.04em] is-visible"
-                data-kid="2-2-7-1-1-2" data-name="social heading" data-reveal="" id="social-heading"
-                style="--mora-delay:100ms">
-                From the pass to the last glass.
-              </h2>
-              <p class="mora-reveal mt-8 max-w-[260px] text-sm leading-6 text-[var(--mora-espresso)]/70 is-visible"
-                data-kid="2-2-7-1-1-3" data-name="social description text" data-reveal="" style="--mora-delay:180ms">
-                A few recent frames from C HOUSE.
-              </p>
-              <a class="mora-text-action mora-reveal mt-10 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-espresso)] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 is-visible"
-                data-kid="2-2-7-1-1-4" data-name="instagram link" data-reveal=""
-                href="https://www.instagram.com/chouseuae/" rel="noreferrer" style="--mora-delay:240ms" target="_blank">
-                Follow C HOUSE on Instagram
-                <i aria-hidden="true" class="ti ti-instagram text-base" data-kid="2-2-7-1-1-4-1"
-                  data-name="instagram icon">
-                </i>
-                <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-7-1-1-4-2"
-                  data-name="arrow-up-right icon">
-                </i>
-              </a>
-            </div>
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:gap-6" data-kid="2-2-7-1-2"
-              data-name="social posts grid">
-              <a aria-label="Instagram post: pasta passed around"
-                class="mora-social-item mora-reveal relative block aspect-[4/5] w-full overflow-hidden is-visible"
-                data-kid="2-2-7-1-2-1" data-name="instagram post 1" data-reveal=""
-                href="https://www.instagram.com/chouseuae/" rel="noreferrer" target="_blank">
-                <img alt="Handmade pasta with tomato and parmesan on a white plate, Erwan Hesry on Unsplash"
-                  class="h-full w-full object-cover" data-kid="2-2-7-1-2-1-1" data-name="post image 1" decoding="async"
-                  loading="lazy"
-                  src="https://images.unsplash.com/photo-1566802374089-a80446239c9d?auto=format&amp;w=1000&amp;q=80&amp;fit=crop" />
-                <span
-                  class="mora-social-caption absolute inset-x-0 bottom-0 bg-[var(--mora-espresso)]/88 px-3 py-3 text-[10px] uppercase tracking-[.12em] text-[var(--mora-candle)]"
-                  data-kid="2-2-7-1-2-1-2" data-name="post caption 1">
-                  Pasta, passed around.
-                </span>
-              </a>
-              <a aria-label="Instagram post: first drink last light"
-                class="mora-social-item mora-reveal relative block aspect-[4/5] w-full overflow-hidden is-visible"
-                data-kid="2-2-7-1-2-2" data-name="instagram post 2" data-reveal=""
-                href="https://www.instagram.com/chouseuae/" rel="noreferrer" style="--mora-delay:70ms" target="_blank">
-                <img alt="Bright aperitivo cocktail in warm evening light, Nati on Pexels"
-                  class="h-full w-full object-cover" data-kid="2-2-7-1-2-2-1" data-name="post image 2" decoding="async"
-                  loading="lazy"
-                  src="https://images.pexels.com/photos/39215054/pexels-photo-39215054.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900&amp;q=80" />
-                <span
-                  class="mora-social-caption absolute inset-x-0 bottom-0 bg-[var(--mora-espresso)]/88 px-3 py-3 text-[10px] uppercase tracking-[.12em] text-[var(--mora-candle)]"
-                  data-kid="2-2-7-1-2-2-2" data-name="post caption 2">
-                  First drink, last light.
-                </span>
-              </a>
-              <a aria-label="Instagram post: a room ready for dinner"
-                class="mora-social-item mora-reveal relative block aspect-[4/5] w-full overflow-hidden is-visible"
-                data-kid="2-2-7-1-2-3" data-name="instagram post 3" data-reveal=""
-                href="https://www.instagram.com/chouseuae/" rel="noreferrer" style="--mora-delay:120ms" target="_blank">
-                <img alt="Warmly lit restaurant room with neatly laid tables, Quang Nguyen Vinh on Pexels"
-                  class="h-full w-full object-cover" data-kid="2-2-7-1-2-3-1" data-name="post image 3" decoding="async"
-                  loading="lazy" src="gallery/pasta.png" />
-                <span
-                  class="mora-social-caption absolute inset-x-0 bottom-0 bg-[var(--mora-espresso)]/88 px-3 py-3 text-[10px] uppercase tracking-[.12em] text-[var(--mora-candle)]"
-                  data-kid="2-2-7-1-2-3-2" data-name="post caption 3">
-                  A room ready for dinner.
-                </span>
-              </a>
-
-            </div>
-          </div>
-          <div
-            class="mx-auto mt-10 max-w-[1360px] border-t border-[var(--mora-espresso)]/25 pt-5 text-[10px] uppercase tracking-[.15em] text-[var(--mora-espresso)]/65 sm:hidden"
-            data-kid="2-2-7-2" data-name="mobile social link">
-            See all on Instagram
-            <i aria-hidden="true" class="ti ti-arrow-up-right ml-2" data-kid="2-2-7-2-1"
-              data-name="arrow-up-right icon">
-            </i>
-          </div>
-        </section>
         <section aria-labelledby="contact-heading"
-          class="bg-[var(--mora-parchment)] px-5 py-28 sm:px-8 lg:px-10 lg:py-40" data-kid="2-2-8"
+          class="bg-[var(--mora-parchment)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-8"
           data-name="contact section" id="contact">
           <div class="mx-auto grid max-w-[1360px] gap-14 lg:grid-cols-[.75fr_1.25fr] lg:gap-16" data-kid="2-2-8-1"
             data-name="contact grid container">
@@ -1492,53 +1373,49 @@
             </div>
             <div
               class="mora-reveal mora-map-panel mora-fold relative min-h-[440px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[590px] is-visible"
-              data-kid="2-2-8-1-2" data-name="map display panel" data-reveal="" style="--mora-delay:140ms">
+              data-kid="2-2-8-1-2" data-name="map display panel" data-reveal=""
+              style="--mora-delay:140ms;overflow:clip;z-index:0">
               <iframe
-                src="https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply" frameborder="0"
-                style="border:0" allowfullscreen></iframe>
-              <div
-                class="absolute left-6 top-6 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-olive)]/65"
-                data-kid="2-2-8-1-2-2" data-name="map location header">
-                <i aria-hidden="true" class="ti ti-map-pin text-base text-[var(--mora-clay)]" data-kid="2-2-8-1-2-2-1"
-                  data-name="location pin icon">
-                </i>
-                Dubai · Jebel Ali
+                src="https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=near&output=embed"
+                class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply pointer-events-none"
+                frameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
+
+
+              <div class="absolute bottom-6 right-6 z-10 pointer-events-none" data-kid="2-2-8-1-2-3" data-name="map caption overlay container">
+                <div class="mora-fold mora-fold-parchment bg-[var(--mora-clay)] px-5 py-4 text-[var(--mora-candle)]"
+                  data-kid="2-2-8-1-2-3-inner" data-name="map caption overlay">
+                  <p class="text-xs font-semibold" data-kid="2-2-8-1-2-3-1" data-name="location title">
+                    Jebel Ali Recreation Club
+                  </p>
+                  <p class="mt-1 text-[10px] text-[var(--mora-candle)]/75" data-kid="2-2-8-1-2-3-2"
+                    data-name="location address">
+                    C HOUSE · Dubai, UAE
+                  </p>
+                </div>
               </div>
-              <div
-                class="mora-fold mora-fold-parchment absolute bottom-6 left-6 bg-[var(--mora-clay)] px-5 py-4 text-[var(--mora-candle)]"
-                data-kid="2-2-8-1-2-3" data-name="map caption overlay">
-                <p class="text-xs font-semibold" data-kid="2-2-8-1-2-3-1" data-name="location title">
-                  Jebel Ali Recreation Club
-                </p>
-                <p class="mt-1 text-[10px] text-[var(--mora-candle)]/75" data-kid="2-2-8-1-2-3-2"
-                  data-name="location address">
-                  C HOUSE · Dubai, UAE
-                </p>
-              </div>
-              <div
-                class="absolute bottom-6 right-6 border border-[var(--mora-olive)]/40 bg-[var(--mora-stone)]/75 px-4 py-3 text-[9px] uppercase tracking-[.14em] text-[var(--mora-olive)]"
+              <a href="https://maps.google.com/?q=Jebel+Ali+Recreation+Club+Dubai" target="_blank"
+                class="absolute bottom-6 left-6 border border-[var(--mora-olive)]/40 bg-[#f5e6c8] px-4 py-3 text-[9px] font-bold uppercase tracking-[.14em] text-black hover:bg-[var(--mora-clay)] hover:text-white transition-colors z-10 cursor-pointer"
                 data-kid="2-2-8-1-2-4" data-name="map link overlay">
                 Open in Maps
                 <i aria-hidden="true" class="ti ti-arrow-up-right ml-2 text-sm" data-kid="2-2-8-1-2-4-1"
                   data-name="arrow-up-right icon">
                 </i>
-              </div>
+              </a>
             </div>
           </div>
         </section>
       </main>
-      <footer class="bg-black px-5 py-20 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-28" data-kid="2-3"
+      <footer class="bg-black px-5 py-6 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-8" data-kid="2-3"
         data-name="main page footer">
         <div class="mx-auto max-w-[1360px]" data-kid="2-3-1" data-name="footer wrapper">
           <div
-            class="flex flex-col gap-12 border-b border-[var(--mora-candle)]/25 pb-16 lg:flex-row lg:items-end lg:justify-between"
+            class="flex flex-col gap-6 border-b border-[var(--mora-candle)]/25 pb-8 lg:flex-row lg:items-end lg:justify-between"
             data-kid="2-3-1-1" data-name="footer header grid">
             <div data-kid="2-3-1-1-1" data-name="footer brand container">
               <div class="flex items-center" data-kid="2-3-1-1-1-1" data-name="brand name title">
-                <img src="gallery/logo.png"
-                  class="h-[clamp(10rem,18vw,20rem)] w-auto object-contain -ml-8 sm:-ml-12 lg:-ml-16" alt="Logo">
-                <div class="mora-serif text-[clamp(4.5rem,9vw,8.5rem)] leading-[.8] tracking-[-.07em]">
+                <img src="gallery/logo.webp"
+                  class="h-16 sm:h-24 lg:h-28 w-auto object-contain -ml-4 lg:-ml-6" alt="Logo">
+                <div class="mora-serif text-[clamp(2.5rem,5vw,4rem)] leading-[.9] tracking-[-.05em] ml-2">
                   C HOUSE
                 </div>
               </div>
@@ -1547,21 +1424,8 @@
                 Italian bistro · bar · lounge
               </p>
             </div>
-            <div class="max-w-[360px] lg:pb-1" data-kid="2-3-1-1-2" data-name="footer call to action container">
-              <p class="mora-serif text-3xl leading-[1.05]" data-kid="2-3-1-1-2-1" data-name="cta headline text">
-                Dinner is better when it takes its time.
-              </p>
-              <button
-                class="mora-primary mora-fold mora-fold-candle mt-8 px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                data-kid="2-3-1-1-2-2" data-name="cta reserve button" data-open-reservation="" type="button">
-                Reserve a table
-                <i aria-hidden="true" class="ti ti-arrow-up-right ml-6 text-sm" data-kid="2-3-1-1-2-2-1"
-                  data-name="arrow-up-right icon">
-                </i>
-              </button>
-            </div>
           </div>
-          <div class="grid gap-12 py-14 text-sm sm:grid-cols-2 lg:grid-cols-[1.3fr_.8fr_1fr]" data-kid="2-3-1-2"
+          <div class="grid gap-12 py-8 text-sm sm:grid-cols-2 lg:grid-cols-[1.3fr_.8fr_1fr]" data-kid="2-3-1-2"
             data-name="footer links grid">
             <div data-kid="2-3-1-2-1" data-name="footer visit column">
               <p class="mora-kicker text-[var(--mora-brass)]" data-kid="2-3-1-2-1-1" data-name="visit kicker text">
@@ -2044,7 +1908,7 @@
 
         const foodData = [
           { src: 'https://images.pexels.com/photos/14538480/pexels-photo-14538480.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80', alt: 'Hands sharing pizza and plates at a lively table, Doğu Tuncer on Pexels', name: 'Burrata & roasted tomatoes', meta: 'Olive oil · warm bread · antipasti' },
-          { src: 'gallery/food.png', alt: 'Handmade pasta twirled on a white ceramic plate with tomato and parmesan, Erwan Hesry on Unsplash', name: 'Truffle tagliatelle', meta: 'Warm parmesan · handmade pasta' },
+          { src: 'gallery/food.webp', alt: 'Handmade pasta twirled on a white ceramic plate with tomato and parmesan, Erwan Hesry on Unsplash', name: 'Truffle tagliatelle', meta: 'Warm parmesan · handmade pasta' },
           { src: 'https://images.pexels.com/photos/33158334/pexels-photo-33158334.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80', alt: 'Fresh Italian pizza with blistered crust and basil, damla selen demir on Pexels', name: 'Blistered margherita', meta: 'Tomato · basil · shared hands' },
           { src: 'https://images.unsplash.com/photo-1605851086486-2bfb45e926d9?auto=format&w=1200&q=80&fit=crop', alt: 'Italian grilled meat with roasted vegetables and red wine, sergey mikheev on Unsplash', name: 'Grilled beef', meta: 'Seasonal vegetables · red wine' },
           { src: 'https://images.unsplash.com/photo-1661587781420-dc427db4ccda?auto=format&w=1000&q=80&fit=crop', alt: 'Dessert and shared plates being prepared at a restaurant table, Filipp Romanovski on Unsplash', name: 'Tiramisù', meta: 'Espresso · mascarpone · to share' }
@@ -2120,13 +1984,13 @@
         });
 
         const galleryData = [
-          { src: './gallery/1.png', alt: 'Interior dining booths with a decorative golden ring divider', caption: 'Interior dining booths' },
-          { src: './gallery/2.png', alt: 'Interior dining space with elegantly set tables', caption: 'Tables set for dinner' },
-          { src: './gallery/3.png', alt: 'Outdoor patio setting with woven chairs and a marble table', caption: 'Outdoor patio dining' },
-          { src: './gallery/4.png', alt: 'Interior dining booths beside warm golden lighting', caption: 'Evening interior ambiance' },
-          { src: './gallery/6.png', alt: 'Elegant crystal chandelier hanging in the dining area', caption: 'Golden chandelier' },
-          { src: './gallery/5.png', alt: 'Outdoor restaurant seating area with a large canopy at sunset', caption: 'Outdoor sunset seating' },
-          { src: './gallery/interior.png', alt: 'Interior dining lounge with white booths and wood paneled walls', caption: 'Interior dining lounge' }
+          { src: './gallery/1.webp', alt: 'Interior dining booths with a decorative golden ring divider', caption: 'Interior dining booths' },
+          { src: './gallery/2.webp', alt: 'Interior dining space with elegantly set tables', caption: 'Tables set for dinner' },
+          { src: './gallery/3.webp', alt: 'Outdoor patio setting with woven chairs and a marble table', caption: 'Outdoor patio dining' },
+          { src: './gallery/4.webp', alt: 'Interior dining booths beside warm golden lighting', caption: 'Evening interior ambiance' },
+          { src: './gallery/6.webp', alt: 'Elegant crystal chandelier hanging in the dining area', caption: 'Golden chandelier' },
+          { src: './gallery/5.webp', alt: 'Outdoor restaurant seating area with a large canopy at sunset', caption: 'Outdoor sunset seating' },
+          { src: './gallery/interior.webp', alt: 'Interior dining lounge with white booths and wood paneled walls', caption: 'Interior dining lounge' }
         ];
         const lightbox = document.getElementById('gallery-lightbox');
         const lightboxImage = document.getElementById('lightbox-image');
@@ -2187,6 +2051,139 @@
     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
     <i class="ti ti-brand-whatsapp text-2xl"></i>
   </a>
+  <script>
+    (function () {
+      const glass = document.getElementById('scroll-glass');
+      const heading = document.getElementById('bar-heading');
+      if (!glass || !heading) return;
+
+      let glassStartRect, parentRect;
+      let ticking = false;
+      let isLocked = false;
+
+      // Add a CSS transition to the heading so color changes smoothly
+      heading.style.transition = 'color 0.8s ease-out';
+
+      function measure() {
+        // Clear JS transform to read native CSS state
+        glass.style.transform = '';
+        const rect = glass.getBoundingClientRect();
+
+        // If image hasn't loaded yet, it might have 0 height. 
+        // Don't lock in a broken measurement.
+        if (rect.height === 0 || rect.width === 0) {
+          glassStartRect = null;
+          return;
+        }
+
+        glassStartRect = rect;
+        onScroll();
+      }
+
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          if (!glassStartRect) measure();
+
+          // If measure() failed (images still loading), abort this frame
+          if (!glassStartRect) {
+            ticking = false;
+            return;
+          }
+
+          // Re-measure parent and heading dynamically
+          const headingRect = heading.getBoundingClientRect();
+          parentRect = glass.parentElement.getBoundingClientRect();
+
+          const parentCenterX = parentRect.left + parentRect.width / 2;
+          const parentCenterY = parentRect.top + parentRect.height / 2;
+
+          const viewportHeight = window.innerHeight;
+          // Animation starts when the target heading is still below the screen (much earlier)
+          const triggerStart = viewportHeight * 1.8;
+          // Animation finishes when heading reaches 30% from the top
+          const triggerEnd = viewportHeight * 0.3;
+          const range = triggerStart - triggerEnd;
+
+          // Progress goes from 0 to 1
+          let progress = (triggerStart - headingRect.top) / range;
+
+          if (progress <= 0) {
+            // Before animation starts, let Tailwind CSS handle the default state completely
+            glass.style.transform = '';
+            glass.style.zIndex = '';
+            heading.style.color = '';
+            ticking = false;
+            return;
+          }
+
+          // Cap progress at 1
+          progress = Math.min(1, progress);
+
+          // Once it reaches the end, lock it in the equilibrium position
+          if (isLocked) {
+            progress = 1;
+          } else if (progress >= 1) {
+            isLocked = true;
+          }
+
+          // Automatically sync JS math with the Tailwind CSS classes
+          // This allows you to easily edit the CSS class without breaking the animation!
+          let xPercent = -2.60;
+          let yPercent = 0.20;
+          
+          const classString = glass.className;
+          const xMatch = classString.match(/translate-x-\[(-?\d+)%\]/);
+          if (xMatch) {
+            xPercent = parseInt(xMatch[1]) / 100;
+            if (classString.includes('-translate-x-')) xPercent = -Math.abs(xPercent);
+          }
+          
+          const yMatch = classString.match(/translate-y-\[(-?\d+)%\]/);
+          if (yMatch) {
+            yPercent = parseInt(yMatch[1]) / 100;
+            if (classString.includes('-translate-y-')) yPercent = -Math.abs(yPercent);
+          }
+
+          const startX = xPercent * glass.offsetWidth;
+          const startY = yPercent * glass.offsetHeight;
+
+          // The target position is the heading, relative to the parent's center anchor
+          const targetX = headingRect.left - parentCenterX - glassStartRect.width * 0.15;
+          const targetY = headingRect.top - parentCenterY + glassStartRect.height * 0.35;
+
+          const currentX = startX + (targetX - startX) * progress;
+          const currentY = startY + (targetY - startY) * progress;
+          const currentRotate = -6 + (21) * progress; // from -6 to 15
+          const currentScale = 1 - 0.25 * progress;
+
+          // Only change transform, never touch left/top/position!
+          glass.style.transform = 'translate(' + currentX + 'px, ' + currentY + 'px) rotate(' + currentRotate + 'deg) scale(' + currentScale + ')';
+          glass.style.zIndex = '9999';
+
+          // Color transition: trigger watermelon red smoothly when glass lands
+          if (progress > 0.8) {
+            heading.style.color = 'rgb(232, 68, 100)';
+          } else {
+            heading.style.color = '';
+          }
+
+          ticking = false;
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', measure);
+      window.addEventListener('load', measure); // Guarantee measure after all images load
+
+      // Fallback timer just in case load event already fired
+      setTimeout(measure, 100);
+      setTimeout(measure, 1000);
+
+      onScroll();
+    })();
+  </script>
 </body>
 
 </html>
