@@ -758,7 +758,7 @@
                   </span>
                 </button>
                 <button aria-selected="true"
-                  class="mora-food-row is-active grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
+                  class="mora-food-row mora-reveal grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
                   data-food-index="1" data-kid="2-2-3-1-2-3-2" data-name="pasta category row" data-reveal="" role="tab"
                   style="--mora-delay:70ms" type="button">
                   <span class="mora-food-number text-[11px] text-[var(--mora-candle)]/55" data-kid="2-2-3-1-2-3-2-1"
@@ -845,7 +845,7 @@
                 </button>
               </div>
               <a class="mora-outline-button mt-10 inline-flex w-fit items-center border border-[var(--mora-candle)] px-6 py-4 text-[10px] font-bold uppercase tracking-[.18em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                data-kid="2-2-3-1-2-4" data-name="view menu full button" href="contact.html">
+                data-kid="2-2-3-1-2-4" data-name="view menu full button" href="menu.html">
                 View menu
                 <i aria-hidden="true" class="ti ti-arrow-up-right ml-8 text-sm" data-kid="2-2-3-1-2-4-1"
                   data-name="arrow-up-right icon">
@@ -997,7 +997,7 @@
                 </div>
               </div>
               <a class="mora-light-button mt-10 inline-flex items-center border border-[var(--mora-candle)] px-6 py-4 text-[10px] font-bold uppercase tracking-[.17em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                data-kid="2-2-4-2-2-5" data-name="bar discovery button" href="contact.html">
+                data-kid="2-2-4-2-2-5" data-name="bar discovery button" href="bar.html">
                 Discover the bar
                 <i aria-hidden="true" class="ti ti-arrow-up-right ml-7 text-sm" data-kid="2-2-4-2-2-5-1"
                   data-name="arrow-up-right icon">
@@ -1483,10 +1483,12 @@
                 <button
                   class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                   data-kid="2-2-8-1-1-4-2" data-name="reserve button" data-open-reservation="" type="button">
-                  Reserve a table
-                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-2-1"
-                    data-name="arrow-up-right icon">
-                  </i>
+                  <a href="contact.html">
+                    Reserve a table
+                    <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-2-1"
+                      data-name="arrow-up-right icon">
+                    </i>
+                  </a>
                 </button>
               </div>
             </div>
@@ -1551,14 +1553,13 @@
               <p class="mora-serif text-3xl leading-[1.05]" data-kid="2-3-1-1-2-1" data-name="cta headline text">
                 Dinner is better when it takes its time.
               </p>
-              <button
-                class="mora-primary mora-fold mora-fold-candle mt-8 px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                data-kid="2-3-1-1-2-2" data-name="cta reserve button" data-open-reservation="" type="button">
+              <a href="./contact.html"
+                class="mora-primary mora-fold mora-fold-candle inline-block mt-8 px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] bg-[#A84F37] text-white hover:bg-[#30201B] transition-colors"
+                data-kid="2-3-1-1-2-2">
                 Reserve a table
-                <i aria-hidden="true" class="ti ti-arrow-up-right ml-6 text-sm" data-kid="2-3-1-1-2-2-1"
-                  data-name="arrow-up-right icon">
+                <i aria-hidden="true" class="ti ti-arrow-up-right ml-6 text-sm" data-kid="2-3-1-1-2-2-1">
                 </i>
-              </button>
+              </a>
             </div>
           </div>
           <div class="grid gap-12 py-14 text-sm sm:grid-cols-2 lg:grid-cols-[1.3fr_.8fr_1fr]" data-kid="2-3-1-2"
