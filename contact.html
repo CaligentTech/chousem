@@ -166,8 +166,7 @@
             <div>
                 <h1 class="mora-serif text-5xl sm:text-6xl text-[#30201B] mb-6">Find the long table.</h1>
                 <!-- your existing C HOUSE address, hours, phone, email, Get Directions/Reserve links go here unchanged -->
-                <div class="mx-auto grid max-w-[1360px] gap-14 lg:grid-cols-[.75fr_1.25fr] lg:gap-16" data-kid="2-2-8-1"
-                    data-name="contact grid container">
+                <div data-kid="2-2-8-1" data-name="contact grid container">
                     <div class="mora-reveal is-visible" data-kid="2-2-8-1-1" data-name="contact info block"
                         data-reveal="">
 
@@ -252,41 +251,37 @@
                             </button>
                         </div>
                     </div>
-                    <!-- <div
-              class="mora-reveal mora-map-panel mora-fold relative min-h-[440px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[590px] is-visible"
-              data-kid="2-2-8-1-2" data-name="map display panel" data-reveal="" style="--mora-delay:140ms">
-              <iframe
-                src="https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply" frameborder="0"
-                style="border:0" allowfullscreen></iframe>
-              <div
-                class="absolute left-6 top-6 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-olive)]/65"
-                data-kid="2-2-8-1-2-2" data-name="map location header">
-                <i aria-hidden="true" class="ti ti-map-pin text-base text-[var(--mora-clay)]" data-kid="2-2-8-1-2-2-1"
-                  data-name="location pin icon">
-                </i>
-                Dubai · Jebel Ali
-              </div>
-              <div
-                class="mora-fold mora-fold-parchment absolute bottom-6 left-6 bg-[var(--mora-clay)] px-5 py-4 text-[var(--mora-candle)]"
-                data-kid="2-2-8-1-2-3" data-name="map caption overlay">
-                <p class="text-xs font-semibold" data-kid="2-2-8-1-2-3-1" data-name="location title">
-                  Jebel Ali Recreation Club
-                </p>
-                <p class="mt-1 text-[10px] text-[var(--mora-candle)]/75" data-kid="2-2-8-1-2-3-2"
-                  data-name="location address">
-                  C HOUSE · Dubai, UAE
-                </p>
-              </div>
-              <div
-                class="absolute bottom-6 right-6 border border-[var(--mora-olive)]/40 bg-[var(--mora-stone)]/75 px-4 py-3 text-[9px] uppercase tracking-[.14em] text-[var(--mora-olive)]"
-                data-kid="2-2-8-1-2-4" data-name="map link overlay">
-                Open in Maps
-                <i aria-hidden="true" class="ti ti-arrow-up-right ml-2 text-sm" data-kid="2-2-8-1-2-4-1"
-                  data-name="arrow-up-right icon">
-                </i>
-              </div>
-            </div> -->
+                    <!-- <div class="mora-reveal mora-map-panel mora-fold relative min-h-[440px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[590px] is-visible"
+                        data-kid="2-2-8-1-2" data-name="map display panel" data-reveal="" style="--mora-delay:140ms">
+                        <iframe
+                            src="https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                            class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply"
+                            frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <div
+                            class="absolute bottom-6 right-6 border border-[var(--mora-olive)]/40 bg-[var(--mora-clay)]/75 ...">
+                            <i aria-hidden="true" class="ti ti-map-pin text-base text-[var(--mora-clay)]"
+                                data-kid="2-2-8-1-2-2-1" data-name="location pin icon">
+                            </i>
+                            Dubai · Jebel Ali
+                        </div>
+                        <div class="mora-fold mora-fold-parchment absolute bottom-6 left-6 bg-[var(--mora-clay)] px-5 py-4 text-[var(--mora-candle)]"
+                            data-kid="2-2-8-1-2-3" data-name="map caption overlay">
+                            <p class="text-xs font-semibold" data-kid="2-2-8-1-2-3-1" data-name="location title">
+                                Jebel Ali Recreation Club
+                            </p>
+                            <p class="mt-1 text-[10px] text-[var(--mora-candle)]/75" data-kid="2-2-8-1-2-3-2"
+                                data-name="location address">
+                                C HOUSE · Dubai, UAE
+                            </p>
+                        </div>
+                        <div
+                            class="absolute bottom-6 right-6 border border-[var(--mora-olive)]/40 bg-[var(--mora-clay)]/75 ...">
+                            Open in Maps
+                            <i aria-hidden="true" class="ti ti-arrow-up-right ml-2 text-sm" data-kid="2-2-8-1-2-4-1"
+                                data-name="arrow-up-right icon">
+                            </i>
+                        </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -333,8 +328,42 @@
 
                 </form>
             </div>
+            <!-- MAP GOES HERE, BELOW THE FORM CARD, STILL IN RIGHT COLUMN -->
+            <div class="mora-reveal mora-map-panel mora-fold relative min-h-[300px] overflow-hidden rounded-2xl border border-[var(--mora-olive)] mt-8"
+                data-kid="2-2-8-1-2" data-name="map display panel">
+                <iframe
+                    src="https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply" frameborder="0"
+                    style="border:0" allowfullscreen></iframe>
+                <div
+                    class="absolute left-6 top-6 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-olive)]/65">
+                    <i aria-hidden="true" class="ti ti-map-pin text-base text-[var(--mora-clay)]"></i>
+                    Dubai · Jebel Ali
+                </div>
+                <div
+                    class="mora-fold mora-fold-parchment absolute bottom-6 left-6 bg-[var(--mora-clay)] px-5 py-4 text-[var(--mora-candle)]">
+                    <p class="text-xs font-semibold">Jebel Ali Recreation Club</p>
+                    <p class="mt-1 text-[10px] text-[var(--mora-candle)]/75">C HOUSE · Dubai, UAE</p>
+                </div>
+                <div
+                    class="absolute bottom-6 right-6 border border-[var(--mora-olive)]/40 bg-[var(--mora-clay)]/75 px-4 py-3 text-[9px] uppercase tracking-[.14em] text-[var(--mora-olive)]">
+                    Open in Maps
+                    <i aria-hidden="true" class="ti ti-arrow-up-right ml-2 text-sm"></i>
+                </div>
+            </div>
 
         </section>
+
+        <!-- MAP SECTION -->
+        <!-- <section class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 pb-16">
+            <div class="relative min-h-[400px] overflow-hidden rounded-2xl border border-[#30201B]/20">
+                <iframe
+                    src="https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    class="absolute inset-0 h-full w-full grayscale opacity-90" frameborder="0" style="border:0"
+                    allowfullscreen loading="lazy">
+                </iframe>
+            </div>
+        </section> -->
         <footer class="bg-black px-5 py-20 text-[var(--mora-candle,#F2E7D4)] sm:px-8 lg:px-10 lg:py-28" data-kid="2-3"
             data-name="main page footer">
             <div class="mx-auto max-w-[1360px]" data-kid="2-3-1" data-name="footer wrapper">
