@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Experience & Events &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
+  <meta name="description" content="Live entertainment, special events, and the nightlife experience at C HOUSE." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .mora-serif {
+      font-family: 'DM Serif Display', Georgia, serif;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- HERO CONTAINER -->
+  <div class="relative min-h-[70svh] w-full flex flex-col justify-between overflow-hidden">
+    <!-- BACKGROUND IMAGE -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2000&q=80" alt="C HOUSE Experience"
+        class="h-full w-full object-cover object-center opacity-60" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header aria-label="Primary navigation" class="relative z-50 pt-6 px-5 sm:px-8 lg:px-12 text-white">
+      <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
+        <div class="flex items-center">
+          <a aria-label="home" class="flex items-center gap-3 text-white" href="./index.html">
+            <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo" />
+            <span class="font-sans text-[32px] tracking-[0.2em] font-light text-white">C HOUSE</span>
+          </a>
+        </div>
+
+        <nav aria-label="Main links"
+          class="hidden items-center gap-1 rounded-full bg-black/40 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10 shadow-lg">
+          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+            href="./index.html">Home</a>
+          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+            href="./menu.html">Menu</a>
+          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+            href="./about.html">About</a>
+          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+            href="./bar.html">Bar</a>
+          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-white/20 text-white font-semibold"
+            href="./experience.html" aria-current="page">Experience</a>
+          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+            href="./gallery.html">Gallery</a>
+          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+            href="./contact.html">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="./contact.html"
+            class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
+            <span>Reserve a Table</span>
+            <i class="ti ti-arrow-up-right text-base"></i>
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn"
+          class="lg:hidden flex items-center justify-center w-10 h-10 border border-white/30 rounded-full text-white backdrop-blur-sm bg-black/30"
+          aria-label="Open menu" type="button">
+          <i class="ti ti-menu-2 text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu"
+        class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
+        <nav class="flex flex-col gap-3">
+          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+            href="./index.html">Home</a>
+          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+            href="menu.html">Menu</a>
+          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+            href="./about.html">About</a>
+          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+            href="bar.html">Bar</a>
+          <a class="text-[13px] tracking-widest uppercase text-white py-2 border-b border-white/10 font-semibold"
+            href="./experience.html">Experience</a>
+          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+            href="./gallery.html">Gallery</a>
+          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+            href="./contact.html">Contact</a>
+          <a href="./contact.html"
+            class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
+            Reserve a Table <i class="ti ti-arrow-up-right"></i>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 py-16 text-center">
+      <p class="text-[11px] uppercase tracking-[.25em] text-[#AA8243] font-bold mb-6">Live the moment</p>
+      <h1
+        class="mora-serif text-white text-5xl sm:text-7xl lg:text-[7rem] font-normal tracking-tight uppercase leading-[0.9] drop-shadow-2xl">
+        The Experience
+      </h1>
+      <p class="mt-8 text-sm sm:text-base text-gray-300 max-w-2xl font-light leading-relaxed">
+        From pulsating live bands to intimate acoustic sets and themed event nights. C HOUSE transforms from a relaxed bistro by day into a vibrant social destination by night.
+      </p>
+    </main>
+  </div>
+
+  <!-- UPCOMING EVENTS SECTION -->
+  <section class="bg-[#111] py-20 px-6 sm:px-12 lg:px-20 border-t border-white/10">
+    <div class="mx-auto max-w-[1360px]">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
+        <div>
+          <h2 class="mora-serif text-4xl sm:text-6xl text-white mb-4">Weekly Events</h2>
+          <p class="text-gray-400 font-light max-w-lg">Join us every week for our signature themed nights featuring live entertainment and exclusive offers.</p>
+        </div>
+        <a href="./contact.html" class="inline-flex items-center gap-2 text-[#AA8243] hover:text-white transition-colors uppercase tracking-widest text-xs font-bold border-b border-[#AA8243] hover:border-white pb-1 w-fit">
+          Book your table <i class="ti ti-arrow-up-right text-lg"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Event 1 -->
+        <div class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1556626601-e2be67584577?auto=format&fit=crop&w=800&q=80" alt="Ladies Night" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          </div>
+          <div class="p-8 relative z-10 -mt-12">
+            <div class="bg-[#AA8243] text-white text-[10px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full inline-block mb-4">Every Tuesday</div>
+            <h3 class="mora-serif text-3xl mb-3 text-white">Ladies Privilege</h3>
+            <p class="text-gray-400 text-sm font-light mb-6">3 House Drinks or Cocktails per guest and 25% Off all starters from 8:00 PM to 11:30 PM.</p>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1470229722913-7c092fb13809?auto=format&fit=crop&w=800&q=80" alt="Live Music" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          </div>
+          <div class="p-8 relative z-10 -mt-12">
+            <div class="bg-[#AA8243] text-white text-[10px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full inline-block mb-4">Friday & Saturday</div>
+            <h3 class="mora-serif text-3xl mb-3 text-white">Live Acoustics</h3>
+            <p class="text-gray-400 text-sm font-light mb-6">Unwind to the soulful tunes of our resident acoustic bands while enjoying the perfect weekend atmosphere.</p>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=800&q=80" alt="Happy Hour" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          </div>
+          <div class="p-8 relative z-10 -mt-12">
+            <div class="bg-[#AA8243] text-white text-[10px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full inline-block mb-4">Daily</div>
+            <h3 class="mora-serif text-3xl mb-3 text-white">Sundowners</h3>
+            <p class="text-gray-400 text-sm font-light mb-6">Enjoy extended happy hour pricing on our signature cocktails and draught beers as the sun sets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE BANNER -->
+  <section class="relative py-32 px-5 text-center flex flex-col items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=2000&q=80" alt="Party Vibe" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-[#30201B]/80 backdrop-blur-sm"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <h2 class="mora-serif text-5xl sm:text-7xl text-white mb-6">Private Events & Gatherings</h2>
+      <p class="text-lg text-[#F2E7D4]/80 font-light mb-10">Looking for the perfect venue for your next celebration? Whether it's a birthday, corporate event, or a casual get-together, our team will make it unforgettable.</p>
+      <a href="./contact.html" class="inline-flex items-center gap-2 bg-white text-black font-semibold rounded-full px-8 py-4 hover:bg-[#AA8243] hover:text-white transition-colors">
+        Inquire Now <i class="ti ti-arrow-up-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER SPACING -->
+  <footer class="bg-black py-12 border-t border-white/10 text-center text-gray-500 text-sm">
+    <p>&copy; 2024 C HOUSE. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if(menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
+      });
+    }
+  </script>
+</body>
+</html>

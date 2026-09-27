@@ -611,9 +611,39 @@
               href="bar.html">Bar</a>
 
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+              href="./experience.html">Experience</a>
+            <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
               href="./gallery.html">Gallery</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
               href="contact.html">Contact</a>
+          </nav>
+          <button id="mobile-menu-button" aria-expanded="false" class="lg:hidden absolute right-0 flex items-center justify-center p-2 text-[#f5e6c8]">
+            <i class="ti ti-menu-2 text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu"
+          class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
+          <nav class="flex flex-col gap-3">
+            <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+              href="./index.html">Home</a>
+            <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+              href="menu.html">Menu</a>
+            <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+              href="./about.html">About</a>
+            <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+              href="bar.html">Bar</a>
+            <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+              href="./experience.html">Experience</a>
+            <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+              href="./gallery.html">Gallery</a>
+            <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+              href="./contact.html">Contact</a>
+            <a href="./contact.html"
+              class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
+              Reserve a Table <i class="ti ti-arrow-up-right"></i>
+            </a>
           </nav>
         </div>
       </header>
@@ -692,16 +722,16 @@
         <section aria-labelledby="food-heading"
           class="border-y border-[var(--mora-espresso)]/10 bg-[var(--mora-clay)] px-5 py-12 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-20"
           data-kid="2-2-3" data-name="food menu section" id="food">
-          <div class="mx-auto grid max-w-[1360px] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-16" data-kid="2-2-3-1"
+          <div class="mx-auto grid max-w-[1360px] gap-6 lg:grid-cols-[.9fr_1.1fr] lg:gap-16" data-kid="2-2-3-1"
             data-name="food menu container">
             <div
-              class="order-first relative h-[min(126vw,620px)] lg:order-last lg:mt-20 lg:h-[710px] flex items-center justify-center"
+              class="order-first relative h-[75vw] lg:order-last lg:mt-20 lg:h-[710px] flex items-center justify-center"
               data-kid="2-2-3-1-1" data-name="food display stage" id="food-stage">
               <img id="scroll-glass" alt="Mocktail"
-                class="absolute origin-bottom w-[40%] h-[45%] lg:w-[35%] lg:h-[40%] object-cover rounded-[2rem] -rotate-6 -translate-x-[211%] -translate-y-[92%] z-50"
+                class="absolute origin-bottom w-[40%] h-[45%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 translate-x-[90%] translate-y-[365%] lg:-translate-x-[390%] lg:-translate-y-[42%] z-50"
                 decoding="async" loading="lazy" src="gallery/mocktailindex.png" style="transition: none;" />
               <img alt="Pizza"
-                class="absolute origin-bottom w-[85%] h-[90%] lg:w-[80%] lg:h-[85%] object-cover rounded-[2rem] rotate-3 translate-x-4 transition-all duration-500 hover:rotate-6 hover:translate-x-6 hover:scale-105 z-10"
+                class="absolute origin-bottom w-[110%] h-[110%] lg:w-[80%] lg:h-[85%] object-contain rounded-[2rem] rotate-3 translate-x-2 transition-all duration-500 hover:rotate-6 hover:translate-x-6 hover:scale-105 z-10"
                 decoding="async" loading="lazy" src="gallery/pizzaindex.png" />
             </div>
             <div class="order-last flex flex-col lg:order-first" data-kid="2-2-3-1-2"
@@ -717,7 +747,7 @@
                 </a>
               </div>
               <h2
-                class="mora-serif mt-14 max-w-[620px] text-[clamp(3.4rem,7.3vw,7rem)] leading-[.87] tracking-[-.045em]"
+                class="mora-serif mt-8 lg:mt-14 max-w-[620px] text-[clamp(3.4rem,7.3vw,7rem)] leading-[.87] tracking-[-.045em]"
                 data-kid="2-2-3-1-2-2" data-name="food heading" id="food-heading">
                 The argument for one more course.
               </h2>
@@ -931,7 +961,7 @@
                   then another hour.
                 </em>
               </h2>
-              <p class="mt-10 max-w-[430px] text-sm leading-7 text-[var(--mora-candle)]/80" data-kid="2-2-4-2-2-3"
+              <p class="mt-20 max-w-[430px] text-base font-bold leading-relaxed text-[var(--mora-candle)]/80" data-kid="2-2-4-2-2-3"
                 data-name="bar description text">
                 Bright bitters, Italian wines, classic cocktails and a table worth staying at. C HOUSE moves easily from
                 first drink to final course.
@@ -1469,7 +1499,10 @@
                   href="bar.html">
                   Bar experience
                 </a>
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-4" data-name="gallery link" href="gallery.html">
+                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-4" data-name="experience link" href="experience.html">
+                  Experience
+                </a>
+                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-5" data-name="gallery link" href="gallery.html">
                   Gallery
                 </a>
                 <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-5" data-name="celebrations link"
@@ -1660,79 +1693,7 @@
           Reservations recommended for dinner · Sun - Thu 12:00PM - 00:00AM & Fri-Sat 12:00PM - 2:00AM
         </p>
       </aside>
-      <div aria-hidden="true"
-        class="mora-mobile-menu fixed inset-0 z-[65] flex flex-col bg-[var(--mora-olive)] px-5 py-6 text-[var(--mora-candle)] sm:px-8"
-        data-kid="2-6" data-name="mobile menu drawer" id="mobile-menu">
-        <div class="flex items-center justify-between border-b border-[var(--mora-candle)]/25 pb-5" data-kid="2-6-1"
-          data-name="menu header">
-          <a aria-label="C HOUSE home" class="mora-serif text-[2rem] leading-none tracking-[-.05em]" data-kid="2-6-1-1"
-            data-name="home link" href="#home">
-            C HOUSE
-          </a>
-          <button aria-label="Close menu"
-            class="inline-flex h-11 w-11 items-center justify-center border border-[var(--mora-candle)]/45 text-xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-            data-kid="2-6-1-2" data-name="close menu button" id="close-mobile-menu" type="button">
-            <i aria-hidden="true" class="ti ti-x" data-kid="2-6-1-2-1" data-name="close icon">
-            </i>
-          </button>
-        </div>
-        <nav aria-label="Mobile links" class="flex flex-col pt-16" data-kid="2-6-2" data-name="mobile navigation links">
-          <a class="border-b border-[var(--mora-candle)]/22 py-5 text-3xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-            data-kid="2-6-2-1" data-name="menu link" href="menu.html">
-            Menu
-            <span class="float-right text-base" data-kid="2-6-2-1-1" data-name="index number">
-              01
-            </span>
-          </a>
-          <a class="border-b border-[var(--mora-candle)]/22 py-5 text-3xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-            data-kid="2-6-2-2" data-name="about link" href="about.html">
-            About
-            <span class="float-right text-base" data-kid="2-6-2-2-1" data-name="index number">
-              02
-            </span>
-          </a>
-          <a class="border-b border-[var(--mora-candle)]/22 py-5 text-3xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-            data-kid="2-6-2-3" data-name="bar experience link" href="bar.html">
-            Bar experience
-            <span class="float-right text-base" data-kid="2-6-2-3-1" data-name="index number">
-              03
-            </span>
-          </a>
-          <a class="border-b border-[var(--mora-candle)]/22 py-5 text-3xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-            data-kid="2-6-2-4" data-name="gallery link" href="gallery.html">
-            Gallery
-            <span class="float-right text-base" data-kid="2-6-2-4-1" data-name="index number">
-              04
-            </span>
-          </a>
-          <a class="border-b border-[var(--mora-candle)]/22 py-5 text-3xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-            data-kid="2-6-2-5" data-name="contact link" href="#contact">
-            Contact
-            <span class="float-right text-base" data-kid="2-6-2-5-1" data-name="index number">
-              05
-            </span>
-          </a>
-        </nav>
-        <div class="mt-auto flex items-end justify-between gap-6 border-t border-[var(--mora-candle)]/25 pt-6"
-          data-kid="2-6-3" data-name="menu footer">
-          <div data-kid="2-6-3-1" data-name="menu footer address">
-            <p class="mora-kicker text-[var(--mora-terracotta)]" data-kid="2-6-3-1-1" data-name="menu address title">
-              H Rd, Jebel Ali Recreation Club
-            </p>
-            <p class="mt-3 text-xs text-[var(--mora-candle)]/65" data-kid="2-6-3-1-2" data-name="menu hours">
-              Sun - Thu 12:00PM - 00:00AM & Fri-Sat 12:00PM - 2:00AM
-            </p>
-          </div>
-          <button
-            class="mora-primary px-5 py-4 text-[10px] font-bold uppercase tracking-[.14em] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-            data-kid="2-6-3-2" data-name="menu reserve button" data-open-reservation="" type="button">
-            Reserve
-            <i aria-hidden="true" class="ti ti-arrow-up-right ml-4" data-kid="2-6-3-2-1"
-              data-name="arrow-up-right icon">
-            </i>
-          </button>
-        </div>
-      </div>
+
       <div aria-hidden="true" aria-labelledby="lightbox-caption" aria-modal="true"
         class="mora-lightbox fixed inset-0 z-[90] flex items-center justify-center bg-[var(--mora-espresso)] px-5 py-6 text-[var(--mora-candle)] sm:px-10"
         data-dynamic="true" data-kid="2-7" data-name="lightbox container" data-reason="visible/hidden toggle state"
@@ -1826,17 +1787,15 @@
         const drawerClose = document.getElementById('close-reservation');
         const menu = document.getElementById('mobile-menu');
         const menuButton = document.getElementById('mobile-menu-button');
-        const menuClose = document.getElementById('close-mobile-menu');
         let lastFocus = null;
 
         const syncLock = () => {
-          const locked = drawer.classList.contains('is-open') || menu.classList.contains('is-open') || !document.getElementById('gallery-lightbox').hasAttribute('hidden');
+          const locked = drawer.classList.contains('is-open') || !document.getElementById('gallery-lightbox').hasAttribute('hidden');
           document.body.classList.toggle('mora-lock', locked);
         };
         const openDrawer = () => {
           lastFocus = document.activeElement;
-          menu.classList.remove('is-open');
-          menu.setAttribute('aria-hidden', 'true');
+          menu.classList.add('hidden');
           menuButton.setAttribute('aria-expanded', 'false');
           drawer.classList.add('is-open');
           drawer.setAttribute('aria-hidden', 'false');
@@ -1851,30 +1810,19 @@
           syncLock();
           if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
         };
-        const openMenu = () => {
-          lastFocus = document.activeElement;
-          drawer.classList.remove('is-open');
-          drawer.setAttribute('aria-hidden', 'true');
-          scrim.classList.remove('is-open');
-          menu.classList.add('is-open');
-          menu.setAttribute('aria-hidden', 'false');
-          menuButton.setAttribute('aria-expanded', 'true');
-          syncLock();
-          window.setTimeout(() => menuClose.focus(), 360);
-        };
-        const closeMenu = () => {
-          menu.classList.remove('is-open');
-          menu.setAttribute('aria-hidden', 'true');
-          menuButton.setAttribute('aria-expanded', 'false');
-          syncLock();
-          if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
-        };
+
         page.querySelectorAll('[data-open-reservation]').forEach((button) => button.addEventListener('click', openDrawer));
         drawerClose.addEventListener('click', closeDrawer);
         scrim.addEventListener('click', closeDrawer);
-        menuButton.addEventListener('click', () => menu.classList.contains('is-open') ? closeMenu() : openMenu());
-        menuClose.addEventListener('click', closeMenu);
-        menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+        
+        menuButton.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          menuButton.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
+        });
+        menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+        }));
 
         const reservationForm = document.getElementById('reservation-form');
         const reservationSubmit = document.getElementById('reservation-submit');
@@ -2058,6 +2006,7 @@
       if (!glass || !heading) return;
 
       let glassStartRect, parentRect;
+      let startXPercent = 0, startYPercent = 0, startRotate = 12;
       let ticking = false;
       let isLocked = false;
 
@@ -2077,6 +2026,46 @@
         }
 
         glassStartRect = rect;
+        
+        // Cache starting values from CSS classes
+        const classString = glass.className;
+        const isDesktop = window.innerWidth >= 1024;
+        
+        const extractVal = (prefix) => {
+           let regex = new RegExp(`lg:-?${prefix}-\\[(-?\\d+)%\\]`);
+           let match = isDesktop ? classString.match(regex) : null;
+           if (match) return { val: parseInt(match[1]), str: match[0] };
+           
+           regex = new RegExp(`(?:^|\\s)-?${prefix}-\\[(-?\\d+)%\\]`);
+           match = classString.match(regex);
+           return match ? { val: parseInt(match[1]), str: match[0] } : null;
+        };
+
+        const xMatch = extractVal('translate-x');
+        if (xMatch) {
+          startXPercent = xMatch.val / 100;
+          if (xMatch.str.includes('-translate-x-')) startXPercent = -Math.abs(startXPercent);
+        } else {
+          startXPercent = -1.8; // Fallback
+        }
+        
+        const yMatch = extractVal('translate-y');
+        if (yMatch) {
+          startYPercent = yMatch.val / 100;
+          if (yMatch.str.includes('-translate-y-')) startYPercent = -Math.abs(startYPercent);
+        } else {
+          startYPercent = -0.6; // Fallback
+        }
+        
+        const rotRegex = /(?:^|\\s)(-?)rotate-\\[?(\\d+)(?:deg)?\\]?/;
+        const rotMatch = classString.match(rotRegex);
+        if (rotMatch) {
+          startRotate = parseInt(rotMatch[2]);
+          if (rotMatch[1] === '-') startRotate = -Math.abs(startRotate);
+        } else {
+          startRotate = 12; // Fallback
+        }
+
         onScroll();
       }
 
@@ -2101,7 +2090,8 @@
 
           const viewportHeight = window.innerHeight;
           // Animation starts when the target heading is still below the screen (much earlier)
-          const triggerStart = viewportHeight * 1.8;
+          const isDesktopNow = window.innerWidth >= 1024;
+          const triggerStart = isDesktopNow ? viewportHeight * 1.8 : viewportHeight * 1.2;
           // Animation finishes when heading reaches 30% from the top
           const triggerEnd = viewportHeight * 0.3;
           const range = triggerStart - triggerEnd;
@@ -2109,7 +2099,15 @@
           // Progress goes from 0 to 1
           let progress = (triggerStart - headingRect.top) / range;
 
-          if (progress <= 0) {
+          // Once it reaches the end, lock it in the equilibrium position permanently
+          if (isLocked) {
+            progress = 1;
+          } else if (progress >= 1) {
+            isLocked = true;
+            progress = 1;
+          }
+
+          if (progress <= 0 && !isLocked) {
             // Before animation starts, let Tailwind CSS handle the default state completely
             glass.style.transform = '';
             glass.style.zIndex = '';
@@ -2118,44 +2116,25 @@
             return;
           }
 
-          // Cap progress at 1
-          progress = Math.min(1, progress);
+          // Cap progress at 1 just in case
+          progress = Math.min(1, Math.max(0, progress));
 
-          // Once it reaches the end, lock it in the equilibrium position
-          if (isLocked) {
-            progress = 1;
-          } else if (progress >= 1) {
-            isLocked = true;
-          }
-
-          // Automatically sync JS math with the Tailwind CSS classes
-          // This allows you to easily edit the CSS class without breaking the animation!
-          let xPercent = -2.60;
-          let yPercent = 0.20;
-          
-          const classString = glass.className;
-          const xMatch = classString.match(/translate-x-\[(-?\d+)%\]/);
-          if (xMatch) {
-            xPercent = parseInt(xMatch[1]) / 100;
-            if (classString.includes('-translate-x-')) xPercent = -Math.abs(xPercent);
-          }
-          
-          const yMatch = classString.match(/translate-y-\[(-?\d+)%\]/);
-          if (yMatch) {
-            yPercent = parseInt(yMatch[1]) / 100;
-            if (classString.includes('-translate-y-')) yPercent = -Math.abs(yPercent);
-          }
-
-          const startX = xPercent * glass.offsetWidth;
-          const startY = yPercent * glass.offsetHeight;
+          const startX = startXPercent * glass.offsetWidth;
+          const startY = startYPercent * glass.offsetHeight;
 
           // The target position is the heading, relative to the parent's center anchor
-          const targetX = headingRect.left - parentCenterX - glassStartRect.width * 0.15;
-          const targetY = headingRect.top - parentCenterY + glassStartRect.height * 0.35;
+          // Tweak these values to change the final landing position for Mobile vs Desktop
+          // Format: isDesktopNow ? [Desktop Value] : [Mobile Value];
+          const targetXMultiplier = isDesktopNow ? -1.2 : -1.5; 
+          const targetYMultiplier = isDesktopNow ? 0.8 : 0.25;
+
+          const targetX = headingRect.left - parentCenterX - glassStartRect.width * targetXMultiplier;
+          const targetY = headingRect.top - parentCenterY + glassStartRect.height * targetYMultiplier;
 
           const currentX = startX + (targetX - startX) * progress;
           const currentY = startY + (targetY - startY) * progress;
-          const currentRotate = -6 + (21) * progress; // from -6 to 15
+          // Animate rotation from initial to 15 degrees
+          const currentRotate = startRotate + (15 - startRotate) * progress;
           const currentScale = 1 - 0.25 * progress;
 
           // Only change transform, never touch left/top/position!
