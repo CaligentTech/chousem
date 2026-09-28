@@ -298,6 +298,16 @@
                 <h2 class="mora-serif text-3xl mb-2">Reserve or Enquire</h2>
                 <p class="text-[#F2E7D4]/60 text-sm mb-8">Tell us what you're looking for and we'll get back to you.</p>
 
+                <!-- Acknowledgement Messages (Hidden by default) -->
+                <div id="form-success" class="hidden bg-green-500/20 border border-green-500/50 text-green-200 p-4 rounded-lg mb-6">
+                    <p class="font-semibold text-sm">✓ Message sent successfully!</p>
+                    <p class="text-xs opacity-80 mt-1">We will get back to you shortly.</p>
+                </div>
+                <div id="form-error" class="hidden bg-red-500/20 border border-red-500/50 text-red-200 p-4 rounded-lg mb-6">
+                    <p class="font-semibold text-sm">✕ Something went wrong.</p>
+                    <p class="text-xs opacity-80 mt-1">Please try again or contact us directly.</p>
+                </div>
+
                 <form id="contactForm" class="space-y-5" action="send-email.php" method="POST">
 
                     <div>
@@ -327,6 +337,12 @@
                             <option value="private-event">Private Celebration</option>
                             <option value="general">General Enquiry</option>
                         </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wide mb-2">Message *</label>
+                        <textarea name="message" rows="4" required placeholder="Tell us what you need..."
+                            class="w-full bg-[#F2E7D4]/10 border border-[#F2E7D4]/20 rounded-lg px-4 py-3 text-sm placeholder-[#F2E7D4]/40 focus:outline-none focus:border-[#AA8243] resize-y"></textarea>
                     </div>
 
                     <button type="submit"
@@ -488,6 +504,19 @@
                 mobileMenuBtn.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                 });
+            }
+
+            // Check URL for form submission status
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            
+            if (status === 'success') {
+                document.getElementById('form-success').classList.remove('hidden');
+                // Optional: scroll to the message
+                document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else if (status === 'error') {
+                document.getElementById('form-error').classList.remove('hidden');
+                document.getElementById('form-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         </script>
     </div>

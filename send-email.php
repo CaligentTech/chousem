@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email'] ?? '');
     $phone = htmlspecialchars($_POST['phone'] ?? '');
     $service = htmlspecialchars($_POST['service'] ?? '');
+    $messageText = htmlspecialchars($_POST['message'] ?? '');
     
     $mail = new PHPMailer(true);
 
@@ -51,9 +52,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><strong>Email:</strong> {$email}</p>
             <p><strong>Phone:</strong> {$phone}</p>
             <p><strong>Service Requested:</strong> {$service}</p>
+            <hr>
+            <p><strong>Message:</strong></p>
+            <p>" . nl2br($messageText) . "</p>
         ";
         
-        $mail->AltBody = "New Contact Form Submission\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\nService: {$service}";
+        $mail->AltBody = "New Contact Form Submission\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\nService: {$service}\n\nMessage:\n{$messageText}";
 
         $mail->send();
         
