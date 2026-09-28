@@ -106,8 +106,8 @@
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
                         href="./about.html">About</a>
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="./bar.html">Bar</a>
-                    <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-[#30201B] text-[#EBDDCB] font-semibold shadow-sm"
+                        href="./bar.html">Bar</a>                    <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
+                        href="./experience.html">Experience</a>                    <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-[#30201B] text-[#EBDDCB] font-semibold shadow-sm"
                         href="./gallery.html" aria-current="page">Gallery</a>
                     <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
                         href="./contact.html">Contact</a>
@@ -143,6 +143,8 @@
                         href="./about.html">About</a>
                     <a class="text-[13px] tracking-widest uppercase text-[#30201B]/80 py-2 border-b border-[#30201B]/10"
                         href="bar.html">Bar</a>
+                    <a class="text-[13px] tracking-widest uppercase text-[#30201B]/80 py-2 border-b border-[#30201B]/10"
+                        href="./experience.html">Experience</a>
                     <a class="text-[13px] tracking-widest uppercase text-[#30201B] py-2 border-b border-[#30201B]/10 font-semibold"
                         href="./gallery.html">Gallery</a>
                     <a class="text-[13px] tracking-widest uppercase text-[#30201B]/80 py-2 border-b border-[#30201B]/10"
@@ -186,100 +188,102 @@
     <main class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 pt-2 pb-10 flex-grow">
 
         <!-- FOOD GALLERY -->
-        <div id="gallery-food" class="gallery-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+        <div id="gallery-food" class="gallery-panel">
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 sm:gap-8 w-full">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/food.webp" alt="C HOUSE signature food plate"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/burger.webp" alt="C HOUSE curated culinary dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/lasagna.webp" alt="C HOUSE Italian bistro specialty"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/Frenchfries.webp" alt="C HOUSE culinary art"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/pasta.webp" alt="C HOUSE fresh appetizers"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/Pizza.webp" alt="C HOUSE fine dining experience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
             <!-- NEW IMAGES START -->
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/Calamari%20Fritti.webp" alt="Calamari Fritti"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05084.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05088.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05096.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05105.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05111.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05118.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05123.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05128.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/DSC05131.webp" alt="C HOUSE dish"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <!-- <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <!-- <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/Diavola%20Pizza.webp" alt="Diavola Pizza"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div> -->
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/Lamb%20Chops%202.webp" alt="Lamb Chops"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/food/Roasted%20Beetroot%20%26%20Goat%20Cheese%20Salad.webp"
                     alt="Roasted Beetroot and Goat Cheese Salad"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
             <!-- NEW IMAGES END -->
-            <h1 class="col-span-full text-center text-[#30201B]/70 mt-6 max-w-2xl mx-auto text-xl"><b><i>
+            </div>
+            <h1 class="text-center text-[#30201B]/70 mt-8 mb-6 max-w-2xl mx-auto text-xl"><b><i>
                         Fresh, handmade dishes rooted in Italian tradition from wood-fired pizzas to house-made
                         pasta.</i></b>
             </h1>
@@ -300,60 +304,55 @@
         </div>
 
         <!-- DRINK GALLERY -->
-        <div id="gallery-drink"
-            class="gallery-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
-                <img src="gallery/barcounter.webp" alt="C HOUSE bar and lounge counter"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+        <div id="gallery-drink" class="gallery-panel hidden">
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 sm:gap-8 w-full">
+
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/special-drinks.webp" alt="C HOUSE artisan signature mocktail"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/mocktail.webp" alt="C HOUSE mixology beverage"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/Blueberrydrink.webp" alt="C HOUSE mixology beverage"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/dragonfruitdrink.webp" alt="C HOUSE mixology beverage"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
-                <img src="./gallery/bardrink.webp" alt="C HOUSE mixology beverage"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
+
             <!-- NEW IMAGES START -->
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/drinks/Beverage.webp" alt="C HOUSE beverage"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/drinks/DSC05172.webp" alt="C HOUSE drink"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/drinks/DSC05178.webp" alt="C HOUSE drink"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/drinks/DSC05181.webp" alt="C HOUSE drink"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/drinks/DSC05189.webp" alt="C HOUSE drink"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy" />
             </div>
             <!-- NEW IMAGES END -->
-            <p class="col-span-full text-center text-[#30201B]/70 mb-6 max-w-2xl mx-auto text-xl"><b><i>
+            </div>
+            <p class="text-center text-[#30201B]/70 mt-8 mb-6 max-w-2xl mx-auto text-xl"><b><i>
                         Bright bitters, Italian wines, and crafted cocktails an aperitivo that moves easily into the
                         next
                         hour.</b></i>
@@ -375,77 +374,78 @@
         </div>
 
         <!-- AMBIENCE GALLERY -->
-        <div id="gallery-ambience"
-            class="gallery-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+        <div id="gallery-ambience" class="gallery-panel hidden">
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 sm:gap-8 w-full">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience11.webp" alt="C HOUSE night lighting and terrace"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience12.webp" alt="C HOUSE open terrace view"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience13.webp" alt="C HOUSE indoor lounge seating"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience14.webp" alt="C HOUSE signature dining area"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="./gallery/ambience15.webp" alt="C HOUSE luxury interior decor"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/interior.webp" alt="C HOUSE social vibe"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%201.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%202.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%203.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%204.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%205.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%206.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%207.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%208.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%209.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%2010.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
+            <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
                 <img src="gallery/ambience/Ambiance%2011.jpg.webp" alt="C HOUSE ambience"
-                    class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500" />
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <p class="col-span-full text-center text-[#30201B]/70 mb-6 max-w-2xl mx-auto text-xl"><b><i>
+            </div>
+            <p class="text-center text-[#30201B]/70 mt-8 mb-6 max-w-2xl mx-auto text-xl"><b><i>
                         Warm lighting, curated interiors, and a terrace view the space that sets the mood for every
                         visit.
             </p></i></b>
@@ -562,6 +562,11 @@
               </p>
               <div class="mt-5 grid gap-3 leading-6 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-3-2"
                 data-name="social links list">
+                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-fb" data-name="facebook link"
+                  href="https://www.facebook.com/chouseuae/" rel="noreferrer" target="_blank">
+                  Facebook
+
+                </a>
                 <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-1" data-name="instagram link"
                   href="https://www.instagram.com/chouseuae/" rel="noreferrer" target="_blank">
                   Instagram
@@ -573,8 +578,8 @@
                   052 218 5569 / 050 460 3469 / (04) 880 3320
                 </a>
                 <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-3" data-name="email link"
-                  href="mailto:hello@moradubai.ae">
-                  hello@moradubai.ae
+                  href="mailto:hello@chouse.ae">
+                  hello@chouse.ae
                 </a>
               </div>
             </div>
@@ -587,9 +592,6 @@
             </span>
             <span data-kid="2-3-1-3-2" data-name="reservation advice">
               Reservations recommended for dinner
-            </span>
-            <span data-kid="2-3-1-3-3" data-name="legal links">
-              Privacy · Accessibility
             </span>
           </div>
         </div>
@@ -631,8 +633,8 @@
             });
         }
     </script>
-    <a href="https://wa.me/971522185569" target="_blank"
-        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+    <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
+        class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
         <i class="ti ti-brand-whatsapp text-2xl"></i>
     </a>
 </body>

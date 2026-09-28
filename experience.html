@@ -21,6 +21,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    :root {
+      --mora-clay: #A84F37;
+      --mora-terracotta: #C76D4D;
+      --mora-olive: #29372D;
+      --mora-espresso: #30201B;
+      --mora-stone: #B7A48E;
+      --mora-parchment: #E7D8C0;
+      --mora-brass: #AA8243;
+      --mora-candle: #F2E7D4;
+    }
+
     body {
       font-family: 'Manrope', sans-serif;
       margin: 0;
@@ -41,7 +52,7 @@
   <div class="relative min-h-[70svh] w-full flex flex-col justify-between overflow-hidden">
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2000&q=80" alt="C HOUSE Experience"
+      <img src="./gallery/ambience12.webp" alt="C HOUSE Experience"
         class="h-full w-full object-cover object-center opacity-60" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black"></div>
     </div>
@@ -144,7 +155,7 @@
         <!-- Event 1 -->
         <div class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
           <div class="h-64 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1556626601-e2be67584577?auto=format&fit=crop&w=800&q=80" alt="Ladies Night" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <img src="./gallery/drinks/Beverage.webp" alt="Ladies Night" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
           </div>
           <div class="p-8 relative z-10 -mt-12">
@@ -157,7 +168,7 @@
         <!-- Event 2 -->
         <div class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
           <div class="h-64 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1470229722913-7c092fb13809?auto=format&fit=crop&w=800&q=80" alt="Live Music" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <img src="./gallery/ambience/Ambiance%205.jpg.webp" alt="Live Music" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
           </div>
           <div class="p-8 relative z-10 -mt-12">
@@ -170,7 +181,7 @@
         <!-- Event 3 -->
         <div class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
           <div class="h-64 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=800&q=80" alt="Happy Hour" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <img src="./gallery/special-drinks.webp" alt="Happy Hour" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
           </div>
           <div class="p-8 relative z-10 -mt-12">
@@ -183,10 +194,54 @@
     </div>
   </section>
 
+  <!-- SEASONAL MENUS & CURRENT OFFERS -->
+  <section class="bg-black py-20 px-6 sm:px-12 lg:px-20 border-t border-white/10" id="current-offers">
+    <div class="mx-auto max-w-[1360px]">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
+        <div>
+          <h2 class="mora-serif text-4xl sm:text-6xl text-white mb-4">Seasonal Menus & Offers</h2>
+          <p class="text-gray-400 font-light max-w-lg">Discover our chef's seasonal creations and limited-time promotions. (Content managed via CMS)</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Seasonal Menu -->
+        <div class="group flex flex-col sm:flex-row bg-[#111] rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
+          <div class="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative">
+            <img src="./gallery/pasta.webp" alt="Summer Truffle Menu" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          </div>
+          <div class="p-8 sm:w-3/5 flex flex-col justify-center">
+            <div class="bg-[#AA8243] text-white text-[10px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full inline-block mb-4 w-fit">Seasonal Special</div>
+            <h3 class="mora-serif text-3xl mb-3 text-white">Summer Truffle Menu</h3>
+            <p class="text-gray-400 text-sm font-light mb-6">Experience the rich, earthy flavors of summer truffles incorporated into our classic Italian dishes. Available for a limited time only.</p>
+            <a href="./menu.html" class="inline-flex items-center gap-2 text-white hover:text-[#AA8243] transition-colors uppercase tracking-widest text-xs font-bold w-fit">
+              View Menu <i class="ti ti-arrow-right text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Current Offer -->
+        <div class="group flex flex-col sm:flex-row bg-[#111] rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
+          <div class="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative">
+            <img src="./gallery/food/DSC05118.webp" alt="Business Lunch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          </div>
+          <div class="p-8 sm:w-3/5 flex flex-col justify-center">
+            <div class="bg-[#AA8243] text-white text-[10px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full inline-block mb-4 w-fit">Current Offer</div>
+            <h3 class="mora-serif text-3xl mb-3 text-white">Business Lunch</h3>
+            <p class="text-gray-400 text-sm font-light mb-6">A two-course Italian feast designed for your midday break. Perfect for client meetings or a quick escape from the office.</p>
+            <a href="./contact.html" class="inline-flex items-center gap-2 text-white hover:text-[#AA8243] transition-colors uppercase tracking-widest text-xs font-bold w-fit">
+              Book a Table <i class="ti ti-arrow-right text-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURE BANNER -->
   <section class="relative py-32 px-5 text-center flex flex-col items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=2000&q=80" alt="Party Vibe" class="w-full h-full object-cover" />
+      <img src="./gallery/interior.webp" alt="Party Vibe" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-[#30201B]/80 backdrop-blur-sm"></div>
     </div>
     <div class="relative z-10 max-w-4xl mx-auto">
@@ -199,9 +254,121 @@
   </section>
 
   <!-- FOOTER SPACING -->
-  <footer class="bg-black py-12 border-t border-white/10 text-center text-gray-500 text-sm">
-    <p>&copy; 2024 C HOUSE. All rights reserved.</p>
+  <footer class="bg-black px-5 py-6 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-8" data-kid="2-3"
+    data-name="main page footer">
+    <div class="mx-auto max-w-[1360px]" data-kid="2-3-1" data-name="footer wrapper">
+      <div
+        class="flex flex-col gap-6 border-b border-[var(--mora-candle)]/25 pb-8 lg:flex-row lg:items-end lg:justify-between"
+        data-kid="2-3-1-1" data-name="footer header grid">
+        <div data-kid="2-3-1-1-1" data-name="footer brand container">
+          <div class="flex items-center" data-kid="2-3-1-1-1-1" data-name="brand name title">
+            <img src="gallery/logo.webp" class="h-16 sm:h-24 lg:h-28 w-auto object-contain -ml-4 lg:-ml-6" alt="Logo">
+            <div class="mora-serif text-[clamp(2.5rem,5vw,4rem)] leading-[.9] tracking-[-.05em] ml-2">
+              C HOUSE
+            </div>
+          </div>
+          <p class="mt-5 text-[10px] font-semibold uppercase tracking-[.24em] text-[var(--mora-candle)]/58"
+            data-kid="2-3-1-1-1-2" data-name="brand subtitle">
+            Italian bistro · bar · lounge
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-12 py-8 text-sm sm:grid-cols-2 lg:grid-cols-[1.3fr_.8fr_1fr]" data-kid="2-3-1-2"
+        data-name="footer links grid">
+        <div data-kid="2-3-1-2-1" data-name="footer visit column">
+          <p class="mora-kicker text-[var(--mora-brass)]" data-kid="2-3-1-2-1-1" data-name="visit kicker text">
+            Visit
+          </p>
+          <div class="mt-5 leading-7 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-1-2"
+            data-name="visit content list">
+            <p data-kid="2-3-1-2-1-2-1" data-name="address line 1">
+              H Rd, Jebel Ali Recreation Club
+            </p>
+            <p data-kid="2-3-1-2-1-2-2" data-name="hours line">
+              Sun - Thu 12:00PM - 00:00AM & Fri-Sat 12:00PM - 2:00AM
+            </p>
+            <p data-kid="2-3-1-2-1-2-3" data-name="location line">
+              Behind IBN Batuta Mall, Dubai
+            </p>
+            <a class="mora-menu-link mt-4 inline-block border-b border-[var(--mora-candle)]/35 pb-1 text-[11px] uppercase tracking-[.12em]"
+              data-kid="2-3-1-2-1-2-4" data-name="directions link"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Jebel+Ali+Recreation+Club+Dubai"
+              rel="noreferrer" target="_blank">
+              Directions
+              <i aria-hidden="true" class="ti ti-arrow-up-right ml-1" data-kid="2-3-1-2-1-2-4-1"
+                data-name="arrow-up-right icon">
+              </i>
+            </a>
+          </div>
+        </div>
+        <div data-kid="2-3-1-2-2" data-name="footer explore column">
+          <p class="mora-kicker text-[var(--mora-brass)]" data-kid="2-3-1-2-2-1" data-name="explore kicker text">
+            Explore
+          </p>
+          <div class="mt-5 grid gap-3 leading-6 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-2-2"
+            data-name="explore links list">
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-1" data-name="menu link" href="menu.html">
+              Menu
+            </a>
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-2" data-name="about link" href="about.html">
+              About
+            </a>
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-3" data-name="bar experience link" href="bar.html">
+              Bar experience
+            </a>
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-4" data-name="experience link" href="experience.html">
+              Experience
+            </a>
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-5" data-name="gallery link" href="gallery.html">
+              Gallery
+            </a>
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-5" data-name="celebrations link" href="contact.html">
+              Private celebrations
+            </a>
+          </div>
+        </div>
+        <div data-kid="2-3-1-2-3" data-name="footer social column">
+          <p class="mora-kicker text-[var(--mora-brass)]" data-kid="2-3-1-2-3-1" data-name="social kicker text">
+            Keep in touch
+          </p>
+          <div class="mt-5 grid gap-3 leading-6 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-3-2"
+            data-name="social links list">
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-fb" data-name="facebook link"
+              href="https://www.facebook.com/chouseuae/" rel="noreferrer" target="_blank">
+              Facebook
+            </a>
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-1" data-name="instagram link"
+              href="https://www.instagram.com/chouseuae/" rel="noreferrer" target="_blank">
+              Instagram
+              <i aria-hidden="true" class="ti ti-instagram ml-1" data-kid="2-3-1-2-3-2-1-1" data-name="instagram icon">
+              </i>
+            </a>
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+97148803320">
+              052 218 5569 / 050 460 3469 / (04) 880 3320
+            </a>
+            <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-3" data-name="email link" href="mailto:hello@chouse.ae">
+              hello@chouse.ae
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-3 border-t border-[var(--mora-candle)]/25 pt-6 text-[10px] uppercase tracking-[.14em] text-[var(--mora-candle)]/52 sm:flex-row sm:items-center sm:justify-between"
+        data-kid="2-3-1-3" data-name="copyright info bar">
+        <span data-kid="2-3-1-3-1" data-name="copyright text">
+          © C HOUSE Dubai
+        </span>
+        <span data-kid="2-3-1-3-2" data-name="reservation advice">
+          Reservations recommended for dinner
+        </span>
+      </div>
+    </div>
   </footer>
+
+  <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
+    class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
+    <i class="ti ti-brand-whatsapp text-2xl"></i>
+  </a>
 
   <script>
     const menuBtn = document.getElementById('mobile-menu-btn');
