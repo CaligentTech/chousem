@@ -480,21 +480,6 @@
                 }
             }
 
-            // WhatsApp form code (yours, new)
-            document.getElementById('contactForm').addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const name = document.querySelector('[name="name"]').value;
-                const email = document.querySelector('[name="email"]').value;
-                const phone = document.querySelector('[name="phone"]').value;
-                const service = document.querySelector('[name="service"]').value;
-
-                const message = `New Enquiry from C HOUSE website:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}`;
-
-                const whatsappURL = `https://wa.me/971522185569?text=${message}`;
-
-                window.open(whatsappURL, '_blank');
-            });
 
             // Mobile menu toggle
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
