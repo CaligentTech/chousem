@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -18,34 +19,34 @@ if (!file_exists($configPath)) {
 $config = require $configPath;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // Sanitize input fields
     $name = htmlspecialchars($_POST['name'] ?? '');
     $email = htmlspecialchars($_POST['email'] ?? '');
     $phone = htmlspecialchars($_POST['phone'] ?? '');
     $service = htmlspecialchars($_POST['service'] ?? '');
     $messageText = htmlspecialchars($_POST['message'] ?? '');
-    
+
     $mail = new PHPMailer(true);
 
     try {
-        $mail->isSMTP();                                            
-        $mail->Host       = $config['smtp_host'];                     
-        $mail->SMTPAuth   = true;                                   
-        $mail->Username   = $config['smtp_username'];                     
-        $mail->Password   = $config['smtp_password'];                               
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
-        $mail->Port       = $config['smtp_port'];                                    
+        $mail->isSMTP();
+        $mail->Host       = $config['smtp_host'];
+        $mail->SMTPAuth   = true;
+        $mail->Username   = $config['smtp_username'];
+        $mail->Password   = $config['smtp_password'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = $config['smtp_port'];
 
         // Recipients
         $mail->setFrom('hello@chouse.ae', 'C HOUSE Website Form');
-        $mail->addAddress('hello@chouse.ae', 'C HOUSE Admin');     
+        $mail->addAddress('hello@chouse.ae', 'C HOUSE Admin');
         $mail->addReplyTo($email, $name);
 
         // Content
-        $mail->isHTML(true);                                  
+        $mail->isHTML(true);
         $mail->Subject = 'New Contact Form Submission - ' . $name;
-        
+
         $mail->Body    = "
             <h3>New Contact Form Submission</h3>
             <p><strong>Name:</strong> {$name}</p>
@@ -56,21 +57,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><strong>Message:</strong></p>
             <p>" . nl2br($messageText) . "</p>
         ";
-        
+
         $mail->AltBody = "New Contact Form Submission\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\nService: {$service}\n\nMessage:\n{$messageText}";
 
         $mail->send();
-        
-        header("Location: contact.html?status=success");
+
+        $redirect = (!empty($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'contact.php') !== false) ? 'contact.php' : 'contact.html';
+        header("Location: {$redirect}?status=success");
         exit();
-        
     } catch (Exception $e) {
         error_log("Mailer Error: " . $mail->ErrorInfo);
-        header("Location: contact.html?status=error");
+        $redirect = (!empty($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'contact.php') !== false) ? 'contact.php' : 'contact.html';
+        header("Location: {$redirect}?status=error");
         exit();
     }
 } else {
-    header("Location: contact.html");
+    $redirect = (!empty($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'contact.php') !== false) ? 'contact.php' : 'contact.html';
+    header("Location: {$redirect}");
     exit();
 }
-?>

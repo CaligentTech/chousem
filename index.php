@@ -1,3 +1,16 @@
+<?php
+require_once __DIR__ . '/admin/includes/db.php';
+require_once __DIR__ . '/admin/includes/functions.php';
+
+$s = get_all_settings($pdo);
+$home_content = get_page_content($pdo, 'home');
+$reviews = get_reviews($pdo);
+
+// Gallery sections used on the homepage
+$table_in_motion_images = get_gallery($pdo, 'home_table_in_motion');
+$home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" class="bg-[#1C1A18] overscroll-none">
@@ -593,7 +606,7 @@
         <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-center relative" data-kid="2-1-1"
           data-name="navigation bar layout container">
           <div class="absolute left-0 flex items-center">
-            <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="#">
+            <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="index.php">
               <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="Logo">
               <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
             </a>
@@ -602,23 +615,22 @@
             class="hidden items-center gap-1 rounded-full bg-black/30 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10"
             data-kid="2-1-1-2" data-name="main navigation links container">
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./index.html">Home</a>
+              href="./index.php">Home</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./menu.html">Menu</a>
+              href="./menu.php">Menu</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./about.html">About</a>
+              href="./about.php">About</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="bar.html">Bar</a>
+              href="bar.php">Bar</a>
 
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./experience.html">Experience</a>
+              href="./experience.php">Experience</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./gallery.html">Gallery</a>
+              href="./gallery.php">Gallery</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="contact.html">Contact</a>
+              href="contact.php">Contact</a>
           </nav>
-          <button id="mobile-menu-button" aria-expanded="false"
-            class="lg:hidden absolute right-0 flex items-center justify-center p-2 text-[#f5e6c8]">
+          <button id="mobile-menu-button" aria-expanded="false" class="lg:hidden absolute right-0 flex items-center justify-center p-2 text-[#f5e6c8]">
             <i class="ti ti-menu-2 text-2xl"></i>
           </button>
         </div>
@@ -628,20 +640,20 @@
           class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
           <nav class="flex flex-col gap-3">
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./index.html">Home</a>
+              href="./index.php">Home</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="menu.html">Menu</a>
+              href="menu.php">Menu</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./about.html">About</a>
+              href="./about.php">About</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="bar.html">Bar</a>
+              href="bar.php">Bar</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./experience.html">Experience</a>
+              href="./experience.php">Experience</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./gallery.html">Gallery</a>
+              href="./gallery.php">Gallery</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./contact.html">Contact</a>
-            <a href="./contact.html"
+              href="./contact.php">Contact</a>
+            <a href="./contact.php"
               class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
               Reserve a Table <i class="ti ti-arrow-up-right"></i>
             </a>
@@ -654,46 +666,42 @@
           data-kid="2-2-1" data-name="hero section" id="home">
           <div class="absolute inset-0" data-kid="2-2-1-1" data-name="hero image background container">
             <img alt="Hero Night" class="absolute inset-0 h-full w-full object-cover" decoding="async" loading="lazy"
-              src="./gallery/heronight.png" />
+              src="<?= e($s['hero_image']) ?>" />
             <div class="absolute inset-0 bg-black/20"></div>
           </div>
           <h1 id="hero-heading"
             class="font-agraham absolute z-10 w-full top-1/2 -translate-y-1/2 mt-8 lg:mt-12 text-left px-6 lg:px-12 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4rem] text-white leading-none tracking-wide"
             style="text-shadow: 0 10px 50px rgba(0,0,0,0.7);">
-            Italian Bistro
+            <?= e($s['hero_heading']) ?>
           </h1>
 
           <div class="absolute bottom-2 lg:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
-            <a class="text-[#f5e6c8] hover:text-white transition-colors mt-2" href="menu.html">
+            <a class="text-[#f5e6c8] hover:text-white transition-colors mt-2" href="menu.php">
               <svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                 stroke-width="1" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
                 <polyline points="4 8 12 16 20 8"></polyline>
               </svg>
             </a>
           </div>
-          <div
-            class="flex absolute bottom-14 lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
+          <div class="flex absolute bottom-14 lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
             <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-10">
               <div class="flex items-center lg:flex-col gap-2 lg:gap-1 shrink-0">
-                <span class="text-white text-2xl lg:text-[32px] font-bold leading-none">4.9 <span
+                <span class="text-white text-2xl lg:text-[32px] font-bold leading-none"><?= e($s['google_rating']) ?> <span
                     class="text-yellow-500 text-xl lg:text-[26px] align-baseline"><b>&#9733;</b></span></span>
                 <span class="text-gray-300 text-[11px] lg:text-[13px] uppercase tracking-wider">Google Rating</span>
               </div>
               <div class="flex flex-col lg:gap-2 text-white/90 mora-serif text-sm lg:text-lg tracking-wide">
-                <p>Crafted Mocktails &nbsp;<span class="text-gray-400 font-sans text-xs lg:text-base">|</span>&nbsp;
-                  Shisha</p>
-                <p>Live Entertainment &nbsp;<span class="text-gray-400 font-sans text-xs lg:text-base">|</span>&nbsp;
-                  Chef's
-                  Specials</p>
+                <p><?= e($s['hero_subtext_1']) ?></p>
+                <p><?= e($s['hero_subtext_2']) ?></p>
               </div>
             </div>
             <div class="flex items-center gap-4 lg:gap-6 mt-1 lg:mt-0">
               <div class="flex items-center gap-2 lg:gap-3">
-                <a href="contact.html"
+                <a href="contact.php"
                   class="bg-white text-black text-[11px] lg:text-[13px] font-semibold rounded-full py-2.5 px-5 lg:py-3 lg:px-6 hover:bg-[#5C3D2E] hover:text-white transition-colors whitespace-nowrap shadow-lg">
                   Reserve a Table
                 </a>
-                <a href="contact.html"
+                <a href="contact.php"
                   class="flex items-center justify-center bg-[#EBDDCB] text-black w-9 h-9 lg:w-11 lg:h-11 rounded-full hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-lg">
                   <i class="ti ti-arrow-up-right text-base lg:text-lg"></i>
                 </a>
@@ -704,13 +712,12 @@
             <div class="flex gap-4">
               <div
                 class="flex-none flex items-center gap-4 p-3 rounded-[24px] bg-white/10 backdrop-blur-xl border border-white/20 w-[380px] shadow-2xl">
-                <img src="gallery/food.webp" class="w-[120px] h-[140px] rounded-[16px] object-cover"
-                  alt="Truffle Tagliatelle">
+                <img src="<?= e($s['hero_food_card_image']) ?>" class="w-[120px] h-[140px] rounded-[16px] object-cover"
+                  alt="<?= e($s['hero_food_card_title']) ?>">
                 <div class="flex flex-col gap-2">
-                  <h3 class="text-white text-lg font-semibold leading-tight">Truffle Tagliatelle</h3>
-                  <p class="text-gray-300 text-[11px] leading-snug">Hand-made daily with fresh black truffles and
-                    parmesan.</p>
-                  <a href="menu.html"
+                  <h3 class="text-white text-lg font-semibold leading-tight"><?= e($s['hero_food_card_title']) ?></h3>
+                  <p class="text-gray-300 text-[11px] leading-snug"><?= e($s['hero_food_card_desc']) ?></p>
+                  <a href="menu.php"
                     class="text-white text-[11px] font-bold rounded-full py-2 px-5 w-fit mt-1 hover:text-gray-200 transition-colors">
                     <button
                       class="bg-white text-black text-[11px] font-bold rounded-full py-2 px-5 w-fit mt-1 hover:bg-[#5C3D2E] hover:text-white transition-colors">View
@@ -743,7 +750,7 @@
               <div class="flex items-center justify-between" data-kid="2-2-3-1-2-1" data-name="food section header">
 
                 <a class="mora-menu-link border-b border-[var(--mora-candle)]/60 pb-1 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                  data-kid="2-2-3-1-2-1-2" data-name="view full menu link" href="menu.html">
+                  data-kid="2-2-3-1-2-1-2" data-name="view full menu link" href="menu.php">
                   Full menu
                   <i aria-hidden="true" class="ti ti-arrow-up-right ml-2" data-kid="2-2-3-1-2-1-2-1"
                     data-name="arrow-up-right icon">
@@ -753,7 +760,7 @@
               <h2
                 class="mora-serif mt-8 lg:mt-14 max-w-[620px] text-[clamp(3.4rem,7.3vw,7rem)] leading-[.87] tracking-[-.045em]"
                 data-kid="2-2-3-1-2-2" data-name="food heading" id="food-heading">
-                The argument for one more course.
+                <?= e($s['home_food_heading']) ?>
               </h2>
               <div aria-label="Food categories" class="mt-14" data-kid="2-2-3-1-2-3" data-name="food categories tablist"
                 role="tablist">
@@ -782,7 +789,7 @@
                 <button aria-selected="false"
                   class="mora-food-row is-active grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
                   data-food-index="1" data-kid="2-2-3-1-2-3-2" data-name="pasta category row" data-reveal="" role="tab"
-                  type="button">
+                  style="--mora-delay:70ms" type="button">
                   <span class="mora-food-number text-[11px] text-[var(--mora-candle)]/55" data-kid="2-2-3-1-2-3-2-1"
                     data-name="number index text">
                     02
@@ -867,7 +874,7 @@
                 </button>
               </div>
               <a class="mora-outline-button mt-10 inline-flex w-fit items-center border border-[var(--mora-candle)] px-6 py-4 text-[10px] font-bold uppercase tracking-[.18em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                data-kid="2-2-3-1-2-4" data-name="view menu full button" href="contact.html">
+                data-kid="2-2-3-1-2-4" data-name="view menu full button" href="menu.php">
                 View menu
                 <i aria-hidden="true" class="ti ti-arrow-up-right ml-8 text-sm" data-kid="2-2-3-1-2-4-1"
                   data-name="arrow-up-right icon">
@@ -876,6 +883,7 @@
             </div>
           </div>
         </section>
+
         <section aria-labelledby="bar-heading"
           class="relative overflow-hidden bg-[#111] px-5 py-16 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-20"
           data-kid="2-2-4" data-name="bar section" id="bar">
@@ -894,27 +902,27 @@
             data-kid="2-2-4-2" data-name="bar container">
             <div class="mora-reveal lg:pt-5 is-visible" data-kid="2-2-4-2-1" data-name="bar image container"
               data-reveal="">
+              <?php
+              $stack_styles = [
+                ['rotate' => '-rotate-12', 'translate' => '-translate-x-6', 'z' => '5'],
+                ['rotate' => 'rotate-6', 'translate' => 'translate-x-6', 'z' => '4'],
+                ['rotate' => '-rotate-6', 'translate' => '-translate-x-8', 'z' => '3'],
+                ['rotate' => 'rotate-12', 'translate' => 'translate-x-8', 'z' => '2'],
+                ['rotate' => '-rotate-3', 'translate' => 'translate-x-0', 'z' => '1'],
+              ];
+              ?>
               <div id="bar-image-stack"
                 class="relative h-[480px] w-full max-w-[400px] mx-auto lg:h-[600px] lg:w-full flex items-center justify-center"
                 data-kid="2-2-4-2-1-1" data-name="bar stacked images">
-                <img alt="Dragonfruit Drink"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-12 -translate-x-6 transition-all duration-500"
-                  style="z-index: 5" decoding="async" loading="lazy" src="gallery/dragonfruitdrink.webp" />
-                <img alt="Blueberry Drink"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-6 translate-x-6 transition-all duration-500"
-                  style="z-index: 4" decoding="async" loading="lazy" src="gallery/Blueberrydrink.webp" />
-                <img alt="Orange Mocktail"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-6 -translate-x-8 transition-all duration-500"
-                  style="z-index: 3" decoding="async" loading="lazy" src="gallery/drinks/DSC05172.webp" />
-                <img alt="Blue Mocktail"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-12 translate-x-8 transition-all duration-500"
-                  style="z-index: 2" decoding="async" loading="lazy" src="gallery/drinks/DSC05178.webp" />
-                <img alt="Yellow Mocktail"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-3 translate-x-0 transition-all duration-500"
-                  style="z-index: 1" decoding="async" loading="lazy" src="gallery/drinks/DSC05189.webp" />
+                <?php foreach ($home_bar_drinks_images as $i => $img): ?>
+                  <?php $style = $stack_styles[$i] ?? $stack_styles[count($stack_styles) - 1]; ?>
+                  <img alt="<?= e($img['alt_text']) ?>"
+                    class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] <?= $style['rotate'] ?> <?= $style['translate'] ?> transition-all duration-500"
+                    style="z-index: <?= $style['z'] ?>" decoding="async" loading="lazy" src="<?= e($img['image_path']) ?>" />
+                <?php endforeach; ?>
               </div>
               <script>
-                (function () {
+                (function() {
                   const stack = document.getElementById('bar-image-stack');
                   if (!stack) return;
                   const images = Array.from(stack.querySelectorAll('img'));
@@ -924,7 +932,10 @@
                     let topImg = null;
                     images.forEach(img => {
                       let z = parseInt(img.style.zIndex) || 0;
-                      if (z > maxZ) { maxZ = z; topImg = img; }
+                      if (z > maxZ) {
+                        maxZ = z;
+                        topImg = img;
+                      }
                     });
                     if (!topImg) return;
 
@@ -949,27 +960,25 @@
                   }, 3000); // shuffle every 3 seconds
                 })();
               </script>
-              <p class="mt-4 text-[10px] uppercase tracking-[.17em] text-[var(--mora-brass)] font-bold"
-                data-kid="2-2-4-2-1-2" data-name="bar image caption">
-                Drinks from noon · aperitivo starts whenever you do
+              <p class="mt-4 text-[10px] uppercase tracking-[.17em] text-[var(--mora-brass)] font-bold" data-kid="2-2-4-2-1-2"
+                data-name="bar image caption">
+                <?= e($s['home_bar_caption']) ?>
               </p>
             </div>
             <div class="mora-reveal lg:relative lg:z-10 lg:pt-5 is-visible" data-kid="2-2-4-2-2"
               data-name="bar content column" data-reveal="" style="--mora-delay:120ms">
 
-              <h2
-                class="mora-serif mt-14 text-white max-w-[700px] text-[clamp(3.5rem,7vw,7rem)] leading-[.87] tracking-[-.045em]"
+              <h2 class="mora-serif mt-14 text-white max-w-[700px] text-[clamp(3.5rem,7vw,7rem)] leading-[.87] tracking-[-.045em]"
                 data-kid="2-2-4-2-2-2" data-name="bar heading" id="bar-heading">
-                An aperitivo,
+                <?= e($s['home_bar_heading_line1']) ?>
                 <br data-kid="2-2-4-2-2-2-1" data-name="line break" />
                 <em data-kid="2-2-4-2-2-2-2" data-name="italic emphasis">
-                  then another hour.
+                  <?= e($s['home_bar_heading_line2']) ?>
                 </em>
               </h2>
-              <p class="mt-20 max-w-[430px] text-base font-bold leading-relaxed text-[var(--mora-candle)]/80"
-                data-kid="2-2-4-2-2-3" data-name="bar description text">
-                Bright bitters, Italian wines, classic mocktails and a table worth staying at. C HOUSE moves easily from
-                first drink to final course.
+              <p class="mt-20 max-w-[430px] text-base font-bold leading-relaxed text-[var(--mora-candle)]/80" data-kid="2-2-4-2-2-3"
+                data-name="bar description text">
+                <?= e($s['home_bar_description']) ?>
               </p>
               <div class="mt-12 max-w-[590px] border-y border-[var(--mora-candle)]/25" data-kid="2-2-4-2-2-4"
                 data-name="bar menu items list">
@@ -1007,7 +1016,7 @@
                 </div>
               </div>
               <a class="mora-light-button mt-10 inline-flex items-center border border-[var(--mora-candle)] px-6 py-4 text-[10px] font-bold uppercase tracking-[.17em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                data-kid="2-2-4-2-2-5" data-name="bar discovery button" href="contact.html">
+                data-kid="2-2-4-2-2-5" data-name="bar discovery button" href="bar.php">
                 Discover the bar
                 <i aria-hidden="true" class="ti ti-arrow-up-right ml-7 text-sm" data-kid="2-2-4-2-2-5-1"
                   data-name="arrow-up-right icon">
@@ -1017,8 +1026,8 @@
           </div>
         </section>
         <section aria-labelledby="gallery-heading"
-          class="mora-gallery bg-[var(--mora-clay)] text-[var(--mora-candle)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24"
-          data-kid="2-2-5" data-name="gallery section" id="gallery">
+          class="mora-gallery bg-[var(--mora-clay)] text-[var(--mora-candle)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-5"
+          data-name="gallery section" id="gallery">
           <div class="mx-auto max-w-[1360px]" data-kid="2-2-5-1" data-name="gallery content container">
             <div
               class="flex flex-col gap-7 border-b border-[var(--mora-candle)]/25 pb-8 lg:flex-row lg:items-end lg:justify-between"
@@ -1029,66 +1038,71 @@
                   class="mora-serif mora-reveal mt-10 text-[clamp(3.2rem,6.7vw,6.8rem)] leading-[.9] tracking-[-.045em] is-visible"
                   data-kid="2-2-5-1-1-1-2" data-name="gallery heading" data-reveal="" id="gallery-heading"
                   style="--mora-delay:90ms">
-                  A table in motion.
+                  <?= e($s['home_gallery_heading'] ?? 'A table in motion.') ?>
                 </h2>
               </div>
               <p class="mora-reveal max-w-[270px] text-sm leading-6 text-[var(--mora-candle)]/75 lg:pb-2 is-visible"
                 data-kid="2-2-5-1-1-2" data-name="gallery description" data-reveal="" style="--mora-delay:170ms">
-                Plates, pours, people, and the in-between.
+                <?= e($s['home_gallery_description'] ?? 'Plates, pours, people, and the in-between.') ?>
               </p>
             </div>
+            <?php
+            $gallery_styles = [
+              ['h' => 'h-[350px]', 'delay' => ''],
+              ['h' => 'h-[300px]', 'delay' => 'style="--mora-delay:70ms"'],
+              ['h' => 'h-[350px]', 'delay' => 'style="--mora-delay:130ms"'],
+              ['h' => 'h-[300px]', 'delay' => 'style="--mora-delay:190ms"'],
+              ['h' => 'h-[330px]', 'delay' => 'style="--mora-delay:150ms"'],
+              ['h' => 'h-[280px]', 'delay' => 'style="--mora-delay:220ms"'],
+            ];
+            $gallery_items = [
+              ['image_path' => './gallery/1.webp', 'alt_text' => 'Interior dining booths with a decorative golden ring divider', 'caption' => '19:42 second round'],
+              ['image_path' => './gallery/2.webp', 'alt_text' => 'Interior dining space with elegantly set tables', 'caption' => '21:07 glasses raised'],
+              ['image_path' => './gallery/3.webp', 'alt_text' => 'Outdoor patio setting with woven chairs and a marble table', 'caption' => '12:18 lunch table'],
+              ['image_path' => './gallery/4.webp', 'alt_text' => 'Interior dining booths beside warm golden lighting', 'caption' => '18:36 first pour'],
+              ['image_path' => './gallery/5.webp', 'alt_text' => 'Outdoor restaurant seating area with a large canopy at sunset', 'caption' => '21:07 pasta passed around'],
+              ['image_path' => './gallery/ambience/Ambiance 6.jpg.webp', 'alt_text' => 'Interior dining lounge with white booths and wood paneled walls', 'caption' => '19:04 the little details'],
+            ];
+
+            // If the database has outdated entries (e.g. 7 entries or chandelier pics), clean and sync the database
+            if (isset($pdo) && !empty($table_in_motion_images)) {
+              $has_chandelier = false;
+              foreach ($table_in_motion_images as $img) {
+                if (strpos($img['image_path'] ?? '', '6.webp') !== false) {
+                  $has_chandelier = true;
+                  break;
+                }
+              }
+              if ($has_chandelier || count($table_in_motion_images) !== 6) {
+                try {
+                  $pdo->prepare("DELETE FROM gallery_images WHERE section = 'home_table_in_motion'")->execute();
+                  $ins = $pdo->prepare("INSERT INTO gallery_images (section, image_path, alt_text, caption, sort_order, is_active) VALUES ('home_table_in_motion', ?, ?, ?, ?, 1)");
+                  foreach ($gallery_items as $order => $item) {
+                    $ins->execute([$item['image_path'], $item['alt_text'], $item['caption'], $order + 1]);
+                  }
+                  $table_in_motion_images = $gallery_items;
+                } catch (Exception $e) {
+                  // Silently continue with $gallery_items
+                }
+              } else {
+                $gallery_items = $table_in_motion_images;
+              }
+            }
+            ?>
             <div
               class="mora-gallery-scroller mt-14 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 lg:grid lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:pb-0"
               data-kid="2-2-5-1-2" data-name="gallery items scroller">
-              <button aria-label="Open gallery image: 19:42 second round"
-                class="mora-gallery-item mora-reveal mora-fold-clay min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="0" data-kid="2-2-5-1-2-1" data-name="gallery item 1" data-reveal="" type="button">
-                <img alt="Interior dining booths with a decorative golden ring divider"
-                  class="h-[350px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-1-1"
-                  data-name="gallery image 1" decoding="async" loading="lazy" src="./gallery/1.webp" />
-              </button>
-              <button aria-label="Open gallery image: 21:07 glasses raised"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="1" data-kid="2-2-5-1-2-2" data-name="gallery item 2" data-reveal=""
-                style="--mora-delay:70ms" type="button">
-                <img alt="Interior dining space with elegantly set tables"
-                  class="h-[300px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-2-1"
-                  data-name="gallery image 2" decoding="async" loading="lazy" src="./gallery/2.webp" />
-              </button>
-              <button aria-label="Open gallery image: 12:18 lunch table"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="2" data-kid="2-2-5-1-2-3" data-name="gallery item 3" data-reveal=""
-                style="--mora-delay:130ms" type="button">
-                <img alt="Outdoor patio setting with woven chairs and a marble table"
-                  class="h-[350px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-3-1"
-                  data-name="gallery image 3" decoding="async" loading="lazy" src="./gallery/3.webp" />
-              </button>
-              <button aria-label="Open gallery image: 18:36 first pour"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="3" data-kid="2-2-5-1-2-4" data-name="gallery item 4" data-reveal=""
-                style="--mora-delay:190ms" type="button">
-                <img alt="Interior dining booths beside warm golden lighting"
-                  class="h-[300px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-4-1"
-                  data-name="gallery image 4" decoding="async" loading="lazy" src="./gallery/4.webp" />
-              </button>
-
-              <button aria-label="Open gallery image: 21:07 pasta passed around"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="4" data-kid="2-2-5-1-2-6" data-name="gallery item 6" data-reveal=""
-                style="--mora-delay:150ms" type="button">
-                <img alt="Outdoor restaurant seating area with a large canopy at sunset"
-                  class="h-[330px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-6-1"
-                  data-name="gallery image 6" decoding="async" loading="lazy" src="./gallery/5.webp" />
-              </button>
-              <button aria-label="Open gallery image: 19:04 the little details"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="5" data-kid="2-2-5-1-2-7" data-name="gallery item 7" data-reveal=""
-                style="--mora-delay:220ms" type="button">
-                <img alt="Interior dining lounge with white booths and wood paneled walls"
-                  class="h-[280px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-7-1"
-                  data-name="gallery image 7" decoding="async" loading="lazy"
-                  src="./gallery/ambience/Ambiance 6.jpg.webp" />
-              </button>
+              <?php foreach ($gallery_items as $i => $img): ?>
+                <?php $style = $gallery_styles[$i % count($gallery_styles)]; ?>
+                <button aria-label="Open gallery image: <?= e($img['caption']) ?>"
+                  class="mora-gallery-item mora-reveal <?= $i === 0 ? 'mora-fold-clay ' : '' ?>min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
+                  data-gallery-index="<?= $i ?>" data-kid="2-2-5-1-2-<?= $i + 1 ?>" data-name="gallery item <?= $i + 1 ?>" data-reveal=""
+                  <?= $style['delay'] ?> type="button">
+                  <img alt="<?= e($img['alt_text']) ?>"
+                    class="<?= $style['h'] ?> w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-<?= $i + 1 ?>-1"
+                    data-name="gallery image <?= $i + 1 ?>" decoding="async" loading="lazy" src="<?= e($img['image_path']) ?>" />
+                </button>
+              <?php endforeach; ?>
             </div>
             <div
               class="mt-4 flex items-center justify-between border-t border-[var(--mora-candle)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-candle)]/65"
@@ -1097,10 +1111,10 @@
                 Tap a frame to enlarge
               </span>
               <span class="lg:hidden" data-kid="2-2-5-1-3-2" data-name="gallery counter">
-                1 / 6
+                1 / <?= count($gallery_items) ?>
               </span>
               <a class="mora-text-action hidden text-[var(--mora-candle)] lg:inline-flex" data-kid="2-2-5-1-3-3"
-                data-name="gallery link" href="gallery.html">
+                data-name="gallery link" href="gallery.php">
                 See the gallery
                 <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-5-1-3-3-1"
                   data-name="arrow-up-right icon">
@@ -1118,184 +1132,115 @@
               <div data-kid="2-2-6-1-1-1" data-name="occasions kicker container">
                 <p class="mora-kicker mora-reveal text-[var(--mora-clay)] is-visible" data-kid="2-2-6-1-1-1-1"
                   data-name="occasions kicker text" data-reveal="">
-                  05 / Occasions
+                  <?= e($s['home_occasions_kicker'] ?? '05 / Occasions') ?>
                 </p>
                 <h2
                   class="mora-serif mora-reveal mt-10 max-w-[700px] text-[clamp(3.4rem,7vw,7rem)] leading-[.88] tracking-[-.045em] is-visible"
                   data-kid="2-2-6-1-1-1-2" data-name="occasions heading" data-reveal="" id="occasions-heading"
                   style="--mora-delay:100ms">
-                  Take your time with it.
+                  <?= e($s['home_occasions_heading'] ?? 'Take your time with it.') ?>
                 </h2>
               </div>
               <p class="mora-reveal max-w-[270px] text-sm leading-6 text-[var(--mora-espresso)]/68 lg:pb-2 is-visible"
                 data-kid="2-2-6-1-1-2" data-name="occasions description" data-reveal="" style="--mora-delay:190ms">
-                One room, six good reasons to arrive.
+                <?= e($s['home_occasions_description'] ?? 'One room, six good reasons to arrive.') ?>
               </p>
             </div>
+            <?php
+            $occasions = [
+              [
+                'time' => '12:00',
+                'title' => 'Lunch',
+                'desc' => 'A quick plate if you need it; a second espresso if you don’t.',
+                'src' => 'https://images.pexels.com/photos/17086329/pexels-photo-17086329.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
+                'alt' => 'Warm contemporary restaurant interior with olive seating and evening lamps, SAAD EMRIS on Pexels',
+                'caption' => 'Lunch at C HOUSE · easy plates, second espresso',
+              ],
+              [
+                'time' => '18:00',
+                'title' => 'Aperitivo',
+                'desc' => 'Aperol, bitter orange, small plates and an unhurried start.',
+                'src' => 'https://images.pexels.com/photos/39215054/pexels-photo-39215054.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
+                'alt' => 'Bright aperitivo mocktail catching warm evening light, Nati on Pexels',
+                'caption' => 'Aperitivo · bitter orange, small plates',
+              ],
+              [
+                'time' => '20:00',
+                'title' => 'Dinner',
+                'desc' => 'Pasta, proper mains and bottles made for passing around.',
+                'src' => 'https://images.pexels.com/photos/30044364/pexels-photo-30044364.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
+                'alt' => 'Friends clinking wine glasses over dinner, Jeremy Li on Pexels',
+                'caption' => 'Dinner at C HOUSE · bottles made for passing around',
+              ],
+              [
+                'time' => '21:30',
+                'title' => 'Date night',
+                'desc' => 'Low light, a corner table and dessert worth sharing.',
+                'src' => 'https://images.pexels.com/photos/2072569/pexels-photo-2072569.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
+                'alt' => 'Couple sharing a warm dinner at an Italian restaurant, Elina Sazonova on Pexels',
+                'caption' => 'Date night · low light, one corner table',
+              ],
+              [
+                'time' => '22:15',
+                'title' => 'Friends at the table',
+                'desc' => 'Big tables, louder stories, one more round.',
+                'src' => 'https://images.pexels.com/photos/5086623/pexels-photo-5086623.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
+                'alt' => 'Friends enjoying an animated dinner together, Jep Gambardella on Pexels',
+                'caption' => 'Friends · one more round for the table',
+              ],
+              [
+                'time' => 'Any time',
+                'title' => 'Private celebrations',
+                'desc' => 'Dinner parties, birthdays and gatherings with room to linger.',
+                'src' => 'https://images.pexels.com/photos/37307299/pexels-photo-37307299.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
+                'alt' => 'Lively group gathered around a warmly lit dinner table, Le Salama on Pexels',
+                'caption' => 'Private celebrations · room to linger',
+              ],
+            ];
+            $active_occasion = $occasions[0];
+            ?>
             <div class="mt-10 grid gap-8 lg:mt-16 lg:grid-cols-[.82fr_1.18fr] lg:gap-12" data-kid="2-2-6-1-2"
               data-name="occasions layout grid">
               <div class="order-last lg:order-first" data-kid="2-2-6-1-2-1" data-name="occasions selection column">
                 <div aria-label="Ways to spend time at C HOUSE" class="flex snap-x gap-0 overflow-x-auto pb-1 lg:block"
                   data-kid="2-2-6-1-2-1-1" data-name="occasions list" role="tablist" style="scrollbar-width:none">
-                  <button aria-selected="true"
-                    class="mora-occasion-row is-active mora-reveal min-w-[82vw] snap-start px-0 py-5 lg:min-w-0 is-visible"
-                    data-kid="2-2-6-1-2-1-1-1" data-name="occasion row 1" data-occasion-index="0" data-reveal=""
-                    role="tab" type="button">
-                    <span class="grid grid-cols-[88px_1fr_22px] items-center gap-4" data-kid="2-2-6-1-2-1-1-1-1"
-                      data-name="occasion details">
-                      <span class="mora-occasion-time text-[10px] font-bold uppercase tracking-[.12em]"
-                        data-kid="2-2-6-1-2-1-1-1-1-1" data-name="occasion time">
-                        12:00
-                      </span>
-                      <span data-kid="2-2-6-1-2-1-1-1-1-2" data-name="occasion name/desc">
-                        <span class="block text-lg font-semibold" data-kid="2-2-6-1-2-1-1-1-1-2-1"
-                          data-name="occasion title">
-                          Lunch
+                  <?php foreach ($occasions as $i => $item): ?>
+                    <?php
+                    $is_first = ($i === 0);
+                    $delay = $is_first ? '' : 'style="--mora-delay:' . ($i * 50) . 'ms"';
+                    $active_class = $is_first ? ' is-active' : '';
+                    $time_color = $is_first ? '' : ' text-[var(--mora-espresso)]/55';
+                    ?>
+                    <button aria-selected="<?= $is_first ? 'true' : 'false' ?>"
+                      class="mora-occasion-row<?= $active_class ?> mora-reveal min-w-[82vw] snap-start px-0 py-5 lg:min-w-0 is-visible"
+                      data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>" data-name="occasion row <?= $i + 1 ?>" data-occasion-index="<?= $i ?>" data-reveal=""
+                      role="tab" <?= $delay ?> type="button">
+                      <span class="grid grid-cols-[88px_1fr_22px] items-center gap-4" data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1"
+                        data-name="occasion details">
+                        <span class="mora-occasion-time text-[10px] font-bold uppercase tracking-[.12em]<?= $time_color ?>"
+                          data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-1" data-name="occasion time">
+                          <?= e($item['time']) ?>
                         </span>
-                        <span class="mt-1 block max-w-[330px] text-xs leading-5 text-[var(--mora-espresso)]/68"
-                          data-kid="2-2-6-1-2-1-1-1-1-2-2" data-name="occasion description" id="occasion-copy-mobile-0">
-                          A quick plate if you need it; a second espresso if you don’t.
+                        <span data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-2" data-name="occasion name/desc">
+                          <span class="block text-lg font-semibold" data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-2-1"
+                            data-name="occasion title">
+                            <?= e($item['title']) ?>
+                          </span>
+                          <span class="mt-1 block max-w-[330px] text-xs leading-5 text-[var(--mora-espresso)]/68"
+                            data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-2-2" data-name="occasion description" <?= $is_first ? ' id="occasion-copy-mobile-0"' : '' ?>>
+                            <?= e($item['desc']) ?>
+                          </span>
                         </span>
-                      </span>
-                      <span class="mora-occasion-marker h-px w-5 bg-[var(--mora-clay)]" data-kid="2-2-6-1-2-1-1-1-1-3"
-                        data-name="occasion highlight marker">
-                      </span>
-                    </span>
-                  </button>
-                  <button aria-selected="false"
-                    class="mora-occasion-row mora-reveal min-w-[82vw] snap-start px-0 py-5 lg:min-w-0 is-visible"
-                    data-kid="2-2-6-1-2-1-1-2" data-name="occasion row 2" data-occasion-index="1" data-reveal=""
-                    role="tab" style="--mora-delay:50ms" type="button">
-                    <span class="grid grid-cols-[88px_1fr_22px] items-center gap-4" data-kid="2-2-6-1-2-1-1-2-1"
-                      data-name="occasion details">
-                      <span
-                        class="mora-occasion-time text-[10px] font-bold uppercase tracking-[.12em] text-[var(--mora-espresso)]/55"
-                        data-kid="2-2-6-1-2-1-1-2-1-1" data-name="occasion time">
-                        18:00
-                      </span>
-                      <span data-kid="2-2-6-1-2-1-1-2-1-2" data-name="occasion name/desc">
-                        <span class="block text-lg font-semibold" data-kid="2-2-6-1-2-1-1-2-1-2-1"
-                          data-name="occasion title">
-                          Aperitivo
-                        </span>
-                        <span class="mt-1 block max-w-[330px] text-xs leading-5 text-[var(--mora-espresso)]/68"
-                          data-kid="2-2-6-1-2-1-1-2-1-2-2" data-name="occasion description">
-                          Aperol, bitter orange, small plates and an unhurried start.
+                        <span class="mora-occasion-marker h-px w-5 bg-[var(--mora-clay)]" data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-3"
+                          data-name="occasion highlight marker">
                         </span>
                       </span>
-                      <span class="mora-occasion-marker h-px w-5 bg-[var(--mora-clay)]" data-kid="2-2-6-1-2-1-1-2-1-3"
-                        data-name="occasion highlight marker">
-                      </span>
-                    </span>
-                  </button>
-                  <button aria-selected="false"
-                    class="mora-occasion-row mora-reveal min-w-[82vw] snap-start px-0 py-5 lg:min-w-0 is-visible"
-                    data-kid="2-2-6-1-2-1-1-3" data-name="occasion row 3" data-occasion-index="2" data-reveal=""
-                    role="tab" style="--mora-delay:100ms" type="button">
-                    <span class="grid grid-cols-[88px_1fr_22px] items-center gap-4" data-kid="2-2-6-1-2-1-1-3-1"
-                      data-name="occasion details">
-                      <span
-                        class="mora-occasion-time text-[10px] font-bold uppercase tracking-[.12em] text-[var(--mora-espresso)]/55"
-                        data-kid="2-2-6-1-2-1-1-3-1-1" data-name="occasion time">
-                        20:00
-                      </span>
-                      <span data-kid="2-2-6-1-2-1-1-3-1-2" data-name="occasion name/desc">
-                        <span class="block text-lg font-semibold" data-kid="2-2-6-1-2-1-1-3-1-2-1"
-                          data-name="occasion title">
-                          Dinner
-                        </span>
-                        <span class="mt-1 block max-w-[330px] text-xs leading-5 text-[var(--mora-espresso)]/68"
-                          data-kid="2-2-6-1-2-1-1-3-1-2-2" data-name="occasion description">
-                          Pasta, proper mains and bottles made for passing around.
-                        </span>
-                      </span>
-                      <span class="mora-occasion-marker h-px w-5 bg-[var(--mora-clay)]" data-kid="2-2-6-1-2-1-1-3-1-3"
-                        data-name="occasion highlight marker">
-                      </span>
-                    </span>
-                  </button>
-                  <button aria-selected="false"
-                    class="mora-occasion-row mora-reveal min-w-[82vw] snap-start px-0 py-5 lg:min-w-0 is-visible"
-                    data-kid="2-2-6-1-2-1-1-4" data-name="occasion row 4" data-occasion-index="3" data-reveal=""
-                    role="tab" style="--mora-delay:150ms" type="button">
-                    <span class="grid grid-cols-[88px_1fr_22px] items-center gap-4" data-kid="2-2-6-1-2-1-1-4-1"
-                      data-name="occasion details">
-                      <span
-                        class="mora-occasion-time text-[10px] font-bold uppercase tracking-[.12em] text-[var(--mora-espresso)]/55"
-                        data-kid="2-2-6-1-2-1-1-4-1-1" data-name="occasion time">
-                        21:30
-                      </span>
-                      <span data-kid="2-2-6-1-2-1-1-4-1-2" data-name="occasion name/desc">
-                        <span class="block text-lg font-semibold" data-kid="2-2-6-1-2-1-1-4-1-2-1"
-                          data-name="occasion title">
-                          Date night
-                        </span>
-                        <span class="mt-1 block max-w-[330px] text-xs leading-5 text-[var(--mora-espresso)]/68"
-                          data-kid="2-2-6-1-2-1-1-4-1-2-2" data-name="occasion description">
-                          Low light, a corner table and dessert worth sharing.
-                        </span>
-                      </span>
-                      <span class="mora-occasion-marker h-px w-5 bg-[var(--mora-clay)]" data-kid="2-2-6-1-2-1-1-4-1-3"
-                        data-name="occasion highlight marker">
-                      </span>
-                    </span>
-                  </button>
-                  <button aria-selected="false"
-                    class="mora-occasion-row mora-reveal min-w-[82vw] snap-start px-0 py-5 lg:min-w-0 is-visible"
-                    data-kid="2-2-6-1-2-1-1-5" data-name="occasion row 5" data-occasion-index="4" data-reveal=""
-                    role="tab" style="--mora-delay:200ms" type="button">
-                    <span class="grid grid-cols-[88px_1fr_22px] items-center gap-4" data-kid="2-2-6-1-2-1-1-5-1"
-                      data-name="occasion details">
-                      <span
-                        class="mora-occasion-time text-[10px] font-bold uppercase tracking-[.12em] text-[var(--mora-espresso)]/55"
-                        data-kid="2-2-6-1-2-1-1-5-1-1" data-name="occasion time">
-                        22:15
-                      </span>
-                      <span data-kid="2-2-6-1-2-1-1-5-1-2" data-name="occasion name/desc">
-                        <span class="block text-lg font-semibold" data-kid="2-2-6-1-2-1-1-5-1-2-1"
-                          data-name="occasion title">
-                          Friends at the table
-                        </span>
-                        <span class="mt-1 block max-w-[330px] text-xs leading-5 text-[var(--mora-espresso)]/68"
-                          data-kid="2-2-6-1-2-1-1-5-1-2-2" data-name="occasion description">
-                          Big tables, louder stories, one more round.
-                        </span>
-                      </span>
-                      <span class="mora-occasion-marker h-px w-5 bg-[var(--mora-clay)]" data-kid="2-2-6-1-2-1-1-5-1-3"
-                        data-name="occasion highlight marker">
-                      </span>
-                    </span>
-                  </button>
-                  <button aria-selected="false"
-                    class="mora-occasion-row mora-reveal min-w-[82vw] snap-start px-0 py-5 lg:min-w-0 is-visible"
-                    data-kid="2-2-6-1-2-1-1-6" data-name="occasion row 6" data-occasion-index="5" data-reveal=""
-                    role="tab" style="--mora-delay:250ms" type="button">
-                    <span class="grid grid-cols-[88px_1fr_22px] items-center gap-4" data-kid="2-2-6-1-2-1-1-6-1"
-                      data-name="occasion details">
-                      <span
-                        class="mora-occasion-time text-[10px] font-bold uppercase tracking-[.12em] text-[var(--mora-espresso)]/55"
-                        data-kid="2-2-6-1-2-1-1-6-1-1" data-name="occasion time">
-                        Any time
-                      </span>
-                      <span data-kid="2-2-6-1-2-1-1-6-1-2" data-name="occasion name/desc">
-                        <span class="block text-lg font-semibold" data-kid="2-2-6-1-2-1-1-6-1-2-1"
-                          data-name="occasion title">
-                          Private celebrations
-                        </span>
-                        <span class="mt-1 block max-w-[330px] text-xs leading-5 text-[var(--mora-espresso)]/68"
-                          data-kid="2-2-6-1-2-1-1-6-1-2-2" data-name="occasion description">
-                          Dinner parties, birthdays and gatherings with room to linger.
-                        </span>
-                      </span>
-                      <span class="mora-occasion-marker h-px w-5 bg-[var(--mora-clay)]" data-kid="2-2-6-1-2-1-1-6-1-3"
-                        data-name="occasion highlight marker">
-                      </span>
-                    </span>
-                  </button>
+                    </button>
+                  <?php endforeach; ?>
                 </div>
                 <a class="mora-text-action mt-10 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-espresso)] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                  data-kid="2-2-6-1-2-1-2" data-name="private celebration plan link" href="contact.html">
-                  Plan a private celebration
+                  data-kid="2-2-6-1-2-1-2" data-name="private celebration plan link" href="contact.php">
+                  <?= e($s['home_occasions_link_text'] ?? 'Plan a private celebration') ?>
                   <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-6-1-2-1-2-1"
                     data-name="arrow-up-right icon">
                   </i>
@@ -1305,24 +1250,24 @@
                 <figure class="mora-photo-frame relative h-[430px] overflow-hidden lg:h-[600px]"
                   data-kid="2-2-6-1-2-2-1" data-name="occasion image frame">
                   <img
-                    alt="Warm contemporary restaurant interior with olive seating and evening lamps, SAAD EMRIS on Pexels"
+                    alt="<?= e($active_occasion['alt']) ?>"
                     class="h-full w-full object-cover" data-dynamic="true" data-kid="2-2-6-1-2-2-1-1"
                     data-name="occasion feature image" data-reason="src, alt, and content updated by interaction"
                     decoding="async" id="occasion-image" loading="lazy"
-                    src="https://images.pexels.com/photos/17086329/pexels-photo-17086329.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100&amp;q=80" />
+                    src="<?= e($active_occasion['src']) ?>" />
                   <div class="absolute bottom-0 left-0 max-w-[88%] z-10">
                     <figcaption
                       class="mora-fold-clay mora-fold bg-[var(--mora-candle)] px-4 py-3 text-[10px] uppercase tracking-[.14em] text-[var(--mora-espresso)]"
                       data-dynamic="true" data-kid="2-2-6-1-2-2-1-2" data-name="occasion image caption"
                       data-reason="text updated by interaction" id="occasion-caption">
-                      Lunch at C HOUSE · easy plates, second espresso
+                      <?= e($active_occasion['caption']) ?>
                     </figcaption>
                   </div>
                 </figure>
                 <p class="mora-serif mt-7 max-w-[620px] text-3xl leading-[1.05] text-[var(--mora-espresso)]"
                   data-dynamic="true" data-kid="2-2-6-1-2-2-2" data-name="occasion copy text"
                   data-reason="text updated by interaction" id="occasion-copy">
-                  A quick plate if you need it; a second espresso if you don’t.
+                  <?= e($active_occasion['desc']) ?>
                 </p>
               </div>
             </div>
@@ -1338,7 +1283,7 @@
 
               <h2 class="mora-serif mt-12 text-[clamp(3.4rem,6.6vw,6.6rem)] leading-[.88] tracking-[-.045em]"
                 data-kid="2-2-8-1-1-2" data-name="contact heading" id="contact-heading">
-                Find the long table.
+                <?= e($s['home_contact_heading'] ?? 'Find the long table.') ?>
               </h2>
               <div class="mt-14 border-y border-[var(--mora-espresso)]/28 py-7 text-sm leading-7" data-kid="2-2-8-1-1-3"
                 data-name="contact details list">
@@ -1348,12 +1293,12 @@
                   </i>
                   <span data-kid="2-2-8-1-1-3-1-2" data-name="location address block">
                     <strong class="font-semibold" data-kid="2-2-8-1-1-3-1-2-1" data-name="location company name">
-                      C HOUSE
+                      <?= e($s['site_name'] ?? 'C HOUSE') ?>
                     </strong>
                     <br data-kid="2-2-8-1-1-3-1-2-2" data-name="line break" />
-                    H Rd, Jebel Ali Recreation Club, Jebel Ali Village
+                    <?= e($s['address_line1'] ?? 'H Rd, Jebel Ali Recreation Club, Jebel Ali Village') ?>
                     <br data-kid="2-2-8-1-1-3-1-2-3" data-name="location address lines" />
-                    Behind IBN Batuta Mall, Dubai
+                    <?= e($s['address_line2'] ?? 'Behind IBN Batuta Mall, Dubai') ?>
                   </span>
                 </p>
                 <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-2" data-name="contact hours">
@@ -1362,10 +1307,18 @@
                   </i>
                   <span data-kid="2-2-8-1-1-3-2-2" data-name="hours block">
                     <strong class="font-semibold" data-kid="2-2-8-1-1-3-2-2-1" data-name="hours title">
-                      Hours Of Operations
+                      <?= e($s['hours_title'] ?? 'Hours Of Operations') ?>
                     </strong>
                     <br data-kid="2-2-8-1-1-3-2-2-2" data-name="line break" />
-                    Sun - Thu 12:00PM - 00:00AM & Fri-Sat 12:00PM - 2:00AM
+                    <?php if (!empty($s['hours_weekday']) && !empty($s['hours_weekend'])): ?>
+                      <?= e($s['hours_weekday']) ?> &amp; <?= e($s['hours_weekend']) ?>
+                    <?php elseif (!empty($s['hours_weekday'])): ?>
+                      <?= e($s['hours_weekday']) ?>
+                    <?php elseif (!empty($s['hours'])): ?>
+                      <?= e($s['hours']) ?>
+                    <?php else: ?>
+                      Sun - Thu 12:00PM - 00:00AM &amp; Fri-Sat 12:00PM - 2:00AM
+                    <?php endif; ?>
                   </span>
                 </p>
                 <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-3" data-name="contact methods">
@@ -1373,18 +1326,28 @@
                     data-kid="2-2-8-1-1-3-3-1" data-name="phone icon">
                   </i>
                   <span data-kid="2-2-8-1-1-3-3-2" data-name="methods block">
-                    <span class="inline-flex flex-wrap items-center gap-x-1 gap-y-1"><a
-                        class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">052 218 5569</a> /
-                      <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971504603469">050 460 3469</a> /
-                      <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">(04) 880
-                        3320</a></span>
+                    <?php if (!empty($s['phone_numbers'])):
+                      $phones = array_map('trim', preg_split('/[,|\/]/', $s['phone_numbers']));
+                    ?>
+                      <span class="inline-flex flex-wrap items-center gap-x-1 gap-y-1">
+                        <?php foreach ($phones as $idx => $phone):
+                          $cleanPhone = preg_replace('/[^0-9+]/', '', $phone);
+                        ?>
+                          <?php if ($idx > 0): ?>/ <?php endif; ?>
+                        <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                          data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:<?= e($cleanPhone) ?>"><?= e($phone) ?></a>
+                      <?php endforeach; ?>
+                      </span>
+                    <?php else: ?>
+                      <span class="inline-flex flex-wrap items-center gap-x-1 gap-y-1"><a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                          data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">052 218 5569</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                          data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971504603469">050 460 3469</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                          data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">(04) 880 3320</a></span>
+                    <?php endif; ?>
                     <br data-kid="2-2-8-1-1-3-3-2-2" data-name="line break" />
                     <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                      data-kid="2-2-8-1-1-3-3-2-3" data-name="email link" href="mailto:hello@chouse.ae">
-                      hello@chouse.ae
+                      data-kid="2-2-8-1-1-3-3-2-3" data-name="email link" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>">
+                      <?= e($s['email'] ?? 'hello@chouse.ae') ?>
                     </a>
                   </span>
                 </p>
@@ -1393,7 +1356,7 @@
                 data-name="contact buttons container">
                 <a class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                   data-kid="2-2-8-1-1-4-1" data-name="directions link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Jebel+Ali+Recreation+Club+Dubai"
+                  href="<?= e($s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=Jebel+Ali+Recreation+Club+Dubai') ?>"
                   rel="noreferrer" target="_blank">
                   Get directions
                   <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-1-1"
@@ -1415,25 +1378,24 @@
               data-kid="2-2-8-1-2" data-name="map display panel" data-reveal=""
               style="--mora-delay:140ms;overflow:clip;z-index:0">
               <iframe
-                src="https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=near&output=embed"
+                src="<?= e($s['google_maps_embed'] ?? 'https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=near&output=embed') ?>"
                 class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply pointer-events-none"
                 frameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
 
 
-              <div class="absolute bottom-6 right-6 z-10 pointer-events-none" data-kid="2-2-8-1-2-3"
-                data-name="map caption overlay container">
+              <div class="absolute bottom-6 right-6 z-10 pointer-events-none" data-kid="2-2-8-1-2-3" data-name="map caption overlay container">
                 <div class="mora-fold mora-fold-parchment bg-[var(--mora-clay)] px-5 py-4 text-[var(--mora-candle)]"
                   data-kid="2-2-8-1-2-3-inner" data-name="map caption overlay">
                   <p class="text-xs font-semibold" data-kid="2-2-8-1-2-3-1" data-name="location title">
-                    Jebel Ali Recreation Club
+                    <?= e($s['location_name'] ?? 'Jebel Ali Recreation Club') ?>
                   </p>
                   <p class="mt-1 text-[10px] text-[var(--mora-candle)]/75" data-kid="2-2-8-1-2-3-2"
                     data-name="location address">
-                    C HOUSE · Dubai, UAE
+                    <?= e($s['location_caption'] ?? ($s['location_city'] ?? (($s['site_name'] ?? 'C HOUSE') . ' · Dubai, UAE'))) ?>
                   </p>
                 </div>
               </div>
-              <a href="https://maps.google.com/?q=Jebel+Ali+Recreation+Club+Dubai" target="_blank"
+              <a href="<?= e($s['google_maps_link'] ?? 'https://maps.google.com/?q=Jebel+Ali+Recreation+Club+Dubai') ?>" target="_blank"
                 class="absolute bottom-6 left-6 border border-[var(--mora-olive)]/40 bg-[#f5e6c8] px-4 py-3 text-[9px] font-bold uppercase tracking-[.14em] text-black hover:bg-[var(--mora-clay)] hover:text-white transition-colors z-10 cursor-pointer"
                 data-kid="2-2-8-1-2-4" data-name="map link overlay">
                 Open in Maps
@@ -1445,125 +1407,7 @@
           </div>
         </section>
       </main>
-      <footer class="bg-black px-5 py-6 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-8" data-kid="2-3"
-        data-name="main page footer">
-        <div class="mx-auto max-w-[1360px]" data-kid="2-3-1" data-name="footer wrapper">
-          <div
-            class="flex flex-col gap-6 border-b border-[var(--mora-candle)]/25 pb-8 lg:flex-row lg:items-end lg:justify-between"
-            data-kid="2-3-1-1" data-name="footer header grid">
-            <div data-kid="2-3-1-1-1" data-name="footer brand container">
-              <div class="flex items-center" data-kid="2-3-1-1-1-1" data-name="brand name title">
-                <img src="gallery/logo.webp" class="h-16 sm:h-24 lg:h-28 w-auto object-contain -ml-4 lg:-ml-6"
-                  alt="Logo">
-                <div class="mora-serif text-[clamp(2.5rem,5vw,4rem)] leading-[.9] tracking-[-.05em] ml-2">
-                  C HOUSE
-                </div>
-              </div>
-              <p class="mt-5 text-[10px] font-semibold uppercase tracking-[.24em] text-[var(--mora-candle)]/58"
-                data-kid="2-3-1-1-1-2" data-name="brand subtitle">
-                Italian bistro · bar · lounge
-              </p>
-            </div>
-          </div>
-          <div class="grid gap-12 py-8 text-sm sm:grid-cols-2 lg:grid-cols-[1.3fr_.8fr_1fr]" data-kid="2-3-1-2"
-            data-name="footer links grid">
-            <div data-kid="2-3-1-2-1" data-name="footer visit column">
-              <p class="mora-kicker text-[var(--mora-brass)]" data-kid="2-3-1-2-1-1" data-name="visit kicker text">
-                Visit
-              </p>
-              <div class="mt-5 leading-7 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-1-2"
-                data-name="visit content list">
-                <p data-kid="2-3-1-2-1-2-1" data-name="address line 1">
-                  H Rd, Jebel Ali Recreation Club
-                </p>
-                <p data-kid="2-3-1-2-1-2-2" data-name="hours line">
-                  Sun - Thu 12:00PM - 00:00AM & Fri-Sat 12:00PM - 2:00AM
-                </p>
-                <p data-kid="2-3-1-2-1-2-3" data-name="location line">
-                  Behind IBN Batuta Mall, Dubai
-                </p>
-                <a class="mora-menu-link mt-4 inline-block border-b border-[var(--mora-candle)]/35 pb-1 text-[11px] uppercase tracking-[.12em]"
-                  data-kid="2-3-1-2-1-2-4" data-name="directions link"
-                  href="https://www.google.com/maps/search/?api=1&amp;query=Jebel+Ali+Recreation+Club+Dubai"
-                  rel="noreferrer" target="_blank">
-                  Directions
-                  <i aria-hidden="true" class="ti ti-arrow-up-right ml-1" data-kid="2-3-1-2-1-2-4-1"
-                    data-name="arrow-up-right icon">
-                  </i>
-                </a>
-              </div>
-            </div>
-            <div data-kid="2-3-1-2-2" data-name="footer explore column">
-              <p class="mora-kicker text-[var(--mora-brass)]" data-kid="2-3-1-2-2-1" data-name="explore kicker text">
-                Explore
-              </p>
-              <div class="mt-5 grid gap-3 leading-6 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-2-2"
-                data-name="explore links list">
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-1" data-name="menu link" href="menu.html">
-                  Menu
-                </a>
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-2" data-name="about link" href="about.html">
-                  About
-                </a>
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-3" data-name="bar experience link"
-                  href="bar.html">
-                  Bar experience
-                </a>
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-4" data-name="experience link"
-                  href="experience.html">
-                  Experience
-                </a>
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-5" data-name="gallery link" href="gallery.html">
-                  Gallery
-                </a>
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-2-2-5" data-name="celebrations link"
-                  href="contact.html">
-                  Private celebrations
-                </a>
-              </div>
-            </div>
-            <div data-kid="2-3-1-2-3" data-name="footer social column">
-              <p class="mora-kicker text-[var(--mora-brass)]" data-kid="2-3-1-2-3-1" data-name="social kicker text">
-                Keep in touch
-              </p>
-              <div class="mt-5 grid gap-3 leading-6 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-3-2"
-                data-name="social links list">
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-fb" data-name="facebook link"
-                  href="https://www.facebook.com/chouseuae/" rel="noreferrer" target="_blank">
-                  Facebook
-
-                </a>
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-1" data-name="instagram link"
-                  href="https://www.instagram.com/chouseuae/" rel="noreferrer" target="_blank">
-                  Instagram
-                  <i aria-hidden="true" class="ti ti-instagram ml-1" data-kid="2-3-1-2-3-2-1-1"
-                    data-name="instagram icon">
-                  </i>
-                </a>
-                <span class="inline-flex flex-wrap items-center gap-1"><a class="mora-menu-link w-fit"
-                    data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+971522185569">052 218 5569</a> / <a
-                    class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link"
-                    href="tel:+971504603469">050 460 3469</a> / <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2"
-                    data-name="phone link" href="tel:+97148803320">(04) 880 3320</a></span>
-                <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-3" data-name="email link"
-                  href="mailto:hello@chouse.ae">
-                  hello@chouse.ae
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex flex-col gap-3 border-t border-[var(--mora-candle)]/25 pt-6 text-[10px] uppercase tracking-[.14em] text-[var(--mora-candle)]/52 sm:flex-row sm:items-center sm:justify-between"
-            data-kid="2-3-1-3" data-name="copyright info bar">
-            <span data-kid="2-3-1-3-1" data-name="copyright text">
-              © C HOUSE Dubai
-            </span>
-            <span data-kid="2-3-1-3-2" data-name="reservation advice">
-              Reservations recommended for dinner
-            </span>
-          </div>
-        </div>
-      </footer>
+      <?php include __DIR__ . '/includes/footer.php'; ?>
       <button aria-label="Close reservation panel" class="mora-scrim fixed inset-0 z-[70] bg-[var(--mora-espresso)]/75"
         data-kid="2-4" data-name="scrim overlay for drawers" id="mora-scrim" type="button">
       </button>
@@ -1687,9 +1531,8 @@
             data-reason="visibility toggled by script" id="reservation-alt">
             That time is full. Try 19:30 or 21:45, or call us for larger tables:
             <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
-              href="tel:+971522185569">052 218 5569</a> / <a class="border-b border-[var(--mora-candle)]/45"
-              data-kid="2-5-3-7-1" data-name="alternate phone link" href="tel:+971504603469">050 460 3469</a> / <a
-              class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
+              href="tel:+971522185569">052 218 5569</a> / <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
+              href="tel:+971504603469">050 460 3469</a> / <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
               href="tel:+97148803320">(04) 880 3320</a>
             .
           </div>
@@ -1781,7 +1624,9 @@
         const nav = document.getElementById('mora-nav');
         const setNavState = () => nav.classList.toggle('is-scrolled', window.scrollY > 24);
         setNavState();
-        window.addEventListener('scroll', setNavState, { passive: true });
+        window.addEventListener('scroll', setNavState, {
+          passive: true
+        });
 
         const revealItems = page.querySelectorAll('[data-reveal]');
         if ('IntersectionObserver' in window) {
@@ -1792,7 +1637,10 @@
                 observer.unobserve(entry.target);
               }
             });
-          }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+          }, {
+            threshold: 0.08,
+            rootMargin: '0px 0px -30px 0px'
+          });
           revealItems.forEach((item) => revealObserver.observe(item));
         } else {
           revealItems.forEach((item) => item.classList.add('is-visible'));
@@ -1870,12 +1718,36 @@
           }, 850);
         });
 
-        const foodData = [
-          { src: 'https://images.pexels.com/photos/14538480/pexels-photo-14538480.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80', alt: 'Hands sharing pizza and plates at a lively table, Doğu Tuncer on Pexels', name: 'Burrata & roasted tomatoes', meta: 'Olive oil · warm bread · antipasti' },
-          { src: 'gallery/food.webp', alt: 'Handmade pasta twirled on a white ceramic plate with tomato and parmesan, Erwan Hesry on Unsplash', name: 'Truffle tagliatelle', meta: 'Warm parmesan · handmade pasta' },
-          { src: 'https://images.pexels.com/photos/33158334/pexels-photo-33158334.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80', alt: 'Fresh Italian pizza with blistered crust and basil, damla selen demir on Pexels', name: 'Blistered margherita', meta: 'Tomato · basil · shared hands' },
-          { src: 'https://images.unsplash.com/photo-1605851086486-2bfb45e926d9?auto=format&w=1200&q=80&fit=crop', alt: 'Italian grilled meat with roasted vegetables and red wine, sergey mikheev on Unsplash', name: 'Grilled beef', meta: 'Seasonal vegetables · red wine' },
-          { src: 'https://images.unsplash.com/photo-1661587781420-dc427db4ccda?auto=format&w=1000&q=80&fit=crop', alt: 'Dessert and shared plates being prepared at a restaurant table, Filipp Romanovski on Unsplash', name: 'Tiramisù', meta: 'Espresso · mascarpone · to share' }
+        const foodData = [{
+            src: 'https://images.pexels.com/photos/14538480/pexels-photo-14538480.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+            alt: 'Hands sharing pizza and plates at a lively table, Doğu Tuncer on Pexels',
+            name: 'Burrata & roasted tomatoes',
+            meta: 'Olive oil · warm bread · antipasti'
+          },
+          {
+            src: 'gallery/food.webp',
+            alt: 'Handmade pasta twirled on a white ceramic plate with tomato and parmesan, Erwan Hesry on Unsplash',
+            name: 'Truffle tagliatelle',
+            meta: 'Warm parmesan · handmade pasta'
+          },
+          {
+            src: 'https://images.pexels.com/photos/33158334/pexels-photo-33158334.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+            alt: 'Fresh Italian pizza with blistered crust and basil, damla selen demir on Pexels',
+            name: 'Blistered margherita',
+            meta: 'Tomato · basil · shared hands'
+          },
+          {
+            src: 'https://images.unsplash.com/photo-1605851086486-2bfb45e926d9?auto=format&w=1200&q=80&fit=crop',
+            alt: 'Italian grilled meat with roasted vegetables and red wine, sergey mikheev on Unsplash',
+            name: 'Grilled beef',
+            meta: 'Seasonal vegetables · red wine'
+          },
+          {
+            src: 'https://images.unsplash.com/photo-1661587781420-dc427db4ccda?auto=format&w=1000&q=80&fit=crop',
+            alt: 'Dessert and shared plates being prepared at a restaurant table, Filipp Romanovski on Unsplash',
+            name: 'Tiramisù',
+            meta: 'Espresso · mascarpone · to share'
+          }
         ];
         const foodRows = page.querySelectorAll('[data-food-index]');
         const foodImage = document.getElementById('food-image');
@@ -1904,19 +1776,31 @@
         foodRows.forEach((row) => {
           row.addEventListener('click', () => updateFood(Number(row.dataset.foodIndex)));
           row.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') { event.preventDefault(); const next = (Number(row.dataset.foodIndex) + 1) % foodData.length; foodRows[next].focus(); updateFood(next); }
-            if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') { event.preventDefault(); const next = (Number(row.dataset.foodIndex) - 1 + foodData.length) % foodData.length; foodRows[next].focus(); updateFood(next); }
+            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+              event.preventDefault();
+              const next = (Number(row.dataset.foodIndex) + 1) % foodData.length;
+              foodRows[next].focus();
+              updateFood(next);
+            }
+            if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+              event.preventDefault();
+              const next = (Number(row.dataset.foodIndex) - 1 + foodData.length) % foodData.length;
+              foodRows[next].focus();
+              updateFood(next);
+            }
           });
         });
 
-        const occasionData = [
-          { src: 'https://images.pexels.com/photos/17086329/pexels-photo-17086329.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80', alt: 'Warm contemporary restaurant interior with olive seating and evening lamps, SAAD EMRIS on Pexels', caption: 'Lunch at MORA · easy plates, second espresso', copy: 'A quick plate if you need it; a second espresso if you don’t.' },
-          { src: 'https://images.pexels.com/photos/39215054/pexels-photo-39215054.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80', alt: 'Bright aperitivo mocktail catching warm evening light, Nati on Pexels', caption: 'Aperitivo · bitter orange, small plates', copy: 'Aperol, bitter orange, small plates and an unhurried start.' },
-          { src: 'https://images.pexels.com/photos/30044364/pexels-photo-30044364.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80', alt: 'Friends clinking wine glasses over dinner, Jeremy Li on Pexels', caption: 'Dinner at MORA · bottles made for passing around', copy: 'Pasta, proper mains and bottles made for passing around.' },
-          { src: 'https://images.pexels.com/photos/2072569/pexels-photo-2072569.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80', alt: 'Couple sharing a warm dinner at an Italian restaurant, Elina Sazonova on Pexels', caption: 'Date night · low light, one corner table', copy: 'Low light, a corner table and dessert worth sharing.' },
-          { src: 'https://images.pexels.com/photos/5086623/pexels-photo-5086623.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80', alt: 'Friends enjoying an animated dinner together, Jep Gambardella on Pexels', caption: 'Friends · one more round for the table', copy: 'Big tables, louder stories, one more round.' },
-          { src: 'https://images.pexels.com/photos/37307299/pexels-photo-37307299.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80', alt: 'Lively group gathered around a warmly lit dinner table, Le Salama on Pexels', caption: 'Private celebrations · room to linger', copy: 'Dinner parties, birthdays and gatherings with room to linger.' }
-        ];
+        const occasionData = <?= json_encode(
+                                array_map(function ($item) {
+                                  return [
+                                    'src' => $item['src'],
+                                    'alt' => $item['alt'],
+                                    'caption' => $item['caption'],
+                                    'copy' => $item['desc']
+                                  ];
+                                }, $occasions)
+                              ) ?>;
         const occasionRows = page.querySelectorAll('[data-occasion-index]');
         const occasionImage = document.getElementById('occasion-image');
         const occasionCaption = document.getElementById('occasion-caption');
@@ -1942,19 +1826,30 @@
         occasionRows.forEach((row) => {
           row.addEventListener('click', () => updateOccasion(Number(row.dataset.occasionIndex)));
           row.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') { event.preventDefault(); const next = (Number(row.dataset.occasionIndex) + 1) % occasionData.length; occasionRows[next].focus(); updateOccasion(next); }
-            if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') { event.preventDefault(); const next = (Number(row.dataset.occasionIndex) - 1 + occasionData.length) % occasionData.length; occasionRows[next].focus(); updateOccasion(next); }
+            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+              event.preventDefault();
+              const next = (Number(row.dataset.occasionIndex) + 1) % occasionData.length;
+              occasionRows[next].focus();
+              updateOccasion(next);
+            }
+            if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+              event.preventDefault();
+              const next = (Number(row.dataset.occasionIndex) - 1 + occasionData.length) % occasionData.length;
+              occasionRows[next].focus();
+              updateOccasion(next);
+            }
           });
         });
 
-        const galleryData = [
-          { src: './gallery/1.webp', alt: 'Interior dining booths with a decorative golden ring divider', caption: '19:42 second round' },
-          { src: './gallery/2.webp', alt: 'Interior dining space with elegantly set tables', caption: '21:07 glasses raised' },
-          { src: './gallery/3.webp', alt: 'Outdoor patio setting with woven chairs and a marble table', caption: '12:18 lunch table' },
-          { src: './gallery/4.webp', alt: 'Interior dining booths beside warm golden lighting', caption: '18:36 first pour' },
-          { src: './gallery/5.webp', alt: 'Outdoor restaurant seating area with a large canopy at sunset', caption: '21:07 pasta passed around' },
-          { src: './gallery/ambience/Ambiance 6.jpg.webp', alt: 'Interior dining lounge with white booths and wood paneled walls', caption: '19:04 the little details' }
-        ];
+        const galleryData = <?= json_encode(
+                              array_map(function ($img) {
+                                return [
+                                  'src' => $img['image_path'],
+                                  'alt' => $img['alt_text'],
+                                  'caption' => $img['caption']
+                                ];
+                              }, $gallery_items)
+                            ) ?>;
         const lightbox = document.getElementById('gallery-lightbox');
         const lightboxImage = document.getElementById('lightbox-image');
         const lightboxCaption = document.getElementById('lightbox-caption');
@@ -1984,10 +1879,18 @@
           if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
         };
         page.querySelectorAll('[data-gallery-index]').forEach((button) => button.addEventListener('click', () => openGallery(Number(button.dataset.galleryIndex))));
-        document.getElementById('lightbox-prev').addEventListener('click', () => { galleryIndex = (galleryIndex - 1 + galleryData.length) % galleryData.length; paintGallery(); });
-        document.getElementById('lightbox-next').addEventListener('click', () => { galleryIndex = (galleryIndex + 1) % galleryData.length; paintGallery(); });
+        document.getElementById('lightbox-prev').addEventListener('click', () => {
+          galleryIndex = (galleryIndex - 1 + galleryData.length) % galleryData.length;
+          paintGallery();
+        });
+        document.getElementById('lightbox-next').addEventListener('click', () => {
+          galleryIndex = (galleryIndex + 1) % galleryData.length;
+          paintGallery();
+        });
         lightboxClose.addEventListener('click', closeGallery);
-        lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closeGallery(); });
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) closeGallery();
+        });
 
         const reserveDock = document.getElementById('reserve-dock');
         const heroReserve = document.getElementById('hero-reserve');
@@ -1996,7 +1899,9 @@
             const shouldShow = !entry.isIntersecting && entry.boundingClientRect.top < 0;
             reserveDock.classList.toggle('is-visible', shouldShow);
             reserveDock.setAttribute('aria-hidden', String(!shouldShow));
-          }, { threshold: 0 });
+          }, {
+            threshold: 0
+          });
           dockObserver.observe(heroReserve);
         }
 
@@ -2015,13 +1920,15 @@
     <i class="ti ti-brand-whatsapp text-2xl"></i>
   </a>
   <script>
-    (function () {
+    (function() {
       const glass = document.getElementById('scroll-glass');
       const heading = document.getElementById('bar-heading');
       if (!glass || !heading) return;
 
       let glassStartRect, parentRect;
-      let startXPercent = 0, startYPercent = 0, startRotate = 12;
+      let startXPercent = 0,
+        startYPercent = 0,
+        startRotate = 12;
       let ticking = false;
       let isLocked = false;
 
@@ -2049,11 +1956,17 @@
         const extractVal = (prefix) => {
           let regex = new RegExp(`lg:-?${prefix}-\\[(-?\\d+)%\\]`);
           let match = isDesktop ? classString.match(regex) : null;
-          if (match) return { val: parseInt(match[1]), str: match[0] };
+          if (match) return {
+            val: parseInt(match[1]),
+            str: match[0]
+          };
 
           regex = new RegExp(`(?:^|\\s)-?${prefix}-\\[(-?\\d+)%\\]`);
           match = classString.match(regex);
-          return match ? { val: parseInt(match[1]), str: match[0] } : null;
+          return match ? {
+            val: parseInt(match[1]),
+            str: match[0]
+          } : null;
         };
 
         const xMatch = extractVal('translate-x');
@@ -2087,7 +2000,7 @@
       function onScroll() {
         if (ticking) return;
         ticking = true;
-        requestAnimationFrame(function () {
+        requestAnimationFrame(function() {
           if (!glassStartRect) measure();
 
           // If measure() failed (images still loading), abort this frame
@@ -2167,7 +2080,9 @@
         });
       }
 
-      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('scroll', onScroll, {
+        passive: true
+      });
       window.addEventListener('resize', measure);
       window.addEventListener('load', measure); // Guarantee measure after all images load
 
