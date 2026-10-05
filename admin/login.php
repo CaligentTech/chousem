@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $admin = $stmt->fetch();
 
             // Using password_verify if hashed, or fallback to plain text for this initial setup
-            if ($admin && (password_verify($password, $admin['password']) || $password === $admin['password'])) {
+            if ($admin && (password_verify($password, $admin['password_hash']) || $password === $admin['password_hash'])) {
                 $_SESSION['admin_logged_in'] = true;
                 $_SESSION['admin_username'] = $admin['username'];
                 header('Location: index.php');
