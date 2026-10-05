@@ -31,6 +31,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <a href="site_settings.php" class="flex items-center gap-3 px-3 py-2 rounded-lg <?= $current_page == 'site_settings.php' ? 'bg-[#D4AF37] text-black font-semibold' : 'hover:bg-[#2A2623] hover:text-white' ?>">
                 <i class="ti ti-settings text-xl"></i> Site Settings
             </a>
+            <a href="categories.php" class="flex items-center gap-3 px-3 py-2 rounded-lg <?= $current_page == 'categories.php' ? 'bg-[#D4AF37] text-black font-semibold' : 'hover:bg-[#2A2623] hover:text-white' ?>">
+                <i class="ti ti-category text-xl"></i> Menu Categories
+            </a>
             <a href="menu_items.php" class="flex items-center gap-3 px-3 py-2 rounded-lg <?= $current_page == 'menu_items.php' ? 'bg-[#D4AF37] text-black font-semibold' : 'hover:bg-[#2A2623] hover:text-white' ?>">
                 <i class="ti ti-tools-kitchen-2 text-xl"></i> Menu Items
             </a>
@@ -42,6 +45,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </a>
             <a href="offers.php" class="flex items-center gap-3 px-3 py-2 rounded-lg <?= $current_page == 'offers.php' ? 'bg-[#D4AF37] text-black font-semibold' : 'hover:bg-[#2A2623] hover:text-white' ?>">
                 <i class="ti ti-ticket text-xl"></i> Offers & Bundles
+            </a>
+            <a href="reviews.php" class="flex items-center gap-3 px-3 py-2 rounded-lg <?= $current_page == 'reviews.php' ? 'bg-[#D4AF37] text-black font-semibold' : 'hover:bg-[#2A2623] hover:text-white' ?>">
+                <i class="ti ti-message-star text-xl"></i> Reviews
             </a>
         </nav>
         <div class="p-4 border-t border-[#3A3633]">
