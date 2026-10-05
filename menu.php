@@ -11,6 +11,7 @@ $categories = get_categories($pdo, 'food');
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>C HOUSE - Menu</title>
+  <link rel="preload" as="image" href="gallery/food.webp" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap');
 
@@ -129,7 +130,7 @@ $categories = get_categories($pdo, 'food');
     <!-- Hero Header -->
     <section class="relative pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center justify-center">
       <div class="absolute inset-0 z-0">
-        <img alt="Menu hero" class="h-full w-full object-cover opacity-30" decoding="async" loading="lazy"
+        <img alt="Menu hero" class="h-full w-full object-cover opacity-30" decoding="async"
           src="gallery/food.webp" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
       </div>

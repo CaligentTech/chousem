@@ -19,6 +19,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>C HOUSE - Italian bistro · bar · lounge</title>
+  <link rel="preload" as="image" href="<?= e($s['hero_image']) ?>" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -665,7 +666,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           class="relative h-svh overflow-hidden bg-black text-[#f5e6c8] flex flex-col items-center justify-center"
           data-kid="2-2-1" data-name="hero section" id="home">
           <div class="absolute inset-0" data-kid="2-2-1-1" data-name="hero image background container">
-            <img alt="Hero Night" class="absolute inset-0 h-full w-full object-cover" decoding="async" loading="lazy"
+            <img alt="Hero Night" class="absolute inset-0 h-full w-full object-cover" decoding="async"
               src="<?= e($s['hero_image']) ?>" />
             <div class="absolute inset-0 bg-black/20"></div>
           </div>
