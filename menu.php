@@ -146,13 +146,26 @@ $categories = get_categories($pdo, 'food');
 
     <!-- Menu Content -->
     <section class="py-12 px-5 lg:px-12 max-w-[1360px] mx-auto">
-      <?php foreach ($categories as $cat):
-        $items = get_menu_items($pdo, $cat['id']);
-      ?>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
+        <?php foreach ($categories as $cat):
+          $items = get_menu_items($pdo, $cat['id']);
+        ?>
         <div class="menu-section">
-          <h2 class="mora-serif text-4xl mb-2"><?= e($cat['name']) ?></h2>
+          <?php
+          $category_images = [
+              'Antipasti' => 'gallery/calamari-fritti.webp',
+              'Primi' => 'gallery/fettuccine-alfredo.webp'
+          ];
+          if (isset($category_images[$cat['name']])): ?>
+            <div class="relative mb-2 flex items-center justify-between">
+              <h2 class="mora-serif text-4xl mb-0"><?= e($cat['name']) ?></h2>
+              <img src="<?= e($category_images[$cat['name']]) ?>" alt="<?= e($cat['name']) ?>" class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
+            </div>
+          <?php else: ?>
+            <h2 class="mora-serif text-4xl mb-2"><?= e($cat['name']) ?></h2>
+          <?php endif; ?>
           <?php if ($cat['subtitle']): ?>
-            <p class="text-[11px] uppercase tracking-[.15em] ..."><?= e($cat['subtitle']) ?></p>
+            <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold"><?= e($cat['subtitle']) ?></p>
           <?php endif; ?>
           <div class="flex flex-col gap-5">
             <?php foreach ($items as $item): ?>
@@ -167,6 +180,7 @@ $categories = get_categories($pdo, 'food');
           </div>
         </div>
       <?php endforeach; ?>
+      </div>
 
       <div class="mt-12 pt-8 border-t border-[var(--mora-espresso)]/20 text-center text-sm font-semibold opacity-70">
         <p><?= e(get_content($pdo, 'menu', 'disclaimer', 'text')) ?></p> <br>
