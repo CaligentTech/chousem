@@ -37,6 +37,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <a href="gallery.php" class="flex items-center gap-3 px-3 py-2 rounded-lg <?= $current_page == 'gallery.php' ? 'bg-[#D4AF37] text-black font-semibold' : 'hover:bg-[#2A2623] hover:text-white' ?>">
                 <i class="ti ti-photo text-xl"></i> Gallery
             </a>
+            <a href="events.php" class="flex items-center gap-3 px-3 py-2 rounded-lg <?= $current_page == 'events.php' ? 'bg-[#D4AF37] text-black font-semibold' : 'hover:bg-[#2A2623] hover:text-white' ?>">
+                <i class="ti ti-calendar-event text-xl"></i> Events
+            </a>
+            <a href="offers.php" class="flex items-center gap-3 px-3 py-2 rounded-lg <?= $current_page == 'offers.php' ? 'bg-[#D4AF37] text-black font-semibold' : 'hover:bg-[#2A2623] hover:text-white' ?>">
+                <i class="ti ti-ticket text-xl"></i> Offers & Bundles
+            </a>
         </nav>
         <div class="p-4 border-t border-[#3A3633]">
             <a href="logout.php" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-red-500/10 hover:text-red-500 transition">

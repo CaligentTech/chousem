@@ -11,6 +11,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare("UPDATE page_content SET content_value = ? WHERE id = ?");
             
             foreach ($_POST['content'] as $id => $value) {
+                // Check if a file was uploaded for this field
+                if (isset($_FILES['image_upload']['error'][$id]) && $_FILES['image_upload']['error'][$id] === UPLOAD_ERR_OK) {
+                    $upload_dir = __DIR__ . '/../gallery/';
+                    if (!is_dir($upload_dir)) {
+                        mkdir($upload_dir, 0755, true);
+                    }
+                    $filename = time() . '_' . preg_replace("/[^a-zA-Z0-9.\-_]/", "", basename($_FILES['image_upload']['name'][$id]));
+                    $target_file = $upload_dir . $filename;
+                    
+                    if (move_uploaded_file($_FILES['image_upload']['tmp_name'][$id], $target_file)) {
+                        $value = 'gallery/' . $filename;
+                    }
+                }
                 $stmt->execute([$value, $id]);
             }
             
@@ -46,7 +59,7 @@ foreach ($all_content as $row) {
     </div>
 <?php endif; ?>
 
-<form method="POST" action="">
+<form method="POST" action="" enctype="multipart/form-data">
     <div class="space-y-8">
         <?php foreach ($grouped_content as $page => $sections): ?>
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
@@ -69,7 +82,22 @@ foreach ($all_content as $row) {
                                             <p class="text-xs text-gray-400 font-mono"><?= htmlspecialchars($item['content_key']) ?></p>
                                         </div>
                                         <div class="md:w-2/3">
-                                            <?php if (strlen($item['content_value']) > 80 || strpos($item['content_value'], "\n") !== false): ?>
+                                            <?php 
+                                            $is_image = false;
+                                            $lower_key = strtolower($item['content_key']);
+                                            if (strpos($lower_key, 'image') !== false || strpos($lower_key, 'img') !== false || strpos($lower_key, 'banner') !== false || strpos($lower_key, 'bg') !== false || strpos($lower_key, 'background') !== false || strpos($lower_key, 'photo') !== false) {
+                                                $is_image = true;
+                                            }
+                                            
+                                            if ($is_image): ?>
+                                                <div class="space-y-2">
+                                                    <input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['content_value']) ?>" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent">
+                                                    <div class="mt-2">
+                                                        <label class="block text-xs font-medium text-gray-500 mb-1">Upload to replace image (optional)</label>
+                                                        <input type="file" name="image_upload[<?= $item['id'] ?>]" accept="image/*,.pdf" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#D4AF37]">
+                                                    </div>
+                                                </div>
+                                            <?php elseif (strlen($item['content_value']) > 80 || strpos($item['content_value'], "\n") !== false): ?>
                                                 <textarea name="content[<?= $item['id'] ?>]" rows="4" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"><?= htmlspecialchars($item['content_value']) ?></textarea>
                                             <?php else: ?>
                                                 <input type="text" name="content[<?= $item['id'] ?>]" value="<?= htmlspecialchars($item['content_value']) ?>" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent">
