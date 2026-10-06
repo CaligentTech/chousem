@@ -13,6 +13,7 @@ $events = get_events($pdo);
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Experience & Events &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
   <meta name="description" content="Live entertainment, special events, and the nightlife experience at C HOUSE." />
+  <link rel="preload" as="image" href="<?= e($experience_content['hero']['image'] ?? 'gallery/exp_hero.webp') ?>" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +60,7 @@ $events = get_events($pdo);
   <div class="relative min-h-[70svh] w-full flex flex-col justify-between overflow-hidden">
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
-      <img src="<?= e($experience_content['hero']['image'] ?? './gallery/ambience12.webp') ?>" alt="C HOUSE Experience"
+      <img src="<?= e($experience_content['hero']['image'] ?? 'gallery/exp_hero.webp') ?>" alt="C HOUSE Experience"
         class="h-full w-full object-cover object-center opacity-60" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black"></div>
     </div>
@@ -300,7 +301,7 @@ $events = get_events($pdo);
   <!-- FEATURE BANNER -->
   <section class="relative py-32 px-5 text-center flex flex-col items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src="<?= e($experience_content['private_events']['image'] ?? ($experience_content['banner']['image'] ?? ($experience_content['cta']['image'] ?? './gallery/interior.webp'))) ?>" alt="<?= e($experience_content['private_events']['heading'] ?? 'Private Events & Gatherings') ?>" class="w-full h-full object-cover" />
+      <img src="<?= e($experience_content['private_events']['image'] ?? ($experience_content['banner']['image'] ?? ($experience_content['cta']['image'] ?? 'gallery/cta_dining.webp'))) ?>" alt="<?= e($experience_content['private_events']['heading'] ?? 'Private Events & Gatherings') ?>" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-[#30201B]/80 backdrop-blur-sm"></div>
     </div>
     <div class="relative z-10 max-w-4xl mx-auto">
