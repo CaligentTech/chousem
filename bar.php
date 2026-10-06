@@ -36,8 +36,17 @@ $bundles = get_offers($pdo, 'bundle');
       overflow-x: hidden;
     }
 
+    #mora-page .mora-text-action:hover {
+      color: var(--mora-clay);
+    }
+
     .mora-serif {
       font-family: 'DM Serif Display', Georgia, serif;
+    }
+
+    .mora-menu-link:hover {
+      color: #C76D4D;
+      border-color: #C76D4D;
     }
 
     .menu-item {
