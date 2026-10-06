@@ -165,9 +165,9 @@ $events = get_events($pdo);
           <?php foreach ($events as $event): ?>
             <div
               class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-              <div class="h-64 overflow-hidden relative">
+              <div class="aspect-[4/5] sm:aspect-auto sm:h-64 overflow-hidden relative">
                 <img src="<?= e($event['image_path'] ?? ($event['image'] ?? '')) ?>" alt="<?= e($event['title'] ?? ($event['name'] ?? 'Event')) ?>"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
               <div class="p-8 relative z-10 -mt-12">
@@ -189,9 +189,9 @@ $events = get_events($pdo);
           <!-- Fallback Event 1 -->
           <div
             class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-            <div class="h-64 overflow-hidden relative">
+            <div class="aspect-[4/5] sm:aspect-auto sm:h-64 overflow-hidden relative">
               <img src="./gallery/drinks/Beverage.webp" alt="Ladies Night"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
             <div class="p-8 relative z-10 -mt-12">
@@ -207,9 +207,9 @@ $events = get_events($pdo);
           <!-- Fallback Event 2 -->
           <div
             class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-            <div class="h-64 overflow-hidden relative">
+            <div class="aspect-[4/5] sm:aspect-auto sm:h-64 overflow-hidden relative">
               <img src="./gallery/ambience/Ambiance%205.jpg.webp" alt="Live Music"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
             <div class="p-8 relative z-10 -mt-12">
@@ -225,9 +225,9 @@ $events = get_events($pdo);
           <!-- Fallback Event 3 -->
           <div
             class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-            <div class="h-64 overflow-hidden relative">
+            <div class="aspect-[4/5] sm:aspect-auto sm:h-64 overflow-hidden relative">
               <img src="./gallery/special-drinks.webp" alt="Happy Hour"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
             <div class="p-8 relative z-10 -mt-12">
@@ -258,9 +258,9 @@ $events = get_events($pdo);
         <!-- Seasonal Menu -->
         <div
           class="group flex flex-col sm:flex-row bg-[#111] rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-          <div class="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative">
+          <div class="w-full sm:w-2/5 aspect-[4/5] sm:aspect-auto sm:min-h-full overflow-hidden relative shrink-0">
             <img src="<?= e($experience_content['seasonal_offers']['card_1_image'] ?? ($experience_content['seasonal_menu']['image'] ?? ($experience_content['seasonal']['card_1_image'] ?? './gallery/pasta.webp'))) ?>" alt="<?= e($experience_content['seasonal_offers']['card_1_title'] ?? ($experience_content['seasonal_menu']['heading'] ?? ($experience_content['seasonal_menu']['title'] ?? 'Summer Truffle Menu'))) ?>"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           </div>
           <div class="p-8 sm:w-3/5 flex flex-col justify-center">
             <div
@@ -278,9 +278,9 @@ $events = get_events($pdo);
         <!-- Current Offer -->
         <div
           class="group flex flex-col sm:flex-row bg-[#111] rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-          <div class="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative">
+          <div class="w-full sm:w-2/5 aspect-[4/5] sm:aspect-auto sm:min-h-full overflow-hidden relative shrink-0">
             <img src="<?= e($experience_content['seasonal_offers']['card_2_image'] ?? ($experience_content['business_lunch']['image'] ?? ($experience_content['seasonal']['card_2_image'] ?? './gallery/food/DSC05118.webp'))) ?>" alt="<?= e($experience_content['seasonal_offers']['card_2_title'] ?? ($experience_content['business_lunch']['heading'] ?? ($experience_content['business_lunch']['title'] ?? 'Business Lunch'))) ?>"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           </div>
           <div class="p-8 sm:w-3/5 flex flex-col justify-center">
             <div
