@@ -15,9 +15,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
         body { font-family: 'Manrope', sans-serif; background-color: #f3f4f6; }
     </style>
 </head>
-<body class="flex h-screen overflow-hidden">
+<body class="flex h-screen overflow-hidden relative">
+    <!-- Mobile Backdrop -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity opacity-0"></div>
+    
     <!-- Sidebar -->
-    <aside class="w-64 bg-[#1C1A18] text-gray-300 flex flex-col hidden md:flex">
+    <aside id="admin-sidebar" class="w-64 bg-[#1C1A18] text-gray-300 flex-col absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-200 ease-in-out z-50 flex shadow-2xl md:shadow-none">
         <div class="h-16 flex items-center px-6 border-b border-[#3A3633]">
             <span class="text-xl font-bold text-white tracking-wide">C HOUSE <span class="text-[#D4AF37]">ADMIN</span></span>
         </div>
@@ -60,7 +63,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <!-- Main Content -->
     <main class="flex-1 flex flex-col overflow-hidden">
         <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6 z-10 md:justify-end">
-            <button class="md:hidden text-gray-600 focus:outline-none">
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none">
                 <i class="ti ti-menu-2 text-2xl"></i>
             </button>
             <div class="flex items-center gap-4">
