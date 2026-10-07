@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/includes/auth.php';
 
 $message = '';
 
@@ -47,6 +47,8 @@ if (isset($_GET['edit'])) {
     $stmt->execute([$_GET['edit']]);
     $edit_item = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">

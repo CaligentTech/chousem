@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/includes/auth.php';
 
 $message = '';
 
@@ -39,6 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Fetch all settings
 $stmt = $pdo->query("SELECT * FROM site_settings ORDER BY setting_key");
 $settings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="mb-8 flex items-center justify-between">

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/includes/auth.php';
 
 // Fetch quick stats
 $stats = [
@@ -8,6 +8,8 @@ $stats = [
     'Events' => $pdo->query("SELECT COUNT(*) FROM events")->fetchColumn(),
     'Reviews' => $pdo->query("SELECT COUNT(*) FROM reviews")->fetchColumn()
 ];
+
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="mb-8">

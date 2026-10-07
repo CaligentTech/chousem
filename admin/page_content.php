@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/includes/auth.php';
 
 $message = '';
 
@@ -44,6 +44,8 @@ $grouped_content = [];
 foreach ($all_content as $row) {
     $grouped_content[$row['page']][$row['section']][] = $row;
 }
+
+require_once __DIR__ . '/includes/header.php';
 ?>
 
 <div class="mb-8 flex items-center justify-between">
