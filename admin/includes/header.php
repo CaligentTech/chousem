@@ -15,7 +15,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         body { font-family: 'Manrope', sans-serif; background-color: #f3f4f6; }
     </style>
 </head>
-<body class="flex h-screen overflow-hidden relative">
+<body class="flex h-[100dvh] overflow-hidden relative">
     <!-- Mobile Backdrop -->
     <div id="sidebar-backdrop" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity opacity-0"></div>
     
@@ -73,4 +73,4 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </div>
             </div>
         </header>
-        <div class="flex-1 overflow-y-auto p-6 md:p-8">
+        <div class="flex-1 overflow-y-auto p-6 pb-24 md:p-8 md:pb-8">

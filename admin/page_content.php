@@ -113,7 +113,7 @@ foreach ($all_content as $row) {
         <?php endforeach; ?>
     </div>
 
-    <div class="fixed bottom-0 left-0 right-0 md:left-64 p-4 bg-white border-t border-gray-200 shadow-lg flex justify-end z-20">
+    <div class="fixed bottom-0 left-0 right-0 md:left-64 p-4 pb-8 md:pb-4 bg-white border-t border-gray-200 shadow-lg flex justify-end z-20">
         <button type="submit" class="bg-[#D4AF37] hover:bg-[#B3932E] text-black font-bold px-8 py-3 rounded-lg shadow-md transition flex items-center gap-2">
             <i class="ti ti-device-floppy"></i> Save All Changes
         </button>
