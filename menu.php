@@ -3,20 +3,6 @@ require_once __DIR__ . '/admin/includes/db.php';
 require_once __DIR__ . '/admin/includes/functions.php';
 $s = get_all_settings($pdo);
 $categories = get_categories($pdo, 'food');
-
-/*
- * Build the grid cells.
- * The original HTML puts some categories together in ONE grid cell
- * (Zuppe + Fries, Secondi + Griglia, Dolci + Non Alcohol Sips).
- * Categories sharing the same `group_no` go into the same cell.
- * If `group_no` is empty/missing, each category gets its own cell.
- */
-$groups = [];
-foreach ($categories as $cat) {
-  $key = !empty($cat['group_no']) ? 'g' . $cat['group_no'] : 'c' . $cat['id'];
-  $groups[$key][] = $cat;
-}
-$groups = array_values($groups);
 ?>
 <!DOCTYPE html>
 <html lang="en" class="bg-[#1C1A18] overscroll-none">
@@ -25,6 +11,7 @@ $groups = array_values($groups);
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>C HOUSE - Menu</title>
+  <link rel="preload" as="image" href="gallery/food.webp" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap');
 
@@ -47,17 +34,8 @@ $groups = array_values($groups);
       overflow-x: hidden;
     }
 
-    #mora-page .mora-text-action:hover {
-      color: var(--mora-clay);
-    }
-
     .mora-serif {
       font-family: 'DM Serif Display', Georgia, serif;
-    }
-
-    .mora-menu-link:hover {
-      color: #C76D4D;
-      border-color: #C76D4D;
     }
 
     .menu-item {
@@ -114,8 +92,8 @@ $groups = array_values($groups);
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
           href="bar.php">Bar</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-          href="experience.php">Experience</a>
-        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="experience.php">Experience</a> <a
+          class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
           href="gallery.php">Gallery</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
           href="contact.php">Contact</a>
@@ -130,13 +108,20 @@ $groups = array_values($groups);
     <div id="mobile-menu"
       class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
       <nav class="flex flex-col gap-3">
-        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10" href="./index.php">Home</a>
-        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10" href="menu.php">Menu</a>
-        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10" href="./about.php">About</a>
-        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10" href="bar.php">Bar</a>
-        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10" href="./experience.php">Experience</a>
-        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10" href="./gallery.php">Gallery</a>
-        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10" href="./contact.php">Contact</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="./index.php">Home</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="menu.php">Menu</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="./about.php">About</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="bar.php">Bar</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="./experience.php">Experience</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="./gallery.php">Gallery</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="./contact.php">Contact</a>
       </nav>
     </div>
   </header>
@@ -145,7 +130,7 @@ $groups = array_values($groups);
     <!-- Hero Header -->
     <section class="relative pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center justify-center">
       <div class="absolute inset-0 z-0">
-        <img alt="Menu hero" class="h-full w-full object-cover opacity-30" decoding="async" loading="lazy"
+        <img alt="Menu hero" class="h-full w-full object-cover opacity-30" decoding="async"
           src="gallery/food.webp" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
       </div>
@@ -163,88 +148,51 @@ $groups = array_values($groups);
     <!-- Menu Content -->
     <section class="py-12 px-5 lg:px-12 max-w-[1360px] mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
-
-        <?php foreach ($groups as $gi => $group): ?>
-          <div class="menu-section" style="animation-delay: <?= number_format(($gi + 1) * 0.1, 1) ?>s">
-
-            <?php foreach ($group as $ci => $cat):
-              $items = get_menu_items($pdo, $cat['id']);
-              $hasImage = !empty($cat['image']);
-            ?>
-              <?php if ($hasImage): ?>
-                <div class="relative mb-2 flex items-center justify-between">
-                  <h2 class="mora-serif text-4xl mb-0"><?= e($cat['name']) ?></h2>
-                  <img src="<?= e($cat['image']) ?>" alt="<?= e($cat['name']) ?>"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
-                </div>
-              <?php else: ?>
-                <h2 class="mora-serif text-4xl mb-2 <?= $ci > 0 ? 'mt-12' : '' ?>"><?= e($cat['name']) ?></h2>
-              <?php endif; ?>
-
-              <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold"><?= e($cat['subtitle'] ?? '') ?></p>
-
-              <div class="flex flex-col gap-5">
-                <?php foreach ($items as $item): ?>
-                  <div class="menu-item flex justify-between items-baseline pb-2">
-                    <span class="text-lg"><?= e($item['name']) ?><?= !empty($item['dietary_tag']) ? ' (' . e($item['dietary_tag']) . ')' : '' ?></span>
-                    <span class="menu-price"><?= e($item['price']) ?></span>
-                  </div>
-                <?php endforeach; ?>
+        <?php foreach ($categories as $cat):
+          $items = get_menu_items($pdo, $cat['id']);
+        ?>
+          <div class="menu-section">
+            <?php
+            $category_images = [
+              'Antipasti' => 'gallery/calamari-fritti.webp',
+              'Primi' => 'gallery/fettuccine-alfredo.webp'
+            ];
+            if (isset($category_images[$cat['name']])): ?>
+              <div class="relative mb-2 flex items-center justify-between">
+                <h2 class="mora-serif text-4xl mb-0"><?= e($cat['name']) ?></h2>
+                <img src="<?= e($category_images[$cat['name']]) ?>" alt="<?= e($cat['name']) ?>" class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
               </div>
-            <?php endforeach; ?>
-
+            <?php else: ?>
+              <h2 class="mora-serif text-4xl mb-2"><?= e($cat['name']) ?></h2>
+            <?php endif; ?>
+            <?php if ($cat['subtitle']): ?>
+              <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold"><?= e($cat['subtitle']) ?></p>
+            <?php endif; ?>
+            <div class="flex flex-col gap-5">
+              <?php foreach ($items as $item): ?>
+                <div class="menu-item flex justify-between items-baseline pb-2">
+                  <span class="text-lg">
+                    <?= e($item['name']) ?>
+                    <?= $item['dietary_tag'] ? ' (' . e($item['dietary_tag']) . ')' : '' ?>
+                  </span>
+                  <span class="menu-price"><?= e($item['price']) ?></span>
+                </div>
+              <?php endforeach; ?>
+            </div>
           </div>
         <?php endforeach; ?>
-
-        <!-- Drinks block (still static: shakes, brews, refreshments) -->
-        <div class="menu-section lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 pt-12 border-t border-[var(--mora-espresso)]/20"
-          style="animation-delay: 0.7s">
-          <div>
-            <h3 class="mora-serif text-2xl mb-6">Rich & Creamy Shakes</h3>
-            <div class="flex flex-col gap-4">
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Nutella Ferrero Shake</span><span class="menu-price">48</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Lotus Milkshake</span><span class="menu-price">48</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Vanilla / Strawberry / Chocolate</span><span class="menu-price">40</span></div>
-            </div>
-
-            <h3 class="mora-serif text-2xl mb-6 mt-10">Hot & Chilled Brews</h3>
-            <div class="flex flex-col gap-4">
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Iced Tea (Peach / Lemon / Passion Fruit)</span><span class="menu-price">38</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Flavored Iced / Blended Coffee</span><span class="menu-price">39</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Cappuccino / Café Latte</span><span class="menu-price">35</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Hot Chocolate</span><span class="menu-price">38</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Masala Chai</span><span class="menu-price">20</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Espresso (Single / Double)</span><span class="menu-price">20 / 30</span></div>
-            </div>
-          </div>
-
-          <div class="md:col-span-2">
-            <h3 class="mora-serif text-2xl mb-6">Cooling Refreshments</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">RedBull</span><span class="menu-price">35</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[14px]">Fresh Juice / Organic Coconut Water</span><span class="menu-price">32</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Traditional Lassi (Sweet / Salted)</span><span class="menu-price">30</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Butter Milk (Chaas)</span><span class="menu-price">28</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base text-[13px]">Pepsi, Diet Pepsi, 7up, Mirinda, Soda, Tonic</span><span class="menu-price">19</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Still Water (S) or (L)</span><span class="menu-price">18 / 28</span></div>
-              <div class="menu-item flex justify-between items-baseline pb-2"><span class="text-base">Sparkling Water (S) or (L)</span><span class="menu-price">28 / 38</span></div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /grid -->
+      </div>
 
       <div class="mt-12 pt-8 border-t border-[var(--mora-espresso)]/20 text-center text-sm font-semibold opacity-70">
-        <?= e(get_content($pdo, 'menu', 'disclaimer', 'text')) ?> <br>
+        <p><?= e(get_content($pdo, 'menu', 'disclaimer', 'text')) ?></p> <br>
         <span class="font-normal text-gray-600 mt-2 block">(V) Vegetarian &nbsp;|&nbsp; (NV) Non-Vegetarian
           &nbsp;|&nbsp; (S) Seafood &nbsp;|&nbsp; (P) Prawns</span>
       </div>
     </section>
 
   </main>
-
+  <!-- FOOTER SPACING -->
   <?php include __DIR__ . '/includes/footer.php'; ?>
-
   <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
     class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
     <i class="ti ti-brand-whatsapp text-2xl"></i>

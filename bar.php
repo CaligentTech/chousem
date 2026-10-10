@@ -14,6 +14,7 @@ $bundles = get_offers($pdo, 'bundle');
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>C HOUSE - Bar Menu</title>
+  <link rel="preload" as="image" href="gallery/drinks/DSC05172.webp" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap');
 
@@ -141,8 +142,8 @@ $bundles = get_offers($pdo, 'bundle');
     <!-- Hero Header -->
     <section class="relative pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center justify-center">
       <div class="absolute inset-0 z-0">
-        <img alt="Bar menu hero" class="h-full w-full object-cover opacity-30" decoding="async" loading="lazy"
-          src="gallery/food.webp" />
+        <img alt="Bar menu hero" class="h-full w-full object-cover opacity-30" decoding="async"
+          src="gallery/drinks/DSC05172.webp" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
       </div>
       <div class="relative z-10 text-center max-w-3xl mx-auto">
