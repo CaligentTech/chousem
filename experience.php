@@ -13,7 +13,6 @@ $events = get_events($pdo);
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Experience & Events &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
   <meta name="description" content="Live entertainment, special events, and the nightlife experience at C HOUSE." />
-  <link rel="preload" as="image" href="<?= e($experience_content['hero']['image'] ?? 'gallery/exp_hero.webp') ?>" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,13 +68,13 @@ $events = get_events($pdo);
   <div class="relative min-h-[70svh] w-full flex flex-col justify-between overflow-hidden">
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
-      <img src="<?= e($experience_content['hero']['image'] ?? 'gallery/exp_hero.webp') ?>" alt="C HOUSE Experience"
+      <img src="<?= e($experience_content['hero']['image'] ?? './gallery/ambience12.webp') ?>" alt="C HOUSE Experience"
         class="h-full w-full object-cover object-center opacity-60" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black"></div>
     </div>
 
     <!-- NAVBAR -->
-    <header aria-label="Primary navigation" class="relative z-50 pt-6 px-5 sm:px-8 lg:px-12 text-white">
+    <header id="site-header" aria-label="Primary navigation" class="fixed top-0 inset-x-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-white transition-all duration-300">
       <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
         <div class="flex items-center">
           <a aria-label="home" class="flex items-center gap-3 text-white" href="./index.php">
@@ -143,10 +142,10 @@ $events = get_events($pdo);
       </div>
     </header>
 
-    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 py-16 text-center">
-      <p class="text-[11px] uppercase tracking-[.25em] text-[#AA8243] font-bold mb-6"><?= e($experience_content['hero']['kicker'] ?? ($experience_content['hero']['subtitle'] ?? 'Live the moment')) ?></p>
+    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 pt-36 pb-16 text-center">
+      <p class="text-[11px] uppercase tracking-[.25em] text-[#F2E7D4] font-bold mb-6"><?= e($experience_content['hero']['kicker'] ?? ($experience_content['hero']['subtitle'] ?? 'Live the moment')) ?></p>
       <h1
-        class="mora-serif text-white text-5xl sm:text-7xl lg:text-[7rem] font-normal tracking-tight uppercase leading-[0.9] drop-shadow-2xl">
+        class="mora-serif text-white text-5xl md:text-7xl mb-2 font-normal tracking-tight leading-[0.95] drop-shadow-2xl">
         <?= e($experience_content['hero']['heading'] ?? 'The Experience') ?>
       </h1>
       <p class="mt-8 text-sm sm:text-base text-gray-300 max-w-2xl font-light leading-relaxed">
@@ -174,9 +173,9 @@ $events = get_events($pdo);
           <?php foreach ($events as $event): ?>
             <div
               class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-              <div class="aspect-[4/5] sm:aspect-auto sm:h-64 overflow-hidden relative">
+              <div class="h-64 overflow-hidden relative">
                 <img src="<?= e($event['image_path'] ?? ($event['image'] ?? '')) ?>" alt="<?= e($event['title'] ?? ($event['name'] ?? 'Event')) ?>"
-                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
               </div>
               <div class="p-8 relative z-10 -mt-12">
@@ -198,9 +197,9 @@ $events = get_events($pdo);
           <!-- Fallback Event 1 -->
           <div
             class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-            <div class="aspect-[4/5] sm:aspect-auto sm:h-64 overflow-hidden relative">
+            <div class="h-64 overflow-hidden relative">
               <img src="./gallery/drinks/Beverage.webp" alt="Ladies Night"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
             <div class="p-8 relative z-10 -mt-12">
@@ -216,9 +215,9 @@ $events = get_events($pdo);
           <!-- Fallback Event 2 -->
           <div
             class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-            <div class="aspect-[4/5] sm:aspect-auto sm:h-64 overflow-hidden relative">
+            <div class="h-64 overflow-hidden relative">
               <img src="./gallery/ambience/Ambiance%205.jpg.webp" alt="Live Music"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
             <div class="p-8 relative z-10 -mt-12">
@@ -234,9 +233,9 @@ $events = get_events($pdo);
           <!-- Fallback Event 3 -->
           <div
             class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-            <div class="aspect-[4/5] sm:aspect-auto sm:h-64 overflow-hidden relative">
+            <div class="h-64 overflow-hidden relative">
               <img src="./gallery/special-drinks.webp" alt="Happy Hour"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
             <div class="p-8 relative z-10 -mt-12">
@@ -267,9 +266,9 @@ $events = get_events($pdo);
         <!-- Seasonal Menu -->
         <div
           class="group flex flex-col sm:flex-row bg-[#111] rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-          <div class="w-full sm:w-2/5 aspect-[4/5] sm:aspect-auto sm:min-h-full overflow-hidden relative shrink-0">
+          <div class="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative">
             <img src="<?= e($experience_content['seasonal_offers']['card_1_image'] ?? ($experience_content['seasonal_menu']['image'] ?? ($experience_content['seasonal']['card_1_image'] ?? './gallery/pasta.webp'))) ?>" alt="<?= e($experience_content['seasonal_offers']['card_1_title'] ?? ($experience_content['seasonal_menu']['heading'] ?? ($experience_content['seasonal_menu']['title'] ?? 'Summer Truffle Menu'))) ?>"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           </div>
           <div class="p-8 sm:w-3/5 flex flex-col justify-center">
             <div
@@ -287,9 +286,9 @@ $events = get_events($pdo);
         <!-- Current Offer -->
         <div
           class="group flex flex-col sm:flex-row bg-[#111] rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
-          <div class="w-full sm:w-2/5 aspect-[4/5] sm:aspect-auto sm:min-h-full overflow-hidden relative shrink-0">
+          <div class="sm:w-2/5 h-64 sm:h-auto overflow-hidden relative">
             <img src="<?= e($experience_content['seasonal_offers']['card_2_image'] ?? ($experience_content['business_lunch']['image'] ?? ($experience_content['seasonal']['card_2_image'] ?? './gallery/food/DSC05118.webp'))) ?>" alt="<?= e($experience_content['seasonal_offers']['card_2_title'] ?? ($experience_content['business_lunch']['heading'] ?? ($experience_content['business_lunch']['title'] ?? 'Business Lunch'))) ?>"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           </div>
           <div class="p-8 sm:w-3/5 flex flex-col justify-center">
             <div
@@ -306,6 +305,7 @@ $events = get_events($pdo);
       </div>
     </div>
   </section>
+
 
   <!-- FEATURE BANNER -->
   <section class="relative py-32 px-5 text-center flex flex-col items-center justify-center overflow-hidden">
@@ -326,7 +326,7 @@ $events = get_events($pdo);
   <!-- FOOTER SPACING -->
   <?php include __DIR__ . '/includes/footer.php'; ?>
 
-  <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
+  <a aria-label="Chat with us on WhatsApp" rel="noopener" href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
     class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
     <i class="ti ti-brand-whatsapp text-2xl"></i>
   </a>
@@ -334,6 +334,17 @@ $events = get_events($pdo);
   <script>
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+
+    const siteHeader = document.getElementById('site-header');
+    const syncHeader = () => {
+      siteHeader.classList.toggle('bg-black/80', window.scrollY > 24);
+      siteHeader.classList.toggle('backdrop-blur-md', window.scrollY > 24);
+      siteHeader.classList.toggle('shadow-lg', window.scrollY > 24);
+    };
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, {
+      passive: true
+    });
 
     if (menuBtn && mobileMenu) {
       menuBtn.addEventListener('click', () => {

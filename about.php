@@ -51,6 +51,40 @@ $reviews = get_reviews($pdo);
       font-family: 'DM Serif Display', Georgia, serif;
     }
 
+    /* A-07: auto-scrolling review row */
+    .review-marquee {
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .review-track {
+      animation: review-scroll 45s linear infinite;
+    }
+
+    .review-marquee:hover .review-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes review-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .review-track {
+        animation: none;
+      }
+
+      .review-marquee {
+        overflow-x: auto;
+      }
+    }
+
     .mora-menu-link:hover {
       color: #C76D4D;
       border-color: #C76D4D;
@@ -61,7 +95,7 @@ $reviews = get_reviews($pdo);
 <body class="bg-black text-white overflow-x-hidden">
 
   <!-- HERO CONTAINER -->
-  <div class="relative min-h-[100svh] w-full flex flex-col justify-between overflow-hidden">
+  <div class="relative min-h-[55svh] w-full flex flex-col justify-between overflow-hidden">
 
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
@@ -72,12 +106,12 @@ $reviews = get_reviews($pdo);
     </div>
 
     <!-- NAVBAR (MATCHING INDEX.HTML WITH ROUND WHITE RESERVE BUTTON) -->
-    <header aria-label="Primary navigation" class="relative z-50 pt-6 px-5 sm:px-8 lg:px-12 text-white">
+    <header id="site-header" aria-label="Primary navigation" class="fixed top-0 inset-x-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-white transition-all duration-300">
       <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
 
         <!-- Logo & Brand Name -->
         <div class="flex items-center">
-          <a aria-label="home" class="flex items-center gap-3 text-white" href="./index.html">
+          <a aria-label="home" class="flex items-center gap-3 text-white" href="./index.php">
             <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo" />
             <span class="font-sans text-[32px] tracking-[0.2em] font-light text-white">C HOUSE</span>
           </a>
@@ -147,14 +181,14 @@ $reviews = get_reviews($pdo);
     </header>
 
     <!-- CENTER HERO CONTENT: ABOUT US IN BIG WHITE LETTERS -->
-    <main class="relative z-10 flex-1 flex items-center justify-center px-5 py-16 text-center">
-      <h1 class="mora-serif text-white text-6xl sm:text-7xl lg:text-[7.5rem] font-bold tracking-tight uppercase leading-none select-none drop-shadow-2xl">
-        <?= e($about_content['hero']['heading'] ?? 'ABOUT US') ?>
+    <main class="relative z-10 flex-1 flex items-center justify-center px-5 pt-36 pb-10 text-center">
+      <h1 class="mora-serif text-white text-5xl md:text-7xl font-normal tracking-tight leading-tight select-none drop-shadow-2xl">
+        <?= e($about_content['hero']['heading'] ?? 'About Us') ?>
       </h1>
     </main>
 
     <!-- Bottom Spacing Anchor -->
-    <div class="relative z-10 pb-10 sm:pb-14"></div>
+    <div class="relative z-10 pb-4 sm:pb-6"></div>
 
   </div>
 
@@ -180,6 +214,7 @@ $reviews = get_reviews($pdo);
         </div>
 
       </div>
+    </div>
   </section>
 
   <!-- WHAT MAKES US SPECIAL SECTION -->
@@ -201,7 +236,7 @@ $reviews = get_reviews($pdo);
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6 text-white z-10">
               <span
-                class="text-[10px] uppercase tracking-[.2em] text-[#F2E7D4] font-bold bg-white/15 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 inline-block mb-2">​<?= e($about_content['special']['slide_1_tag']) ?></span>
+                class="text-[10px] uppercase tracking-[.2em] text-[#F2E7D4] font-bold bg-white/15 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 inline-block mb-2"><?= e($about_content['special']['slide_1_tag']) ?></span>
               <h3 class="mora-serif text-2xl sm:text-3xl text-white font-medium"><?= e($about_content['special']['slide_1_title']) ?></h3>
               <p class="text-xs sm:text-sm text-gray-200 mt-1 max-w-md leading-relaxed"><?= e($about_content['special']['slide_1_desc']) ?></p>
             </div>
@@ -216,7 +251,7 @@ $reviews = get_reviews($pdo);
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6 text-white z-10">
               <span
-                class="text-[10px] uppercase tracking-[.2em] text-[#F2E7D4] font-bold bg-white/15 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 inline-block mb-2">​<?= e($about_content['special']['slide_2_tag']) ?></span>
+                class="text-[10px] uppercase tracking-[.2em] text-[#F2E7D4] font-bold bg-white/15 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 inline-block mb-2"><?= e($about_content['special']['slide_2_tag']) ?></span>
               <h3 class="mora-serif text-2xl sm:text-3xl text-white font-medium"><?= e($about_content['special']['slide_2_title']) ?>
               </h3>
               <p class="text-xs sm:text-sm text-gray-200 mt-1 max-w-md leading-relaxed"><?= e($about_content['special']['slide_2_desc']) ?></p>
@@ -232,7 +267,7 @@ $reviews = get_reviews($pdo);
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6 text-white z-10">
               <span
-                class="text-[10px] uppercase tracking-[.2em] text-[#F2E7D4] font-bold bg-white/15 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 inline-block mb-2">Terrace</span>
+                class="text-[10px] uppercase tracking-[.2em] text-[#F2E7D4] font-bold bg-white/15 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 inline-block mb-2"><?= e($about_content['special']['slide_3_tag']) ?></span>
               <h3 class="mora-serif text-2xl sm:text-3xl text-white font-medium"><?= e($about_content['special']['slide_3_title']) ?></h3>
               <p class="text-xs sm:text-sm text-gray-200 mt-1 max-w-md leading-relaxed"><?= e($about_content['special']['slide_3_desc']) ?></p>
             </div>
@@ -313,7 +348,7 @@ $reviews = get_reviews($pdo);
             </button>
             <div
               class="accordion-content hidden px-6 py-4 bg-[#FAF7F2] text-[#4a3e39] text-sm leading-relaxed border-t border-[#30201B]/10">
-              <p><?= e($about_content['special']['accordion_2_content']) ?></p>
+              <p><?= e($about_content['special']['accordion_3_content']) ?></p>
             </div>
           </div>
 
@@ -344,8 +379,8 @@ $reviews = get_reviews($pdo);
 
       <!-- Stat 1 -->
       <div class="flex flex-col items-center">
-        <span class="mora-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
-          <?= e($about_content['stats']['stat_1_value']) ?>
+        <span class="mora-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-normal leading-none">
+          <span class="stat-counter" data-value="<?= e($about_content['stats']['stat_1_value']) ?>"><?= e($about_content['stats']['stat_1_value']) ?></span>
         </span>
         <p class="mt-3 text-xs sm:text-sm uppercase tracking-[.18em] text-[#F2E7D4]/80 font-medium">
           <?= e($about_content['stats']['stat_1_label']) ?>
@@ -354,8 +389,8 @@ $reviews = get_reviews($pdo);
 
       <!-- Stat 2 -->
       <div class="flex flex-col items-center sm:border-x sm:border-white/15 px-4">
-        <span class="mora-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
-          <?= e($about_content['stats']['stat_2_value']) ?>
+        <span class="mora-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-normal leading-none">
+          <span class="stat-counter" data-value="<?= e($about_content['stats']['stat_2_value']) ?>"><?= e($about_content['stats']['stat_2_value']) ?></span>
         </span>
         <p class="mt-3 text-xs sm:text-sm uppercase tracking-[.18em] text-[#F2E7D4]/80 font-medium">
           <?= e($about_content['stats']['stat_2_label']) ?>
@@ -364,8 +399,8 @@ $reviews = get_reviews($pdo);
 
       <!-- Stat 3 -->
       <div class="flex flex-col items-center">
-        <span class="mora-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
-          <?= e($about_content['stats']['stat_3_value']) ?>
+        <span class="mora-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-normal leading-none">
+          <span class="stat-counter" data-value="<?= e($about_content['stats']['stat_3_value']) ?>"><?= e($about_content['stats']['stat_3_value']) ?></span>
         </span>
         <p class="mt-3 text-xs sm:text-sm uppercase tracking-[.18em] text-[#F2E7D4]/80 font-medium">
           <?= e($about_content['stats']['stat_3_label']) ?>
@@ -391,26 +426,31 @@ $reviews = get_reviews($pdo);
         </p>
       </div>
 
-      <!-- Reviews 2x2 Grid (Reference Format) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-        <?php foreach ($reviews as $review): ?>
-          <div class="relative p-7 sm:p-8 rounded-2xl bg-[#FAF8F5] border border-[#30201B]/8 flex flex-col justify-between hover:shadow-lg transition-all duration-300">
-            <div class="relative">
-              <p class="text-[15px] sm:text-base text-[#4a3e39] leading-relaxed relative z-10 font-normal">
-                &ldquo;<?= e($review['review_text']) ?>&rdquo;
-              </p>
-              <span class="absolute -bottom-3 right-0 text-5xl font-serif text-[#30201B]/10 select-none pointer-events-none">&rdquo;</span>
+      <!-- Reviews: single auto-scrolling row (cards glide in from the right and out to the left) -->
+      <div class="review-marquee overflow-hidden -mx-6 sm:-mx-12 lg:-mx-20">
+        <div class="review-track flex w-max">
+          <?php for ($pass = 0; $pass < 2; $pass++): ?>
+            <div class="flex gap-6 pr-6" <?= $pass ? 'aria-hidden="true"' : '' ?>>
+              <?php foreach ($reviews as $review): ?>
+                <div class="review-card relative w-[300px] sm:w-[380px] shrink-0 p-7 rounded-2xl bg-[#FAF8F5] border border-[#30201B]/8 flex flex-col justify-between shadow-sm">
+                  <div class="relative">
+                    <p class="text-[15px] text-[#4a3e39] leading-relaxed relative z-10 font-normal">
+                      &ldquo;<?= e($review['review_text']) ?>&rdquo;
+                    </p>
+                  </div>
+                  <div class="mt-6 pt-5 border-t border-[#30201B]/8 flex flex-col items-start">
+                    <div class="flex items-center gap-1 text-amber-500 text-base mb-1.5">
+                      <?php for ($i = 1; $i <= 5; $i++): ?>
+                        <i class="ti ti-star-filled <?= $i > $review['star_rating'] ? 'text-gray-300' : '' ?>"></i>
+                      <?php endfor; ?>
+                    </div>
+                    <span class="font-bold text-base text-[#30201B] tracking-wide"><?= e($review['reviewer_name']) ?></span>
+                  </div>
+                </div>
+              <?php endforeach; ?>
             </div>
-            <div class="mt-6 pt-5 border-t border-[#30201B]/8 flex flex-col items-start">
-              <div class="flex items-center gap-1 text-amber-500 text-base mb-1.5">
-                <?php for ($i = 1; $i <= 5; $i++): ?>
-                  <i class="ti ti-star-filled <?= $i > $review['star_rating'] ? 'text-gray-300' : '' ?>"></i>
-                <?php endfor; ?>
-              </div>
-              <span class="font-bold text-base text-[#30201B] tracking-wide"><?= e($review['reviewer_name']) ?></span>
-            </div>
-          </div>
-        <?php endforeach; ?>
+          <?php endfor; ?>
+        </div>
       </div>
 
     </div>
@@ -432,6 +472,63 @@ $reviews = get_reviews($pdo);
         menuBtn.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
       });
     }
+
+    // Sticky header background after scrolling
+    const siteHeader = document.getElementById('site-header');
+    const syncHeader = () => {
+      const on = window.scrollY > 24;
+      siteHeader.classList.toggle('bg-black/80', on);
+      siteHeader.classList.toggle('backdrop-blur-md', on);
+      siteHeader.classList.toggle('shadow-lg', on);
+    };
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, {
+      passive: true
+    });
+
+    // Stats count-up: "10K+" -> number 10, suffix "K+"; "95%" -> 95, "%"
+    (function initCounters() {
+      const els = document.querySelectorAll('.stat-counter');
+      els.forEach((el) => {
+        const m = el.dataset.value.trim().match(/^([\d.,]+)(.*)$/);
+        if (!m) return;
+        el.dataset.target = m[1].replace(/,/g, '');
+        el.dataset.suffix = m[2];
+        el.innerHTML = '<span class="stat-num">0</span><span class="stat-suffix ml-1.5">' + m[2] + '</span>';
+      });
+      const run = (el) => {
+        const target = parseFloat(el.dataset.target);
+        const num = el.querySelector('.stat-num');
+        if (isNaN(target) || !num) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          num.textContent = target;
+          return;
+        }
+        const t0 = performance.now(),
+          dur = 3500;
+        const tick = (t) => {
+          const p = Math.min((t - t0) / dur, 1);
+          num.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(run);
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            run(en.target);
+            io.unobserve(en.target);
+          }
+        });
+      }, {
+        threshold: 0.4
+      });
+      els.forEach((el) => io.observe(el));
+    })();
 
     // Special Section Carousel Logic
     (function initSpecialCarousel() {
@@ -542,7 +639,7 @@ $reviews = get_reviews($pdo);
     })();
   </script>
 
-  <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
+  <a aria-label="Chat with us on WhatsApp" rel="noopener" href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
     class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
     <i class="ti ti-brand-whatsapp text-2xl"></i>
   </a>

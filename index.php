@@ -602,13 +602,13 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
     <div class="mora-sans overflow-x-clip bg-[var(--mora-parchment)] text-[var(--mora-espresso)]" data-kid="2"
       data-name="main page container" id="mora-page">
       <header aria-label="Primary navigation"
-        class="absolute inset-x-0 top-0 z-50 pt-6 px-5 sm:px-8 lg:px-12 text-[#f5e6c8]" data-kid="2-1"
+        class="fixed inset-x-0 top-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-[#f5e6c8] transition-all duration-300" data-kid="2-1"
         data-name="primary navigation header" id="mora-nav">
-        <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-center relative" data-kid="2-1-1"
+        <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative" data-kid="2-1-1"
           data-name="navigation bar layout container">
-          <div class="absolute left-0 flex items-center">
-            <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="index.php">
-              <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="Logo">
+          <div class="flex items-center">
+            <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="./index.php">
+              <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo">
               <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
             </a>
           </div>
@@ -631,7 +631,14 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
               href="contact.php">Contact</a>
           </nav>
-          <button id="mobile-menu-button" aria-expanded="false" class="lg:hidden absolute right-0 flex items-center justify-center p-2 text-[#f5e6c8]">
+          <div class="hidden lg:flex items-center gap-4">
+            <a href="./contact.php"
+              class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
+              <span>Reserve a Table</span>
+              <i class="ti ti-arrow-up-right text-base"></i>
+            </a>
+          </div>
+          <button id="mobile-menu-button" aria-expanded="false" aria-label="Open menu" class="lg:hidden flex items-center justify-center p-2 text-[#f5e6c8]">
             <i class="ti ti-menu-2 text-2xl"></i>
           </button>
         </div>
@@ -666,7 +673,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           class="relative h-svh overflow-hidden bg-black text-[#f5e6c8] flex flex-col items-center justify-center"
           data-kid="2-2-1" data-name="hero section" id="home">
           <div class="absolute inset-0" data-kid="2-2-1-1" data-name="hero image background container">
-            <img alt="Hero Night" class="absolute inset-0 h-full w-full object-cover" decoding="async"
+            <img alt="C HOUSE dining room at night, warmly lit" class="absolute inset-0 h-full w-full object-cover" decoding="async"
               src="<?= e($s['hero_image']) ?>" />
             <div class="absolute inset-0 bg-black/20"></div>
           </div>
@@ -677,7 +684,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </h1>
 
           <div class="absolute bottom-2 lg:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
-            <a class="text-[#f5e6c8] hover:text-white transition-colors mt-2" href="menu.php">
+            <a class="text-[#f5e6c8] hover:text-white transition-colors mt-2" href="menu.php" aria-label="View menu">
               <svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                 stroke-width="1" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
                 <polyline points="4 8 12 16 20 8"></polyline>
@@ -686,30 +693,21 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </div>
           <div class="flex absolute bottom-14 lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
             <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-10">
-              <div class="flex items-center lg:flex-col gap-2 lg:gap-1 shrink-0">
+              <?php $reviews_url = $s['google_reviews_url'] ?? $s['google_maps_url'] ?? ''; ?>
+              <<?= $reviews_url ? 'a href="' . e($reviews_url) . '" target="_blank" rel="noopener" aria-label="Read our Google reviews"' : 'div' ?> class="flex items-center lg:flex-col gap-2 lg:gap-1 shrink-0 hover:opacity-80 transition-opacity">
                 <span class="text-white text-2xl lg:text-[32px] font-bold leading-none"><?= e($s['google_rating']) ?> <span
                     class="text-yellow-500 text-xl lg:text-[26px] align-baseline"><b>&#9733;</b></span></span>
                 <span class="text-gray-300 text-[11px] lg:text-[13px] uppercase tracking-wider">Google Rating</span>
-              </div>
+              </<?= $reviews_url ? 'a' : 'div' ?>>
               <div class="flex flex-col lg:gap-2 text-white/90 mora-serif text-sm lg:text-lg tracking-wide">
                 <p><?= e($s['hero_subtext_1']) ?></p>
                 <p><?= e($s['hero_subtext_2']) ?></p>
               </div>
             </div>
             <div class="flex items-center gap-4 lg:gap-6 mt-1 lg:mt-0">
-              <div class="flex items-center gap-2 lg:gap-3">
-                <a href="contact.php"
-                  class="bg-white text-black text-[11px] lg:text-[13px] font-semibold rounded-full py-2.5 px-5 lg:py-3 lg:px-6 hover:bg-[#5C3D2E] hover:text-white transition-colors whitespace-nowrap shadow-lg">
-                  Reserve a Table
-                </a>
-                <a href="contact.php"
-                  class="flex items-center justify-center bg-[#EBDDCB] text-black w-9 h-9 lg:w-11 lg:h-11 rounded-full hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-lg">
-                  <i class="ti ti-arrow-up-right text-base lg:text-lg"></i>
-                </a>
-              </div>
             </div>
           </div>
-          <div class="hidden lg:flex absolute bottom-12 right-4 z-20 flex-col items-start gap-4">
+          <div class="hidden lg:flex absolute bottom-4 right-4 z-20 flex-col items-start gap-4">
             <div class="flex gap-4">
               <div
                 class="flex-none flex items-center gap-4 p-3 rounded-[24px] bg-white/10 backdrop-blur-xl border border-white/20 w-[380px] shadow-2xl">
@@ -739,10 +737,10 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             <div
               class="order-first relative h-[75vw] lg:order-last lg:mt-20 lg:h-[710px] flex items-center justify-center"
               data-kid="2-2-3-1-1" data-name="food display stage" id="food-stage">
-              <img id="scroll-glass" alt="Mocktail"
+              <img id="scroll-glass" alt="Signature C HOUSE mocktail in a tall glass"
                 class="absolute origin-bottom w-[40%] h-[45%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 translate-x-[90%] translate-y-[365%] lg:-translate-x-[390%] lg:-translate-y-[42%] z-50"
                 decoding="async" loading="lazy" src="gallery/mocktailindex.png" style="transition: none;" />
-              <img alt="Pizza"
+              <img alt="Wood-fired pizza fresh from the C HOUSE oven"
                 class="absolute origin-bottom w-[110%] h-[110%] lg:w-[80%] lg:h-[85%] object-contain rounded-[2rem] rotate-3 translate-x-2 transition-all duration-500 hover:rotate-6 hover:translate-x-6 hover:scale-105 z-10"
                 decoding="async" src="gallery/Pizza.webp" />
             </div>
@@ -1109,7 +1107,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               class="mt-4 flex items-center justify-between border-t border-[var(--mora-candle)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-candle)]/65"
               data-kid="2-2-5-1-3" data-name="gallery footer controls">
               <span data-kid="2-2-5-1-3-1" data-name="gallery tap instructions">
-                Tap a frame to enlarge
+                Select an image to enlarge
               </span>
               <span class="lg:hidden" data-kid="2-2-5-1-3-2" data-name="gallery counter">
                 1 / <?= count($gallery_items) ?>
@@ -1133,7 +1131,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               <div data-kid="2-2-6-1-1-1" data-name="occasions kicker container">
                 <p class="mora-kicker mora-reveal text-[var(--mora-clay)] is-visible" data-kid="2-2-6-1-1-1-1"
                   data-name="occasions kicker text" data-reveal="">
-                  <?= e($s['home_occasions_kicker'] ?? '05 / Occasions') ?>
+                  <?= e($s['home_occasions_kicker'] ?? 'Occasions') ?>
                 </p>
                 <h2
                   class="mora-serif mora-reveal mt-10 max-w-[700px] text-[clamp(3.4rem,7vw,7rem)] leading-[.88] tracking-[-.045em] is-visible"
@@ -1154,7 +1152,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 'title' => 'Lunch',
                 'desc' => 'A quick plate if you need it; a second espresso if you don’t.',
                 'src' => 'https://images.pexels.com/photos/17086329/pexels-photo-17086329.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Warm contemporary restaurant interior with olive seating and evening lamps, SAAD EMRIS on Pexels',
+                'alt' => 'Warm contemporary restaurant interior with olive seating and evening lamps',
                 'caption' => 'Lunch at C HOUSE · easy plates, second espresso',
               ],
               [
@@ -1162,7 +1160,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 'title' => 'Aperitivo',
                 'desc' => 'Aperol, bitter orange, small plates and an unhurried start.',
                 'src' => 'https://images.pexels.com/photos/39215054/pexels-photo-39215054.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Bright aperitivo mocktail catching warm evening light, Nati on Pexels',
+                'alt' => 'Bright aperitivo mocktail catching warm evening light',
                 'caption' => 'Aperitivo · bitter orange, small plates',
               ],
               [
@@ -1170,7 +1168,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 'title' => 'Dinner',
                 'desc' => 'Pasta, proper mains and bottles made for passing around.',
                 'src' => 'https://images.pexels.com/photos/30044364/pexels-photo-30044364.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Friends clinking wine glasses over dinner, Jeremy Li on Pexels',
+                'alt' => 'Friends clinking wine glasses over dinner',
                 'caption' => 'Dinner at C HOUSE · bottles made for passing around',
               ],
               [
@@ -1178,7 +1176,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 'title' => 'Date night',
                 'desc' => 'Low light, a corner table and dessert worth sharing.',
                 'src' => 'https://images.pexels.com/photos/2072569/pexels-photo-2072569.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Couple sharing a warm dinner at an Italian restaurant, Elina Sazonova on Pexels',
+                'alt' => 'Couple sharing a warm dinner at an Italian restaurant',
                 'caption' => 'Date night · low light, one corner table',
               ],
               [
@@ -1186,7 +1184,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 'title' => 'Friends at the table',
                 'desc' => 'Big tables, louder stories, one more round.',
                 'src' => 'https://images.pexels.com/photos/5086623/pexels-photo-5086623.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Friends enjoying an animated dinner together, Jep Gambardella on Pexels',
+                'alt' => 'Friends enjoying an animated dinner together',
                 'caption' => 'Friends · one more round for the table',
               ],
               [
@@ -1194,7 +1192,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 'title' => 'Private celebrations',
                 'desc' => 'Dinner parties, birthdays and gatherings with room to linger.',
                 'src' => 'https://images.pexels.com/photos/37307299/pexels-photo-37307299.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Lively group gathered around a warmly lit dinner table, Le Salama on Pexels',
+                'alt' => 'Lively group gathered around a warmly lit dinner table',
                 'caption' => 'Private celebrations · room to linger',
               ],
             ];
@@ -1299,7 +1297,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                     <br data-kid="2-2-8-1-1-3-1-2-2" data-name="line break" />
                     <?= e($s['address_line1'] ?? 'H Rd, Jebel Ali Recreation Club, Jebel Ali Village') ?>
                     <br data-kid="2-2-8-1-1-3-1-2-3" data-name="location address lines" />
-                    <?= e($s['address_line2'] ?? 'Behind IBN Batuta Mall, Dubai') ?>
+                    <?= e($s['address_line2'] ?? 'Behind Ibn Battuta Mall, Dubai') ?>
                   </span>
                 </p>
                 <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-2" data-name="contact hours">
@@ -1308,18 +1306,15 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   </i>
                   <span data-kid="2-2-8-1-1-3-2-2" data-name="hours block">
                     <strong class="font-semibold" data-kid="2-2-8-1-1-3-2-2-1" data-name="hours title">
-                      <?= e($s['hours_title'] ?? 'Hours Of Operations') ?>
+                      Opening Hours
                     </strong>
                     <br data-kid="2-2-8-1-1-3-2-2-2" data-name="line break" />
-                    <?php if (!empty($s['hours_weekday']) && !empty($s['hours_weekend'])): ?>
-                      <?= e($s['hours_weekday']) ?> &amp; <?= e($s['hours_weekend']) ?>
-                    <?php elseif (!empty($s['hours_weekday'])): ?>
-                      <?= e($s['hours_weekday']) ?>
-                    <?php elseif (!empty($s['hours'])): ?>
-                      <?= e($s['hours']) ?>
-                    <?php else: ?>
-                      Sun - Thu 12:00PM - 00:00AM &amp; Fri-Sat 12:00PM - 2:00AM
-                    <?php endif; ?>
+                    <?php if (!empty($s['hours_weekday']) || !empty($s['hours_weekend'])): ?>
+                      <?php if (!empty($s['hours_weekday'])): ?><?= e($s['hours_weekday']) ?><br><?php endif; ?>
+                    <?php if (!empty($s['hours_weekend'])): ?><?= e($s['hours_weekend']) ?><?php endif; ?>
+                  <?php else: ?>
+                    Sun - Thu: 12:00 PM - 12:00 AM (Midnight)<br>Fri - Sat: 12:00 PM - 2:00 AM
+                  <?php endif; ?>
                   </span>
                 </p>
                 <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-3" data-name="contact methods">
@@ -1327,24 +1322,22 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                     data-kid="2-2-8-1-1-3-3-1" data-name="phone icon">
                   </i>
                   <span data-kid="2-2-8-1-1-3-3-2" data-name="methods block">
-                    <?php if (!empty($s['phone_numbers'])):
-                      $phones = array_map('trim', preg_split('/[,|\/]/', $s['phone_numbers']));
+                    <?php
+                    $phones = function_exists('format_phones') ? format_phones($s['phone_numbers'] ?? '') : [];
+                    if (!$phones) {
+                      $phones = [
+                        ['display' => '+971 52 218 5569', 'tel' => '+971522185569'],
+                        ['display' => '+971 50 460 3469', 'tel' => '+971504603469'],
+                        ['display' => '+971 4 880 3320', 'tel' => '+97148803320'],
+                      ];
+                    }
                     ?>
-                      <span class="inline-flex flex-wrap items-center gap-x-1 gap-y-1">
-                        <?php foreach ($phones as $idx => $phone):
-                          $cleanPhone = preg_replace('/[^0-9+]/', '', $phone);
-                        ?>
-                          <?php if ($idx > 0): ?>/ <?php endif; ?>
-                        <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                          data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:<?= e($cleanPhone) ?>"><?= e($phone) ?></a>
+                    <span class="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <?php foreach ($phones as $idx => $ph): ?>
+                        <?php if ($idx > 0): ?><span aria-hidden="true">/</span><?php endif; ?>
+                        <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4" href="tel:<?= e($ph['tel']) ?>"><?= e($ph['display']) ?></a>
                       <?php endforeach; ?>
-                      </span>
-                    <?php else: ?>
-                      <span class="inline-flex flex-wrap items-center gap-x-1 gap-y-1"><a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                          data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">052 218 5569</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                          data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971504603469">050 460 3469</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                          data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">(04) 880 3320</a></span>
-                    <?php endif; ?>
+                    </span>
                     <br data-kid="2-2-8-1-1-3-3-2-2" data-name="line break" />
                     <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                       data-kid="2-2-8-1-1-3-3-2-3" data-name="email link" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>">
@@ -1355,23 +1348,15 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               </div>
               <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
                 data-name="contact buttons container">
-                <a class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                  data-kid="2-2-8-1-1-4-1" data-name="directions link"
-                  href="<?= e($s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=Jebel+Ali+Recreation+Club+Dubai') ?>"
-                  rel="noreferrer" target="_blank">
-                  Get directions
-                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-1-1"
-                    data-name="arrow-up-right icon">
-                  </i>
-                </a>
-                <button
+
+                <a href="contact.php"
                   class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                  data-kid="2-2-8-1-1-4-2" data-name="reserve button" data-open-reservation="" type="button">
+                  data-kid="2-2-8-1-1-4-2" data-name="reserve button">
                   Reserve a table
                   <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-2-1"
                     data-name="arrow-up-right icon">
                   </i>
-                </button>
+                </a>
               </div>
             </div>
             <div
@@ -1396,13 +1381,11 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   </p>
                 </div>
               </div>
-              <a href="<?= e($s['google_maps_link'] ?? 'https://maps.google.com/?q=Jebel+Ali+Recreation+Club+Dubai') ?>" target="_blank"
-                class="absolute bottom-6 left-6 border border-[var(--mora-olive)]/40 bg-[#f5e6c8] px-4 py-3 text-[9px] font-bold uppercase tracking-[.14em] text-black hover:bg-[var(--mora-clay)] hover:text-white transition-colors z-10 cursor-pointer"
-                data-kid="2-2-8-1-2-4" data-name="map link overlay">
-                Open in Maps
-                <i aria-hidden="true" class="ti ti-arrow-up-right ml-2 text-sm" data-kid="2-2-8-1-2-4-1"
-                  data-name="arrow-up-right icon">
-                </i>
+              <a href="<?= e($s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=Jebel+Ali+Recreation+Club+Dubai') ?>"
+                target="_blank" rel="noopener noreferrer"
+                class="absolute bottom-6 left-6 z-10 border border-[var(--mora-olive)]/40 bg-[#f5e6c8] px-4 py-3 text-[10px] font-bold uppercase tracking-[.14em] text-black hover:bg-[var(--mora-clay)] hover:text-white transition-colors">
+                Get directions
+                <i aria-hidden="true" class="ti ti-arrow-up-right ml-2 text-sm"></i>
               </a>
             </div>
           </div>
@@ -1473,24 +1456,9 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             Preferred time
             <select class="mora-input mt-1 h-12 px-3 text-sm font-normal normal-case tracking-normal"
               data-kid="2-5-3-2-1" data-name="time select" name="time">
-              <option data-kid="2-5-3-2-1-1" data-name="time option 1">
-                19:00
-              </option>
-              <option data-kid="2-5-3-2-1-2" data-name="time option 2">
-                19:30
-              </option>
-              <option data-kid="2-5-3-2-1-3" data-name="time option 3">
-                20:00
-              </option>
-              <option data-kid="2-5-3-2-1-4" data-name="time option 4">
-                20:30
-              </option>
-              <option data-kid="2-5-3-2-1-5" data-name="time option 5">
-                21:00
-              </option>
-              <option data-kid="2-5-3-2-1-6" data-name="time option 6">
-                21:45
-              </option>
+              <?php for ($m = 12 * 60; $m <= 23 * 60; $m += 30): $t = sprintf('%02d:%02d', intdiv($m, 60), $m % 60); ?>
+                <option value="<?= $t ?>"><?= $t ?></option>
+              <?php endfor; ?>
             </select>
           </label>
           <label class="grid gap-2 text-[10px] font-bold uppercase tracking-[.14em]" data-kid="2-5-3-3"
@@ -1530,11 +1498,11 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             class="hidden border-l-2 border-[var(--mora-terracotta)] pl-4 text-xs leading-5 text-[var(--mora-candle)]/72"
             data-dynamic="true" data-kid="2-5-3-7" data-name="alternate times message"
             data-reason="visibility toggled by script" id="reservation-alt">
-            That time is full. Try 19:30 or 21:45, or call us for larger tables:
+            That time is full. Try another time, or call us for larger tables:
             <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
-              href="tel:+971522185569">052 218 5569</a> / <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
-              href="tel:+971504603469">050 460 3469</a> / <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
-              href="tel:+97148803320">(04) 880 3320</a>
+              href="tel:+971522185569">+971 52 218 5569</a> / <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
+              href="tel:+971504603469">+971 50 460 3469</a> / <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
+              href="tel:+97148803320">+971 4 880 3320</a>
             .
           </div>
           <div
@@ -1571,7 +1539,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </i>
         </button>
         <div class="flex max-w-[1120px] flex-col items-center" data-kid="2-7-3" data-name="lightbox inner content">
-          <img alt="Warm restaurant interior, SAAD EMRIS on Pexels"
+          <img alt="Warm restaurant interior"
             class="mora-lightbox-image border border-[var(--mora-candle)]/20" data-dynamic="true" data-kid="2-7-3-1"
             data-name="lightbox image" data-reason="src and alt updated by interaction" decoding="async"
             id="lightbox-image" loading="lazy"
@@ -1599,9 +1567,9 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
       </div>
       <div aria-hidden="false" class="mora-reserve-dock fixed inset-x-4 bottom-4 z-[55] md:hidden is-visible"
         data-kid="2-8" data-name="floating reserve dock button" id="reserve-dock">
-        <button
+        <a href="contact.php"
           class="mora-fold mora-fold-candle flex w-full items-center justify-between bg-[var(--mora-clay)] px-5 py-4 text-left text-[var(--mora-espresso)] shadow-xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-          data-kid="2-8-1" data-name="dock reserve button" data-open-reservation="" type="button">
+          data-kid="2-8-1" data-name="dock reserve button">
           <span data-kid="2-8-1-1" data-name="button text container">
             <span class="block text-[10px] font-bold uppercase tracking-[.16em]" data-kid="2-8-1-1-1"
               data-name="dock title">
@@ -1613,7 +1581,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </span>
           <i aria-hidden="true" class="ti ti-arrow-up-right text-lg" data-kid="2-8-1-2" data-name="arrow-up-right icon">
           </i>
-        </button>
+        </a>
       </div>
     </div>
 
@@ -1623,7 +1591,13 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         if (!page) return;
 
         const nav = document.getElementById('mora-nav');
-        const setNavState = () => nav.classList.toggle('is-scrolled', window.scrollY > 24);
+        const setNavState = () => {
+          const on = window.scrollY > 24;
+          nav.classList.toggle('is-scrolled', on);
+          nav.classList.toggle('bg-black/80', on);
+          nav.classList.toggle('backdrop-blur-md', on);
+          nav.classList.toggle('shadow-lg', on);
+        };
         setNavState();
         window.addEventListener('scroll', setNavState, {
           passive: true
@@ -1721,31 +1695,31 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
 
         const foodData = [{
             src: 'https://images.pexels.com/photos/14538480/pexels-photo-14538480.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
-            alt: 'Hands sharing pizza and plates at a lively table, Doğu Tuncer on Pexels',
+            alt: 'Hands sharing pizza and plates at a lively table',
             name: 'Burrata & roasted tomatoes',
             meta: 'Olive oil · warm bread · antipasti'
           },
           {
             src: 'gallery/food.webp',
-            alt: 'Handmade pasta twirled on a white ceramic plate with tomato and parmesan, Erwan Hesry on Unsplash',
+            alt: 'Handmade pasta twirled on a white ceramic plate with tomato and parmesan',
             name: 'Truffle tagliatelle',
             meta: 'Warm parmesan · handmade pasta'
           },
           {
             src: 'https://images.pexels.com/photos/33158334/pexels-photo-33158334.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
-            alt: 'Fresh Italian pizza with blistered crust and basil, damla selen demir on Pexels',
+            alt: 'Fresh Italian pizza with blistered crust and basil',
             name: 'Blistered margherita',
             meta: 'Tomato · basil · shared hands'
           },
           {
             src: 'https://images.unsplash.com/photo-1605851086486-2bfb45e926d9?auto=format&w=1200&q=80&fit=crop',
-            alt: 'Italian grilled meat with roasted vegetables and red wine, sergey mikheev on Unsplash',
+            alt: 'Italian grilled meat with roasted vegetables and red wine',
             name: 'Grilled beef',
             meta: 'Seasonal vegetables · red wine'
           },
           {
             src: 'https://images.unsplash.com/photo-1661587781420-dc427db4ccda?auto=format&w=1000&q=80&fit=crop',
-            alt: 'Dessert and shared plates being prepared at a restaurant table, Filipp Romanovski on Unsplash',
+            alt: 'Dessert and shared plates being prepared at a restaurant table',
             name: 'Tiramisù',
             meta: 'Espresso · mascarpone · to share'
           }
@@ -1916,7 +1890,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
       })();
     </script>
   </div>
-  <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
+  <a aria-label="Chat with us on WhatsApp" rel="noopener" href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
     class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
     <i class="ti ti-brand-whatsapp text-2xl"></i>
   </a>

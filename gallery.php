@@ -92,7 +92,7 @@ $ambience_images = get_gallery($pdo, 'ambience');
 
     <!-- TOP HEADER / NAVBAR -->
     <div class="w-full">
-        <header aria-label="Primary navigation" class="relative z-50 pt-6 px-5 sm:px-8 lg:px-12 text-[#30201B]">
+        <header id="site-header" aria-label="Primary navigation" class="fixed top-0 inset-x-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-white transition-all duration-300">
             <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
 
                 <!-- Logo & Brand Name -->
@@ -126,7 +126,7 @@ $ambience_images = get_gallery($pdo, 'ambience');
 
                 <!-- Right: Reserve a Table Button -->
                 <div class="hidden lg:flex items-center gap-4">
-                    <a mora-menu-link w-fit data-kid="2-3-1-2-2-2-1" href="./contact.php"
+                    <a href="./contact.php"
                         class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
                         <span>Reserve a Table</span>
                         <i class="ti ti-arrow-up-right text-base"></i>
@@ -169,7 +169,7 @@ $ambience_images = get_gallery($pdo, 'ambience');
         </header>
 
         <!-- TITLE SECTION -->
-        <div class="pt-6 pb-2 text-center px-4">
+        <div class="pt-[120px] pb-2 text-center px-4">
             <div class="inline-block relative">
                 <h1 class="mora-serif text-5xl sm:text-6xl md:text-7xl text-[#30201B] tracking-tight pb-3">
                     Gallery
@@ -237,9 +237,9 @@ $ambience_images = get_gallery($pdo, 'ambience');
                     <?php endif; ?>
                 </div>
                 <div class="lg:col-span-7 flex items-center justify-center lg:justify-start lg:pl-10 xl:pl-16 px-4">
-                    <h1 class="mora-serif text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[52px] font-bold text-[#30201B] tracking-tight leading-tight">
+                    <h2 class="mora-serif text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[52px] font-bold text-[#30201B] tracking-tight leading-tight">
                         <?= e(get_content($pdo, 'gallery', 'food', 'video_tagline')) ?>
-                    </h1>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -281,9 +281,9 @@ $ambience_images = get_gallery($pdo, 'ambience');
                     <?php endif; ?>
                 </div>
                 <div class="lg:col-span-7 flex items-center justify-center lg:justify-start lg:pl-10 xl:pl-16 px-4">
-                    <h1 class="mora-serif text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[52px] font-bold text-[#30201B] tracking-tight leading-tight">
+                    <h2 class="mora-serif text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[52px] font-bold text-[#30201B] tracking-tight leading-tight">
                         <?= e(get_content($pdo, 'gallery', 'drink', 'video_tagline')) ?>
-                    </h1>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -325,9 +325,9 @@ $ambience_images = get_gallery($pdo, 'ambience');
                     <?php endif; ?>
                 </div>
                 <div class="lg:col-span-7 flex items-center justify-center lg:justify-start lg:pl-10 xl:pl-16 px-4">
-                    <h1 class="mora-serif text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[52px] font-bold text-[#30201B] tracking-tight leading-tight">
+                    <h2 class="mora-serif text-3xl sm:text-4xl md:text-5xl lg:text-[44px] xl:text-[52px] font-bold text-[#30201B] tracking-tight leading-tight">
                         <?= e(get_content($pdo, 'gallery', 'ambience', 'video_tagline')) ?>
-                    </h1>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -336,13 +336,13 @@ $ambience_images = get_gallery($pdo, 'ambience');
 
     <div class="pt-6 pb-2 text-center px-4">
         <div class="inline-block relative">
-            <h1 class="cambria text-5xl sm:text-2xl md:text-xl text-[#30201B] tracking-tight pb-0">
+            <h2 class="cambria text-5xl sm:text-2xl md:text-xl text-[#30201B] tracking-tight pb-0">
                 INSTAGRAM
-            </h1>
+            </h2>
             <div class="h-[2px] w-20 bg-[#AA8243]/60 mx-auto"></div>
-            <h1 class="cambria text-5xl sm:text-2xl md:text-4xl text-[#30201B] tracking-tight pb-0"><b>
+            <h2 class="cambria text-5xl sm:text-2xl md:text-4xl text-[#30201B] tracking-tight pb-0"><b>
                     @chouseuae
-                </b></h1>
+                </b></h2>
             <div class="h-[2px] w-20 bg-[#AA8243]/60 mx-auto"></div>
         </div>
     </div>
@@ -352,6 +352,20 @@ $ambience_images = get_gallery($pdo, 'ambience');
 
     <!-- SCRIPT FOR TABS & MOBILE MENU -->
     <script>
+        const siteHeader = document.getElementById('site-header');
+        if (siteHeader) {
+            const syncHeader = () => {
+                const on = window.scrollY > 24;
+                siteHeader.classList.toggle('bg-[#EBDDCB]/95', on);
+                siteHeader.classList.toggle('backdrop-blur-md', on);
+                siteHeader.classList.toggle('shadow-md', on);
+            };
+            syncHeader();
+            window.addEventListener('scroll', syncHeader, {
+                passive: true
+            });
+        }
+
         function switchCategory(cat) {
             // Hide all panels
             const panels = document.querySelectorAll('.gallery-panel');
@@ -386,7 +400,7 @@ $ambience_images = get_gallery($pdo, 'ambience');
             });
         }
     </script>
-    <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
+    <a aria-label="Chat with us on WhatsApp" rel="noopener" href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
         class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
         <i class="ti ti-brand-whatsapp text-2xl"></i>
     </a>

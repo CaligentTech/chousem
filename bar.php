@@ -86,12 +86,12 @@ $bundles = get_offers($pdo, 'bundle');
 </head>
 
 <body>
-  <header aria-label="Primary navigation"
-    class="absolute inset-x-0 top-0 z-50 pt-6 px-5 sm:px-8 lg:px-12 text-[#f5e6c8]">
-    <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-center relative">
-      <div class="absolute left-0 flex items-center">
-        <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="index.html">
-          <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="Logo">
+  <header id="site-header" aria-label="Primary navigation"
+    class="fixed inset-x-0 top-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-[#f5e6c8] transition-all duration-300">
+    <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
+      <div class="flex items-center">
+        <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="./index.php">
+          <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo">
           <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
         </a>
       </div>
@@ -106,12 +106,22 @@ $bundles = get_offers($pdo, 'bundle');
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-white bg-white/20 transition-colors"
           href="bar.php">Bar</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-          href="experience.php">Experience</a> <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="experience.php">Experience</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
           href="gallery.php">Gallery</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
           href="contact.php">Contact</a>
       </nav>
-      <button id="mobile-menu-button" aria-expanded="false" class="lg:hidden absolute right-0 flex items-center justify-center p-2 text-[#f5e6c8]">
+
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="./contact.php"
+          class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
+          <span>Reserve a Table</span>
+          <i class="ti ti-arrow-up-right text-base"></i>
+        </a>
+      </div>
+
+      <button id="mobile-menu-button" aria-expanded="false" class="lg:hidden flex items-center justify-center p-2 text-[#f5e6c8]" aria-label="Open menu">
         <i class="ti ti-menu-2 text-2xl"></i>
       </button>
     </div>
@@ -134,6 +144,10 @@ $bundles = get_offers($pdo, 'bundle');
           href="./gallery.php">Gallery</a>
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
           href="./contact.php">Contact</a>
+        <a href="./contact.php"
+          class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
+          Reserve a Table <i class="ti ti-arrow-up-right"></i>
+        </a>
       </nav>
     </div>
   </header>
@@ -150,7 +164,7 @@ $bundles = get_offers($pdo, 'bundle');
         <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4"><?= e(get_content($pdo, 'bar', 'hero', 'kicker')) ?: 'C HOUSE Selection' ?></p>
         <h1 class="mora-serif text-5xl md:text-7xl mb-6"><?= e(get_content($pdo, 'bar', 'hero', 'heading')) ?: 'The Bar' ?></h1>
         <p class="text-sm md:text-base text-gray-300 tracking-wide font-light mb-10"><?= e(get_content($pdo, 'bar', 'hero', 'description')) ?: 'Explore our curated Bar Food Menu and signature drinks.' ?></p>
-        <a href="<?= !empty($s['bar_menu_pdf']) ? e($s['bar_menu_pdf']) : './assets/C-House-Indo-Chinese-Menu.pdf' ?>" download="C_House_Bar_Food_Menu.pdf"
+        <a href="<?= !empty($s['bar_menu_pdf']) ? e($s['bar_menu_pdf']) : './assets/C-House-Indo-Chinese-Menu.pdf' ?>" download="C-House-Indo-Chinese-Menu.pdf"
           class="inline-flex items-center gap-2 rounded-full bg-[#AA8243] px-8 py-3 text-sm tracking-widest uppercase text-white transition-colors hover:bg-white hover:text-black font-semibold shadow-lg">
           <i class="ti ti-download text-lg"></i> Download Bar Food Menu
         </a>
@@ -267,13 +281,25 @@ $bundles = get_offers($pdo, 'bundle');
 
   </main>
   <?php include __DIR__ . '/includes/footer.php'; ?>
-  <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
+  <a aria-label="Chat with us on WhatsApp" rel="noopener" href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
     class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
     <i class="ti ti-brand-whatsapp text-2xl"></i>
   </a>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const siteHeader = document.getElementById('site-header');
+      const syncHeader = () => {
+        const on = window.scrollY > 24;
+        siteHeader.classList.toggle('bg-black/80', on);
+        siteHeader.classList.toggle('backdrop-blur-md', on);
+        siteHeader.classList.toggle('shadow-lg', on);
+      };
+      syncHeader();
+      window.addEventListener('scroll', syncHeader, {
+        passive: true
+      });
+
       const menu = document.getElementById('mobile-menu');
       const menuButton = document.getElementById('mobile-menu-button');
       if (menu && menuButton) {

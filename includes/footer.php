@@ -65,10 +65,10 @@ if (!function_exists('e')) {
                     data-name="explore links list">
                     <a class="mora-menu-link w-fit" href="menu.php">Menu</a>
                     <a class="mora-menu-link w-fit" href="about.php">About</a>
-                    <a class="mora-menu-link w-fit" href="bar.php">Bar experience</a>
+                    <a class="mora-menu-link w-fit" href="bar.php">Bar</a>
                     <a class="mora-menu-link w-fit" href="experience.php">Experience</a>
                     <a class="mora-menu-link w-fit" href="gallery.php">Gallery</a>
-                    <a class="mora-menu-link w-fit" href="contact.php">Private celebrations</a>
+                    <a class="mora-menu-link w-fit" href="contact.php">Contact</a>
                 </div>
             </div>
             <div data-kid="2-3-1-2-3" data-name="footer social column">
@@ -83,7 +83,10 @@ if (!function_exists('e')) {
                         <i aria-hidden="true" class="ti ti-instagram ml-1"></i>
                     </a>
                     <span class="inline-flex flex-wrap items-center gap-1">
-                        <a class="mora-menu-link w-fit" href="<?= e($s['phone_link'] ?? 'tel:+971522185569') ?>"><?= e($s['phone_numbers'] ?? '052 218 5569 / 050 460 3469 / (04) 880 3320') ?></a>
+                        <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">052 218 5569</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971504603469">050 460 3469</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">(04) 880 3320</a>
                     </span>
                     <a class="mora-menu-link w-fit" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>"><?= e($s['email'] ?? 'hello@chouse.ae') ?></a>
                 </div>

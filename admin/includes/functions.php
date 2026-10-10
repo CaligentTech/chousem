@@ -93,3 +93,23 @@ function e($str)
 {
     return htmlspecialchars($str ?? '', ENT_QUOTES, 'UTF-8');
 }
+
+function format_phones($raw)
+{
+    $out = [];
+    foreach (explode('/', (string)$raw) as $p) {
+        $p = trim($p);
+        if ($p === '') continue;
+        $digits = preg_replace('/\D+/', '', $p);
+        if (strpos($digits, '971') === 0) {
+            $digits = substr($digits, 3);          // already has country code
+        }
+        $digits = ltrim($digits, '0');             // drop local leading 0
+        $display = '+971 ' . preg_replace('/^\+?(971)?\s*\(?0?(\d{1,2})\)?\s*/', '$2 ', ltrim($p, '+'));
+        if (strpos(ltrim($p, '+'), '971') === 0) {
+            $display = '+' . ltrim($p, '+');
+        }
+        $out[] = ['display' => trim($display), 'tel' => '+971' . $digits];
+    }
+    return $out;
+}

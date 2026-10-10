@@ -91,7 +91,7 @@ $contact_content = get_page_content($pdo, 'contact');
 <body class="bg-[#EBDDCB] text-[#30201B] overflow-x-hidden min-h-screen flex flex-col justify-between">
   <!-- TOP HEADER / NAVBAR -->
   <div class="w-full">
-    <header aria-label="Primary navigation" class="relative z-50 pt-6 px-5 sm:px-8 lg:px-12 text-[#30201B]">
+    <header id="site-header" aria-label="Primary navigation" class="fixed top-0 inset-x-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-white transition-all duration-300">
       <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
 
         <!-- Logo & Brand Name -->
@@ -166,7 +166,7 @@ $contact_content = get_page_content($pdo, 'contact');
     </header>
 
     <section
-      class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 pt-40 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
       <!-- LEFT: Keep your existing info block exactly as it is -->
       <div>
@@ -189,7 +189,7 @@ $contact_content = get_page_content($pdo, 'contact');
                   <br data-kid="2-2-8-1-1-3-1-2-2" data-name="line break" />
                   <?= e($s['address_line1'] ?? 'H Rd, Jebel Ali Recreation Club, Jebel Ali Village') ?>
                   <br data-kid="2-2-8-1-1-3-1-2-3" data-name="location address lines" />
-                  <?= e($s['address_line2'] ?? 'Behind IBN Batuta Mall, Dubai') ?>
+                  <?= e($s['address_line2'] ?? 'Behind Ibn Battuta Mall, Dubai') ?>
                 </span>
               </p>
               <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-2" data-name="contact hours">
@@ -198,16 +198,15 @@ $contact_content = get_page_content($pdo, 'contact');
                 </i>
                 <span data-kid="2-2-8-1-1-3-2-2" data-name="hours block">
                   <strong class="font-semibold" data-kid="2-2-8-1-1-3-2-2-1" data-name="hours title">
-                    Hours Of Operations
+                    Opening Hours
                   </strong>
                   <br data-kid="2-2-8-1-1-3-2-2-2" data-name="line break" />
-                  <?php if (!empty($s['hours_weekday']) && !empty($s['hours_weekend'])): ?>
-                    <?= e($s['hours_weekday']) ?> &amp; <?= e($s['hours_weekend']) ?>
-                  <?php elseif (!empty($s['hours_weekday'])): ?>
-                    <?= e($s['hours_weekday']) ?>
-                  <?php else: ?>
-                    Sun - Thu 12:00PM - 00:00AM &amp; Fri-Sat 12:00PM - 2:00AM
-                  <?php endif; ?>
+                  <?php if (!empty($s['hours_weekday']) || !empty($s['hours_weekend'])): ?>
+                    <?php if (!empty($s['hours_weekday'])): ?><?= e($s['hours_weekday']) ?><br><?php endif; ?>
+                  <?php if (!empty($s['hours_weekend'])): ?><?= e($s['hours_weekend']) ?><?php endif; ?>
+                <?php else: ?>
+                  Sun - Thu: 12:00 PM - 12:00 AM (Midnight)<br>Fri - Sat: 12:00 PM - 2:00 AM
+                <?php endif; ?>
                 </span>
               </p>
               <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-3" data-name="contact methods">
@@ -215,24 +214,22 @@ $contact_content = get_page_content($pdo, 'contact');
                   data-kid="2-2-8-1-1-3-3-1" data-name="phone icon">
                 </i>
                 <span data-kid="2-2-8-1-1-3-3-2" data-name="methods block">
-                  <?php if (!empty($s['phone_numbers'])):
-                    $phones = array_map('trim', preg_split('/[,|\/]/', $s['phone_numbers']));
+                  <?php
+                  $phones = function_exists('format_phones') ? format_phones($s['phone_numbers'] ?? '') : [];
+                  if (!$phones) {
+                    $phones = [
+                      ['display' => '+971 52 218 5569', 'tel' => '+971522185569'],
+                      ['display' => '+971 50 460 3469', 'tel' => '+971504603469'],
+                      ['display' => '+971 4 880 3320', 'tel' => '+97148803320'],
+                    ];
+                  }
                   ?>
-                    <span class="inline-flex flex-wrap items-center gap-x-1 gap-y-1">
-                      <?php foreach ($phones as $idx => $phone):
-                        $cleanPhone = preg_replace('/[^0-9+]/', '', $phone);
-                      ?>
-                        <?php if ($idx > 0): ?>/ <?php endif; ?>
-                      <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:<?= e($cleanPhone) ?>"><?= e($phone) ?></a>
+                  <span class="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <?php foreach ($phones as $idx => $ph): ?>
+                      <?php if ($idx > 0): ?><span aria-hidden="true">/</span><?php endif; ?>
+                      <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4" href="tel:<?= e($ph['tel']) ?>"><?= e($ph['display']) ?></a>
                     <?php endforeach; ?>
-                    </span>
-                  <?php else: ?>
-                    <span class="inline-flex flex-wrap items-center gap-x-1 gap-y-1"><a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">052 218 5569</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971504603469">050 460 3469</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                        data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">(04) 880 3320</a></span>
-                  <?php endif; ?>
+                  </span>
                   <br data-kid="2-2-8-1-1-3-3-2-2" data-name="line break" />
                   <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                     data-kid="2-2-8-1-1-3-3-2-3" data-name="email link" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>">
@@ -258,7 +255,7 @@ $contact_content = get_page_content($pdo, 'contact');
               data-name="contact buttons container">
               <a class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]"
                 data-kid="2-2-8-1-1-4-1" data-name="directions link"
-                href="<?= e($s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=Jebel+Ali+Recreation+Club+Dubai') ?>"
+                href="<?= e($s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=Jebel+Ali+Recreation+Club+Dubai') ?>"
                 rel="noreferrer" target="_blank">
                 Get directions
                 <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-1-1"
@@ -342,6 +339,20 @@ $contact_content = get_page_content($pdo, 'contact');
     </section>
     <?php include __DIR__ . '/includes/footer.php'; ?>
     <script>
+      const siteHeader = document.getElementById('site-header');
+      if (siteHeader) {
+        const syncHeader = () => {
+          const on = window.scrollY > 24;
+          siteHeader.classList.toggle('bg-[#EBDDCB]/95', on);
+          siteHeader.classList.toggle('backdrop-blur-md', on);
+          siteHeader.classList.toggle('shadow-md', on);
+        };
+        syncHeader();
+        window.addEventListener('scroll', syncHeader, {
+          passive: true
+        });
+      }
+
       function switchCategory(cat) {
         // Hide all panels
         const panels = document.querySelectorAll('.contact-panel');
@@ -397,7 +408,7 @@ $contact_content = get_page_content($pdo, 'contact');
       }
     </script>
   </div>
-  <a href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
+  <a aria-label="Chat with us on WhatsApp" rel="noopener" href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
     class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-50 bg-[#30201B] text-[#f5e6c8] border border-[#f5e6c8]/20 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:bg-[#f5e6c8] hover:text-[#30201B] hover:scale-110 transition-all duration-300">
     <i class="ti ti-brand-whatsapp text-2xl"></i>
   </a>
