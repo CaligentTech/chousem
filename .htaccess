@@ -34,9 +34,28 @@
     RewriteCond %{REQUEST_URI} !^/admin/ [NC]
     RewriteRule ^ %1 [R=301,L]
 
-    # 4. If the requested URL exists as a real file or directory, serve it directly
+    # Prevent LiteSpeed from auto-redirecting /gallery to /gallery/
+    <IfModule mod_dir.c>
+        DirectorySlash Off
+    </IfModule>
+
+    # Explicit redirect for admin directory to preserve trailing slash
+    RewriteRule ^admin$ admin/ [R=301,L]
+
+    # Redirect /gallery/ to clean /gallery
+    RewriteRule ^gallery/$ /gallery [R=301,L]
+
+    # Fix gallery folder collision: serve gallery.php for clean /gallery
+    RewriteRule ^gallery$ gallery.php [L]
+
+    # Map old Ambiance image filenames to new clean ambience-X names
+    RewriteRule ^gallery/ambience/Ambiance[\s%20]*([0-9]+)\.jpg\.(webp|jpeg)$ gallery/ambience/ambience-$1.$2 [NC,L]
+    RewriteRule ^gallery/mocktailindex\.png$ gallery/mocktailindex.webp [NC,L]
+
+    # 4. If the requested URL exists as a real file or directory (except gallery), serve it directly
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_URI} !^/gallery/?$ [NC]
     RewriteRule ^ - [L]
 
     # 5. Internal rewrite: clean URL to corresponding .php file if it exists

@@ -46,7 +46,6 @@ if (!function_exists('e')) {
                 <div class="mt-5 leading-7 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-1-2"
                     data-name="visit content list">
                     <p data-kid="2-3-1-2-1-2-1" data-name="address line 1"><?= e($s['address_line1'] ?? 'H Rd, Jebel Ali Recreation Club') ?></p>
-                    <p data-kid="2-3-1-2-1-2-2" data-name="hours line"><?= e($s['hours_weekday'] ?? 'Sun - Thu 12:00PM - 00:00AM') ?> &amp; <?= e($s['hours_weekend'] ?? 'Fri-Sat 12:00PM - 2:00AM') ?></p>
                     <p data-kid="2-3-1-2-1-2-3" data-name="location line"><?= e($s['address_line2'] ?? 'Behind IBN Batuta Mall, Dubai') ?></p>
                     <a class="mora-menu-link mt-4 inline-block border-b border-[var(--mora-candle)]/35 pb-1 text-[11px] uppercase tracking-[.12em]"
                         data-kid="2-3-1-2-1-2-4" data-name="directions link"

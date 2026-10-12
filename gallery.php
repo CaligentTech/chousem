@@ -5,6 +5,11 @@ $s = get_all_settings($pdo);
 $food_images = get_gallery($pdo, 'food');
 $drink_images = get_gallery($pdo, 'drink');
 $ambience_images = get_gallery($pdo, 'ambience');
+
+function fix_image_path($path) {
+    if (empty($path)) return '';
+    return preg_replace('/Ambiance\s*(\d+)\.jpg\.(webp|jpeg)/i', 'ambience-$1.$2', $path);
+}
 ?>
 
 <!DOCTYPE html>
@@ -205,7 +210,7 @@ $ambience_images = get_gallery($pdo, 'ambience');
                 <?php foreach ($food_images as $img): ?>
                     <?php if ($img['media_type'] === 'image'): ?>
                         <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
-                            <img src="<?= e($img['image_path']) ?>" alt="<?= e($img['alt_text']) ?>"
+                            <img src="<?= e(fix_image_path($img['image_path'])) ?>" alt="<?= e($img['alt_text']) ?>"
                                 class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                                 loading="lazy" />
                         </div>
@@ -251,7 +256,7 @@ $ambience_images = get_gallery($pdo, 'ambience');
                 <?php foreach ($drink_images as $img): ?>
                     <?php if ($img['media_type'] === 'image'): ?>
                         <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
-                            <img src="<?= e($img['image_path']) ?>" alt="<?= e($img['alt_text']) ?>"
+                            <img src="<?= e(fix_image_path($img['image_path'])) ?>" alt="<?= e($img['alt_text']) ?>"
                                 class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                                 loading="lazy" />
                         </div>
@@ -295,7 +300,7 @@ $ambience_images = get_gallery($pdo, 'ambience');
                 <?php foreach ($ambience_images as $img): ?>
                     <?php if ($img['media_type'] === 'image'): ?>
                         <div class="mb-6 sm:mb-8 break-inside-avoid overflow-hidden rounded-md shadow-sm border border-[#30201B]/10 bg-[#dfcfbd]">
-                            <img src="<?= e($img['image_path']) ?>" alt="<?= e($img['alt_text']) ?>"
+                            <img src="<?= e(fix_image_path($img['image_path'])) ?>" alt="<?= e($img['alt_text']) ?>"
                                 class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                                 loading="lazy" />
                         </div>

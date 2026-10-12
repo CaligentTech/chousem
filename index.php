@@ -1370,7 +1370,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         </form>
         <p class="mt-auto pt-10 text-[10px] uppercase tracking-[.14em] text-[var(--mora-candle)]/45" data-kid="2-5-4"
           data-name="footer disclaimer">
-          Reservations recommended for dinner · Sun - Thu 12:00PM - 00:00AM & Fri-Sat 12:00PM - 2:00AM
+          Reservations recommended for dinner
         </p>
       </aside>
 
