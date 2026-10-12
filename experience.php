@@ -144,7 +144,7 @@ $events = get_events($pdo);
     </header>
 
     <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 pt-36 pb-16 text-center">
-      <p class="text-[11px] uppercase tracking-[.25em] text-[#F2E7D4] font-bold mb-6"><?= e($experience_content['hero']['kicker'] ?? ($experience_content['hero']['subtitle'] ?? 'Live the moment')) ?></p>
+      <p class="text-[11px] uppercase tracking-[.25em] text-[#AA8243] font-bold mb-6"><?= e($experience_content['hero']['kicker'] ?? ($experience_content['hero']['subtitle'] ?? 'Live the moment')) ?></p>
       <h1
         class="mora-serif text-white text-5xl md:text-7xl mb-2 font-normal tracking-tight leading-[0.95] drop-shadow-2xl">
         <?= e($experience_content['hero']['heading'] ?? 'The Experience') ?>
