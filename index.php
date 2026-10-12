@@ -608,7 +608,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative" data-kid="2-1-1"
           data-name="navigation bar layout container">
           <div class="flex items-center">
-            <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="./index.php">
+            <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="./">
               <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo">
               <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
             </a>
@@ -617,23 +617,23 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             class="hidden items-center gap-1 rounded-full bg-black/30 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10"
             data-kid="2-1-1-2" data-name="main navigation links container">
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./index.php">Home</a>
+              href="./">Home</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./menu.php">Menu</a>
+              href="menu">Menu</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./about.php">About</a>
+              href="about">About</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="bar.php">Bar</a>
+              href="bar">Bar</a>
 
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./experience.php">Experience</a>
+              href="experience">Experience</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="./gallery.php">Gallery</a>
+              href="gallery">Gallery</a>
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-              href="contact.php">Contact</a>
+              href="contact">Contact</a>
           </nav>
           <div class="hidden lg:flex items-center gap-4">
-            <a href="./contact.php"
+            <a href="contact"
               class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
               <span>Reserve a Table</span>
               <i class="ti ti-arrow-up-right text-base"></i>
@@ -649,20 +649,20 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
           <nav class="flex flex-col gap-3">
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./index.php">Home</a>
+              href="./">Home</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="menu.php">Menu</a>
+              href="menu">Menu</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./about.php">About</a>
+              href="about">About</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="bar.php">Bar</a>
+              href="bar">Bar</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./experience.php">Experience</a>
+              href="experience">Experience</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./gallery.php">Gallery</a>
+              href="gallery">Gallery</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-              href="./contact.php">Contact</a>
-            <a href="./contact.php"
+              href="contact">Contact</a>
+            <a href="contact"
               class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
               Reserve a Table <i class="ti ti-arrow-up-right"></i>
             </a>
@@ -685,7 +685,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </h1>
 
           <div class="absolute bottom-2 lg:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
-            <a class="text-[#f5e6c8] hover:text-white transition-colors mt-2" href="menu.php" aria-label="View menu">
+            <a class="text-[#f5e6c8] hover:text-white transition-colors mt-2" href="menu" aria-label="View menu">
               <svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                 stroke-width="1" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
                 <polyline points="4 8 12 16 20 8"></polyline>
@@ -717,7 +717,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 <div class="flex flex-col gap-2">
                   <h3 class="text-white text-lg font-semibold leading-tight"><?= e($s['hero_food_card_title']) ?></h3>
                   <p class="text-gray-300 text-[11px] leading-snug"><?= e($s['hero_food_card_desc']) ?></p>
-                  <a href="menu.php"
+                  <a href="menu"
                     class="text-white text-[11px] font-bold rounded-full py-2 px-5 w-fit mt-1 hover:text-gray-200 transition-colors">
                     <button
                       class="bg-white text-black text-[11px] font-bold rounded-full py-2 px-5 w-fit mt-1 hover:bg-[#5C3D2E] hover:text-white transition-colors">View
@@ -740,7 +740,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               data-kid="2-2-3-1-1" data-name="food display stage" id="food-stage">
               <img id="scroll-glass" alt="Signature C HOUSE mocktail in a tall glass"
                 class="absolute origin-bottom w-[40%] h-[45%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 translate-x-[90%] translate-y-[365%] lg:-translate-x-[390%] lg:-translate-y-[42%] z-50"
-                decoding="async" loading="lazy" src="gallery/mocktailindex.png" style="transition: none;" />
+                decoding="async" loading="lazy" src="gallery/mocktailindex.webp" style="transition: none;" />
               <img alt="Wood-fired pizza fresh from the C HOUSE oven"
                 class="absolute origin-bottom w-[110%] h-[110%] lg:w-[80%] lg:h-[85%] object-contain rounded-[2rem] rotate-3 translate-x-2 transition-all duration-500 hover:rotate-6 hover:translate-x-6 hover:scale-105 z-10"
                 decoding="async" src="gallery/Pizza.webp" />
@@ -750,7 +750,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               <div class="flex items-center justify-between" data-kid="2-2-3-1-2-1" data-name="food section header">
 
                 <a class="mora-menu-link border-b border-[var(--mora-candle)]/60 pb-1 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                  data-kid="2-2-3-1-2-1-2" data-name="view full menu link" href="menu.php">
+                  data-kid="2-2-3-1-2-1-2" data-name="view full menu link" href="menu">
                   Full menu
                   <i aria-hidden="true" class="ti ti-arrow-up-right ml-2" data-kid="2-2-3-1-2-1-2-1"
                     data-name="arrow-up-right icon">
@@ -874,7 +874,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 </button>
               </div>
               <a class="mora-outline-button mt-10 inline-flex w-fit items-center border border-[var(--mora-candle)] px-6 py-4 text-[10px] font-bold uppercase tracking-[.18em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                data-kid="2-2-3-1-2-4" data-name="view menu full button" href="menu.php">
+                data-kid="2-2-3-1-2-4" data-name="view menu full button" href="menu">
                 View menu
                 <i aria-hidden="true" class="ti ti-arrow-up-right ml-8 text-sm" data-kid="2-2-3-1-2-4-1"
                   data-name="arrow-up-right icon">
@@ -1016,7 +1016,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 </div>
               </div>
               <a class="mora-light-button mt-10 inline-flex items-center border border-[var(--mora-candle)] px-6 py-4 text-[10px] font-bold uppercase tracking-[.17em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-                data-kid="2-2-4-2-2-5" data-name="bar discovery button" href="bar.php">
+                data-kid="2-2-4-2-2-5" data-name="bar discovery button" href="bar">
                 Discover the bar
                 <i aria-hidden="true" class="ti ti-arrow-up-right ml-7 text-sm" data-kid="2-2-4-2-2-5-1"
                   data-name="arrow-up-right icon">
@@ -1061,14 +1061,14 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               ['image_path' => './gallery/3.webp', 'alt_text' => 'Outdoor patio setting with woven chairs and a marble table', 'caption' => '12:18 lunch table'],
               ['image_path' => './gallery/4.webp', 'alt_text' => 'Interior dining booths beside warm golden lighting', 'caption' => '18:36 first pour'],
               ['image_path' => './gallery/5.webp', 'alt_text' => 'Outdoor restaurant seating area with a large canopy at sunset', 'caption' => '21:07 pasta passed around'],
-              ['image_path' => './gallery/ambience/Ambiance 6.jpg.webp', 'alt_text' => 'Interior dining lounge with white booths and wood paneled walls', 'caption' => '19:04 the little details'],
+              ['image_path' => './gallery/ambience/ambience-6.webp', 'alt_text' => 'Interior dining lounge with white booths and wood paneled walls', 'caption' => '19:04 the little details'],
             ];
 
             // If the database has outdated entries (e.g. 7 entries or chandelier pics), clean and sync the database
             if (isset($pdo) && !empty($table_in_motion_images)) {
               $has_chandelier = false;
               foreach ($table_in_motion_images as $img) {
-                if (strpos($img['image_path'] ?? '', '6.webp') !== false) {
+                if (strpos($img['image_path'] ?? '', 'gallery/6.webp') !== false || strpos($img['image_path'] ?? '', 'Ambiance 6') !== false) {
                   $has_chandelier = true;
                   break;
                 }
@@ -1114,7 +1114,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 1 / <?= count($gallery_items) ?>
               </span>
               <a class="mora-text-action hidden text-[var(--mora-candle)] lg:inline-flex" data-kid="2-2-5-1-3-3"
-                data-name="gallery link" href="gallery.php">
+                data-name="gallery link" href="gallery">
                 See the gallery
                 <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-5-1-3-3-1"
                   data-name="arrow-up-right icon">
@@ -1123,156 +1123,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             </div>
           </div>
         </section>
-        <section aria-labelledby="occasions-heading"
-          class="hidden bg-[var(--mora-stone)] px-5 py-16 sm:px-8 lg:px-10 lg:py-20" data-kid="2-2-6"
-          data-name="occasions section" id="occasions">
-          <div class="mx-auto max-w-[1360px]" data-kid="2-2-6-1" data-name="occasions content container">
-            <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between" data-kid="2-2-6-1-1"
-              data-name="occasions header">
-              <div data-kid="2-2-6-1-1-1" data-name="occasions kicker container">
-                <p class="mora-kicker mora-reveal text-[var(--mora-clay)] is-visible" data-kid="2-2-6-1-1-1-1"
-                  data-name="occasions kicker text" data-reveal="">
-                  <?= e($s['home_occasions_kicker'] ?? 'Occasions') ?>
-                </p>
-                <h2
-                  class="mora-serif mora-reveal mt-10 max-w-[700px] text-[clamp(3.4rem,7vw,7rem)] leading-[.88] tracking-[-.045em] is-visible"
-                  data-kid="2-2-6-1-1-1-2" data-name="occasions heading" data-reveal="" id="occasions-heading"
-                  style="--mora-delay:100ms">
-                  <?= e($s['home_occasions_heading'] ?? 'Take your time with it.') ?>
-                </h2>
-              </div>
-              <p class="mora-reveal max-w-[270px] text-sm leading-6 text-[var(--mora-espresso)]/68 lg:pb-2 is-visible"
-                data-kid="2-2-6-1-1-2" data-name="occasions description" data-reveal="" style="--mora-delay:190ms">
-                <?= e($s['home_occasions_description'] ?? 'One room, six good reasons to arrive.') ?>
-              </p>
-            </div>
-            <?php
-            $occasions = [
-              [
-                'time' => '12:00',
-                'title' => 'Lunch',
-                'desc' => 'A quick plate if you need it; a second espresso if you don’t.',
-                'src' => 'https://images.pexels.com/photos/17086329/pexels-photo-17086329.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Warm contemporary restaurant interior with olive seating and evening lamps',
-                'caption' => 'Lunch at C HOUSE · easy plates, second espresso',
-              ],
-              [
-                'time' => '18:00',
-                'title' => 'Aperitivo',
-                'desc' => 'Aperol, bitter orange, small plates and an unhurried start.',
-                'src' => 'https://images.pexels.com/photos/39215054/pexels-photo-39215054.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Bright aperitivo mocktail catching warm evening light',
-                'caption' => 'Aperitivo · bitter orange, small plates',
-              ],
-              [
-                'time' => '20:00',
-                'title' => 'Dinner',
-                'desc' => 'Pasta, proper mains and bottles made for passing around.',
-                'src' => 'https://images.pexels.com/photos/30044364/pexels-photo-30044364.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Friends clinking wine glasses over dinner',
-                'caption' => 'Dinner at C HOUSE · bottles made for passing around',
-              ],
-              [
-                'time' => '21:30',
-                'title' => 'Date night',
-                'desc' => 'Low light, a corner table and dessert worth sharing.',
-                'src' => 'https://images.pexels.com/photos/2072569/pexels-photo-2072569.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Couple sharing a warm dinner at an Italian restaurant',
-                'caption' => 'Date night · low light, one corner table',
-              ],
-              [
-                'time' => '22:15',
-                'title' => 'Friends at the table',
-                'desc' => 'Big tables, louder stories, one more round.',
-                'src' => 'https://images.pexels.com/photos/5086623/pexels-photo-5086623.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Friends enjoying an animated dinner together',
-                'caption' => 'Friends · one more round for the table',
-              ],
-              [
-                'time' => 'Any time',
-                'title' => 'Private celebrations',
-                'desc' => 'Dinner parties, birthdays and gatherings with room to linger.',
-                'src' => 'https://images.pexels.com/photos/37307299/pexels-photo-37307299.jpeg?auto=compress&cs=tinysrgb&w=1100&q=80',
-                'alt' => 'Lively group gathered around a warmly lit dinner table',
-                'caption' => 'Private celebrations · room to linger',
-              ],
-            ];
-            $active_occasion = $occasions[0];
-            ?>
-            <div class="mt-10 grid gap-8 lg:mt-16 lg:grid-cols-[.82fr_1.18fr] lg:gap-12" data-kid="2-2-6-1-2"
-              data-name="occasions layout grid">
-              <div class="order-last lg:order-first" data-kid="2-2-6-1-2-1" data-name="occasions selection column">
-                <div aria-label="Ways to spend time at C HOUSE" class="flex snap-x gap-0 overflow-x-auto pb-1 lg:block"
-                  data-kid="2-2-6-1-2-1-1" data-name="occasions list" role="tablist" style="scrollbar-width:none">
-                  <?php foreach ($occasions as $i => $item): ?>
-                    <?php
-                    $is_first = ($i === 0);
-                    $delay = $is_first ? '' : 'style="--mora-delay:' . ($i * 50) . 'ms"';
-                    $active_class = $is_first ? ' is-active' : '';
-                    $time_color = $is_first ? '' : ' text-[var(--mora-espresso)]/55';
-                    ?>
-                    <button aria-selected="<?= $is_first ? 'true' : 'false' ?>"
-                      class="mora-occasion-row<?= $active_class ?> mora-reveal min-w-[82vw] snap-start px-0 py-5 lg:min-w-0 is-visible"
-                      data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>" data-name="occasion row <?= $i + 1 ?>" data-occasion-index="<?= $i ?>" data-reveal=""
-                      role="tab" <?= $delay ?> type="button">
-                      <span class="grid grid-cols-[88px_1fr_22px] items-center gap-4" data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1"
-                        data-name="occasion details">
-                        <span class="mora-occasion-time text-[10px] font-bold uppercase tracking-[.12em]<?= $time_color ?>"
-                          data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-1" data-name="occasion time">
-                          <?= e($item['time']) ?>
-                        </span>
-                        <span data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-2" data-name="occasion name/desc">
-                          <span class="block text-lg font-semibold" data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-2-1"
-                            data-name="occasion title">
-                            <?= e($item['title']) ?>
-                          </span>
-                          <span class="mt-1 block max-w-[330px] text-xs leading-5 text-[var(--mora-espresso)]/68"
-                            data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-2-2" data-name="occasion description" <?= $is_first ? ' id="occasion-copy-mobile-0"' : '' ?>>
-                            <?= e($item['desc']) ?>
-                          </span>
-                        </span>
-                        <span class="mora-occasion-marker h-px w-5 bg-[var(--mora-clay)]" data-kid="2-2-6-1-2-1-1-<?= $i + 1 ?>-1-3"
-                          data-name="occasion highlight marker">
-                        </span>
-                      </span>
-                    </button>
-                  <?php endforeach; ?>
-                </div>
-                <a class="mora-text-action mt-10 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-espresso)] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                  data-kid="2-2-6-1-2-1-2" data-name="private celebration plan link" href="contact.php">
-                  <?= e($s['home_occasions_link_text'] ?? 'Plan a private celebration') ?>
-                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-6-1-2-1-2-1"
-                    data-name="arrow-up-right icon">
-                  </i>
-                </a>
-              </div>
-              <div class="order-first lg:order-last" data-kid="2-2-6-1-2-2" data-name="occasions image/display">
-                <figure class="mora-photo-frame relative h-[430px] overflow-hidden lg:h-[600px]"
-                  data-kid="2-2-6-1-2-2-1" data-name="occasion image frame">
-                  <img
-                    alt="<?= e($active_occasion['alt']) ?>"
-                    class="h-full w-full object-cover" data-dynamic="true" data-kid="2-2-6-1-2-2-1-1"
-                    data-name="occasion feature image" data-reason="src, alt, and content updated by interaction"
-                    decoding="async" id="occasion-image" loading="lazy"
-                    src="<?= e($active_occasion['src']) ?>" />
-                  <div class="absolute bottom-0 left-0 max-w-[88%] z-10">
-                    <figcaption
-                      class="mora-fold-clay mora-fold bg-[var(--mora-candle)] px-4 py-3 text-[10px] uppercase tracking-[.14em] text-[var(--mora-espresso)]"
-                      data-dynamic="true" data-kid="2-2-6-1-2-2-1-2" data-name="occasion image caption"
-                      data-reason="text updated by interaction" id="occasion-caption">
-                      <?= e($active_occasion['caption']) ?>
-                    </figcaption>
-                  </div>
-                </figure>
-                <p class="mora-serif mt-7 max-w-[620px] text-3xl leading-[1.05] text-[var(--mora-espresso)]"
-                  data-dynamic="true" data-kid="2-2-6-1-2-2-2" data-name="occasion copy text"
-                  data-reason="text updated by interaction" id="occasion-copy">
-                  <?= e($active_occasion['desc']) ?>
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         <section aria-labelledby="contact-heading"
           class="bg-[var(--mora-parchment)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-8"
@@ -1350,7 +1201,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
                 data-name="contact buttons container">
 
-                <a href="contact.php"
+                <a href="contact"
                   class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                   data-kid="2-2-8-1-1-4-2" data-name="reserve button">
                   Reserve a table
@@ -1510,7 +1361,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             class="hidden border-l-2 border-[var(--mora-terracotta)] pl-4 text-xs leading-5 text-[var(--mora-candle)]/72"
             data-dynamic="true" data-kid="2-5-3-8" data-name="reservation error message"
             data-reason="visibility toggled by script" id="reservation-error">
-            We couldn’t send that request. Please call (04) 880 3320 and we’ll help.
+            We couldn’t send that request. Please call +971 4 880 3320 and we’ll help.
           </div>
           <div aria-hidden="true" class="mora-loading-rule h-px bg-[var(--mora-brass)]" data-dynamic="true"
             data-kid="2-5-3-9" data-name="loading progress rule" data-reason="animation state toggled by script"
@@ -1540,11 +1391,11 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </i>
         </button>
         <div class="flex max-w-[1120px] flex-col items-center" data-kid="2-7-3" data-name="lightbox inner content">
-          <img alt="Warm restaurant interior"
+          <img alt="Gallery image"
             class="mora-lightbox-image border border-[var(--mora-candle)]/20" data-dynamic="true" data-kid="2-7-3-1"
             data-name="lightbox image" data-reason="src and alt updated by interaction" decoding="async"
             id="lightbox-image" loading="lazy"
-            src="https://images.pexels.com/photos/17086329/pexels-photo-17086329.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;q=80" />
+            src="gallery/food.webp" />
           <div class="mt-5 flex w-full items-start justify-between gap-8 border-t border-[var(--mora-candle)]/25 pt-4"
             data-kid="2-7-3-2" data-name="lightbox footer info">
             <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-candle)]/75" data-dynamic="true"
@@ -1568,7 +1419,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
       </div>
       <div aria-hidden="false" class="mora-reserve-dock fixed inset-x-4 bottom-4 z-[55] md:hidden is-visible"
         data-kid="2-8" data-name="floating reserve dock button" id="reserve-dock">
-        <a href="contact.php"
+        <a href="contact"
           class="mora-fold mora-fold-candle flex w-full items-center justify-between bg-[var(--mora-clay)] px-5 py-4 text-left text-[var(--mora-espresso)] shadow-xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
           data-kid="2-8-1" data-name="dock reserve button">
           <span data-kid="2-8-1-1" data-name="button text container">
@@ -1694,128 +1545,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           }, 850);
         });
 
-        const foodData = [{
-            src: 'https://images.pexels.com/photos/14538480/pexels-photo-14538480.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
-            alt: 'Hands sharing pizza and plates at a lively table',
-            name: 'Burrata & roasted tomatoes',
-            meta: 'Olive oil · warm bread · antipasti'
-          },
-          {
-            src: 'gallery/food.webp',
-            alt: 'Handmade pasta twirled on a white ceramic plate with tomato and parmesan',
-            name: 'Truffle tagliatelle',
-            meta: 'Warm parmesan · handmade pasta'
-          },
-          {
-            src: 'https://images.pexels.com/photos/33158334/pexels-photo-33158334.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
-            alt: 'Fresh Italian pizza with blistered crust and basil',
-            name: 'Blistered margherita',
-            meta: 'Tomato · basil · shared hands'
-          },
-          {
-            src: 'https://images.unsplash.com/photo-1605851086486-2bfb45e926d9?auto=format&w=1200&q=80&fit=crop',
-            alt: 'Italian grilled meat with roasted vegetables and red wine',
-            name: 'Grilled beef',
-            meta: 'Seasonal vegetables · red wine'
-          },
-          {
-            src: 'https://images.unsplash.com/photo-1661587781420-dc427db4ccda?auto=format&w=1000&q=80&fit=crop',
-            alt: 'Dessert and shared plates being prepared at a restaurant table',
-            name: 'Tiramisù',
-            meta: 'Espresso · mascarpone · to share'
-          }
-        ];
-        const foodRows = page.querySelectorAll('[data-food-index]');
-        const foodImage = document.getElementById('food-image');
-        const foodName = document.getElementById('food-dish-name');
-        const foodMeta = document.getElementById('food-dish-meta');
-        let foodTimer;
-        const updateFood = (index) => {
-          const item = foodData[index];
-          foodRows.forEach((row) => {
-            const active = Number(row.dataset.foodIndex) === index;
-            row.classList.toggle('is-active', active);
-            row.setAttribute('aria-selected', String(active));
-            row.querySelector('.mora-food-rule').classList.toggle('w-8', active);
-            row.querySelector('.mora-food-rule').classList.toggle('w-0', !active);
-          });
-          foodImage.classList.add('mora-image-changing');
-          window.clearTimeout(foodTimer);
-          foodTimer = window.setTimeout(() => {
-            foodImage.src = item.src;
-            foodImage.alt = item.alt;
-            foodName.textContent = item.name;
-            foodMeta.textContent = item.meta;
-            foodImage.classList.remove('mora-image-changing');
-          }, 120);
-        };
-        foodRows.forEach((row) => {
-          row.addEventListener('click', () => updateFood(Number(row.dataset.foodIndex)));
-          row.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-              event.preventDefault();
-              const next = (Number(row.dataset.foodIndex) + 1) % foodData.length;
-              foodRows[next].focus();
-              updateFood(next);
-            }
-            if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
-              event.preventDefault();
-              const next = (Number(row.dataset.foodIndex) - 1 + foodData.length) % foodData.length;
-              foodRows[next].focus();
-              updateFood(next);
-            }
-          });
-        });
 
-        const occasionData = <?= json_encode(
-                                array_map(function ($item) {
-                                  return [
-                                    'src' => $item['src'],
-                                    'alt' => $item['alt'],
-                                    'caption' => $item['caption'],
-                                    'copy' => $item['desc']
-                                  ];
-                                }, $occasions)
-                              ) ?>;
-        const occasionRows = page.querySelectorAll('[data-occasion-index]');
-        const occasionImage = document.getElementById('occasion-image');
-        const occasionCaption = document.getElementById('occasion-caption');
-        const occasionCopy = document.getElementById('occasion-copy');
-        let occasionTimer;
-        const updateOccasion = (index) => {
-          const item = occasionData[index];
-          occasionRows.forEach((row) => {
-            const active = Number(row.dataset.occasionIndex) === index;
-            row.classList.toggle('is-active', active);
-            row.setAttribute('aria-selected', String(active));
-          });
-          occasionImage.classList.add('mora-image-changing');
-          window.clearTimeout(occasionTimer);
-          occasionTimer = window.setTimeout(() => {
-            occasionImage.src = item.src;
-            occasionImage.alt = item.alt;
-            occasionCaption.textContent = item.caption;
-            occasionCopy.textContent = item.copy;
-            occasionImage.classList.remove('mora-image-changing');
-          }, 140);
-        };
-        occasionRows.forEach((row) => {
-          row.addEventListener('click', () => updateOccasion(Number(row.dataset.occasionIndex)));
-          row.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-              event.preventDefault();
-              const next = (Number(row.dataset.occasionIndex) + 1) % occasionData.length;
-              occasionRows[next].focus();
-              updateOccasion(next);
-            }
-            if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
-              event.preventDefault();
-              const next = (Number(row.dataset.occasionIndex) - 1 + occasionData.length) % occasionData.length;
-              occasionRows[next].focus();
-              updateOccasion(next);
-            }
-          });
-        });
 
         const galleryData = <?= json_encode(
                               array_map(function ($img) {

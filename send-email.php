@@ -62,17 +62,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $mail->send();
 
-        $redirect = (!empty($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'contact.php') !== false) ? 'contact.php' : 'contact.html';
-        header("Location: {$redirect}?status=success");
+        header("Location: contact?status=success");
         exit();
     } catch (Exception $e) {
         error_log("Mailer Error: " . $mail->ErrorInfo);
-        $redirect = (!empty($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'contact.php') !== false) ? 'contact.php' : 'contact.html';
-        header("Location: {$redirect}?status=error");
+        header("Location: contact?status=error");
         exit();
     }
 } else {
-    $redirect = (!empty($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'contact.php') !== false) ? 'contact.php' : 'contact.html';
-    header("Location: {$redirect}");
+    header("Location: contact");
     exit();
 }

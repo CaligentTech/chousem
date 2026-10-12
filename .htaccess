@@ -1,0 +1,57 @@
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_value error_log "/home/chouseae/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+<IfModule lsapi_module>
+   php_value error_log "/home/chouseae/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Remove trailing slashes on non-directories to protect relative asset paths
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{THE_REQUEST} \s/+([^?]+?)/+[?\s]
+    RewriteRule ^ /%1 [R=301,L]
+
+    # 2. Redirect explicit /index.php or /index to root /
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/index\.(php|html)[\s?] [NC]
+    RewriteRule ^index\.(php|html)$ / [R=301,L]
+    RewriteRule ^index$ / [R=301,L]
+
+    # 3. External redirect: If a GET request explicitly requests a .php or .html file, redirect to clean URL
+    # Exempt POST requests (e.g. form handlers like send-email.php) to preserve POST data
+    # Exempt /admin/ directory
+    RewriteCond %{REQUEST_METHOD} !POST
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.(php|html)[\s?] [NC]
+    RewriteCond %{REQUEST_URI} !^/admin/ [NC]
+    RewriteRule ^ %1 [R=301,L]
+
+    # 4. If the requested URL exists as a real file or directory, serve it directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 5. Internal rewrite: clean URL to corresponding .php file if it exists
+    RewriteCond %{DOCUMENT_ROOT}/$1.php -f [OR]
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
+
+    # 6. Fallback internal rewrite: clean URL to corresponding .html file if it exists
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f [OR]
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.html [L,QSA]
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Set UTF-8 encoding
+AddDefaultCharset UTF-8

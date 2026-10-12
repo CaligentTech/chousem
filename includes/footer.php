@@ -63,12 +63,12 @@ if (!function_exists('e')) {
                 </p>
                 <div class="mt-5 grid gap-3 leading-6 text-[var(--mora-candle)]/68" data-kid="2-3-1-2-2-2"
                     data-name="explore links list">
-                    <a class="mora-menu-link w-fit" href="menu.php">Menu</a>
-                    <a class="mora-menu-link w-fit" href="about.php">About</a>
-                    <a class="mora-menu-link w-fit" href="bar.php">Bar</a>
-                    <a class="mora-menu-link w-fit" href="experience.php">Experience</a>
-                    <a class="mora-menu-link w-fit" href="gallery.php">Gallery</a>
-                    <a class="mora-menu-link w-fit" href="contact.php">Contact</a>
+                    <a class="mora-menu-link w-fit" href="menu">Menu</a>
+                    <a class="mora-menu-link w-fit" href="about">About</a>
+                    <a class="mora-menu-link w-fit" href="bar">Bar</a>
+                    <a class="mora-menu-link w-fit" href="experience">Experience</a>
+                    <a class="mora-menu-link w-fit" href="gallery">Gallery</a>
+                    <a class="mora-menu-link w-fit" href="contact">Contact</a>
                 </div>
             </div>
             <div data-kid="2-3-1-2-3" data-name="footer social column">
@@ -84,9 +84,9 @@ if (!function_exists('e')) {
                     </a>
                     <span class="inline-flex flex-wrap items-center gap-1">
                         <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">052 218 5569</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971504603469">050 460 3469</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">(04) 880 3320</a>
+                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">+971 52 218 5569</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971504603469">+971 50 460 3469</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">+971 4 880 3320</a>
                     </span>
                     <a class="mora-menu-link w-fit" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>"><?= e($s['email'] ?? 'hello@chouse.ae') ?></a>
                 </div>

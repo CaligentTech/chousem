@@ -78,7 +78,7 @@ $events = get_events($pdo);
     <header id="site-header" aria-label="Primary navigation" class="fixed top-0 inset-x-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-white transition-all duration-300">
       <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
         <div class="flex items-center">
-          <a aria-label="home" class="flex items-center gap-3 text-white" href="./index.php">
+          <a aria-label="home" class="flex items-center gap-3 text-white" href="./">
             <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo" />
             <span class="font-sans text-[32px] tracking-[0.2em] font-light text-white">C HOUSE</span>
           </a>
@@ -87,23 +87,23 @@ $events = get_events($pdo);
         <nav aria-label="Main links"
           class="hidden items-center gap-1 rounded-full bg-black/40 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10 shadow-lg">
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="./index.php">Home</a>
+            href="./">Home</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="./menu.php">Menu</a>
+            href="menu">Menu</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="./about.php">About</a>
+            href="about">About</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="./bar.php">Bar</a>
+            href="bar">Bar</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-white/20 text-white font-semibold"
-            href="./experience.php" aria-current="page">Experience</a>
+            href="experience" aria-current="page">Experience</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="./gallery.php">Gallery</a>
+            href="gallery">Gallery</a>
           <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="./contact.php">Contact</a>
+            href="contact">Contact</a>
         </nav>
 
         <div class="hidden lg:flex items-center gap-4">
-          <a href="./contact.php"
+          <a href="contact"
             class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
             <span>Reserve a Table</span>
             <i class="ti ti-arrow-up-right text-base"></i>
@@ -122,20 +122,20 @@ $events = get_events($pdo);
         class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
         <nav class="flex flex-col gap-3">
           <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="./index.php">Home</a>
+            href="./">Home</a>
           <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="menu.php">Menu</a>
+            href="menu">Menu</a>
           <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="./about.php">About</a>
+            href="about">About</a>
           <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="bar.php">Bar</a>
+            href="bar">Bar</a>
           <a class="text-[13px] tracking-widest uppercase text-white py-2 border-b border-white/10 font-semibold"
-            href="./experience.php">Experience</a>
+            href="experience">Experience</a>
           <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="./gallery.php">Gallery</a>
+            href="gallery">Gallery</a>
           <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="./contact.php">Contact</a>
-          <a href="./contact.php"
+            href="contact">Contact</a>
+          <a href="contact"
             class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
             Reserve a Table <i class="ti ti-arrow-up-right"></i>
           </a>
@@ -163,7 +163,7 @@ $events = get_events($pdo);
           <h2 class="mora-serif text-4xl sm:text-6xl text-white mb-4"><?= e($experience_content['weekly_events']['heading'] ?? ($experience_content['events']['heading'] ?? 'Weekly Events')) ?></h2>
           <p class="text-gray-400 font-light max-w-lg"><?= e($experience_content['weekly_events']['description'] ?? ($experience_content['events']['description'] ?? 'Join us every week for our signature themed nights featuring live entertainment and exclusive offers.')) ?></p>
         </div>
-        <a href="./contact.php"
+        <a href="contact"
           class="inline-flex items-center gap-2 text-[#AA8243] hover:text-white transition-colors uppercase tracking-widest text-xs font-bold border-b border-[#AA8243] hover:border-white pb-1 w-fit">
           <?= e($experience_content['events']['cta_text'] ?? 'Book your table') ?> <i class="ti ti-arrow-up-right text-lg"></i>
         </a>
@@ -217,7 +217,7 @@ $events = get_events($pdo);
           <div
             class="group relative bg-black rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/20 transition-colors">
             <div class="h-64 overflow-hidden relative">
-              <img src="./gallery/ambience/Ambiance%205.jpg.webp" alt="Live Music"
+              <img src="./gallery/ambience/ambience-5.webp" alt="Live Music"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
@@ -277,7 +277,7 @@ $events = get_events($pdo);
               <?= e($experience_content['seasonal_offers']['card_1_tag'] ?? ($experience_content['seasonal_menu']['tag'] ?? ($experience_content['seasonal']['card_1_tag'] ?? 'Seasonal Special'))) ?></div>
             <h3 class="mora-serif text-3xl mb-3 text-white"><?= e($experience_content['seasonal_offers']['card_1_title'] ?? ($experience_content['seasonal_menu']['heading'] ?? ($experience_content['seasonal_menu']['title'] ?? 'Summer Truffle Menu'))) ?></h3>
             <p class="text-gray-400 text-sm font-light mb-6"><?= e($experience_content['seasonal_offers']['card_1_desc'] ?? ($experience_content['seasonal_offers']['card_1_description'] ?? ($experience_content['seasonal_menu']['description'] ?? 'Experience the rich, earthy flavors of summer truffles incorporated into our classic Italian dishes. Available for a limited time only.'))) ?></p>
-            <a href="<?= e($experience_content['seasonal_offers']['card_1_link'] ?? ($experience_content['seasonal_menu']['link'] ?? './menu.php')) ?>"
+            <a href="<?= e($experience_content['seasonal_offers']['card_1_link'] ?? ($experience_content['seasonal_menu']['link'] ?? 'menu')) ?>"
               class="inline-flex items-center gap-2 text-white hover:text-[#AA8243] transition-colors uppercase tracking-widest text-xs font-bold w-fit">
               <?= e($experience_content['seasonal_offers']['card_1_link_text'] ?? ($experience_content['seasonal_menu']['link_text'] ?? 'View Menu')) ?> <i class="ti ti-arrow-right text-lg"></i>
             </a>
@@ -297,7 +297,7 @@ $events = get_events($pdo);
               <?= e($experience_content['seasonal_offers']['card_2_tag'] ?? ($experience_content['business_lunch']['tag'] ?? ($experience_content['seasonal']['card_2_tag'] ?? 'Current Offer'))) ?></div>
             <h3 class="mora-serif text-3xl mb-3 text-white"><?= e($experience_content['seasonal_offers']['card_2_title'] ?? ($experience_content['business_lunch']['heading'] ?? ($experience_content['business_lunch']['title'] ?? 'Business Lunch'))) ?></h3>
             <p class="text-gray-400 text-sm font-light mb-6"><?= e($experience_content['seasonal_offers']['card_2_desc'] ?? ($experience_content['seasonal_offers']['card_2_description'] ?? ($experience_content['business_lunch']['description'] ?? 'A two-course Italian feast designed for your midday break. Perfect for client meetings or a quick escape from the office.'))) ?></p>
-            <a href="<?= e($experience_content['seasonal_offers']['card_2_link'] ?? ($experience_content['business_lunch']['link'] ?? ($s['reservation_link'] ?? './contact.php'))) ?>"
+            <a href="<?= e($experience_content['seasonal_offers']['card_2_link'] ?? ($experience_content['business_lunch']['link'] ?? ($s['reservation_link'] ?? 'contact'))) ?>"
               class="inline-flex items-center gap-2 text-white hover:text-[#AA8243] transition-colors uppercase tracking-widest text-xs font-bold w-fit">
               <?= e($experience_content['seasonal_offers']['card_2_link_text'] ?? ($experience_content['business_lunch']['link_text'] ?? 'Book a Table')) ?> <i class="ti ti-arrow-right text-lg"></i>
             </a>
@@ -317,7 +317,7 @@ $events = get_events($pdo);
     <div class="relative z-10 max-w-4xl mx-auto">
       <h2 class="mora-serif text-5xl sm:text-7xl text-white mb-6"><?= e($experience_content['private_events']['heading'] ?? ($experience_content['private_celebrations']['heading'] ?? ($experience_content['banner']['heading'] ?? ($experience_content['cta']['heading'] ?? 'Private Events & Gatherings')))) ?></h2>
       <p class="text-lg text-[#F2E7D4]/80 font-light mb-10"><?= e($experience_content['private_events']['description'] ?? ($experience_content['private_celebrations']['description'] ?? ($experience_content['banner']['description'] ?? ($experience_content['cta']['description'] ?? "Looking for the perfect venue for your next celebration?\n        Whether it's a birthday, corporate event, or a casual get-together, our team will make it unforgettable.")))) ?></p>
-      <a href="<?= e($experience_content['private_events']['button_link'] ?? ($experience_content['banner']['button_link'] ?? ($experience_content['cta']['button_link'] ?? ($s['reservation_link'] ?? './contact.php')))) ?>"
+      <a href="<?= e($experience_content['private_events']['button_link'] ?? ($experience_content['banner']['button_link'] ?? ($experience_content['cta']['button_link'] ?? ($s['reservation_link'] ?? 'contact')))) ?>"
         class="inline-flex items-center gap-2 bg-white text-black font-semibold rounded-full px-8 py-4 hover:bg-[#AA8243] hover:text-white transition-colors">
         <?= e($experience_content['private_events']['button_text'] ?? ($experience_content['banner']['button_text'] ?? ($experience_content['cta']['button_text'] ?? 'Inquire Now'))) ?> <i class="ti ti-arrow-up-right"></i>
       </a>

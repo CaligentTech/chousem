@@ -86,7 +86,7 @@ $categories = get_categories($pdo, 'food');
     class="fixed top-0 inset-x-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-white transition-all duration-300">
     <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
       <div class="flex items-center">
-        <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="./index.php">
+        <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="./">
           <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo">
           <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
         </a>
@@ -94,23 +94,23 @@ $categories = get_categories($pdo, 'food');
       <nav aria-label="Main links"
         class="hidden items-center gap-1 rounded-full bg-black/30 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10">
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-          href="./index.php">Home</a>
+          href="./">Home</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-white bg-white/20 transition-colors"
-          href="menu.php">Menu</a>
+          href="menu">Menu</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-          href="about.php">About</a>
+          href="about">About</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-          href="bar.php">Bar</a>
+          href="bar">Bar</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-          href="experience.php">Experience</a> <a
+          href="experience">Experience</a> <a
           class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-          href="gallery.php">Gallery</a>
+          href="gallery">Gallery</a>
         <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-          href="contact.php">Contact</a>
+          href="contact">Contact</a>
       </nav>
 
       <div class="hidden lg:flex items-center gap-4">
-        <a href="./contact.php"
+        <a href="contact"
           class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
           <span>Reserve a Table</span>
           <i class="ti ti-arrow-up-right text-base"></i>
@@ -128,20 +128,20 @@ $categories = get_categories($pdo, 'food');
       class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
       <nav class="flex flex-col gap-3">
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-          href="./index.php">Home</a>
+          href="./">Home</a>
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-          href="menu.php">Menu</a>
+          href="menu">Menu</a>
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-          href="./about.php">About</a>
+          href="about">About</a>
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-          href="bar.php">Bar</a>
+          href="bar">Bar</a>
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-          href="./experience.php">Experience</a>
+          href="experience">Experience</a>
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-          href="./gallery.php">Gallery</a>
+          href="gallery">Gallery</a>
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-          href="./contact.php">Contact</a>
-        <a href="./contact.php"
+          href="contact">Contact</a>
+        <a href="contact"
           class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
           Reserve a Table <i class="ti ti-arrow-up-right"></i>
         </a>
