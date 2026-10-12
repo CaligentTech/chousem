@@ -14,6 +14,7 @@ $ambience_images = get_gallery($pdo, 'ambience');
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Gallery &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
+    <?php include __DIR__ . '/includes/head-icons.php'; ?>
     <meta name="description"
         content="Gallery of C HOUSE &mdash; Italian Bistro, Bar &amp; Lounge in Dubai Jebel Ali." />
 

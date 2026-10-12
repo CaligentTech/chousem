@@ -12,6 +12,7 @@ $events = get_events($pdo);
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Experience & Events &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
+  <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <meta name="description" content="Live entertainment, special events, and the nightlife experience at C HOUSE." />
 
   <!-- Fonts -->

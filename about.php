@@ -13,6 +13,7 @@ $reviews = get_reviews($pdo);
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>About Us &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
+  <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <meta name="description" content="About C HOUSE &mdash; Italian Bistro, Bar &amp; Lounge in Dubai Jebel Ali." />
 
   <!-- Fonts -->
@@ -95,14 +96,13 @@ $reviews = get_reviews($pdo);
 <body class="bg-black text-white overflow-x-hidden">
 
   <!-- HERO CONTAINER -->
-  <div class="relative min-h-[55svh] w-full flex flex-col justify-between overflow-hidden">
+  <div class="relative min-h-[60svh] w-full flex flex-col justify-between overflow-hidden bg-black">
 
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
-      <img src="<?= e($about_content['hero']['image'] ?? 'gallery/about-hero.webp') ?>" alt="C HOUSE Outdoor Terrace"
-        class="h-full w-full object-cover object-center" />
-      <!-- Subtle Dark Overlay for Crisp Contrast -->
-      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/65"></div>
+      <img src="<?= e($about_content['hero']['image'] ?? 'gallery/about-hero.webp') ?>" alt="C HOUSE dining room with live music at night"
+        class="h-full w-full object-cover object-[50%_12%]" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/40"></div>
     </div>
 
     <!-- NAVBAR (MATCHING INDEX.HTML WITH ROUND WHITE RESERVE BUTTON) -->

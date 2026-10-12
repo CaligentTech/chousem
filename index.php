@@ -19,6 +19,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>C HOUSE - Italian bistro · bar · lounge</title>
+  <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <link rel="preload" as="image" href="<?= e($s['hero_image']) ?>" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');

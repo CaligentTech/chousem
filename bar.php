@@ -14,6 +14,7 @@ $bundles = get_offers($pdo, 'bundle');
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>C HOUSE - Bar Menu</title>
+  <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <link rel="preload" as="image" href="gallery/drinks/DSC05172.webp" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap');

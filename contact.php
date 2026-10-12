@@ -11,6 +11,7 @@ $contact_content = get_page_content($pdo, 'contact');
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Contact Us &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
+  <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <meta name="description" content="Contacts of C HOUSE &mdash; Italian Bistro, Bar &amp; Lounge in Dubai Jebel Ali." />
 
   <!-- Fonts -->
