@@ -1777,7 +1777,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           const finalScale = 1.0;
           const gw = glass.offsetWidth * finalScale; // final on-screen size of the glass
           const gh = glass.offsetHeight * finalScale;
-          const gap = isDesktopNow ? 24 : 40; // space between text and glass
+          const gap = isDesktopNow ? 24 : 10; // space between text and glass
 
           // measure where the heading text really ends on each line
           const textRange = document.createRange();
