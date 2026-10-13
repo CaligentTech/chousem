@@ -1777,7 +1777,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           const finalScale = 1.0;
           const gw = glass.offsetWidth * finalScale; // final on-screen size of the glass
           const gh = glass.offsetHeight * finalScale;
-          const gap = isDesktopNow ? 24 : 10; // space between text and glass
+          const gap = isDesktopNow ? 24 : -40; // space between text and glass
 
           // measure where the heading text really ends on each line
           const textRange = document.createRange();
@@ -1798,10 +1798,9 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             centerX = widestRight + gap + gw / 2;
             centerY = headingRect.top + headingRect.height / 2;
           } else {
-            // little room: place glass so its LEFT edge starts after the last line
-            const lastLineRight = lastLine ? lastLine.right : headingRect.right;
-            centerX = lastLineRight + gap;
-            centerY = (lastLine ? lastLine.top : headingRect.bottom - gh);
+            // little room: push glass past the right edge of the heading
+            centerX = headingRect.right + gap;
+            centerY = (lastLine ? lastLine.top + lastLine.height / 2 : headingRect.bottom - gh / 2);
           }
 
           // the glass scales/rotates from its bottom-centre, so correct for that
