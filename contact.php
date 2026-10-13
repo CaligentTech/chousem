@@ -254,15 +254,39 @@ $contact_content = get_page_content($pdo, 'contact');
 
             <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
               data-name="contact buttons container">
-              <a class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]"
-                data-kid="2-2-8-1-1-4-1" data-name="directions link"
-                href="<?= e($s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=Jebel+Ali+Recreation+Club+Dubai') ?>"
-                rel="noreferrer" target="_blank">
-                Get directions
-                <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-1-1"
-                  data-name="arrow-up-right icon">
-                </i>
-              </a>
+              <?php
+              $c_map_q = rawurlencode($s['map_query'] ?? 'C HOUSE Jebel Ali Recreation Club Dubai');
+              $c_lat = trim($s['map_lat'] ?? '');
+              $c_lng = trim($s['map_lng'] ?? '');
+              $c_has_ll = ($c_lat !== '' && $c_lng !== '');
+              $c_google = $s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=' . $c_map_q;
+              $c_waze   = $s['waze_url'] ?? ($c_has_ll ? 'https://waze.com/ul?ll=' . $c_lat . ',' . $c_lng . '&navigate=yes' : 'https://waze.com/ul?q=' . $c_map_q . '&navigate=yes');
+              $c_apple  = $s['apple_maps_url'] ?? ($c_has_ll ? 'https://maps.apple.com/?daddr=' . $c_lat . ',' . $c_lng . '&dirflg=d' : 'https://maps.apple.com/?daddr=' . $c_map_q . '&dirflg=d');
+              ?>
+              <div class="relative" id="contact-directions-wrap">
+                <button onclick="document.getElementById('contact-directions-menu').classList.toggle('hidden')" class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]" type="button">
+                  Get directions
+                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm"></i>
+                </button>
+                <div id="contact-directions-menu" class="hidden absolute left-0 top-full mt-2 z-50 bg-white border border-[#30201B]/15 rounded-xl overflow-hidden shadow-xl min-w-[180px]">
+                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors" href="<?= e($c_google) ?>" rel="noreferrer" target="_blank">
+                    <i class="ti ti-brand-google-maps text-base"></i> Google Maps
+                  </a>
+                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($c_waze) ?>" rel="noreferrer" target="_blank">
+                    <i class="ti ti-navigation text-base"></i> Waze
+                  </a>
+                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($c_apple) ?>" rel="noreferrer" target="_blank">
+                    <i class="ti ti-brand-apple text-base"></i> Apple Maps
+                  </a>
+                </div>
+              </div>
+              <script>
+                document.addEventListener('click', function(e) {
+                  const wrap = document.getElementById('contact-directions-wrap');
+                  const menu = document.getElementById('contact-directions-menu');
+                  if (wrap && menu && !wrap.contains(e.target)) menu.classList.add('hidden');
+                });
+              </script>
               <button
                 class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]"
                 data-kid="2-2-8-1-1-4-2" data-name="reserve button" data-open-reservation="" type="button">
