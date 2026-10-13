@@ -1256,7 +1256,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 : 'https://maps.apple.com/?daddr=' . $q . '&dirflg=d');
               $map_btn = 'inline-flex items-center gap-2 border border-[var(--mora-olive)]/40 bg-[#f5e6c8] px-4 py-3 text-[10px] font-bold uppercase tracking-[.14em] text-black hover:bg-[var(--mora-clay)] hover:text-white transition-colors';
               ?>
-              <div class="hidden lg:flex absolute inset-x-6 bottom-6 z-10 flex-wrap gap-2" data-name="map direction buttons">
+              <div class="absolute inset-x-6 bottom-6 z-10 flex flex-wrap gap-2" data-name="map direction buttons">
                 <a href="<?= e($google_url) ?>" target="_blank" rel="noopener noreferrer" class="<?= $map_btn ?>">
                   <i aria-hidden="true" class="ti ti-brand-google-maps text-sm"></i> Google Maps
                 </a>
