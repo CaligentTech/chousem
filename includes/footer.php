@@ -91,9 +91,9 @@ if (!function_exists('e')) {
                 </div>
             </div>
         </div>
-        <div class="flex flex-col gap-3 border-t border-[var(--mora-candle)]/25 pt-6 text-[10px] uppercase tracking-[.14em] text-[var(--mora-candle)]/52 sm:flex-row sm:items-center sm:justify-between"
+        <div class="flex flex-col gap-3 border-t border-[var(--mora-candle)]/25 pt-6 text-[11px] uppercase tracking-[.14em] text-[var(--mora-candle)]/75 sm:flex-row sm:items-center sm:justify-between"
             data-kid="2-3-1-3">
-            <span data-kid="2-3-1-3-1"><?= e($s['footer_copyright'] ?? '© 2026 C HOUSE. All rights reserved.') ?></span>
+            <span data-kid="2-3-1-3-1">&copy; <?= date('Y') ?> <?= e($s['site_name'] ?? 'C HOUSE') ?>. All rights reserved.</span>
             <span data-kid="2-3-1-3-2"><?= e($s['footer_advice'] ?? 'Reservations recommended for dinner') ?></span>
         </div>
     </div>
