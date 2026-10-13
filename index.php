@@ -1228,7 +1228,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 frameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
 
 
-              <div class="absolute bottom-6 right-6 z-10 pointer-events-none" data-kid="2-2-8-1-2-3" data-name="map caption overlay container">
+              <div class="absolute top-6 right-6 z-10 pointer-events-none" data-kid="2-2-8-1-2-3" data-name="map caption overlay container">
                 <div class="mora-fold mora-fold-parchment bg-[var(--mora-clay)] px-5 py-4 text-[var(--mora-candle)]"
                   data-kid="2-2-8-1-2-3-inner" data-name="map caption overlay">
                   <p class="text-xs font-semibold" data-kid="2-2-8-1-2-3-1" data-name="location title">
@@ -1240,12 +1240,33 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   </p>
                 </div>
               </div>
-              <a href="<?= e($s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=Jebel+Ali+Recreation+Club+Dubai') ?>"
-                target="_blank" rel="noopener noreferrer"
-                class="absolute bottom-6 left-6 z-10 border border-[var(--mora-olive)]/40 bg-[#f5e6c8] px-4 py-3 text-[10px] font-bold uppercase tracking-[.14em] text-black hover:bg-[var(--mora-clay)] hover:text-white transition-colors">
-                Get directions
-                <i aria-hidden="true" class="ti ti-arrow-up-right ml-2 text-sm"></i>
-              </a>
+              <?php
+              // Where "directions" should lead. Change in the settings table, or edit the default below.
+              $map_query = $s['map_query'] ?? 'C HOUSE Jebel Ali Recreation Club Dubai';
+              $q = rawurlencode($map_query);
+              $lat = trim($s['map_lat'] ?? '');
+              $lng = trim($s['map_lng'] ?? '');
+              $has_ll = ($lat !== '' && $lng !== '');
+              $google_url = $s['google_maps_url'] ?? $s['google_maps_link'] ?? ('https://www.google.com/maps/search/?api=1&query=' . $q);
+              $waze_url   = $s['waze_url'] ?? ($has_ll
+                ? 'https://waze.com/ul?ll=' . $lat . ',' . $lng . '&navigate=yes'
+                : 'https://waze.com/ul?q=' . $q . '&navigate=yes');
+              $apple_url  = $s['apple_maps_url'] ?? ($has_ll
+                ? 'https://maps.apple.com/?daddr=' . $lat . ',' . $lng . '&dirflg=d'
+                : 'https://maps.apple.com/?daddr=' . $q . '&dirflg=d');
+              $map_btn = 'inline-flex items-center gap-2 border border-[var(--mora-olive)]/40 bg-[#f5e6c8] px-4 py-3 text-[10px] font-bold uppercase tracking-[.14em] text-black hover:bg-[var(--mora-clay)] hover:text-white transition-colors';
+              ?>
+              <div class="absolute inset-x-6 bottom-6 z-10 flex flex-wrap gap-2" data-name="map direction buttons">
+                <a href="<?= e($google_url) ?>" target="_blank" rel="noopener noreferrer" class="<?= $map_btn ?>">
+                  <i aria-hidden="true" class="ti ti-brand-google-maps text-sm"></i> Google Maps
+                </a>
+                <a href="<?= e($waze_url) ?>" target="_blank" rel="noopener noreferrer" class="<?= $map_btn ?>">
+                  <i aria-hidden="true" class="ti ti-navigation text-sm"></i> Waze
+                </a>
+                <a href="<?= e($apple_url) ?>" target="_blank" rel="noopener noreferrer" class="<?= $map_btn ?>">
+                  <i aria-hidden="true" class="ti ti-brand-apple text-sm"></i> Apple Maps
+                </a>
+              </div>
             </div>
           </div>
         </section>
