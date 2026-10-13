@@ -746,7 +746,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               class="order-first relative h-[75vw] lg:order-last lg:mt-20 lg:h-[710px] flex items-center justify-center"
               data-kid="2-2-3-1-1" data-name="food display stage" id="food-stage">
               <img id="scroll-glass" alt="Signature C HOUSE mocktail in a tall glass"
-                class="absolute origin-bottom w-[35%] h-[40%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 translate-x-[110%] translate-y-[340%] lg:-translate-x-[390%] lg:-translate-y-[42%] z-50"
+                class="absolute origin-bottom w-[35%] h-[40%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 translate-x-[120%] translate-y-[420%] lg:-translate-x-[390%] lg:-translate-y-[42%] z-50"
                 decoding="async" loading="lazy" src="gallery/mocktailindex.webp" style="transition: none;" />
               <img alt="Wood-fired pizza fresh from the C HOUSE oven"
                 class="absolute origin-bottom w-[110%] h-[110%] lg:w-[80%] lg:h-[85%] object-contain rounded-[2rem] rotate-3 translate-x-2 transition-all duration-500 hover:rotate-6 hover:translate-x-6 hover:scale-105 z-10"
@@ -1793,7 +1793,11 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           }, null);
 
           let centerX, centerY;
-          if (widestRight + gap + gw <= headingRect.right) {
+          if (!isDesktopNow) {
+            // On mobile: always sit to the right of the last line, vertically aligned with it
+            centerX = (lastLine ? lastLine.right : headingRect.right) + gap + gw / 2;
+            centerY = (lastLine ? lastLine.top + lastLine.height / 2 : headingRect.bottom - gh / 2);
+          } else if (widestRight + gap + gw <= headingRect.right) {
             // enough room: sit to the right of the longest line, vertically centred on the heading
             centerX = widestRight + gap + gw / 2;
             centerY = headingRect.top + headingRect.height / 2;
