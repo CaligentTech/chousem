@@ -1794,10 +1794,10 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
 
           let centerX, centerY;
           if (!isDesktopNow) {
-            // On mobile: sit to the right of the last line, vertically aligned with it, clamped to viewport
+            // On mobile: sit to the right of the last line of the heading
             const desiredX = (lastLine ? lastLine.right : headingRect.right) + gap + gw / 2;
             centerX = Math.min(desiredX, window.innerWidth - gw / 2 - 8);
-            centerY = (lastLine ? lastLine.top + lastLine.height / 2 : headingRect.bottom - gh / 2);
+            centerY = headingRect.bottom - gh / 2;
           } else if (widestRight + gap + gw <= headingRect.right) {
             // enough room: sit to the right of the longest line, vertically centred on the heading
             centerX = widestRight + gap + gw / 2;
