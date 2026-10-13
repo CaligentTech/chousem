@@ -603,7 +603,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
     <div class="mora-sans overflow-x-clip bg-[var(--mora-parchment)] text-[var(--mora-espresso)]" data-kid="2"
       data-name="main page container" id="mora-page">
       <header aria-label="Primary navigation"
-        class="fixed inset-x-0 top-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-[#f5e6c8] transition-all duration-300" data-kid="2-1"
+        class="fixed inset-x-0 top-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-[#f5e6c8] transition-all duration-300 bg-black/70 backdrop-blur-md shadow-lg" data-kid="2-1"
         data-name="primary navigation header" id="mora-nav">
         <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative" data-kid="2-1-1"
           data-name="navigation bar layout container">
@@ -703,9 +703,9 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-10">
               <?php $reviews_url = $s['google_reviews_url'] ?? $s['google_maps_url'] ?? ''; ?>
               <<?= $reviews_url ? 'a href="' . e($reviews_url) . '" target="_blank" rel="noopener" aria-label="Read our Google reviews"' : 'div' ?> class="flex items-center lg:flex-col gap-2 lg:gap-1 shrink-0 hover:opacity-80 transition-opacity">
-                <span class="text-white text-2xl lg:text-[32px] font-bold leading-none"><?= e($s['google_rating']) ?> <span
-                    class="text-yellow-500 text-xl lg:text-[26px] align-baseline"><b>&#9733;</b></span></span>
-                <span class="text-gray-300 text-[11px] lg:text-[13px] uppercase tracking-wider">Google Rating</span>
+                <span class="text-white text-4xl lg:text-[52px] font-bold leading-none"><?= e($s['google_rating']) ?> <span
+                    class="text-yellow-500 text-3xl lg:text-[42px] align-baseline"><b>&#9733;</b></span></span>
+                <span class="text-gray-300 text-[13px] lg:text-[15px] uppercase tracking-wider">Google Rating</span>
               </<?= $reviews_url ? 'a' : 'div' ?>>
               <div class="flex flex-col lg:gap-2 text-white/90 mora-serif text-sm lg:text-lg tracking-wide">
                 <p><?= e($s['hero_subtext_1']) ?></p>
@@ -1474,9 +1474,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         const setNavState = () => {
           const on = window.scrollY > 24;
           nav.classList.toggle('is-scrolled', on);
-          nav.classList.toggle('bg-black/80', on);
           nav.classList.toggle('backdrop-blur-md', on);
-          nav.classList.toggle('shadow-lg', on);
         };
         setNavState();
         window.addEventListener('scroll', setNavState, {

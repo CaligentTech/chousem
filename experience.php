@@ -66,7 +66,7 @@ $events = get_events($pdo);
 <body class="bg-black text-white overflow-x-hidden">
 
   <!-- HERO CONTAINER -->
-  <div class="relative min-h-[70svh] w-full flex flex-col justify-between overflow-hidden">
+  <div class="relative w-full flex flex-col justify-between overflow-hidden">
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
       <img src="<?= e($experience_content['hero']['image'] ?? './gallery/ambience12.webp') ?>" alt="C HOUSE Experience"
@@ -143,7 +143,8 @@ $events = get_events($pdo);
       </div>
     </header>
 
-    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 pt-36 pb-16 text-center">
+    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 pt-24 pb-12 text-center">
+      <div class="relative z-10 text-center max-w-3xl mx-auto">
       <p class="text-[11px] uppercase tracking-[.25em] text-[#AA8243] font-bold mb-6"><?= e($experience_content['hero']['kicker'] ?? ($experience_content['hero']['subtitle'] ?? 'Live the moment')) ?></p>
       <h1
         class="mora-serif text-white text-5xl md:text-7xl mb-2 font-normal tracking-tight leading-[0.95] drop-shadow-2xl">
@@ -152,6 +153,7 @@ $events = get_events($pdo);
       <p class="mt-8 text-sm sm:text-base text-gray-300 max-w-2xl font-light leading-relaxed">
         <?= e($experience_content['hero']['description'] ?? 'From pulsating live bands to intimate acoustic sets and themed event nights. C HOUSE transforms from a relaxed bistro by day into a vibrant social destination by night.') ?>
       </p>
+      </div>
     </main>
   </div>
 

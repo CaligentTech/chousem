@@ -96,7 +96,7 @@ $reviews = get_reviews($pdo);
 <body class="bg-black text-white overflow-x-hidden">
 
   <!-- HERO CONTAINER -->
-  <div class="relative min-h-[60svh] w-full flex flex-col justify-between overflow-hidden bg-black">
+  <div class="relative w-full flex flex-col justify-between overflow-hidden bg-black">
 
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
@@ -181,14 +181,13 @@ $reviews = get_reviews($pdo);
     </header>
 
     <!-- CENTER HERO CONTENT: ABOUT US IN BIG WHITE LETTERS -->
-    <main class="relative z-10 flex-1 flex items-center justify-center px-5 pt-36 pb-10 text-center">
-      <h1 class="mora-serif text-white text-5xl md:text-7xl font-normal tracking-tight leading-tight select-none drop-shadow-2xl">
-        <?= e($about_content['hero']['heading'] ?? 'About Us') ?>
-      </h1>
+    <main class="relative z-10 flex-1 flex items-center justify-center px-5 pt-24 pb-12 text-center">
+      <div class="relative z-10 text-center max-w-3xl mx-auto">
+        <h1 class="mora-serif text-white text-5xl md:text-7xl font-normal tracking-tight leading-tight select-none drop-shadow-2xl">
+          <?= e($about_content['hero']['heading'] ?? 'About Us') ?>
+        </h1>
+      </div>
     </main>
-
-    <!-- Bottom Spacing Anchor -->
-    <div class="relative z-10 pb-4 sm:pb-6"></div>
 
   </div>
 
