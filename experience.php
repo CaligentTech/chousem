@@ -66,7 +66,7 @@ $events = get_events($pdo);
 <body class="bg-black text-white overflow-x-hidden">
 
   <!-- HERO CONTAINER -->
-  <div class="relative w-full flex flex-col justify-between overflow-hidden">
+  <div class="relative min-h-[500px] w-full flex flex-col justify-between overflow-hidden">
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
       <img src="<?= e($experience_content['hero']['image'] ?? './gallery/ambience12.webp') ?>" alt="C HOUSE Experience"

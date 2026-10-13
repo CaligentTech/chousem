@@ -96,7 +96,7 @@ $reviews = get_reviews($pdo);
 <body class="bg-black text-white overflow-x-hidden">
 
   <!-- HERO CONTAINER -->
-  <div class="relative w-full flex flex-col justify-between overflow-hidden bg-black">
+  <div class="relative min-h-[500px] w-full flex flex-col justify-between overflow-hidden bg-black">
 
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 z-0">
