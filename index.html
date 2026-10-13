@@ -1768,7 +1768,7 @@
           startXPercent = xMatch.val / 100;
           if (xMatch.str.includes('-translate-x-')) startXPercent = -Math.abs(startXPercent);
         } else {
-          startXPercent = -1.8; // Fallback
+          startXPercent = isDesktop ? -1.8 : 1.1; // Fallback
         }
 
         const yMatch = extractVal('translate-y');
