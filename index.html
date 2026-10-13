@@ -1857,7 +1857,7 @@
           const currentY = startY + (targetY - startY) * progress;
           // Animate rotation from initial to 15 degrees
           const currentRotate = startRotate + (15 - startRotate) * progress;
-          const currentScale = 1 - 0.25 * progress;
+          const currentScale = 1.0;
 
           // Only change transform, never touch left/top/position!
           glass.style.transform = 'translate(' + currentX + 'px, ' + currentY + 'px) rotate(' + currentRotate + 'deg) scale(' + currentScale + ')';
