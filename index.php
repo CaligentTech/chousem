@@ -1799,7 +1799,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             centerY = headingRect.top + headingRect.height / 2;
           } else {
             // little room: tuck it at the right edge, beside the short last line
-            centerX = !isDesktopNow ? headingRect.right + gw + 24 : headingRect.right - gw / 2;
+            centerX = headingRect.right - gw / 2;
             centerY = (lastLine ? lastLine.bottom : headingRect.bottom) - gh / 2;
           }
 
