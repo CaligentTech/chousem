@@ -1810,8 +1810,17 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
 
           // the glass scales/rotates from its bottom-centre, so correct for that
           const targetX = centerX - parentCenterX;
-          const scaleOffset = isDesktopNow ? (glass.offsetHeight / 2) * (1 - finalScale) : 0;
-          const targetY = centerY - parentCenterY - scaleOffset;
+          let targetY;
+          if (!isDesktopNow) {
+            // On mobile food-stage and heading are in separate grid rows,
+            // so parentCenterY is useless. Compute offset from glass's current screen position.
+            const glassRect = glass.getBoundingClientRect();
+            const glassCenterY = glassRect.top + glassRect.height / 2;
+            targetY = (centerY - glassCenterY) + (startYPercent * glass.offsetHeight);
+          } else {
+            const scaleOffset = (glass.offsetHeight / 2) * (1 - finalScale);
+            targetY = centerY - parentCenterY - scaleOffset;
+          }
 
           const currentX = startX + (targetX - startX) * progress;
           const currentY = startY + (targetY - startY) * progress;
