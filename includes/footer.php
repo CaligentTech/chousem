@@ -47,13 +47,38 @@ if (!function_exists('e')) {
                     data-name="visit content list">
                     <p data-kid="2-3-1-2-1-2-1" data-name="address line 1"><?= e($s['address_line1'] ?? 'H Rd, Jebel Ali Recreation Club') ?></p>
                     <p data-kid="2-3-1-2-1-2-3" data-name="location line"><?= e($s['address_line2'] ?? 'Behind IBN Batuta Mall, Dubai') ?></p>
-                    <a class="mora-menu-link mt-4 inline-block border-b border-[var(--mora-candle)]/35 pb-1 text-[11px] uppercase tracking-[.12em]"
-                        data-kid="2-3-1-2-1-2-4" data-name="directions link"
-                        href="https://www.google.com/maps/search/?api=1&amp;query=Jebel+Ali+Recreation+Club+Dubai"
-                        rel="noreferrer" target="_blank">
-                        Directions
-                        <i aria-hidden="true" class="ti ti-arrow-up-right ml-1" data-kid="2-3-1-2-1-2-4-1"></i>
-                    </a>
+                    <?php
+                    $map_q = rawurlencode($s['map_query'] ?? 'C HOUSE Jebel Ali Recreation Club Dubai');
+                    $lat = trim($s['map_lat'] ?? '');
+                    $lng = trim($s['map_lng'] ?? '');
+                    $has_ll = ($lat !== '' && $lng !== '');
+                    $google_url = $s['google_maps_url'] ?? 'https://www.google.com/maps/search/?api=1&query=' . $map_q;
+                    $waze_url   = $s['waze_url'] ?? ($has_ll ? 'https://waze.com/ul?ll=' . $lat . ',' . $lng . '&navigate=yes' : 'https://waze.com/ul?q=' . $map_q . '&navigate=yes');
+                    $apple_url  = $s['apple_maps_url'] ?? ($has_ll ? 'https://maps.apple.com/?daddr=' . $lat . ',' . $lng . '&dirflg=d' : 'https://maps.apple.com/?daddr=' . $map_q . '&dirflg=d');
+                    ?>
+                    <div class="relative mt-4 w-fit" id="footer-directions-wrap">
+                        <button onclick="document.getElementById('footer-directions-menu').classList.toggle('hidden')" class="mora-menu-link inline-flex items-center gap-1.5 border-b border-[var(--mora-candle)]/35 pb-1 text-[11px] uppercase tracking-[.12em]" type="button">
+                            Directions <i class="ti ti-arrow-up-right ml-1"></i>
+                        </button>
+                        <div id="footer-directions-menu" class="hidden absolute left-0 top-full mt-2 z-50 bg-[#1a1a1a] border border-[var(--mora-candle)]/20 rounded-xl overflow-hidden shadow-xl min-w-[180px]">
+                            <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[var(--mora-candle)]/80 hover:bg-white/10 hover:text-white transition-colors" href="<?= e($google_url) ?>" rel="noreferrer" target="_blank">
+                                <i class="ti ti-brand-google-maps text-base"></i> Google Maps
+                            </a>
+                            <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[var(--mora-candle)]/80 hover:bg-white/10 hover:text-white transition-colors border-t border-[var(--mora-candle)]/10" href="<?= e($waze_url) ?>" rel="noreferrer" target="_blank">
+                                <i class="ti ti-navigation text-base"></i> Waze
+                            </a>
+                            <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[var(--mora-candle)]/80 hover:bg-white/10 hover:text-white transition-colors border-t border-[var(--mora-candle)]/10" href="<?= e($apple_url) ?>" rel="noreferrer" target="_blank">
+                                <i class="ti ti-brand-apple text-base"></i> Apple Maps
+                            </a>
+                        </div>
+                    </div>
+                    <script>
+                        document.addEventListener('click', function(e) {
+                            const wrap = document.getElementById('footer-directions-wrap');
+                            const menu = document.getElementById('footer-directions-menu');
+                            if (wrap && menu && !wrap.contains(e.target)) menu.classList.add('hidden');
+                        });
+                    </script>
                 </div>
             </div>
             <div data-kid="2-3-1-2-2" data-name="footer explore column">
