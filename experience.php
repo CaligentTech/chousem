@@ -143,14 +143,13 @@ $events = get_events($pdo);
       </div>
     </header>
 
-    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 pt-24 pb-12 text-center">
-      <div class="relative z-10 text-center max-w-3xl mx-auto">
-      <p class="text-[11px] uppercase tracking-[.25em] text-[#AA8243] font-bold mb-6"><?= e($experience_content['hero']['kicker'] ?? ($experience_content['hero']['subtitle'] ?? 'Live the moment')) ?></p>
-      <h1
-        class="mora-serif text-white text-5xl md:text-7xl mb-2 font-normal tracking-tight leading-[0.95] drop-shadow-2xl">
+    <main class="relative z-10 flex-1 flex flex-col items-center px-5 pt-24 pb-12 text-center">
+      <div class="text-center max-w-3xl mx-auto pt-16">
+      <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4"><?= e($experience_content['hero']['kicker'] ?? ($experience_content['hero']['subtitle'] ?? 'Live the moment')) ?></p>
+      <h1 class="mora-serif text-5xl md:text-7xl mb-6">
         <?= e($experience_content['hero']['heading'] ?? 'The Experience') ?>
       </h1>
-      <p class="mt-8 text-sm sm:text-base text-gray-300 max-w-2xl font-light leading-relaxed">
+      <p class="text-sm md:text-base text-gray-300 tracking-wide font-light mb-10">
         <?= e($experience_content['hero']['description'] ?? 'From pulsating live bands to intimate acoustic sets and themed event nights. C HOUSE transforms from a relaxed bistro by day into a vibrant social destination by night.') ?>
       </p>
       </div>

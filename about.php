@@ -181,9 +181,10 @@ $reviews = get_reviews($pdo);
     </header>
 
     <!-- CENTER HERO CONTENT: ABOUT US IN BIG WHITE LETTERS -->
-    <main class="relative z-10 flex-1 flex items-center justify-center px-5 pt-24 pb-12 text-center">
-      <div class="relative z-10 text-center max-w-3xl mx-auto">
-        <h1 class="mora-serif text-white text-5xl md:text-7xl font-normal tracking-tight leading-tight select-none drop-shadow-2xl">
+    <main class="relative z-10 flex-1 flex flex-col items-center px-5 pt-24 pb-12 text-center">
+      <div class="text-center max-w-3xl mx-auto pt-16">
+        <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4">&nbsp;</p>
+        <h1 class="mora-serif text-5xl md:text-7xl mb-6">
           <?= e($about_content['hero']['heading'] ?? 'About Us') ?>
         </h1>
       </div>
