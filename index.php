@@ -1810,7 +1810,8 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
 
           // the glass scales/rotates from its bottom-centre, so correct for that
           const targetX = centerX - parentCenterX;
-          const targetY = centerY - parentCenterY - (glass.offsetHeight / 2) * (1 - finalScale);
+          const scaleOffset = isDesktopNow ? (glass.offsetHeight / 2) * (1 - finalScale) : 0;
+          const targetY = centerY - parentCenterY - scaleOffset;
 
           const currentX = startX + (targetX - startX) * progress;
           const currentY = startY + (targetY - startY) * progress;
