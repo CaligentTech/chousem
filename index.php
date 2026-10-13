@@ -1793,7 +1793,12 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           }, null);
 
           let centerX, centerY;
-          if (widestRight + gap + gw <= headingRect.right) {
+          if (!isDesktopNow) {
+            // Mobile: sit to the right of "course." (last line), vertically centred on it
+            const desiredX = (lastLine ? lastLine.right : headingRect.right) + gap + gw / 2;
+            centerX = Math.min(desiredX, window.innerWidth - gw / 2 - 8);
+            centerY = lastLine ? lastLine.top + lastLine.height / 2 : headingRect.bottom - gh / 2;
+          } else if (widestRight + gap + gw <= headingRect.right) {
             // enough room: sit to the right of the longest line, vertically centred on the heading
             centerX = widestRight + gap + gw / 2;
             centerY = headingRect.top + headingRect.height / 2;
@@ -1805,7 +1810,8 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
 
           // the glass scales/rotates from its bottom-centre, so correct for that
           const targetX = centerX - parentCenterX;
-          const targetY = centerY - parentCenterY - (glass.offsetHeight / 2) * (1 - finalScale);
+          const scaleOffset = isDesktopNow ? (glass.offsetHeight / 2) * (1 - finalScale) : 0;
+          const targetY = centerY - parentCenterY - scaleOffset;
 
           const currentX = startX + (targetX - startX) * progress;
           const currentY = startY + (targetY - startY) * progress;
