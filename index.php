@@ -1798,8 +1798,9 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             centerX = widestRight + gap + gw / 2;
             centerY = headingRect.top + headingRect.height / 2;
           } else {
-            // little room: push glass past the right edge of the heading
-            centerX = headingRect.right + gap;
+            // little room: sit at the end of the last line of text
+            const lastLineRight = lastLine ? lastLine.right : headingRect.right;
+            centerX = lastLineRight + gap + gw / 2;
             centerY = (lastLine ? lastLine.top + lastLine.height / 2 : headingRect.bottom - gh / 2);
           }
 
