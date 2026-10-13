@@ -1219,7 +1219,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               </div>
             </div>
             <div
-              class="mora-reveal mora-map-panel mora-fold relative min-h-[440px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[590px] is-visible"
+              class="mora-reveal mora-map-panel relative min-h-[300px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[380px] rounded-2xl is-visible"
               data-kid="2-2-8-1-2" data-name="map display panel" data-reveal=""
               style="--mora-delay:140ms;overflow:clip;z-index:0">
               <iframe
