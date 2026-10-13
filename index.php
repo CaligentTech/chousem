@@ -1643,7 +1643,6 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         startYPercent = 0,
         startRotate = 12;
       let ticking = false;
-      let isLocked = false;
 
       // Add a CSS transition to the heading so color changes smoothly
       heading.style.transition = 'color 0.8s ease-out';
@@ -1740,15 +1739,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           // Progress goes from 0 to 1
           let progress = (triggerStart - headingRect.top) / range;
 
-          // Once it reaches the end, lock it in the equilibrium position permanently
-          if (isLocked) {
-            progress = 1;
-          } else if (progress >= 1) {
-            isLocked = true;
-            progress = 1;
-          }
-
-          if (progress <= 0 && !isLocked) {
+          if (progress <= 0) {
             // Before animation starts, let Tailwind CSS handle the default state completely
             glass.style.transform = '';
             glass.style.zIndex = '';
@@ -1763,24 +1754,49 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           const startX = startXPercent * glass.offsetWidth;
           const startY = startYPercent * glass.offsetHeight;
 
-          // The target position is the heading, relative to the parent's center anchor
-          // Tweak these values to change the final landing position for Mobile vs Desktop
-          // Format: isDesktopNow ? [Desktop Value] : [Mobile Value];
-          const targetXMultiplier = isDesktopNow ? -1.2 : -1.5;
-          const targetYMultiplier = isDesktopNow ? 0.8 : 0.25;
+          // ---- Landing spot: BESIDE the heading text, never on top of it ----
+          const finalScale = 0.75;
+          const gw = glass.offsetWidth * finalScale; // final on-screen size of the glass
+          const gh = glass.offsetHeight * finalScale;
+          const gap = isDesktopNow ? 24 : 12; // space between text and glass
 
-          const targetX = headingRect.left - parentCenterX - glassStartRect.width * targetXMultiplier;
-          const targetY = headingRect.top - parentCenterY + glassStartRect.height * targetYMultiplier;
+          // measure where the heading text really ends on each line
+          const textRange = document.createRange();
+          textRange.selectNodeContents(heading);
+          const lineRects = Array.from(textRange.getClientRects()).filter(function(r) {
+            return r.width > 2 && r.height > 2;
+          });
+          const widestRight = lineRects.length ? Math.max.apply(null, lineRects.map(function(r) {
+            return r.right;
+          })) : headingRect.left;
+          const lastLine = lineRects.reduce(function(a, r) {
+            return (!a || r.bottom >= a.bottom) ? r : a;
+          }, null);
+
+          let centerX, centerY;
+          if (widestRight + gap + gw <= headingRect.right) {
+            // enough room: sit to the right of the longest line, vertically centred on the heading
+            centerX = widestRight + gap + gw / 2;
+            centerY = headingRect.top + headingRect.height / 2;
+          } else {
+            // little room: tuck it at the right edge, beside the short last line
+            centerX = headingRect.right - gw / 2;
+            centerY = (lastLine ? lastLine.bottom : headingRect.bottom) - gh / 2;
+          }
+
+          // the glass scales/rotates from its bottom-centre, so correct for that
+          const targetX = centerX - parentCenterX;
+          const targetY = centerY - parentCenterY - (glass.offsetHeight / 2) * (1 - finalScale);
 
           const currentX = startX + (targetX - startX) * progress;
           const currentY = startY + (targetY - startY) * progress;
           // Animate rotation from initial to 15 degrees
           const currentRotate = startRotate + (15 - startRotate) * progress;
-          const currentScale = 1 - 0.25 * progress;
+          const currentScale = 1 - (1 - finalScale) * progress;
 
           // Only change transform, never touch left/top/position!
           glass.style.transform = 'translate(' + currentX + 'px, ' + currentY + 'px) rotate(' + currentRotate + 'deg) scale(' + currentScale + ')';
-          glass.style.zIndex = '9999';
+          glass.style.zIndex = '40'; // above the pizza, below the sticky header (z-50)
 
           // Color transition: trigger watermelon red smoothly when glass lands
           if (progress > 0.8) {
