@@ -1774,7 +1774,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           const startY = startYPercent * glass.offsetHeight;
 
           // ---- Landing spot: BESIDE the heading text, never on top of it ----
-          const finalScale = 0.75;
+          const finalScale = 1.0;
           const gw = glass.offsetWidth * finalScale; // final on-screen size of the glass
           const gh = glass.offsetHeight * finalScale;
           const gap = isDesktopNow ? 24 : 12; // space between text and glass
