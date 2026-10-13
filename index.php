@@ -1135,7 +1135,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         <section aria-labelledby="contact-heading"
           class="bg-[var(--mora-parchment)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-8"
           data-name="contact section" id="contact">
-          <div class="mx-auto grid max-w-[1360px] gap-14 lg:grid-cols-[.75fr_1.25fr] lg:gap-16" data-kid="2-2-8-1"
+          <div class="mx-auto grid max-w-[1360px] gap-14 lg:grid-cols-[1.25fr_.75fr] lg:gap-16" data-kid="2-2-8-1"
             data-name="contact grid container">
             <div class="mora-reveal is-visible" data-kid="2-2-8-1-1" data-name="contact info block" data-reveal="">
 
@@ -1219,7 +1219,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               </div>
             </div>
             <div
-              class="mora-reveal mora-map-panel relative min-h-[300px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[380px] rounded-2xl is-visible"
+              class="mora-reveal mora-map-panel relative min-h-[240px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[300px] rounded-2xl is-visible"
               data-kid="2-2-8-1-2" data-name="map display panel" data-reveal=""
               style="--mora-delay:140ms;overflow:clip;z-index:0">
               <iframe
