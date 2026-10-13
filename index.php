@@ -746,7 +746,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               class="order-first relative h-[75vw] lg:order-last lg:mt-20 lg:h-[710px] flex items-center justify-center"
               data-kid="2-2-3-1-1" data-name="food display stage" id="food-stage">
               <img id="scroll-glass" alt="Signature C HOUSE mocktail in a tall glass"
-                class="absolute origin-bottom w-[35%] h-[40%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 translate-x-[120%] translate-y-[420%] lg:-translate-x-[390%] lg:-translate-y-[42%] z-50"
+                class="absolute origin-bottom w-[40%] h-[45%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 translate-x-[90%] translate-y-[365%] lg:-translate-x-[390%] lg:-translate-y-[42%] z-50"
                 decoding="async" loading="lazy" src="gallery/mocktailindex.webp" style="transition: none;" />
               <img alt="Wood-fired pizza fresh from the C HOUSE oven"
                 class="absolute origin-bottom w-[110%] h-[110%] lg:w-[80%] lg:h-[85%] object-contain rounded-[2rem] rotate-3 translate-x-2 transition-all duration-500 hover:rotate-6 hover:translate-x-6 hover:scale-105 z-10"
@@ -1793,16 +1793,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           }, null);
 
           let centerX, centerY;
-          if (!isDesktopNow) {
-            // On mobile: sit to the right of the last line of the heading
-            // parentCenterY is from food-stage (top column), heading is below it — compute offset from glass directly
-            const desiredX = (lastLine ? lastLine.right : headingRect.right) + gap + gw / 2;
-            centerX = Math.min(desiredX, window.innerWidth - gw / 2 - 8);
-            const targetAbsY = headingRect.bottom - gh / 2;
-            const glassRect = glass.getBoundingClientRect();
-            const glassCenterY = glassRect.top + glassRect.height / 2;
-            centerY = parentCenterY + (targetAbsY - glassCenterY);
-          } else if (widestRight + gap + gw <= headingRect.right) {
+          if (widestRight + gap + gw <= headingRect.right) {
             // enough room: sit to the right of the longest line, vertically centred on the heading
             centerX = widestRight + gap + gw / 2;
             centerY = headingRect.top + headingRect.height / 2;
@@ -1814,8 +1805,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
 
           // the glass scales/rotates from its bottom-centre, so correct for that
           const targetX = centerX - parentCenterX;
-          const scaleOffset = isDesktopNow ? (glass.offsetHeight / 2) * (1 - finalScale) : 0;
-          const targetY = centerY - parentCenterY - scaleOffset;
+          const targetY = centerY - parentCenterY - (glass.offsetHeight / 2) * (1 - finalScale);
 
           const currentX = startX + (targetX - startX) * progress;
           const currentY = startY + (targetY - startY) * progress;
