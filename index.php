@@ -1138,15 +1138,12 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               </div>
             </div>
             <div
-              class="mt-4 flex items-center justify-between border-t border-[var(--mora-candle)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-candle)]/65"
+              class="mt-4 flex flex-col gap-3 border-t border-[var(--mora-candle)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-candle)]/65 sm:flex-row sm:items-center sm:justify-between sm:gap-0"
               data-kid="2-2-5-1-3" data-name="gallery footer controls">
               <span data-kid="2-2-5-1-3-1" data-name="gallery tap instructions">
                 Select an image to enlarge
               </span>
-              <span class="lg:hidden" data-kid="2-2-5-1-3-2" data-name="gallery counter">
-                1 / <?= count($gallery_items) ?>
-              </span>
-              <a class="mora-text-action hidden text-[var(--mora-candle)] lg:inline-flex" data-kid="2-2-5-1-3-3"
+              <a class="mora-text-action inline-flex text-[var(--mora-candle)]" data-kid="2-2-5-1-3-3"
                 data-name="gallery link" href="gallery">
                 See the gallery
                 <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-5-1-3-3-1"
