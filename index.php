@@ -1096,20 +1096,77 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               }
             }
             ?>
-            <div
-              class="mora-gallery-scroller mt-14 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 lg:grid lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:pb-0"
-              data-kid="2-2-5-1-2" data-name="gallery items scroller">
-              <?php foreach ($gallery_items as $i => $img): ?>
-                <?php $style = $gallery_styles[$i % count($gallery_styles)]; ?>
-                <button aria-label="Open gallery image: <?= e($img['caption']) ?>"
-                  class="mora-gallery-item mora-reveal <?= $i === 0 ? 'mora-fold-clay ' : '' ?>min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                  data-gallery-index="<?= $i ?>" data-kid="2-2-5-1-2-<?= $i + 1 ?>" data-name="gallery item <?= $i + 1 ?>" data-reveal=""
-                  <?= $style['delay'] ?> type="button">
-                  <img alt="<?= e($img['alt_text']) ?>"
-                    class="<?= $style['h'] ?> w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-<?= $i + 1 ?>-1"
-                    data-name="gallery image <?= $i + 1 ?>" decoding="async" loading="lazy" src="<?= e($img['image_path']) ?>" />
+            <?php
+            $gallery_labels = [
+              'The Dining Room',
+              'Terrace',
+              'After Hours',
+              '', '', '',
+            ];
+            ?>
+            <!-- Bento gallery grid -->
+            <div class="mt-14 flex flex-col gap-3 lg:gap-4" data-kid="2-2-5-1-2" data-name="gallery bento grid">
+              <!-- Row 1: large left + 2 stacked right -->
+              <div class="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-3 lg:gap-4">
+                <!-- Large image (item 0) -->
+                <button aria-label="Open gallery image: <?= e($gallery_items[0]['caption']) ?>"
+                  class="mora-gallery-item mora-reveal mora-fold-clay relative overflow-hidden rounded-2xl is-visible"
+                  data-gallery-index="0" data-kid="2-2-5-1-2-1" data-name="gallery item 1" data-reveal="" type="button">
+                  <img alt="<?= e($gallery_items[0]['alt_text']) ?>"
+                    class="w-full h-[55vw] lg:h-[520px] object-cover" data-kid="2-2-5-1-2-1-1"
+                    data-name="gallery image 1" decoding="async" loading="lazy" src="<?= e($gallery_items[0]['image_path']) ?>" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+                  <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+                    <span class="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)]"><?= e($gallery_labels[0]) ?></span>
+                    <span class="flex items-center gap-2 text-[var(--mora-candle)]">
+                      <span class="hidden lg:block w-12 h-px bg-[var(--mora-candle)]/50"></span>
+                      <span class="text-[11px] font-semibold">01</span>
+                    </span>
+                  </div>
                 </button>
-              <?php endforeach; ?>
+                <!-- 2 stacked images (items 1 & 2) -->
+                <div class="grid grid-cols-2 lg:grid-cols-1 gap-3 lg:gap-4">
+                  <?php for ($si = 1; $si <= 2; $si++): ?>
+                  <button aria-label="Open gallery image: <?= e($gallery_items[$si]['caption']) ?>"
+                    class="mora-gallery-item mora-reveal relative overflow-hidden rounded-2xl is-visible"
+                    data-gallery-index="<?= $si ?>" data-kid="2-2-5-1-2-<?= $si + 1 ?>" data-name="gallery item <?= $si + 1 ?>" data-reveal=""
+                    style="--mora-delay:<?= $si * 70 ?>ms" type="button">
+                    <img alt="<?= e($gallery_items[$si]['alt_text']) ?>"
+                      class="w-full h-[40vw] lg:h-[250px] object-cover" data-kid="2-2-5-1-2-<?= $si + 1 ?>-1"
+                      data-name="gallery image <?= $si + 1 ?>" decoding="async" loading="lazy" src="<?= e($gallery_items[$si]['image_path']) ?>" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+                      <span class="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)]"><?= e($gallery_labels[$si]) ?></span>
+                      <span class="flex items-center gap-2 text-[var(--mora-candle)]">
+                        <span class="hidden lg:block w-12 h-px bg-[var(--mora-candle)]/50"></span>
+                        <span class="text-[11px] font-semibold">0<?= $si + 1 ?></span>
+                      </span>
+                    </div>
+                  </button>
+                  <?php endfor; ?>
+                </div>
+              </div>
+              <!-- Row 2: 3 equal columns (items 3, 4, 5) -->
+              <div class="grid grid-cols-3 gap-3 lg:gap-4">
+                <?php for ($ri = 3; $ri <= 5; $ri++): ?>
+                <button aria-label="Open gallery image: <?= e($gallery_items[$ri]['caption']) ?>"
+                  class="mora-gallery-item mora-reveal relative overflow-hidden rounded-2xl is-visible"
+                  data-gallery-index="<?= $ri ?>" data-kid="2-2-5-1-2-<?= $ri + 1 ?>" data-name="gallery item <?= $ri + 1 ?>" data-reveal=""
+                  style="--mora-delay:<?= ($ri - 3) * 70 + 150 ?>ms" type="button">
+                  <img alt="<?= e($gallery_items[$ri]['alt_text']) ?>"
+                    class="w-full h-[30vw] lg:h-[280px] object-cover" data-kid="2-2-5-1-2-<?= $ri + 1 ?>-1"
+                    data-name="gallery image <?= $ri + 1 ?>" decoding="async" loading="lazy" src="<?= e($gallery_items[$ri]['image_path']) ?>" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+                  <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+                    <span class="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)]"><?= e($gallery_labels[$ri] ?? '') ?></span>
+                    <span class="flex items-center gap-2 text-[var(--mora-candle)]">
+                      <span class="text-[11px] font-semibold">0<?= $ri + 1 ?></span>
+                      <span class="hidden lg:block w-8 h-px bg-[var(--mora-candle)]/50"></span>
+                    </span>
+                  </div>
+                </button>
+                <?php endfor; ?>
+              </div>
             </div>
             <div
               class="mt-4 flex items-center justify-between border-t border-[var(--mora-candle)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-candle)]/65"
