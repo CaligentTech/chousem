@@ -1033,11 +1033,11 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </div>
         </section>
         <section aria-labelledby="gallery-heading"
-          class="mora-gallery bg-[var(--mora-clay)] text-[var(--mora-candle)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-5"
+          class="mora-gallery bg-[var(--mora-parchment)] text-[var(--mora-espresso)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-5"
           data-name="gallery section" id="gallery">
           <div class="mx-auto max-w-[1360px]" data-kid="2-2-5-1" data-name="gallery content container">
             <div
-              class="flex flex-col gap-7 border-b border-[var(--mora-candle)]/25 pb-8 lg:flex-row lg:items-end lg:justify-between"
+              class="flex flex-col gap-7 border-b border-[var(--mora-espresso)]/28 pb-8 lg:flex-row lg:items-end lg:justify-between"
               data-kid="2-2-5-1-1" data-name="gallery header">
               <div data-kid="2-2-5-1-1-1" data-name="gallery title container">
 
@@ -1048,7 +1048,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   <?= e($s['home_gallery_heading'] ?? 'A table in motion.') ?>
                 </h2>
               </div>
-              <p class="mora-reveal max-w-[270px] text-sm leading-6 text-[var(--mora-candle)]/75 lg:pb-2 is-visible"
+              <p class="mora-reveal max-w-[270px] text-sm leading-6 text-[var(--mora-espresso)]/75 lg:pb-2 is-visible"
                 data-kid="2-2-5-1-1-2" data-name="gallery description" data-reveal="" style="--mora-delay:170ms">
                 <?= e($s['home_gallery_description'] ?? 'Plates, pours, people, and the in-between.') ?>
               </p>
@@ -1096,14 +1096,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               }
             }
             ?>
-            <?php
-            $gallery_labels = [
-              'The Dining Room',
-              'Terrace',
-              'After Hours',
-              '', '', '',
-            ];
-            ?>
+
             <!-- Bento gallery grid -->
             <div class="mt-14 flex flex-col gap-3 lg:gap-4" data-kid="2-2-5-1-2" data-name="gallery bento grid">
               <!-- Row 1: large left + 2 stacked right -->
@@ -1115,14 +1108,6 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   <img alt="<?= e($gallery_items[0]['alt_text']) ?>"
                     class="w-full h-[55vw] lg:h-[520px] object-cover" data-kid="2-2-5-1-2-1-1"
                     data-name="gallery image 1" decoding="async" loading="lazy" src="<?= e($gallery_items[0]['image_path']) ?>" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                  <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
-                    <span class="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)]"><?= e($gallery_labels[0]) ?></span>
-                    <span class="flex items-center gap-2 text-[var(--mora-candle)]">
-                      <span class="hidden lg:block w-12 h-px bg-[var(--mora-candle)]/50"></span>
-                      <span class="text-[11px] font-semibold">01</span>
-                    </span>
-                  </div>
                 </button>
                 <!-- 2 stacked images (items 1 & 2) -->
                 <div class="grid grid-cols-2 lg:grid-cols-1 gap-3 lg:gap-4">
@@ -1134,14 +1119,6 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                     <img alt="<?= e($gallery_items[$si]['alt_text']) ?>"
                       class="w-full h-[40vw] lg:h-[250px] object-cover" data-kid="2-2-5-1-2-<?= $si + 1 ?>-1"
                       data-name="gallery image <?= $si + 1 ?>" decoding="async" loading="lazy" src="<?= e($gallery_items[$si]['image_path']) ?>" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-                    <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
-                      <span class="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)]"><?= e($gallery_labels[$si]) ?></span>
-                      <span class="flex items-center gap-2 text-[var(--mora-candle)]">
-                        <span class="hidden lg:block w-12 h-px bg-[var(--mora-candle)]/50"></span>
-                        <span class="text-[11px] font-semibold">0<?= $si + 1 ?></span>
-                      </span>
-                    </div>
                   </button>
                   <?php endfor; ?>
                 </div>
@@ -1156,20 +1133,12 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   <img alt="<?= e($gallery_items[$ri]['alt_text']) ?>"
                     class="w-full h-[30vw] lg:h-[280px] object-cover" data-kid="2-2-5-1-2-<?= $ri + 1 ?>-1"
                     data-name="gallery image <?= $ri + 1 ?>" decoding="async" loading="lazy" src="<?= e($gallery_items[$ri]['image_path']) ?>" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
-                  <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
-                    <span class="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)]"><?= e($gallery_labels[$ri] ?? '') ?></span>
-                    <span class="flex items-center gap-2 text-[var(--mora-candle)]">
-                      <span class="text-[11px] font-semibold">0<?= $ri + 1 ?></span>
-                      <span class="hidden lg:block w-8 h-px bg-[var(--mora-candle)]/50"></span>
-                    </span>
-                  </div>
                 </button>
                 <?php endfor; ?>
               </div>
             </div>
             <div
-              class="mt-4 flex items-center justify-between border-t border-[var(--mora-candle)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-candle)]/65"
+              class="mt-4 flex items-center justify-between border-t border-[var(--mora-espresso)]/28 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-espresso)]/65"
               data-kid="2-2-5-1-3" data-name="gallery footer controls">
               <span data-kid="2-2-5-1-3-1" data-name="gallery tap instructions">
                 Select an image to enlarge
@@ -1177,7 +1146,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               <span class="lg:hidden" data-kid="2-2-5-1-3-2" data-name="gallery counter">
                 1 / <?= count($gallery_items) ?>
               </span>
-              <a class="mora-text-action hidden text-[var(--mora-candle)] lg:inline-flex" data-kid="2-2-5-1-3-3"
+              <a class="mora-text-action hidden text-[var(--mora-espresso)] lg:inline-flex" data-kid="2-2-5-1-3-3"
                 data-name="gallery link" href="gallery">
                 See the gallery
                 <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-5-1-3-3-1"
