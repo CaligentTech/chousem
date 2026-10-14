@@ -251,12 +251,12 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
     }
 
     #mora-page .mora-food-row {
-      border-top: 1px solid rgba(48, 32, 27, .15);
+      border-top: 1px solid rgba(255, 255, 255, .6);
       text-align: left;
     }
 
     #mora-page .mora-food-row:last-child {
-      border-bottom: 1px solid rgba(48, 32, 27, .15);
+      border-bottom: 1px solid rgba(255, 255, 255, .6);
     }
 
     #mora-page .mora-food-row:hover,
@@ -794,7 +794,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   </span>
                 </button>
                 <button aria-selected="false"
-                  class="mora-food-row is-active grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
+                  class="mora-food-row grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
                   data-food-index="1" data-kid="2-2-3-1-2-3-2" data-name="pasta category row" data-reveal="" role="tab"
                   style="--mora-delay:70ms" type="button">
                   <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-2-1"
