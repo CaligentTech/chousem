@@ -1033,7 +1033,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </div>
         </section>
         <section aria-labelledby="gallery-heading"
-          class="mora-gallery bg-black text-[var(--mora-candle)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-5"
+          class="mora-gallery bg-[#111] text-[var(--mora-candle)] px-5 py-16 sm:px-8 lg:px-10 lg:py-24" data-kid="2-2-5"
           data-name="gallery section" id="gallery">
           <div class="mx-auto max-w-[1360px]" data-kid="2-2-5-1" data-name="gallery content container">
             <div
