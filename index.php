@@ -691,14 +691,6 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             ?>
           </h1>
 
-          <div class="absolute bottom-2 lg:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
-            <a class="text-[#f5e6c8] hover:text-white transition-colors mt-2" href="menu" aria-label="View menu">
-              <svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="1" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="4 8 12 16 20 8"></polyline>
-              </svg>
-            </a>
-          </div>
           <div class="flex absolute bottom-14 lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
             <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-10">
               <?php $reviews_url = $s['google_reviews_url'] ?? $s['google_maps_url'] ?? ''; ?>
