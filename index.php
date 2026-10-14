@@ -251,21 +251,21 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
     }
 
     #mora-page .mora-food-row {
-      border-top: 1px solid rgba(242, 231, 212, .35);
+      border-top: 1px solid rgba(48, 32, 27, .15);
       text-align: left;
     }
 
     #mora-page .mora-food-row:last-child {
-      border-bottom: 1px solid rgba(242, 231, 212, .35);
+      border-bottom: 1px solid rgba(48, 32, 27, .15);
     }
 
     #mora-page .mora-food-row:hover,
     #mora-page .mora-food-row.is-active {
-      color: var(--mora-candle);
+      color: var(--mora-clay);
     }
 
     #mora-page .mora-food-row.is-active .mora-food-number {
-      color: var(--mora-candle);
+      color: var(--mora-clay);
     }
 
     #mora-page .mora-food-row.is-active .mora-food-rule {
@@ -756,7 +756,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               data-name="food description container">
               <div class="flex items-center justify-between" data-kid="2-2-3-1-2-1" data-name="food section header">
 
-                <a class="mora-menu-link border-b border-[var(--mora-candle)]/60 pb-1 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
+                <a class="mora-menu-link border-b border-[var(--mora-espresso)]/40 pb-1 text-[10px] font-bold uppercase tracking-[.16em] text-[var(--mora-espresso)] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                   data-kid="2-2-3-1-2-1-2" data-name="view full menu link" href="menu">
                   Full menu
                   <i aria-hidden="true" class="ti ti-arrow-up-right ml-2" data-kid="2-2-3-1-2-1-2-1"
@@ -775,7 +775,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   class="mora-food-row mora-reveal grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
                   data-food-index="0" data-kid="2-2-3-1-2-3-1" data-name="antipasti category row" data-reveal=""
                   role="tab" type="button">
-                  <span class="mora-food-number text-[11px] text-[var(--mora-candle)]/55" data-kid="2-2-3-1-2-3-1-1"
+                  <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-1-1"
                     data-name="number index text">
                     01
                   </span>
@@ -784,7 +784,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                       data-name="category name title">
                       Antipasti
                     </span>
-                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-candle)]/55"
+                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-espresso)]/50"
                       data-kid="2-2-3-1-2-3-1-2-2" data-name="category description text">
                       burrata · roasted tomatoes · olive oil
                     </span>
@@ -797,7 +797,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   class="mora-food-row is-active grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
                   data-food-index="1" data-kid="2-2-3-1-2-3-2" data-name="pasta category row" data-reveal="" role="tab"
                   style="--mora-delay:70ms" type="button">
-                  <span class="mora-food-number text-[11px] text-[var(--mora-candle)]/55" data-kid="2-2-3-1-2-3-2-1"
+                  <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-2-1"
                     data-name="number index text">
                     02
                   </span>
@@ -806,7 +806,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                       data-name="category name title">
                       Pasta
                     </span>
-                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-candle)]/55"
+                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-espresso)]/50"
                       data-kid="2-2-3-1-2-3-2-2-2" data-name="category description text">
                       truffle tagliatelle · warm parmesan
                     </span>
@@ -818,7 +818,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 <button aria-selected="false"
                   class="mora-food-row grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left"
                   data-food-index="2" data-kid="2-2-3-1-2-3-3" data-name="pizza category row" role="tab" type="button">
-                  <span class="mora-food-number text-[11px] text-[var(--mora-candle)]/55" data-kid="2-2-3-1-2-3-3-1"
+                  <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-3-1"
                     data-name="number index text">
                     03
                   </span>
@@ -827,7 +827,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                       data-name="category name title">
                       Pizza &amp; classics
                     </span>
-                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-candle)]/55"
+                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-espresso)]/50"
                       data-kid="2-2-3-1-2-3-3-2-2" data-name="category description text">
                       blistered margherita · basil · shared hands
                     </span>
@@ -839,7 +839,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 <button aria-selected="false"
                   class="mora-food-row grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left"
                   data-food-index="3" data-kid="2-2-3-1-2-3-4" data-name="mains category row" role="tab" type="button">
-                  <span class="mora-food-number text-[11px] text-[var(--mora-candle)]/55" data-kid="2-2-3-1-2-3-4-1"
+                  <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-4-1"
                     data-name="number index text">
                     04
                   </span>
@@ -848,7 +848,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                       data-name="category name title">
                       Main dishes
                     </span>
-                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-candle)]/55"
+                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-espresso)]/50"
                       data-kid="2-2-3-1-2-3-4-2-2" data-name="category description text">
                       grilled beef · seasonal vegetables · red wine
                     </span>
@@ -861,7 +861,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   class="mora-food-row grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left"
                   data-food-index="4" data-kid="2-2-3-1-2-3-5" data-name="desserts category row" role="tab"
                   type="button">
-                  <span class="mora-food-number text-[11px] text-[var(--mora-candle)]/55" data-kid="2-2-3-1-2-3-5-1"
+                  <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-5-1"
                     data-name="number index text">
                     05
                   </span>
@@ -870,7 +870,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                       data-name="category name title">
                       Desserts
                     </span>
-                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-candle)]/55"
+                    <span class="mt-2 block text-[10px] uppercase tracking-[.12em] text-[var(--mora-espresso)]/50"
                       data-kid="2-2-3-1-2-3-5-2-2" data-name="category description text">
                       tiramisù · espresso · something to share
                     </span>
@@ -880,7 +880,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   </span>
                 </button>
               </div>
-              <a class="mora-outline-button mt-10 inline-flex w-fit items-center border border-[var(--mora-candle)] px-6 py-4 text-[10px] font-bold uppercase tracking-[.18em] text-[var(--mora-candle)] focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
+              <a class="mora-outline-button mt-10 inline-flex w-fit items-center border border-[var(--mora-espresso)] px-6 py-4 text-[10px] font-bold uppercase tracking-[.18em] text-[var(--mora-espresso)] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                 data-kid="2-2-3-1-2-4" data-name="view menu full button" href="menu">
                 View menu
                 <i aria-hidden="true" class="ti ti-arrow-up-right ml-8 text-sm" data-kid="2-2-3-1-2-4-1"
