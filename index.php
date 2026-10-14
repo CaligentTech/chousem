@@ -738,7 +738,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         </section>
 
         <section aria-labelledby="food-heading"
-          class="border-y border-[var(--mora-espresso)]/10 bg-[var(--mora-clay)] px-5 py-12 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-20"
+          class="border-y border-[var(--mora-espresso)]/10 bg-[#111] px-5 py-12 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-20"
           data-kid="2-2-3" data-name="food menu section" id="food">
           <div class="mx-auto grid max-w-[1360px] gap-6 lg:grid-cols-[.9fr_1.1fr] lg:gap-16" data-kid="2-2-3-1"
             data-name="food menu container">
