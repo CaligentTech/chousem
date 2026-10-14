@@ -1450,17 +1450,15 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             data-name="lightbox image" data-reason="src and alt updated by interaction" decoding="async"
             id="lightbox-image" loading="lazy"
             src="gallery/food.webp" />
-          <div class="mt-5 flex w-full items-start justify-between gap-8 border-t border-[var(--mora-candle)]/25 pt-4"
+          <div class="hidden"
             data-kid="2-7-3-2" data-name="lightbox footer info">
             <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-candle)]/75" data-dynamic="true"
               data-kid="2-7-3-2-1" data-name="lightbox caption" data-reason="text updated by interaction"
               id="lightbox-caption">
-              19:42 · second round
             </p>
             <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-brass)]" data-dynamic="true"
               data-kid="2-7-3-2-2" data-name="lightbox counter" data-reason="text updated by interaction"
               id="lightbox-count">
-              01 / 07
             </p>
           </div>
         </div>
