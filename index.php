@@ -746,7 +746,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               class="order-first relative h-[75vw] lg:order-last lg:mt-20 lg:h-[710px] flex items-center justify-center"
               data-kid="2-2-3-1-1" data-name="food display stage" id="food-stage">
               <img id="scroll-glass" alt="Signature C HOUSE mocktail in a tall glass"
-                class="absolute origin-bottom w-[40%] h-[45%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 translate-x-[92%] translate-y-[280%] lg:-translate-x-[390%] lg:-translate-y-[42%] z-50"
+                class="absolute origin-bottom w-[40%] h-[45%] lg:w-[20%] lg:h-[32%] object-contain rotate-12 lg:rotate-0 translate-x-[92%] translate-y-[280%] lg:-translate-x-[260%] lg:-translate-y-[42%] z-50"
                 decoding="async" loading="lazy" src="gallery/mocktailindex.webp" style="transition: none;" />
               <img alt="Wood-fired pizza fresh from the C HOUSE oven"
                 class="absolute origin-bottom w-[110%] h-[110%] lg:w-[80%] lg:h-[85%] object-contain rounded-[2rem] rotate-3 translate-x-2 transition-all duration-500 hover:rotate-6 hover:translate-x-6 hover:scale-105 z-10"
@@ -1737,13 +1737,18 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           startYPercent = -0.6; // Fallback
         }
 
-        const rotRegex = /(?:^|\\s)(-?)rotate-\\[?(\\d+)(?:deg)?\\]?/;
-        const rotMatch = classString.match(rotRegex);
+        let rotMatch = null;
+        if (isDesktop) {
+          rotMatch = classString.match(/(?:^|\\s)lg:(-?)rotate-(?:\\[(-?\\d+)(?:deg)?\\]|(\\d+))/);
+        }
+        if (!rotMatch) {
+          rotMatch = classString.match(/(?:^|\\s)(-?)rotate-(?:\\[(-?\\d+)(?:deg)?\\]|(\\d+))/);
+        }
         if (rotMatch) {
-          startRotate = parseInt(rotMatch[2]);
-          if (rotMatch[1] === '-') startRotate = -Math.abs(startRotate);
+          const val = parseInt(rotMatch[2] || rotMatch[3]);
+          startRotate = rotMatch[1] === '-' ? -Math.abs(val) : val;
         } else {
-          startRotate = 12; // Fallback
+          startRotate = isDesktop ? 0 : 12; // Fallback
         }
 
         onScroll();
@@ -1769,9 +1774,9 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           const parentCenterY = parentRect.top + parentRect.height / 2;
 
           const viewportHeight = window.innerHeight;
-          // Animation starts when the target heading is still below the screen (much earlier)
+          // Animation starts when the target heading approaches the viewport
           const isDesktopNow = window.innerWidth >= 1024;
-          const triggerStart = isDesktopNow ? viewportHeight * 1.8 : viewportHeight * 1.2;
+          const triggerStart = isDesktopNow ? viewportHeight * 1.15 : viewportHeight * 1.15;
           // Animation finishes when heading reaches 30% from the top
           const triggerEnd = viewportHeight * 0.3;
           const range = triggerStart - triggerEnd;
