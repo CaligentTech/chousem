@@ -357,7 +357,7 @@ function fix_image_path($path) {
     <div class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-4">
         <iframe src="https://feed.chouse.ae/?page_id=7" 
                 class="w-full border-0 overflow-hidden" 
-                style="height: 480px; background: transparent;" 
+                style="height: 380px; background: transparent;" 
                 loading="lazy"
                 scrolling="no"
                 title="C HOUSE Instagram Feed">
