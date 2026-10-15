@@ -287,14 +287,7 @@ $contact_content = get_page_content($pdo, 'contact');
                   if (wrap && menu && !wrap.contains(e.target)) menu.classList.add('hidden');
                 });
               </script>
-              <button
-                class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]"
-                data-kid="2-2-8-1-1-4-2" data-name="reserve button" data-open-reservation="" type="button">
-                Reserve a table
-                <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-2-1"
-                  data-name="arrow-up-right icon">
-                </i>
-              </button>
+
             </div>
           </div>
         </div>

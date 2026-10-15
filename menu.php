@@ -51,6 +51,7 @@ $categories = get_categories($pdo, 'food');
     .menu-item {
       border-bottom: 1px dashed rgba(48, 32, 27, 0.2);
       transition: all 0.3s ease;
+      gap: 1rem;
     }
 
     .menu-item:hover {
@@ -61,6 +62,10 @@ $categories = get_categories($pdo, 'food');
     .menu-price {
       color: var(--mora-clay);
       font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-align: right;
+      margin-left: 1rem;
     }
 
     .menu-section {
@@ -193,12 +198,12 @@ $categories = get_categories($pdo, 'food');
             <?php endif; ?>
             <div class="flex flex-col gap-5">
               <?php foreach ($items as $item): ?>
-                <div class="menu-item flex justify-between items-baseline pb-2">
-                  <span class="text-lg">
+                <div class="menu-item flex justify-between items-baseline pb-2 gap-4">
+                  <span class="text-lg leading-snug">
                     <?= e($item['name']) ?>
                     <?= $item['dietary_tag'] ? ' (' . e($item['dietary_tag']) . ')' : '' ?>
                   </span>
-                  <span class="menu-price"><?= e($item['price']) ?></span>
+                  <span class="menu-price whitespace-nowrap shrink-0 text-right"><?= e($item['price']) ?></span>
                 </div>
               <?php endforeach; ?>
             </div>
