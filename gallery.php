@@ -91,6 +91,26 @@ function fix_image_path($path) {
             color: #C76D4D;
             border-color: #C76D4D;
         }
+
+        #instagram-feed-iframe {
+            height: 480px;
+            background: transparent;
+        }
+        @media (min-width: 400px) {
+            #instagram-feed-iframe {
+                height: 520px;
+            }
+        }
+        @media (min-width: 500px) {
+            #instagram-feed-iframe {
+                height: 600px;
+            }
+        }
+        @media (min-width: 768px) {
+            #instagram-feed-iframe {
+                height: 380px;
+            }
+        }
     </style>
 </head>
 
@@ -354,10 +374,10 @@ function fix_image_path($path) {
     </div>
 
     <!-- INSTAGRAM FEED -->
-    <div class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-4">
-        <iframe src="https://feed.chouse.ae/?page_id=7" 
+    <div class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-4">
+        <iframe id="instagram-feed-iframe"
+                src="https://feed.chouse.ae/?page_id=7" 
                 class="w-full border-0 overflow-hidden" 
-                style="height: 380px; background: transparent;" 
                 loading="lazy"
                 scrolling="no"
                 title="C HOUSE Instagram Feed">
