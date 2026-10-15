@@ -373,7 +373,7 @@ function fix_image_path($path) {
         </div>
     </div>
 
-    <!-- INSTAGRAM FEED -->
+    <!-- INSTAGRAM FEED IFRAME (Temporarily commented out until client IG is connected)
     <div class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-4">
         <iframe id="instagram-feed-iframe"
                 src="https://feed.chouse.ae/?page_id=7" 
@@ -383,6 +383,7 @@ function fix_image_path($path) {
                 title="C HOUSE Instagram Feed">
         </iframe>
     </div>
+    -->
 
     <!-- FOOTER -->
     <?php include __DIR__ . '/includes/footer.php'; ?>
