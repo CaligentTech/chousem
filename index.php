@@ -884,7 +884,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         </section>
 
         <section aria-labelledby="bar-heading"
-          class="relative overflow-hidden bg-[#111] px-5 pt-16 pb-4 sm:pb-8 lg:py-20 text-[var(--mora-candle)] sm:px-8 lg:px-10"
+          class="relative overflow-hidden bg-[#111] px-5 pt-16 pb-8 sm:pb-12 lg:py-20 text-[var(--mora-candle)] sm:px-8 lg:px-10"
           data-kid="2-2-4" data-name="bar section" id="bar">
           <svg aria-hidden="true"
             class="pointer-events-none absolute right-[7%] top-12 hidden h-[520px] w-[420px] lg:block"
@@ -1025,7 +1025,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </div>
         </section>
         <section aria-labelledby="gallery-heading"
-          class="mora-gallery bg-[#111] text-[var(--mora-candle)] px-5 pt-4 pb-16 sm:pt-8 sm:pb-16 lg:px-10 lg:py-24" data-kid="2-2-5"
+          class="mora-gallery bg-[#111] text-[var(--mora-candle)] px-5 pt-8 pb-16 sm:pt-12 sm:pb-16 lg:px-10 lg:py-24" data-kid="2-2-5"
           data-name="gallery section" id="gallery">
           <div class="mx-auto max-w-[1360px]" data-kid="2-2-5-1" data-name="gallery content container">
             <div
@@ -1034,7 +1034,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               <div data-kid="2-2-5-1-1-1" data-name="gallery title container">
 
                 <h2
-                  class="mora-serif mora-reveal mt-2 lg:mt-10 text-[clamp(3.2rem,6.7vw,6.8rem)] leading-[.9] tracking-[-.045em] is-visible"
+                  class="mora-serif mora-reveal mt-4 lg:mt-10 text-[clamp(3.2rem,6.7vw,6.8rem)] leading-[.9] tracking-[-.045em] is-visible"
                   data-kid="2-2-5-1-1-1-2" data-name="gallery heading" data-reveal="" id="gallery-heading"
                   style="--mora-delay:90ms">
                   <?= e($s['home_gallery_heading'] ?? 'A table in motion.') ?>
