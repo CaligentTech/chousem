@@ -1013,7 +1013,7 @@
           </div>
         </section>
         <section aria-labelledby="gallery-heading"
-          class="mora-gallery bg-[var(--mora-clay)] text-[var(--mora-candle)] px-5 pt-8 pb-8 sm:pt-12 sm:pb-12 lg:px-10 lg:pt-10 lg:pb-16"
+          class="mora-gallery bg-[#111] text-[var(--mora-candle)] px-5 pt-8 pb-8 sm:pt-12 sm:pb-12 lg:px-10 lg:pt-10 lg:pb-16"
           data-kid="2-2-5" data-name="gallery section" id="gallery">
           <div class="mx-auto max-w-[1360px]" data-kid="2-2-5-1" data-name="gallery content container">
             <div
@@ -1033,67 +1033,73 @@
                 Plates, pours, people, and the in-between.
               </p>
             </div>
-            <div
-              class="mora-gallery-scroller mt-14 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 lg:grid lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:pb-0"
-              data-kid="2-2-5-1-2" data-name="gallery items scroller">
-              <button aria-label="Open gallery image: 19:42 second round"
-                class="mora-gallery-item mora-reveal mora-fold-clay min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="0" data-kid="2-2-5-1-2-1" data-name="gallery item 1" data-reveal="" type="button">
-                <img alt="Interior dining booths with a decorative golden ring divider"
-                  class="h-[350px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-1-1"
-                  data-name="gallery image 1" decoding="async" loading="lazy" src="./gallery/1.webp" />
-              </button>
-              <button aria-label="Open gallery image: 21:07 glasses raised"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="1" data-kid="2-2-5-1-2-2" data-name="gallery item 2" data-reveal=""
-                style="--mora-delay:70ms" type="button">
-                <img alt="Interior dining space with elegantly set tables"
-                  class="h-[300px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-2-1"
-                  data-name="gallery image 2" decoding="async" loading="lazy" src="./gallery/2.webp" />
-              </button>
-              <button aria-label="Open gallery image: 12:18 lunch table"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="2" data-kid="2-2-5-1-2-3" data-name="gallery item 3" data-reveal=""
-                style="--mora-delay:130ms" type="button">
-                <img alt="Outdoor patio setting with woven chairs and a marble table"
-                  class="h-[350px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-3-1"
-                  data-name="gallery image 3" decoding="async" loading="lazy" src="./gallery/3.webp" />
-              </button>
-              <button aria-label="Open gallery image: 18:36 first pour"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="3" data-kid="2-2-5-1-2-4" data-name="gallery item 4" data-reveal=""
-                style="--mora-delay:190ms" type="button">
-                <img alt="Interior dining booths beside warm golden lighting"
-                  class="h-[300px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-4-1"
-                  data-name="gallery image 4" decoding="async" loading="lazy" src="./gallery/4.webp" />
-              </button>
 
-              <button aria-label="Open gallery image: 21:07 pasta passed around"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="4" data-kid="2-2-5-1-2-6" data-name="gallery item 6" data-reveal=""
-                style="--mora-delay:150ms" type="button">
-                <img alt="Outdoor restaurant seating area with a large canopy at sunset"
-                  class="h-[330px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-6-1"
-                  data-name="gallery image 6" decoding="async" loading="lazy" src="./gallery/5.webp" />
-              </button>
-              <button aria-label="Open gallery image: 19:04 the little details"
-                class="mora-gallery-item mora-reveal min-w-[76vw] snap-start border-[var(--mora-espresso)] lg:min-w-0 is-visible"
-                data-gallery-index="5" data-kid="2-2-5-1-2-7" data-name="gallery item 7" data-reveal=""
-                style="--mora-delay:220ms" type="button">
-                <img alt="Interior dining lounge with white booths and wood paneled walls"
-                  class="h-[280px] w-full object-cover lg:h-[300px]" data-kid="2-2-5-1-2-7-1"
-                  data-name="gallery image 7" decoding="async" loading="lazy"
-                  src="./gallery/ambience/ambience-6.webp" />
-              </button>
+            <!-- Bento gallery grid -->
+            <div class="mt-14 flex flex-col gap-3 lg:gap-4" data-kid="2-2-5-1-2" data-name="gallery bento grid">
+              <!-- Row 1: large left + 2 stacked right -->
+              <div class="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-3 lg:gap-4">
+                <!-- Large image (item 0) -->
+                <button aria-label="Open gallery image: 19:42 second round"
+                  class="mora-gallery-item mora-reveal mora-fold-clay relative overflow-hidden rounded-2xl is-visible"
+                  data-gallery-index="0" data-kid="2-2-5-1-2-1" data-name="gallery item 1" data-reveal="" type="button">
+                  <img alt="Interior dining booths with a decorative golden ring divider"
+                    class="w-full h-[55vw] lg:h-[520px] object-cover" data-kid="2-2-5-1-2-1-1"
+                    data-name="gallery image 1" decoding="async" loading="lazy" src="./gallery/1.webp" />
+                </button>
+                <!-- 2 stacked images (items 1 & 2) -->
+                <div class="grid grid-cols-2 lg:grid-cols-1 gap-3 lg:gap-4">
+                  <button aria-label="Open gallery image: 21:07 glasses raised"
+                    class="mora-gallery-item mora-reveal relative overflow-hidden rounded-2xl is-visible"
+                    data-gallery-index="1" data-kid="2-2-5-1-2-2" data-name="gallery item 2" data-reveal=""
+                    style="--mora-delay:70ms" type="button">
+                    <img alt="Interior dining space with elegantly set tables"
+                      class="w-full h-[40vw] lg:h-[250px] object-cover" data-kid="2-2-5-1-2-2-1"
+                      data-name="gallery image 2" decoding="async" loading="lazy" src="./gallery/2.webp" />
+                  </button>
+                  <button aria-label="Open gallery image: 12:18 lunch table"
+                    class="mora-gallery-item mora-reveal relative overflow-hidden rounded-2xl is-visible"
+                    data-gallery-index="2" data-kid="2-2-5-1-2-3" data-name="gallery item 3" data-reveal=""
+                    style="--mora-delay:140ms" type="button">
+                    <img alt="Outdoor patio setting with woven chairs and a marble table"
+                      class="w-full h-[40vw] lg:h-[250px] object-cover" data-kid="2-2-5-1-2-3-1"
+                      data-name="gallery image 3" decoding="async" loading="lazy" src="./gallery/3.webp" />
+                  </button>
+                </div>
+              </div>
+              <!-- Row 2: 3 equal columns (items 3, 4, 5) -->
+              <div class="grid grid-cols-3 gap-3 lg:gap-4">
+                <button aria-label="Open gallery image: 18:36 first pour"
+                  class="mora-gallery-item mora-reveal relative overflow-hidden rounded-2xl is-visible"
+                  data-gallery-index="3" data-kid="2-2-5-1-2-4" data-name="gallery item 4" data-reveal=""
+                  style="--mora-delay:150ms" type="button">
+                  <img alt="Interior dining booths beside warm golden lighting"
+                    class="w-full h-[30vw] lg:h-[280px] object-cover" data-kid="2-2-5-1-2-4-1"
+                    data-name="gallery image 4" decoding="async" loading="lazy" src="./gallery/4.webp" />
+                </button>
+                <button aria-label="Open gallery image: 21:07 pasta passed around"
+                  class="mora-gallery-item mora-reveal relative overflow-hidden rounded-2xl is-visible"
+                  data-gallery-index="4" data-kid="2-2-5-1-2-5" data-name="gallery item 5" data-reveal=""
+                  style="--mora-delay:220ms" type="button">
+                  <img alt="Outdoor restaurant seating area with a large canopy at sunset"
+                    class="w-full h-[30vw] lg:h-[280px] object-cover" data-kid="2-2-5-1-2-5-1"
+                    data-name="gallery image 5" decoding="async" loading="lazy" src="./gallery/5.webp" />
+                </button>
+                <button aria-label="Open gallery image: 19:04 the little details"
+                  class="mora-gallery-item mora-reveal relative overflow-hidden rounded-2xl is-visible"
+                  data-gallery-index="5" data-kid="2-2-5-1-2-6" data-name="gallery item 6" data-reveal=""
+                  style="--mora-delay:290ms" type="button">
+                  <img alt="Interior dining lounge with white booths and wood paneled walls"
+                    class="w-full h-[30vw] lg:h-[280px] object-cover" data-kid="2-2-5-1-2-6-1"
+                    data-name="gallery image 6" decoding="async" loading="lazy" src="./gallery/ambience/ambience-6.webp" />
+                </button>
+              </div>
             </div>
+
             <div
               class="mt-4 flex items-center justify-between border-t border-[var(--mora-candle)]/25 pt-5 text-[10px] uppercase tracking-[.16em] text-[var(--mora-candle)]/65"
               data-kid="2-2-5-1-3" data-name="gallery footer controls">
               <span data-kid="2-2-5-1-3-1" data-name="gallery tap instructions">
                 Tap a frame to enlarge
-              </span>
-              <span class="lg:hidden" data-kid="2-2-5-1-3-2" data-name="gallery counter">
-                1 / 6
               </span>
               <a class="mora-text-action hidden text-[var(--mora-candle)] lg:inline-flex" data-kid="2-2-5-1-3-3"
                 data-name="gallery link" href="gallery">
@@ -1168,23 +1174,6 @@
               </div>
               <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
                 data-name="contact buttons container">
-                <div class="relative" id="home-contact-directions-wrap">
-                  <button type="button" onclick="event.stopPropagation(); document.getElementById('home-contact-directions-menu').classList.toggle('hidden');" class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]">
-                    Get directions
-                    <i aria-hidden="true" class="ti ti-arrow-up-right text-sm"></i>
-                  </button>
-                  <div id="home-contact-directions-menu" class="hidden absolute left-0 top-full mt-2 z-50 bg-white border border-[#30201B]/15 rounded-xl overflow-hidden shadow-xl min-w-[180px]">
-                    <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors" href="https://www.google.com/maps/search/?api=1&query=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai" rel="noreferrer" target="_blank">
-                      <i class="ti ti-brand-google-maps text-base text-[#AA8243]"></i> Google Maps
-                    </a>
-                    <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="https://waze.com/ul?q=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai&navigate=yes" rel="noreferrer" target="_blank">
-                      <i class="ti ti-navigation text-base text-[#AA8243]"></i> Waze
-                    </a>
-                    <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="https://maps.apple.com/?daddr=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai&dirflg=d" rel="noreferrer" target="_blank">
-                      <i class="ti ti-brand-apple text-base text-[#AA8243]"></i> Apple Maps
-                    </a>
-                  </div>
-                </div>
                 <button
                   class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                   data-kid="2-2-8-1-1-4-2" data-name="reserve button" data-open-reservation="" type="button">
@@ -1196,43 +1185,103 @@
               </div>
             </div>
             <div
-              class="mora-reveal mora-map-panel relative min-h-[360px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[340px] rounded-2xl is-visible"
+              class="mora-reveal mora-map-panel relative min-h-[360px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[340px] rounded-2xl is-visible group"
               data-kid="2-2-8-1-2" data-name="map display panel" data-reveal=""
               style="--mora-delay:140ms;overflow:clip;z-index:0">
               <iframe
+                id="home-map-iframe"
                 src="https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=near&output=embed"
-                class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply"
-                frameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
+                class="absolute inset-0 h-full w-full border-0"
+                style="border:0" loading="lazy" allowfullscreen></iframe>
 
-              <div class="absolute bottom-5 left-5 z-20" id="home-map-directions-wrap">
-                <button type="button" 
-                        onclick="event.stopPropagation(); document.getElementById('home-map-directions-menu').classList.toggle('hidden');" 
-                        class="inline-flex items-center gap-2 border border-[#30201B]/20 bg-[#f5e6c8] px-4 py-2.5 sm:px-5 sm:py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[.14em] text-[#30201B] hover:bg-[#30201B] hover:text-[#f5e6c8] transition-colors rounded-full shadow-lg backdrop-blur-md">
-                  <span>Get Directions</span>
-                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm"></i>
-                </button>
-                <div id="home-map-directions-menu" class="hidden absolute bottom-full mb-2 left-0 z-50 bg-white border border-[#30201B]/15 rounded-xl overflow-hidden shadow-2xl min-w-[190px]">
-                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] font-semibold text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors" href="https://www.google.com/maps/search/?api=1&query=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai" rel="noreferrer" target="_blank">
-                    <i class="ti ti-brand-google-maps text-base text-[#AA8243]"></i> Google Maps
-                  </a>
-                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] font-semibold text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="https://waze.com/ul?q=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai&navigate=yes" rel="noreferrer" target="_blank">
-                    <i class="ti ti-navigation text-base text-[#AA8243]"></i> Waze
-                  </a>
-                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] font-semibold text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="https://maps.apple.com/?daddr=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai&dirflg=d" rel="noreferrer" target="_blank">
-                    <i class="ti ti-brand-apple text-base text-[#AA8243]"></i> Apple Maps
-                  </a>
+              <!-- Transparent Click Overlay to trigger Directions on map click -->
+              <div id="home-map-click-overlay" 
+                   onclick="openMapDirections(event)" 
+                   class="absolute inset-0 z-10 cursor-pointer" 
+                   title="Click to get directions">
+              </div>
+
+              <!-- Directions Modal / Dropdown -->
+              <div id="home-map-directions-modal" 
+                   onclick="closeMapDirections(event)"
+                   class="hidden absolute inset-0 z-30 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-all duration-300">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 max-w-xs w-full text-center relative border border-[#30201B]/15" 
+                     onclick="event.stopPropagation();">
+                  <button type="button" onclick="closeMapDirections(event)" class="absolute top-3 right-3 text-gray-400 hover:text-black w-7 h-7 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
+                    <i class="ti ti-x text-base"></i>
+                  </button>
+                  <div class="w-10 h-10 rounded-full bg-[#f5e6c8] text-[#30201B] flex items-center justify-center mx-auto mb-3">
+                    <i class="ti ti-map-pin text-xl text-[#AA8243]"></i>
+                  </div>
+                  <h3 class="mora-serif text-xl font-bold text-[#30201B] mb-1">Get Directions</h3>
+                  <p class="text-xs text-gray-500 mb-4">Choose your preferred map app</p>
+                  <div class="flex flex-col gap-2">
+                    <a class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#f5e6c8]/60 hover:bg-[#30201B] text-[#30201B] hover:text-[#f5e6c8] transition-colors text-xs font-bold uppercase tracking-wider" 
+                       href="https://www.google.com/maps/search/?api=1&query=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai" rel="noreferrer" target="_blank">
+                      <span class="flex items-center gap-2.5">
+                        <i class="ti ti-brand-google-maps text-lg text-[#AA8243]"></i> Google Maps
+                      </span>
+                      <i class="ti ti-arrow-up-right text-sm"></i>
+                    </a>
+                    <a class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#f5e6c8]/60 hover:bg-[#30201B] text-[#30201B] hover:text-[#f5e6c8] transition-colors text-xs font-bold uppercase tracking-wider" 
+                       href="https://waze.com/ul?q=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai&navigate=yes" rel="noreferrer" target="_blank">
+                      <span class="flex items-center gap-2.5">
+                        <i class="ti ti-navigation text-lg text-[#AA8243]"></i> Waze
+                      </span>
+                      <i class="ti ti-arrow-up-right text-sm"></i>
+                    </a>
+                    <a class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#f5e6c8]/60 hover:bg-[#30201B] text-[#30201B] hover:text-[#f5e6c8] transition-colors text-xs font-bold uppercase tracking-wider" 
+                       href="https://maps.apple.com/?daddr=C+HOUSE+Jebel+Ali+Recreation+Club+Dubai&dirflg=d" rel="noreferrer" target="_blank">
+                      <span class="flex items-center gap-2.5">
+                        <i class="ti ti-brand-apple text-lg text-[#AA8243]"></i> Apple Maps
+                      </span>
+                      <i class="ti ti-arrow-up-right text-sm"></i>
+                    </a>
+                  </div>
+                  <button type="button" onclick="enableInteractiveMap(event)" class="mt-4 text-[10px] uppercase tracking-widest text-[#30201B]/60 hover:text-[#30201B] font-semibold underline">
+                    Interact with map
+                  </button>
                 </div>
               </div>
-              <script>
-                document.addEventListener('click', function(e) {
-                  const mapWrap = document.getElementById('home-map-directions-wrap');
-                  const mapMenu = document.getElementById('home-map-directions-menu');
-                  if (mapWrap && mapMenu && !mapWrap.contains(e.target)) mapMenu.classList.add('hidden');
 
-                  const contactWrap = document.getElementById('home-contact-directions-wrap');
-                  const contactMenu = document.getElementById('home-contact-directions-menu');
-                  if (contactWrap && contactMenu && !contactWrap.contains(e.target)) contactMenu.classList.add('hidden');
-                });
+              <!-- Re-enable directions button (shown if user unlocked map) -->
+              <button id="home-map-reoverlay-btn" 
+                      type="button" 
+                      onclick="reEnableOverlay(event)" 
+                      class="hidden absolute bottom-4 left-4 z-20 bg-white/90 hover:bg-[#30201B] text-[#30201B] hover:text-white px-3.5 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-md backdrop-blur-sm border border-[#30201B]/15 transition-colors">
+                <i class="ti ti-directions mr-1"></i> Directions
+              </button>
+
+              <script>
+                function openMapDirections(e) {
+                  if (e) e.stopPropagation();
+                  const modal = document.getElementById('home-map-directions-modal');
+                  if (modal) modal.classList.remove('hidden');
+                }
+
+                function closeMapDirections(e) {
+                  if (e) e.stopPropagation();
+                  const modal = document.getElementById('home-map-directions-modal');
+                  if (modal) modal.classList.add('hidden');
+                }
+
+                function enableInteractiveMap(e) {
+                  if (e) e.stopPropagation();
+                  closeMapDirections(e);
+                  const overlay = document.getElementById('home-map-click-overlay');
+                  if (overlay) overlay.classList.add('hidden');
+                  const reBtn = document.getElementById('home-map-reoverlay-btn');
+                  if (reBtn) reBtn.classList.remove('hidden');
+                }
+
+                function reEnableOverlay(e) {
+                  if (e) e.stopPropagation();
+                  const overlay = document.getElementById('home-map-click-overlay');
+                  if (overlay) overlay.classList.remove('hidden');
+                  const reBtn = document.getElementById('home-map-reoverlay-btn');
+                  if (reBtn) reBtn.classList.add('hidden');
+                  openMapDirections(e);
+                }
               </script>
             </div>
           </div>
