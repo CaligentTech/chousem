@@ -199,7 +199,7 @@ function fix_image_path($path) {
             </div>
 
             <!-- CATEGORY TABS (Food, Drink, Ambience) -->
-            <div class="flex justify-center items-center gap-8 sm:gap-12 mt-2">
+            <div class="flex justify-center items-center gap-8 sm:gap-12 mt-10 sm:mt-2">
                 <button id="tab-food" onclick="switchCategory('food')"
                     class="tab-btn tab-active font-serif mora-serif text-xl sm:text-2xl text-[#f5e6c8] transition-all duration-200">
                     Food
