@@ -192,7 +192,7 @@ function fix_image_path($path) {
     <section class="relative min-h-[480px] pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center">
         <div class="absolute inset-0 z-0">
             <picture>
-                <source media="(min-width: 768px)" srcset="gallery/gallery-hero-desktop.png">
+                <source media="(min-width: 768px)" srcset="gallery/gallery-hero-desktop.webp">
                 <img alt="Gallery hero" class="h-full w-full object-cover" decoding="async"
                     src="gallery/ambience15.webp" />
             </picture>
