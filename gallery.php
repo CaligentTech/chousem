@@ -357,14 +357,14 @@ function fix_image_path($path) {
 
     <div class="pt-6 pb-2 text-center px-4">
         <div class="inline-block relative">
-            <h2 class="cambria text-5xl sm:text-2xl md:text-xl text-[#30201B] tracking-tight pb-0">
+            <h2 class="cambria text-base sm:text-lg md:text-xl text-[#30201B] tracking-wider pb-0">
                 INSTAGRAM
             </h2>
-            <div class="h-[2px] w-20 bg-[#AA8243]/60 mx-auto"></div>
-            <h2 class="cambria text-5xl sm:text-2xl md:text-4xl text-[#30201B] tracking-tight pb-0"><b>
+            <div class="h-[2px] w-16 sm:w-20 bg-[#AA8243]/60 mx-auto"></div>
+            <h2 class="cambria text-2xl sm:text-3xl md:text-4xl text-[#30201B] tracking-tight pb-0"><b>
                     @chouseuae
                 </b></h2>
-            <div class="h-[2px] w-20 bg-[#AA8243]/60 mx-auto"></div>
+            <div class="h-[2px] w-16 sm:w-20 bg-[#AA8243]/60 mx-auto"></div>
         </div>
     </div>
 
