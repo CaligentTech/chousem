@@ -374,7 +374,7 @@ function fix_image_path($path) {
     </div>
 
     <!-- INSTAGRAM FEED IFRAME -->
-    <div class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-4">
+    <div class="w-full max-w-[1360px] mx-auto px-0 sm:px-6 lg:px-8 pb-8 pt-4">
         <iframe id="instagram-feed-iframe"
                 src="https://feed.chouse.ae/?page_id=7" 
                 class="w-full border-0 overflow-hidden" 
