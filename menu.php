@@ -164,7 +164,7 @@ $categories = get_categories($pdo, 'food');
       </div>
       <div class="relative z-10 text-center max-w-3xl mx-auto pt-16">
         <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4"><?= e(get_content($pdo, 'menu', 'hero', 'kicker')) ?></p>
-        <h1 class="mora-serif text-5xl md:text-7xl mb-6"><?= e(get_content($pdo, 'menu', 'hero', 'heading')) ?></h1>
+        <h1 class="mora-serif text-[#f5e6c8] text-5xl md:text-7xl mb-6"><?= e(get_content($pdo, 'menu', 'hero', 'heading')) ?></h1>
         <p class="text-sm md:text-base text-gray-300 tracking-wide font-light mb-10"><?= e(get_content($pdo, 'menu', 'hero', 'description')) ?></p>
         <a href="<?= !empty($s['food_menu_pdf']) ? e($s['food_menu_pdf']) : './assets/C-House-Indo-Chinese-Menu.pdf' ?>" download="C_House_Indo_Chinese_Menu.pdf"
           class="inline-flex items-center gap-2 rounded-full bg-[#AA8243] px-8 py-3 text-sm tracking-widest uppercase text-white transition-colors hover:bg-white hover:text-black font-semibold shadow-lg">
