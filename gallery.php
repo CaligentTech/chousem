@@ -93,27 +93,27 @@ function fix_image_path($path) {
         }
 
         #instagram-feed-iframe {
-            height: 680px;
+            height: 1150px;
             background: transparent;
         }
-        @media (min-width: 400px) {
+        @media (min-width: 480px) {
             #instagram-feed-iframe {
-                height: 720px;
+                height: 1250px;
             }
         }
         @media (min-width: 640px) {
             #instagram-feed-iframe {
-                height: 760px;
+                height: 1350px;
             }
         }
         @media (min-width: 768px) {
             #instagram-feed-iframe {
-                height: 540px;
+                height: 980px;
             }
         }
         @media (min-width: 1024px) {
             #instagram-feed-iframe {
-                height: 560px;
+                height: 1000px;
             }
         }
     </style>
@@ -377,8 +377,9 @@ function fix_image_path($path) {
     <div class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-4">
         <iframe id="instagram-feed-iframe"
                 src="https://feed.chouse.ae/?page_id=7" 
-                class="w-full border-0" 
+                class="w-full border-0 overflow-hidden" 
                 loading="lazy"
+                scrolling="no"
                 title="C HOUSE Instagram Feed">
         </iframe>
     </div>
