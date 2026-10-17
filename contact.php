@@ -255,13 +255,13 @@ $contact_content = get_page_content($pdo, 'contact');
             <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
               data-name="contact buttons container">
               <?php
-              $c_map_q = rawurlencode($s['map_query'] ?? 'C HOUSE Jebel Ali Recreation Club Dubai');
+              $c_map_q = rawurlencode($s['map_query'] ?? 'C House Milano Cafe & Restaurant Jebel Ali Village Dubai');
               $c_lat = trim($s['map_lat'] ?? '');
               $c_lng = trim($s['map_lng'] ?? '');
               $c_has_ll = ($c_lat !== '' && $c_lng !== '');
-              $c_google = $s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://www.google.com/maps/search/?api=1&query=' . $c_map_q;
-              $c_waze   = $s['waze_url'] ?? ($c_has_ll ? 'https://waze.com/ul?ll=' . $c_lat . ',' . $c_lng . '&navigate=yes' : 'https://waze.com/ul?q=' . $c_map_q . '&navigate=yes');
-              $c_apple  = $s['apple_maps_url'] ?? ($c_has_ll ? 'https://maps.apple.com/?daddr=' . $c_lat . ',' . $c_lng . '&dirflg=d' : 'https://maps.apple.com/?daddr=' . $c_map_q . '&dirflg=d');
+              $c_google = $s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://maps.app.goo.gl/4eRoVnKG8e34B3jo7?g_st=ic';
+              $c_waze   = $s['waze_url'] ?? ($c_has_ll ? 'https://waze.com/ul?ll=' . $c_lat . ',' . $c_lng . '&navigate=yes' : 'https://waze.com/ul?q=' . rawurlencode('C House Milano Cafe and Restaurant Jebel Ali Dubai') . '&navigate=yes');
+              $c_apple  = $s['apple_maps_url'] ?? ($c_has_ll ? 'https://maps.apple.com/?daddr=' . $c_lat . ',' . $c_lng . '&dirflg=d' : 'https://maps.apple.com/?daddr=' . rawurlencode('C House Milano Cafe & Restaurant Jebel Ali Dubai') . '&dirflg=d');
               ?>
               <div class="relative" id="contact-directions-wrap">
                 <button onclick="document.getElementById('contact-directions-menu').classList.toggle('hidden')" class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]" type="button">

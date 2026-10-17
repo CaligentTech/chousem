@@ -48,13 +48,13 @@ if (!function_exists('e')) {
                     <p data-kid="2-3-1-2-1-2-1" data-name="address line 1"><?= e($s['address_line1'] ?? 'H Rd, Jebel Ali Recreation Club') ?></p>
                     <p data-kid="2-3-1-2-1-2-3" data-name="location line"><?= e($s['address_line2'] ?? 'Behind IBN Batuta Mall, Dubai') ?></p>
                     <?php
-                    $map_q = rawurlencode($s['map_query'] ?? 'C HOUSE Jebel Ali Recreation Club Dubai');
+                    $map_q = rawurlencode($s['map_query'] ?? 'C House Milano Cafe & Restaurant Jebel Ali Village Dubai');
                     $lat = trim($s['map_lat'] ?? '');
                     $lng = trim($s['map_lng'] ?? '');
                     $has_ll = ($lat !== '' && $lng !== '');
-                    $google_url = $s['google_maps_url'] ?? 'https://www.google.com/maps/search/?api=1&query=' . $map_q;
-                    $waze_url   = $s['waze_url'] ?? ($has_ll ? 'https://waze.com/ul?ll=' . $lat . ',' . $lng . '&navigate=yes' : 'https://waze.com/ul?q=' . $map_q . '&navigate=yes');
-                    $apple_url  = $s['apple_maps_url'] ?? ($has_ll ? 'https://maps.apple.com/?daddr=' . $lat . ',' . $lng . '&dirflg=d' : 'https://maps.apple.com/?daddr=' . $map_q . '&dirflg=d');
+                    $google_url = $s['google_maps_url'] ?? 'https://maps.app.goo.gl/4eRoVnKG8e34B3jo7?g_st=ic';
+                    $waze_url   = $s['waze_url'] ?? ($has_ll ? 'https://waze.com/ul?ll=' . $lat . ',' . $lng . '&navigate=yes' : 'https://waze.com/ul?q=' . rawurlencode('C House Milano Cafe and Restaurant Jebel Ali Dubai') . '&navigate=yes');
+                    $apple_url  = $s['apple_maps_url'] ?? ($has_ll ? 'https://maps.apple.com/?daddr=' . $lat . ',' . $lng . '&dirflg=d' : 'https://maps.apple.com/?daddr=' . rawurlencode('C House Milano Cafe & Restaurant Jebel Ali Dubai') . '&dirflg=d');
                     ?>
                     <div class="relative mt-4 w-fit" id="footer-directions-wrap">
                         <button onclick="document.getElementById('footer-directions-menu').classList.toggle('hidden')" class="mora-menu-link inline-flex items-center gap-1.5 border-b border-[var(--mora-candle)]/35 pb-1 text-[11px] uppercase tracking-[.12em]" type="button">

@@ -1221,18 +1221,18 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                 </p>
               </div>
               <?php
-              $map_query = $s['map_query'] ?? 'C HOUSE Jebel Ali Recreation Club Dubai';
+              $map_query = $s['map_query'] ?? 'C House Milano Cafe & Restaurant Jebel Ali Village Dubai';
               $q = rawurlencode($map_query);
               $lat = trim($s['map_lat'] ?? '');
               $lng = trim($s['map_lng'] ?? '');
               $has_ll = ($lat !== '' && $lng !== '');
-              $google_url = $s['google_maps_url'] ?? $s['google_maps_link'] ?? ('https://www.google.com/maps/search/?api=1&query=' . $q);
+              $google_url = $s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://maps.app.goo.gl/4eRoVnKG8e34B3jo7?g_st=ic';
               $waze_url   = $s['waze_url'] ?? ($has_ll
                 ? 'https://waze.com/ul?ll=' . $lat . ',' . $lng . '&navigate=yes'
-                : 'https://waze.com/ul?q=' . $q . '&navigate=yes');
+                : 'https://waze.com/ul?q=' . rawurlencode('C House Milano Cafe and Restaurant Jebel Ali Dubai') . '&navigate=yes');
               $apple_url  = $s['apple_maps_url'] ?? ($has_ll
                 ? 'https://maps.apple.com/?daddr=' . $lat . ',' . $lng . '&dirflg=d'
-                : 'https://maps.apple.com/?daddr=' . $q . '&dirflg=d');
+                : 'https://maps.apple.com/?daddr=' . rawurlencode('C House Milano Cafe & Restaurant Jebel Ali Dubai') . '&dirflg=d');
               ?>
               <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5 items-center" data-kid="2-2-8-1-1-4"
                 data-name="contact buttons container">
@@ -1252,98 +1252,57 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               style="--mora-delay:140ms;overflow:clip;z-index:0">
               <iframe
                 id="home-map-iframe"
-                src="<?= e($s['google_maps_embed'] ?? 'https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=near&output=embed') ?>"
+                src="<?= e($s['google_maps_embed'] ?? 'https://maps.google.com/maps?q=C+House+Milano+Cafe+%26+Restaurant+Jebel+Ali+Village&t=&z=16&ie=UTF8&iwloc=near&output=embed') ?>"
                 class="absolute inset-0 h-full w-full border-0"
                 style="border:0" loading="lazy" allowfullscreen></iframe>
 
-              <!-- Transparent Click Overlay to trigger Directions on map click -->
-              <div id="home-map-click-overlay" 
-                   onclick="openMapDirections(event)" 
-                   class="absolute inset-0 z-10 cursor-pointer" 
-                   title="Click to get directions">
-              </div>
-
-              <!-- Directions Modal / Dropdown -->
-              <div id="home-map-directions-modal" 
-                   onclick="closeMapDirections(event)"
-                   class="hidden absolute inset-0 z-30 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-all duration-300">
-                <div class="bg-white rounded-2xl shadow-2xl p-6 max-w-xs w-full text-center relative border border-[#30201B]/15" 
-                     onclick="event.stopPropagation();">
-                  <button type="button" onclick="closeMapDirections(event)" class="absolute top-3 right-3 text-gray-400 hover:text-black w-7 h-7 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
-                    <i class="ti ti-x text-base"></i>
-                  </button>
-                  <div class="w-10 h-10 rounded-full bg-[#f5e6c8] text-[#30201B] flex items-center justify-center mx-auto mb-3">
-                    <i class="ti ti-map-pin text-xl text-[#AA8243]"></i>
+              <!-- Floating Get Directions Button & Dropdown on Map Corner -->
+              <div class="absolute bottom-5 left-5 z-20" id="home-map-directions-wrap">
+                <button type="button" 
+                        onclick="event.stopPropagation(); document.getElementById('home-map-directions-menu').classList.toggle('hidden');" 
+                        class="inline-flex items-center gap-2 border border-[#30201B]/20 bg-[#f5e6c8] px-4 py-2.5 sm:px-5 sm:py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[.14em] text-[#30201B] hover:bg-[#30201B] hover:text-[#f5e6c8] transition-colors rounded-full shadow-lg backdrop-blur-md">
+                  <i class="ti ti-map-pin text-[#AA8243] text-sm"></i>
+                  <span>Get Directions</span>
+                  <i class="ti ti-chevron-up text-xs"></i>
+                </button>
+                <div id="home-map-directions-menu" class="hidden absolute bottom-full mb-2 left-0 z-30 bg-white border border-[#30201B]/15 rounded-2xl overflow-hidden shadow-2xl min-w-[200px] p-2">
+                  <div class="px-3 py-2 border-b border-[#30201B]/10 mb-1">
+                    <p class="text-[9px] font-bold uppercase tracking-wider text-gray-400">Open in</p>
                   </div>
-                  <h3 class="mora-serif text-xl font-bold text-[#30201B] mb-1">Get Directions</h3>
-                  <p class="text-xs text-gray-500 mb-4">Choose your preferred map app</p>
-                  <div class="flex flex-col gap-2">
-                    <a class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#f5e6c8]/60 hover:bg-[#30201B] text-[#30201B] hover:text-[#f5e6c8] transition-colors text-xs font-bold uppercase tracking-wider" 
+                  <div class="flex flex-col gap-1">
+                    <a class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-[#30201B] hover:bg-[#f5e6c8]/60 transition-colors" 
                        href="<?= e($google_url) ?>" rel="noreferrer" target="_blank">
-                      <span class="flex items-center gap-2.5">
-                        <i class="ti ti-brand-google-maps text-lg text-[#AA8243]"></i> Google Maps
+                      <span class="flex items-center gap-2">
+                        <i class="ti ti-brand-google-maps text-base text-[#AA8243]"></i> Google Maps
                       </span>
-                      <i class="ti ti-arrow-up-right text-sm"></i>
+                      <i class="ti ti-arrow-up-right text-xs text-gray-400"></i>
                     </a>
-                    <a class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#f5e6c8]/60 hover:bg-[#30201B] text-[#30201B] hover:text-[#f5e6c8] transition-colors text-xs font-bold uppercase tracking-wider" 
+                    <a class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-[#30201B] hover:bg-[#f5e6c8]/60 transition-colors" 
                        href="<?= e($waze_url) ?>" rel="noreferrer" target="_blank">
-                      <span class="flex items-center gap-2.5">
-                        <i class="ti ti-navigation text-lg text-[#AA8243]"></i> Waze
+                      <span class="flex items-center gap-2">
+                        <i class="ti ti-navigation text-base text-[#AA8243]"></i> Waze
                       </span>
-                      <i class="ti ti-arrow-up-right text-sm"></i>
+                      <i class="ti ti-arrow-up-right text-xs text-gray-400"></i>
                     </a>
-                    <a class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#f5e6c8]/60 hover:bg-[#30201B] text-[#30201B] hover:text-[#f5e6c8] transition-colors text-xs font-bold uppercase tracking-wider" 
+                    <a class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-[#30201B] hover:bg-[#f5e6c8]/60 transition-colors" 
                        href="<?= e($apple_url) ?>" rel="noreferrer" target="_blank">
-                      <span class="flex items-center gap-2.5">
-                        <i class="ti ti-brand-apple text-lg text-[#AA8243]"></i> Apple Maps
+                      <span class="flex items-center gap-2">
+                        <i class="ti ti-brand-apple text-base text-[#AA8243]"></i> Apple Maps
                       </span>
-                      <i class="ti ti-arrow-up-right text-sm"></i>
+                      <i class="ti ti-arrow-up-right text-xs text-gray-400"></i>
                     </a>
                   </div>
-                  <button type="button" onclick="enableInteractiveMap(event)" class="mt-4 text-[10px] uppercase tracking-widest text-[#30201B]/60 hover:text-[#30201B] font-semibold underline">
-                    Interact with map
-                  </button>
                 </div>
               </div>
 
-              <!-- Re-enable directions button (shown if user unlocked map) -->
-              <button id="home-map-reoverlay-btn" 
-                      type="button" 
-                      onclick="reEnableOverlay(event)" 
-                      class="hidden absolute bottom-4 left-4 z-20 bg-white/90 hover:bg-[#30201B] text-[#30201B] hover:text-white px-3.5 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-md backdrop-blur-sm border border-[#30201B]/15 transition-colors">
-                <i class="ti ti-directions mr-1"></i> Directions
-              </button>
-
               <script>
-                function openMapDirections(e) {
-                  if (e) e.stopPropagation();
-                  const modal = document.getElementById('home-map-directions-modal');
-                  if (modal) modal.classList.remove('hidden');
-                }
-
-                function closeMapDirections(e) {
-                  if (e) e.stopPropagation();
-                  const modal = document.getElementById('home-map-directions-modal');
-                  if (modal) modal.classList.add('hidden');
-                }
-
-                function enableInteractiveMap(e) {
-                  if (e) e.stopPropagation();
-                  closeMapDirections(e);
-                  const overlay = document.getElementById('home-map-click-overlay');
-                  if (overlay) overlay.classList.add('hidden');
-                  const reBtn = document.getElementById('home-map-reoverlay-btn');
-                  if (reBtn) reBtn.classList.remove('hidden');
-                }
-
-                function reEnableOverlay(e) {
-                  if (e) e.stopPropagation();
-                  const overlay = document.getElementById('home-map-click-overlay');
-                  if (overlay) overlay.classList.remove('hidden');
-                  const reBtn = document.getElementById('home-map-reoverlay-btn');
-                  if (reBtn) reBtn.classList.add('hidden');
-                  openMapDirections(e);
-                }
+                document.addEventListener('click', function(e) {
+                  const wrap = document.getElementById('home-map-directions-wrap');
+                  const menu = document.getElementById('home-map-directions-menu');
+                  if (wrap && menu && !wrap.contains(e.target)) {
+                    menu.classList.add('hidden');
+                  }
+                });
               </script>
             </div>
           </div>
