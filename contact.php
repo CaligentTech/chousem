@@ -3,6 +3,15 @@ require_once __DIR__ . '/admin/includes/db.php';
 require_once __DIR__ . '/admin/includes/functions.php';
 $s = get_all_settings($pdo);
 $contact_content = get_page_content($pdo, 'contact');
+
+$phones = function_exists('format_phones') ? format_phones($s['phone_numbers'] ?? '') : [];
+if (empty($phones)) {
+  $phones = [
+    ['display' => '+971 52 218 5569', 'tel' => '+971522185569'],
+    ['display' => '+971 50 460 3469', 'tel' => '+971504603469'],
+    ['display' => '+971 4 880 3320', 'tel' => '+97148803320'],
+  ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" class="bg-[#EBDDCB] overscroll-none">
@@ -205,14 +214,14 @@ $contact_content = get_page_content($pdo, 'contact');
             </p>
           </div>
 
-          <div>
-            <div class="inline-flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
-              <?php foreach ($phones as $idx => $ph): ?>
-                <?php if ($idx > 0): ?><span aria-hidden="true" class="text-[#30201B]/40">/</span><?php endif; ?>
+          <div class="space-y-1">
+            <?php foreach ($phones as $idx => $ph): ?>
+              <div>
                 <a class="border-b border-[#30201B]/40 pb-0.5 hover:text-[#AA8243] transition-colors" href="tel:<?= e($ph['tel']) ?>"><?= e($ph['display']) ?></a>
-              <?php endforeach; ?>
-            </div>
-            <div>
+                <?php if ($idx < count($phones) - 1): ?><span aria-hidden="true" class="text-[#30201B]/40 ml-1">/</span><?php endif; ?>
+              </div>
+            <?php endforeach; ?>
+            <div class="pt-0.5">
               <a class="border-b border-[#30201B]/40 pb-0.5 hover:text-[#AA8243] transition-colors" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>">
                 <?= e($s['email'] ?? 'hello@chouse.ae') ?>
               </a>
