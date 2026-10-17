@@ -174,7 +174,7 @@ if (empty($phones)) {
 
   <main class="flex-grow">
     <!-- Hero Header -->
-    <section class="relative min-h-[440px] pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center justify-center text-center">
+    <section class="relative min-h-[480px] pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center text-center">
       <div class="absolute inset-0 z-0">
         <img alt="Contact hero" class="h-full w-full object-cover opacity-30" decoding="async"
           src="gallery/restaurant.webp" />
@@ -182,7 +182,7 @@ if (empty($phones)) {
       </div>
       <div class="relative z-10 text-center max-w-3xl mx-auto pt-16">
         <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4"><?= e(get_content($pdo, 'contact', 'hero', 'kicker')) ?: 'Reservations & Enquiries' ?></p>
-        <h1 class="mora-serif text-[#f5e6c8] text-5xl md:text-7xl">Contact Us</h1>
+        <h1 class="mora-serif text-[#f5e6c8] text-5xl md:text-7xl mb-6">Contact Us</h1>
       </div>
     </section>
 

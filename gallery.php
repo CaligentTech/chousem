@@ -184,14 +184,14 @@ function fix_image_path($path) {
     </header>
 
     <!-- Hero Header -->
-    <section class="relative min-h-[440px] pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center justify-center">
+    <section class="relative min-h-[480px] pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center">
         <div class="absolute inset-0 z-0">
             <img alt="Gallery hero" class="h-full w-full object-cover opacity-30" decoding="async"
                 src="gallery/ambience15.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
         </div>
         <div class="relative z-10 text-center max-w-3xl mx-auto pt-16">
-            <div class="inline-block relative mb-6">
+            <div class="inline-block relative mb-6 pt-[31px]">
                 <h1 class="mora-serif text-[#f5e6c8] text-5xl md:text-7xl tracking-tight pb-3">
                     Gallery
                 </h1>
