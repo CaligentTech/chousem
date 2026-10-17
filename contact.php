@@ -173,136 +173,100 @@ $contact_content = get_page_content($pdo, 'contact');
       </div>
       <div class="relative z-10 text-center max-w-3xl mx-auto pt-16">
         <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4"><?= e(get_content($pdo, 'contact', 'hero', 'kicker')) ?: 'Reservations & Enquiries' ?></p>
-        <h1 class="mora-serif text-[#f5e6c8] text-5xl md:text-7xl mb-6"><?= e(get_content($pdo, 'contact', 'hero', 'heading')) ?: 'Contact Us' ?></h1>
-        <p class="text-sm md:text-base text-gray-300 tracking-wide font-light max-w-xl mx-auto"><?= e(get_content($pdo, 'contact', 'hero', 'description')) ?: 'Table bookings, private dining, events, and directions to C HOUSE Milano in Jebel Ali Village.' ?></p>
+        <h1 class="mora-serif text-[#f5e6c8] text-5xl md:text-7xl">Contact Us</h1>
       </div>
     </section>
 
     <section
       class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-      <!-- LEFT: Keep your existing info block exactly as it is -->
+      <!-- LEFT: Info block -->
       <div>
         <h2 class="mora-serif text-4xl sm:text-5xl text-[#30201B] mb-6">Find the long table.</h2>
-        <!-- your existing C HOUSE address, hours, phone, email, Get Directions/Reserve links go here unchanged -->
-        <div class="mx-auto grid max-w-[1360px] gap-14 lg:grid-cols-[.75fr_1.25fr] lg:gap-16" data-kid="2-2-8-1"
-          data-name="contact grid container">
-          <div class="mora-reveal is-visible" data-kid="2-2-8-1-1" data-name="contact info block" data-reveal="">
 
-            <div class="mt-4 border-y border-[var(--mora-espresso)]/28 py-7 text-sm leading-7" data-kid="2-2-8-1-1-3"
-              data-name="contact details list">
-              <p class="flex items-start gap-3" data-kid="2-2-8-1-1-3-1" data-name="contact location">
-                <i aria-hidden="true" class="ti ti-map-pin mt-1 text-base text-[var(--mora-clay)]"
-                  data-kid="2-2-8-1-1-3-1-1" data-name="location pin icon">
-                </i>
-                <span data-kid="2-2-8-1-1-3-1-2" data-name="location address block">
-                  <strong class="font-semibold" data-kid="2-2-8-1-1-3-1-2-1" data-name="location company name">
-                    C HOUSE
-                  </strong>
-                  <br data-kid="2-2-8-1-1-3-1-2-2" data-name="line break" />
-                  <?= e($s['address_line1'] ?? 'H Rd, Jebel Ali Recreation Club, Jebel Ali Village') ?>
-                  <br data-kid="2-2-8-1-1-3-1-2-3" data-name="location address lines" />
-                  <?= e($s['address_line2'] ?? 'Behind Ibn Battuta Mall, Dubai') ?>
-                </span>
-              </p>
-              <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-2" data-name="contact hours">
-                <i aria-hidden="true" class="ti ti-clock mt-1 text-base text-[var(--mora-clay)]"
-                  data-kid="2-2-8-1-1-3-2-1" data-name="clock icon">
-                </i>
-                <span data-kid="2-2-8-1-1-3-2-2" data-name="hours block">
-                  <strong class="font-semibold" data-kid="2-2-8-1-1-3-2-2-1" data-name="hours title">
-                    Opening Hours
-                  </strong>
-                  <br data-kid="2-2-8-1-1-3-2-2-2" data-name="line break" />
-                  <?php if (!empty($s['hours_weekday']) || !empty($s['hours_weekend'])): ?>
-                    <?php if (!empty($s['hours_weekday'])): ?><?= e($s['hours_weekday']) ?><br><?php endif; ?>
-                  <?php if (!empty($s['hours_weekend'])): ?><?= e($s['hours_weekend']) ?><?php endif; ?>
-                <?php else: ?>
-                  Sun - Thu: 12:00 PM - 12:00 AM (Midnight)<br>Fri - Sat: 12:00 PM - 2:00 AM
-                <?php endif; ?>
-                </span>
-              </p>
-              <p class="mt-6 flex items-start gap-3" data-kid="2-2-8-1-1-3-3" data-name="contact methods">
-                <i aria-hidden="true" class="ti ti-phone mt-1 text-base text-[var(--mora-clay)]"
-                  data-kid="2-2-8-1-1-3-3-1" data-name="phone icon">
-                </i>
-                <span data-kid="2-2-8-1-1-3-3-2" data-name="methods block">
-                  <?php
-                  $phones = function_exists('format_phones') ? format_phones($s['phone_numbers'] ?? '') : [];
-                  if (!$phones) {
-                    $phones = [
-                      ['display' => '+971 52 218 5569', 'tel' => '+971522185569'],
-                      ['display' => '+971 50 460 3469', 'tel' => '+971504603469'],
-                      ['display' => '+971 4 880 3320', 'tel' => '+97148803320'],
-                    ];
-                  }
-                  ?>
-                  <span class="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <?php foreach ($phones as $idx => $ph): ?>
-                      <?php if ($idx > 0): ?><span aria-hidden="true">/</span><?php endif; ?>
-                      <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4" href="tel:<?= e($ph['tel']) ?>"><?= e($ph['display']) ?></a>
-                    <?php endforeach; ?>
-                  </span>
-                  <br data-kid="2-2-8-1-1-3-3-2-2" data-name="line break" />
-                  <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                    data-kid="2-2-8-1-1-3-3-2-3" data-name="email link" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>">
-                    <?= e($s['email'] ?? 'hello@chouse.ae') ?>
-                  </a>
-                </span>
-              </p>
+        <div class="mt-4 border-y border-[#30201B]/20 py-7 text-sm leading-7 space-y-6">
+          <div>
+            <strong class="font-semibold block text-[#30201B]">C HOUSE</strong>
+            <p class="text-[#30201B]/80 mt-1">
+              <?= e($s['address_line1'] ?? 'H Rd, Jebel Ali Recreation Club, Jebel Ali Village') ?><br>
+              <?= e($s['address_line2'] ?? 'Behind Ibn Battuta Mall, Dubai') ?>
+            </p>
+          </div>
+
+          <div>
+            <strong class="font-semibold block text-[#30201B]">Opening Hours</strong>
+            <p class="text-[#30201B]/80 mt-1">
+              <?php if (!empty($s['hours_weekday']) || !empty($s['hours_weekend'])): ?>
+                <?php if (!empty($s['hours_weekday'])): ?><?= e($s['hours_weekday']) ?><br><?php endif; ?>
+                <?php if (!empty($s['hours_weekend'])): ?><?= e($s['hours_weekend']) ?><?php endif; ?>
+              <?php else: ?>
+                Sun - Thu: 12:00 PM - 12:00 AM (Midnight)<br>Fri - Sat: 12:00 PM - 2:00 AM
+              <?php endif; ?>
+            </p>
+          </div>
+
+          <div>
+            <div class="inline-flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
+              <?php foreach ($phones as $idx => $ph): ?>
+                <?php if ($idx > 0): ?><span aria-hidden="true" class="text-[#30201B]/40">/</span><?php endif; ?>
+                <a class="border-b border-[#30201B]/40 pb-0.5 hover:text-[#AA8243] transition-colors" href="tel:<?= e($ph['tel']) ?>"><?= e($ph['display']) ?></a>
+              <?php endforeach; ?>
             </div>
-            <!-- ADD MESSAGE US BUTTON HERE -->
-            <div class="mt-6">
-              <p class="text-[10px] uppercase tracking-[.16em] text-[var(--mora-espresso)]/60 mb-2">
-                WhatsApp</p>
-              <p class="text-sm mb-3"><?= e($s['whatsapp_display'] ?? '+971 52 218 5569') ?></p>
-              <a href="https://wa.me/<?= e($s['whatsapp_number'] ?? '971522185569') ?>?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation."
-                target="_blank"
-                class="inline-flex items-center gap-2 bg-[#30201B] text-[#f5e6c8] px-5 py-3 rounded-full font-semibold text-sm hover:bg-[#f5e6c8] hover:text-[#30201B] border border-[#30201B] transition-colors shadow-sm">
-                <i class="ti ti-brand-whatsapp text-lg"></i>
-                Message Us
+            <div>
+              <a class="border-b border-[#30201B]/40 pb-0.5 hover:text-[#AA8243] transition-colors" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>">
+                <?= e($s['email'] ?? 'hello@chouse.ae') ?>
               </a>
-            </div>
-
-            <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
-              data-name="contact buttons container">
-              <?php
-              $c_map_q = rawurlencode($s['map_query'] ?? 'C House Milano Cafe & Restaurant Jebel Ali Village Dubai');
-              $c_lat = trim($s['map_lat'] ?? '');
-              $c_lng = trim($s['map_lng'] ?? '');
-              $c_has_ll = ($c_lat !== '' && $c_lng !== '');
-              $c_google = $s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://maps.app.goo.gl/4eRoVnKG8e34B3jo7?g_st=ic';
-              $c_waze   = $s['waze_url'] ?? ($c_has_ll ? 'https://waze.com/ul?ll=' . $c_lat . ',' . $c_lng . '&navigate=yes' : 'https://waze.com/ul?q=' . rawurlencode('C House Milano Cafe and Restaurant Jebel Ali Dubai') . '&navigate=yes');
-              $c_apple  = $s['apple_maps_url'] ?? ($c_has_ll ? 'https://maps.apple.com/?daddr=' . $c_lat . ',' . $c_lng . '&dirflg=d' : 'https://maps.apple.com/?daddr=' . rawurlencode('C House Milano Cafe & Restaurant Jebel Ali Dubai') . '&dirflg=d');
-              ?>
-              <div class="relative" id="contact-directions-wrap">
-                <button onclick="document.getElementById('contact-directions-menu').classList.toggle('hidden')" class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]" type="button">
-                  Get directions
-                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm"></i>
-                </button>
-                <div id="contact-directions-menu" class="hidden absolute left-0 top-full mt-2 z-50 bg-white border border-[#30201B]/15 rounded-xl overflow-hidden shadow-xl min-w-[180px]">
-                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors" href="<?= e($c_google) ?>" rel="noreferrer" target="_blank">
-                    <i class="ti ti-brand-google-maps text-base"></i> Google Maps
-                  </a>
-                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($c_waze) ?>" rel="noreferrer" target="_blank">
-                    <i class="ti ti-navigation text-base"></i> Waze
-                  </a>
-                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($c_apple) ?>" rel="noreferrer" target="_blank">
-                    <i class="ti ti-brand-apple text-base"></i> Apple Maps
-                  </a>
-                </div>
-              </div>
-              <script>
-                document.addEventListener('click', function(e) {
-                  const wrap = document.getElementById('contact-directions-wrap');
-                  const menu = document.getElementById('contact-directions-menu');
-                  if (wrap && menu && !wrap.contains(e.target)) menu.classList.add('hidden');
-                });
-              </script>
-
             </div>
           </div>
         </div>
+
+        <div class="mt-6">
+          <p class="text-[10px] uppercase tracking-[.16em] text-[#30201B]/60 mb-2 font-bold">WhatsApp</p>
+          <p class="text-sm font-medium mb-3 text-[#30201B]"><?= e($s['whatsapp_display'] ?? '+971 52 218 5569') ?></p>
+          <a href="https://wa.me/<?= e($s['whatsapp_number'] ?? '971522185569') ?>?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation."
+            target="_blank"
+            class="inline-flex items-center gap-2 bg-[#30201B] text-[#f5e6c8] px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#AA8243] hover:text-white border border-[#30201B] transition-colors shadow-sm">
+            <i class="ti ti-brand-whatsapp text-lg"></i>
+            Message Us
+          </a>
+        </div>
+
+        <div class="mt-8">
+          <?php
+          $c_map_q = rawurlencode($s['map_query'] ?? 'C House Milano Cafe & Restaurant Jebel Ali Village Dubai');
+          $c_lat = trim($s['map_lat'] ?? '');
+          $c_lng = trim($s['map_lng'] ?? '');
+          $c_has_ll = ($c_lat !== '' && $c_lng !== '');
+          $c_google = $s['google_maps_url'] ?? $s['google_maps_link'] ?? 'https://maps.app.goo.gl/4eRoVnKG8e34B3jo7?g_st=ic';
+          $c_waze   = $s['waze_url'] ?? ($c_has_ll ? 'https://waze.com/ul?ll=' . $c_lat . ',' . $c_lng . '&navigate=yes' : 'https://waze.com/ul?q=' . rawurlencode('C House Milano Cafe and Restaurant Jebel Ali Dubai') . '&navigate=yes');
+          $c_apple  = $s['apple_maps_url'] ?? ($c_has_ll ? 'https://maps.apple.com/?daddr=' . $c_lat . ',' . $c_lng . '&dirflg=d' : 'https://maps.apple.com/?daddr=' . rawurlencode('C House Milano Cafe & Restaurant Jebel Ali Dubai') . '&dirflg=d');
+          ?>
+          <div class="relative inline-block" id="contact-directions-wrap">
+            <button onclick="document.getElementById('contact-directions-menu').classList.toggle('hidden')" class="mora-text-action text-[11px] font-bold uppercase tracking-[.16em] inline-flex items-center gap-1.5 focus-visible:outline-2 focus-visible:outline-[#30201B] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]" type="button">
+              <span>Get directions</span>
+              <i aria-hidden="true" class="ti ti-arrow-up-right text-sm"></i>
+            </button>
+            <div id="contact-directions-menu" class="hidden absolute left-0 top-full mt-2 z-50 bg-white border border-[#30201B]/15 rounded-xl overflow-hidden shadow-xl min-w-[180px]">
+              <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors" href="<?= e($c_google) ?>" rel="noreferrer" target="_blank">
+                <i class="ti ti-brand-google-maps text-base"></i> Google Maps
+              </a>
+              <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($c_waze) ?>" rel="noreferrer" target="_blank">
+                <i class="ti ti-navigation text-base"></i> Waze
+              </a>
+              <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($c_apple) ?>" rel="noreferrer" target="_blank">
+                <i class="ti ti-brand-apple text-base"></i> Apple Maps
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          document.addEventListener('click', function(e) {
+            const wrap = document.getElementById('contact-directions-wrap');
+            const menu = document.getElementById('contact-directions-menu');
+            if (wrap && menu && !wrap.contains(e.target)) menu.classList.add('hidden');
+          });
+        </script>
       </div>
 
       <!-- RIGHT: Floating form card (replaces the map) -->
