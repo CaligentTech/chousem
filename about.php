@@ -95,102 +95,97 @@ $reviews = get_reviews($pdo);
 
 <body class="bg-black text-white overflow-x-hidden">
 
-  <!-- HERO CONTAINER -->
-  <div class="relative min-h-[500px] w-full flex flex-col justify-between overflow-hidden bg-black">
+  <!-- NAVBAR -->
+  <header id="site-header" aria-label="Primary navigation" class="fixed inset-x-0 top-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-[#f5e6c8] transition-all duration-300">
+    <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
 
-    <!-- BACKGROUND IMAGE -->
-    <div class="absolute inset-0 z-0">
-      <img src="<?= e($about_content['hero']['image'] ?? 'gallery/about-hero.webp') ?>" alt="C HOUSE dining room with live music at night"
-        class="h-full w-full object-cover object-[50%_12%]" />
-      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/40"></div>
+      <!-- Logo & Brand Name -->
+      <div class="flex items-center">
+        <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="./">
+          <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo" />
+          <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
+        </a>
+      </div>
+
+      <!-- Center Floating Navigation Pill (from index.html) -->
+      <nav aria-label="Main links"
+        class="hidden items-center gap-1 rounded-full bg-black/40 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10 shadow-lg">
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="./">Home</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="menu">Menu</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-white/20 text-white font-semibold"
+          href="about" aria-current="page">About</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="bar">Bar</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="experience">Experience</a> <a
+          class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="gallery">Gallery</a>
+        <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+          href="contact">Contact</a>
+      </nav>
+
+      <!-- Right: Reserve a Table Button (Round edges, White Background) -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="contact"
+          class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
+          <span>Reserve a Table</span>
+          <i class="ti ti-arrow-up-right text-base"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobile-menu-btn"
+        class="lg:hidden flex items-center justify-center w-10 h-10 border border-white/30 rounded-full text-white backdrop-blur-sm bg-black/30"
+        aria-label="Open menu" type="button">
+        <i class="ti ti-menu-2 text-xl"></i>
+      </button>
+
     </div>
 
-    <!-- NAVBAR (MATCHING INDEX.HTML WITH ROUND WHITE RESERVE BUTTON) -->
-    <header id="site-header" aria-label="Primary navigation" class="fixed top-0 inset-x-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-white transition-all duration-300">
-      <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu"
+      class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl">
+      <nav class="flex flex-col gap-3">
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="./">Home</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="menu">Menu</a>
+        <a class="text-[13px] tracking-widest uppercase text-white py-2 border-b border-white/10 font-semibold"
+          href="about">About</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="bar">Bar</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="experience">Experience</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="gallery">Gallery</a>
+        <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+          href="contact">Contact</a>
+        <a href="contact"
+          class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
+          Reserve a Table <i class="ti ti-arrow-up-right"></i>
+        </a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Logo & Brand Name -->
-        <div class="flex items-center">
-          <a aria-label="home" class="flex items-center gap-3 text-white" href="./">
-            <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo" />
-            <span class="font-sans text-[32px] tracking-[0.2em] font-light text-white">C HOUSE</span>
-          </a>
+  <main class="flex-grow">
+    <!-- Hero Header -->
+    <section class="relative min-h-[480px] pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center text-center">
+      <div class="absolute inset-0 z-0">
+        <img src="<?= e($about_content['hero']['image'] ?? 'gallery/about-hero.webp') ?>" alt="About hero"
+          class="h-full w-full object-cover opacity-30 object-[50%_12%]" decoding="async" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+      </div>
+      <div class="relative z-10 text-center max-w-3xl mx-auto pt-16">
+        <div class="inline-block relative mb-6 pt-[31px]">
+          <h1 class="mora-serif text-[#f5e6c8] text-5xl md:text-7xl mb-6">
+            <?= e($about_content['hero']['heading'] ?? 'About Us') ?>
+          </h1>
         </div>
-
-        <!-- Center Floating Navigation Pill (from index.html) -->
-        <nav aria-label="Main links"
-          class="hidden items-center gap-1 rounded-full bg-black/40 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10 shadow-lg">
-          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="./">Home</a>
-          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="menu">Menu</a>
-          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-white/20 text-white font-semibold"
-            href="about" aria-current="page">About</a>
-          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="bar">Bar</a>
-          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="experience">Experience</a> <a
-            class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="gallery">Gallery</a>
-          <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
-            href="contact">Contact</a>
-        </nav>
-
-        <!-- Right: Reserve a Table Button (Round edges, White Background) -->
-        <div class="hidden lg:flex items-center gap-4">
-          <a href="contact"
-            class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
-            <span>Reserve a Table</span>
-            <i class="ti ti-arrow-up-right text-base"></i>
-          </a>
-        </div>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn"
-          class="lg:hidden flex items-center justify-center w-10 h-10 border border-white/30 rounded-full text-white backdrop-blur-sm bg-black/30"
-          aria-label="Open menu" type="button">
-          <i class="ti ti-menu-2 text-xl"></i>
-        </button>
-
       </div>
-
-      <!-- Mobile Dropdown Menu -->
-      <div id="mobile-menu"
-        class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl">
-        <nav class="flex flex-col gap-3">
-          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="./">Home</a>
-          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="menu">Menu</a>
-          <a class="text-[13px] tracking-widest uppercase text-white py-2 border-b border-white/10 font-semibold"
-            href="about">About</a>
-          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="bar">Bar</a>
-          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="experience">Experience</a>
-          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="gallery">Gallery</a>
-          <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-            href="contact">Contact</a>
-          <a href="contact"
-            class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
-            Reserve a Table <i class="ti ti-arrow-up-right"></i>
-          </a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- CENTER HERO CONTENT: ABOUT US IN BIG WHITE LETTERS -->
-    <main class="relative z-10 flex-1 flex flex-col items-center px-5 pt-24 pb-12 text-center">
-      <div class="text-center max-w-3xl mx-auto pt-24">
-        <p class="text-[10px] uppercase tracking-[.2em] text-[#AA8243] font-bold mb-4">&nbsp;</p>
-        <h1 class="mora-serif text-5xl md:text-7xl mb-6">
-          <?= e($about_content['hero']['heading'] ?? 'About Us') ?>
-        </h1>
-      </div>
-    </main>
-
-  </div>
+    </section>
 
   <!-- OUR STORY SECTION -->
   <section class="bg-white text-[#30201B] py-12 sm:py-16 lg:py-20 px-6 sm:px-12 lg:px-20">
@@ -455,6 +450,7 @@ $reviews = get_reviews($pdo);
 
     </div>
   </section>
+  </main>
 
   <!-- Footer section same as homepage -->
   <?php include __DIR__ . '/includes/footer.php'; ?>
