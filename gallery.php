@@ -196,7 +196,7 @@ function fix_image_path($path) {
                 <img alt="Gallery hero" class="h-full w-full object-cover opacity-30" decoding="async"
                     src="gallery/ambience15.webp" />
             </picture>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/45 to-transparent"></div>
         </div>
         <div class="relative z-10 text-center max-w-3xl mx-auto pt-16">
             <div class="inline-block relative mb-6 pt-[31px]">
