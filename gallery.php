@@ -93,17 +93,17 @@ function fix_image_path($path) {
         }
 
         #instagram-feed-iframe {
-            height: 1150px;
+            height: 560px;
             background: transparent;
         }
         @media (min-width: 480px) {
             #instagram-feed-iframe {
-                height: 1250px;
+                height: 600px;
             }
         }
         @media (min-width: 640px) {
             #instagram-feed-iframe {
-                height: 1350px;
+                height: 660px;
             }
         }
         @media (min-width: 768px) {
