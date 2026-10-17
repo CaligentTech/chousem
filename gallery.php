@@ -64,7 +64,7 @@ function fix_image_path($path) {
         }
 
         .tab-active {
-            color: #30201B !important;
+            color: #f5e6c8 !important;
             position: relative;
         }
 
@@ -117,112 +117,107 @@ function fix_image_path($path) {
 <body class="bg-[#EBDDCB] text-[#30201B] overflow-x-hidden min-h-screen flex flex-col justify-between">
 
     <!-- TOP HEADER / NAVBAR -->
-    <div class="w-full">
-        <header id="site-header" aria-label="Primary navigation" class="fixed top-0 inset-x-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-white transition-all duration-300">
-            <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
+    <header id="site-header" aria-label="Primary navigation"
+        class="fixed inset-x-0 top-0 z-50 pt-3 pb-3 px-5 sm:px-8 lg:px-12 text-[#f5e6c8] transition-all duration-300">
+        <div class="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between relative">
+            <div class="flex items-center">
+                <a aria-label="home" class="flex items-center text-[#f5e6c8] gap-4" href="./">
+                    <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4" alt="C HOUSE Logo">
+                    <span class="font-sans text-[32px] tracking-[0.2em] font-light">C HOUSE</span>
+                </a>
+            </div>
+            <nav aria-label="Main links"
+                class="hidden items-center gap-1 rounded-full bg-black/30 px-3 py-1.5 lg:flex backdrop-blur-md border border-white/10">
+                <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+                    href="./">Home</a>
+                <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+                    href="menu">Menu</a>
+                <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+                    href="about">About</a>
+                <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+                    href="bar">Bar</a>
+                <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+                    href="experience">Experience</a>
+                <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-white bg-white/20 transition-colors"
+                    href="gallery">Gallery</a>
+                <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
+                    href="contact">Contact</a>
+            </nav>
 
-                <!-- Logo & Brand Name -->
-                <div class="flex items-center">
-                    <a aria-label="home" class="flex items-center gap-3 text-[#30201B]" href="./">
-                        <img src="gallery/logo.webp" class="h-28 w-auto object-contain -ml-4 logo-dark-brown"
-                            alt="C HOUSE Logo" />
-                        <span class="font-sans text-[32px] tracking-[0.2em] font-light text-[#30201B]">C
-                            HOUSE</span>
-                    </a>
-                </div>
-
-                <!-- Center Floating Navigation Pill -->
-                <nav aria-label="Main links"
-                    class="hidden items-center gap-1 rounded-full bg-[#30201B]/10 px-3 py-1.5 lg:flex backdrop-blur-md border border-[#30201B]/15 shadow-sm">
-                    <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="./">Home</a>
-                    <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="menu">Menu</a>
-                    <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="about">About</a>
-                    <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="bar">Bar</a> <a
-                        class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="experience">Experience</a> <a
-                        class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase bg-[#30201B] text-[#EBDDCB] font-semibold shadow-sm"
-                        href="gallery" aria-current="page">Gallery</a>
-                    <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-[#30201B]/80 transition-colors hover:bg-[#30201B]/15 hover:text-[#30201B]"
-                        href="contact">Contact</a>
-                </nav>
-
-                <!-- Right: Reserve a Table Button -->
-                <div class="hidden lg:flex items-center gap-4">
-                    <a href="contact"
-                        class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
-                        <span>Reserve a Table</span>
-                        <i class="ti ti-arrow-up-right text-base"></i>
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Toggle Button -->
-                <button id="mobile-menu-btn"
-                    class="lg:hidden flex items-center justify-center w-10 h-10 border border-[#30201B]/30 rounded-full text-[#30201B] backdrop-blur-sm bg-white/40"
-                    aria-label="Open menu" type="button">
-                    <i class="ti ti-menu-2 text-xl"></i>
-                </button>
-
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="contact"
+                    class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
+                    <span>Reserve a Table</span>
+                    <i class="ti ti-arrow-up-right text-base"></i>
+                </a>
             </div>
 
-            <!-- Mobile Dropdown Menu -->
-            <div id="mobile-menu"
-                class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
-                <nav class="flex flex-col gap-3">
-                    <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-                        href="./">Home</a>
-                    <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-                        href="menu">Menu</a>
-                    <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-                        href="about">About</a>
-                    <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-                        href="bar">Bar</a>
-                    <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-                        href="experience">Experience</a>
-                    <a class="text-[13px] tracking-widest uppercase text-white py-2 border-b border-white/10 font-semibold"
-                        href="gallery">Gallery</a>
-                    <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
-                        href="contact">Contact</a>
-                    <a href="contact"
-                        class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
-                        Reserve a Table <i class="ti ti-arrow-up-right"></i>
-                    </a>
-                </nav>
-            </div>
-        </header>
+            <button id="mobile-menu-button" aria-expanded="false" class="lg:hidden flex items-center justify-center p-2 text-[#f5e6c8]" aria-label="Open menu">
+                <i class="ti ti-menu-2 text-2xl"></i>
+            </button>
+        </div>
 
-        <!-- TITLE SECTION -->
-        <div class="pt-[120px] pb-2 text-center px-4">
-            <div class="inline-block relative">
-                <h1 class="mora-serif text-5xl sm:text-6xl md:text-7xl text-[#30201B] tracking-tight pb-3">
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden mt-4 mx-auto max-w-[1360px] bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl relative z-50">
+            <nav class="flex flex-col gap-3">
+                <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+                    href="./">Home</a>
+                <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+                    href="menu">Menu</a>
+                <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+                    href="about">About</a>
+                <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+                    href="bar">Bar</a>
+                <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+                    href="experience">Experience</a>
+                <a class="text-[13px] tracking-widest uppercase text-white py-2 border-b border-white/10 font-semibold"
+                    href="gallery">Gallery</a>
+                <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
+                    href="contact">Contact</a>
+                <a href="contact"
+                    class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
+                    Reserve a Table <i class="ti ti-arrow-up-right"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="relative min-h-[440px] pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img alt="Gallery hero" class="h-full w-full object-cover opacity-30" decoding="async"
+                src="gallery/ambience15.webp" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-3xl mx-auto pt-16">
+            <div class="inline-block relative mb-6">
+                <h1 class="mora-serif text-[#f5e6c8] text-5xl md:text-7xl tracking-tight pb-3">
                     Gallery
                 </h1>
-                <div class="h-[2px] w-20 bg-[#AA8243]/60 mx-auto"></div>
+                <div class="h-[2px] w-20 bg-[#AA8243] mx-auto"></div>
             </div>
 
             <!-- CATEGORY TABS (Food, Drink, Ambience) -->
-            <div class="flex justify-center items-center gap-8 sm:gap-12 mt-4">
+            <div class="flex justify-center items-center gap-8 sm:gap-12 mt-2">
                 <button id="tab-food" onclick="switchCategory('food')"
-                    class="tab-btn tab-active font-serif mora-serif text-xl sm:text-2xl text-[#30201B] transition-all duration-200">
+                    class="tab-btn tab-active font-serif mora-serif text-xl sm:text-2xl text-[#f5e6c8] transition-all duration-200">
                     Food
                 </button>
                 <button id="tab-drink" onclick="switchCategory('drink')"
-                    class="tab-btn font-serif mora-serif text-xl sm:text-2xl text-[#30201B]/60 hover:text-[#30201B] transition-all duration-200">
+                    class="tab-btn font-serif mora-serif text-xl sm:text-2xl text-[#f5e6c8]/60 hover:text-[#f5e6c8] transition-all duration-200">
                     Drink
                 </button>
                 <button id="tab-ambience" onclick="switchCategory('ambience')"
-                    class="tab-btn font-serif mora-serif text-xl sm:text-2xl text-[#30201B]/60 hover:text-[#30201B] transition-all duration-200">
+                    class="tab-btn font-serif mora-serif text-xl sm:text-2xl text-[#f5e6c8]/60 hover:text-[#f5e6c8] transition-all duration-200">
                     Ambience
                 </button>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- GALLERY PHOTO GRID -->
-    <main class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 pt-2 pb-10 flex-grow">
+    <main class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 pt-10 pb-16 flex-grow">
 
         <!-- FOOD GALLERY -->
         <div id="gallery-food" class="gallery-panel">
@@ -390,19 +385,34 @@ function fix_image_path($path) {
 
     <!-- SCRIPT FOR TABS & MOBILE MENU -->
     <script>
-        const siteHeader = document.getElementById('site-header');
-        if (siteHeader) {
-            const syncHeader = () => {
-                const on = window.scrollY > 24;
-                siteHeader.classList.toggle('bg-[#EBDDCB]/95', on);
-                siteHeader.classList.toggle('backdrop-blur-md', on);
-                siteHeader.classList.toggle('shadow-md', on);
-            };
-            syncHeader();
-            window.addEventListener('scroll', syncHeader, {
-                passive: true
-            });
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const siteHeader = document.getElementById('site-header');
+            if (siteHeader) {
+                const syncHeader = () => {
+                    const on = window.scrollY > 24;
+                    siteHeader.classList.toggle('bg-black/80', on);
+                    siteHeader.classList.toggle('backdrop-blur-md', on);
+                    siteHeader.classList.toggle('shadow-lg', on);
+                };
+                syncHeader();
+                window.addEventListener('scroll', syncHeader, {
+                    passive: true
+                });
+            }
+
+            const menu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (menu && menuButton) {
+                menuButton.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                    menuButton.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
+                });
+                menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                }));
+            }
+        });
 
         function switchCategory(cat) {
             // Hide all panels
@@ -419,23 +429,14 @@ function fix_image_path($path) {
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('tab-active');
-                btn.classList.add('text-[#30201B]/60');
+                btn.classList.add('text-[#f5e6c8]/60');
             });
 
             const activeBtn = document.getElementById('tab-' + cat);
             if (activeBtn) {
                 activeBtn.classList.add('tab-active');
-                activeBtn.classList.remove('text-[#30201B]/60');
+                activeBtn.classList.remove('text-[#f5e6c8]/60');
             }
-        }
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
         }
     </script>
     <a aria-label="Chat with us on WhatsApp" rel="noopener" href="https://wa.me/971522185569?text=Hello%2C%20I%20would%20like%20to%20make%20a%20reservation." target="_blank"
