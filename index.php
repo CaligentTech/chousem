@@ -1220,43 +1220,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   </span>
                 </p>
               </div>
-              <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
-                data-name="contact buttons container">
-
-                <a href="contact"
-                  class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                  data-kid="2-2-8-1-1-4-2" data-name="reserve button">
-                  Reserve a table
-                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-2-1"
-                    data-name="arrow-up-right icon">
-                  </i>
-                </a>
-              </div>
-            </div>
-            <div
-              class="mora-reveal mora-map-panel relative min-h-[320px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[220px] rounded-2xl is-visible"
-              data-kid="2-2-8-1-2" data-name="map display panel" data-reveal=""
-              style="--mora-delay:140ms;overflow:clip;z-index:0">
-              <iframe
-                src="<?= e($s['google_maps_embed'] ?? 'https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=near&output=embed') ?>"
-                class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply pointer-events-none"
-                frameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
-
-
-              <div class="absolute top-6 right-6 z-10 pointer-events-none" data-kid="2-2-8-1-2-3" data-name="map caption overlay container">
-                <div class="mora-fold mora-fold-parchment bg-[var(--mora-clay)] px-5 py-4 text-[var(--mora-candle)]"
-                  data-kid="2-2-8-1-2-3-inner" data-name="map caption overlay">
-                  <p class="text-xs font-semibold" data-kid="2-2-8-1-2-3-1" data-name="location title">
-                    <?= e($s['location_name'] ?? 'Jebel Ali Recreation Club') ?>
-                  </p>
-                  <p class="mt-1 text-[10px] text-[var(--mora-candle)]/75" data-kid="2-2-8-1-2-3-2"
-                    data-name="location address">
-                    <?= e($s['location_caption'] ?? ($s['location_city'] ?? (($s['site_name'] ?? 'C HOUSE') . ' · Dubai, UAE'))) ?>
-                  </p>
-                </div>
-              </div>
               <?php
-              // Where "directions" should lead. Change in the settings table, or edit the default below.
               $map_query = $s['map_query'] ?? 'C HOUSE Jebel Ali Recreation Club Dubai';
               $q = rawurlencode($map_query);
               $lat = trim($s['map_lat'] ?? '');
@@ -1269,19 +1233,77 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               $apple_url  = $s['apple_maps_url'] ?? ($has_ll
                 ? 'https://maps.apple.com/?daddr=' . $lat . ',' . $lng . '&dirflg=d'
                 : 'https://maps.apple.com/?daddr=' . $q . '&dirflg=d');
-              $map_btn = 'inline-flex items-center gap-2 border border-[var(--mora-olive)]/40 bg-[#f5e6c8] px-4 py-3 text-[10px] font-bold uppercase tracking-[.14em] text-black hover:bg-[var(--mora-clay)] hover:text-white transition-colors';
               ?>
-              <div class="absolute inset-x-6 bottom-6 z-10 flex flex-wrap gap-2" data-name="map direction buttons">
-                <a href="<?= e($google_url) ?>" target="_blank" rel="noopener noreferrer" class="<?= $map_btn ?>">
-                  <i aria-hidden="true" class="ti ti-brand-google-maps text-sm"></i> Google Maps
-                </a>
-                <a href="<?= e($waze_url) ?>" target="_blank" rel="noopener noreferrer" class="<?= $map_btn ?>">
-                  <i aria-hidden="true" class="ti ti-navigation text-sm"></i> Waze
-                </a>
-                <a href="<?= e($apple_url) ?>" target="_blank" rel="noopener noreferrer" class="<?= $map_btn ?>">
-                  <i aria-hidden="true" class="ti ti-brand-apple text-sm"></i> Apple Maps
+              <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5 items-center" data-kid="2-2-8-1-1-4"
+                data-name="contact buttons container">
+
+                <div class="relative" id="home-contact-directions-wrap">
+                  <button type="button" onclick="event.stopPropagation(); document.getElementById('home-contact-directions-menu').classList.toggle('hidden');" class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4 transition-colors duration-200 hover:text-[#AA8243]">
+                    Get directions
+                    <i aria-hidden="true" class="ti ti-arrow-up-right text-sm"></i>
+                  </button>
+                  <div id="home-contact-directions-menu" class="hidden absolute left-0 top-full mt-2 z-50 bg-white border border-[#30201B]/15 rounded-xl overflow-hidden shadow-xl min-w-[180px]">
+                    <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors" href="<?= e($google_url) ?>" rel="noreferrer" target="_blank">
+                      <i class="ti ti-brand-google-maps text-base text-[#AA8243]"></i> Google Maps
+                    </a>
+                    <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($waze_url) ?>" rel="noreferrer" target="_blank">
+                      <i class="ti ti-navigation text-base text-[#AA8243]"></i> Waze
+                    </a>
+                    <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($apple_url) ?>" rel="noreferrer" target="_blank">
+                      <i class="ti ti-brand-apple text-base text-[#AA8243]"></i> Apple Maps
+                    </a>
+                  </div>
+                </div>
+
+                <a href="contact"
+                  class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
+                  data-kid="2-2-8-1-1-4-2" data-name="reserve button">
+                  Reserve a table
+                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-2-1"
+                    data-name="arrow-up-right icon">
+                  </i>
                 </a>
               </div>
+            </div>
+            <div
+              class="mora-reveal mora-map-panel relative min-h-[360px] overflow-hidden border border-[var(--mora-olive)] lg:min-h-[340px] rounded-2xl is-visible"
+              data-kid="2-2-8-1-2" data-name="map display panel" data-reveal=""
+              style="--mora-delay:140ms;overflow:clip;z-index:0">
+              <iframe
+                src="<?= e($s['google_maps_embed'] ?? 'https://maps.google.com/maps?q=Jebel%20Ali%20Recreation%20Club%20Dubai&t=&z=14&ie=UTF8&iwloc=near&output=embed') ?>"
+                class="absolute inset-0 h-full w-full grayscale opacity-80 mix-blend-multiply"
+                frameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
+
+              <div class="absolute bottom-5 left-5 z-20" id="home-map-directions-wrap">
+                <button type="button" 
+                        onclick="event.stopPropagation(); document.getElementById('home-map-directions-menu').classList.toggle('hidden');" 
+                        class="inline-flex items-center gap-2 border border-[#30201B]/20 bg-[#f5e6c8] px-4 py-2.5 sm:px-5 sm:py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[.14em] text-[#30201B] hover:bg-[#30201B] hover:text-[#f5e6c8] transition-colors rounded-full shadow-lg backdrop-blur-md">
+                  <span>Get Directions</span>
+                  <i aria-hidden="true" class="ti ti-arrow-up-right text-sm"></i>
+                </button>
+                <div id="home-map-directions-menu" class="hidden absolute bottom-full mb-2 left-0 z-50 bg-white border border-[#30201B]/15 rounded-xl overflow-hidden shadow-2xl min-w-[190px]">
+                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] font-semibold text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors" href="<?= e($google_url) ?>" rel="noreferrer" target="_blank">
+                    <i class="ti ti-brand-google-maps text-base text-[#AA8243]"></i> Google Maps
+                  </a>
+                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] font-semibold text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($waze_url) ?>" rel="noreferrer" target="_blank">
+                    <i class="ti ti-navigation text-base text-[#AA8243]"></i> Waze
+                  </a>
+                  <a class="flex items-center gap-2.5 px-4 py-3 text-[11px] uppercase tracking-[.12em] font-semibold text-[#30201B]/80 hover:bg-[#f5f0e8] hover:text-[#30201B] transition-colors border-t border-[#30201B]/10" href="<?= e($apple_url) ?>" rel="noreferrer" target="_blank">
+                    <i class="ti ti-brand-apple text-base text-[#AA8243]"></i> Apple Maps
+                  </a>
+                </div>
+              </div>
+              <script>
+                document.addEventListener('click', function(e) {
+                  const mapWrap = document.getElementById('home-map-directions-wrap');
+                  const mapMenu = document.getElementById('home-map-directions-menu');
+                  if (mapWrap && mapMenu && !mapWrap.contains(e.target)) mapMenu.classList.add('hidden');
+
+                  const contactWrap = document.getElementById('home-contact-directions-wrap');
+                  const contactMenu = document.getElementById('home-contact-directions-menu');
+                  if (contactWrap && contactMenu && !contactWrap.contains(e.target)) contactMenu.classList.add('hidden');
+                });
+              </script>
             </div>
           </div>
         </section>
