@@ -287,105 +287,109 @@ $bundles = get_offers($pdo, 'bundle');
         <p class="text-[13px] uppercase tracking-[.15em] text-[var(--mora-clay)] font-bold">Lounge &amp; Terrace Selection</p>
       </div>
 
-      <div class="bg-[#1C1A18] text-[#f5e6c8] rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#AA8243]/30 shadow-2xl relative overflow-hidden">
-        <!-- Ambient decorative glow -->
-        <div class="absolute -top-32 -right-32 w-80 h-80 bg-[#AA8243]/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-[#C76D4D]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
 
-        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <!-- CLASSIC FLAVOURS -->
+        <div class="menu-section">
+          <h2 class="mora-serif text-4xl mb-2">Classic Flavours</h2>
+          <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">AED 95 Each &bull; Single Flavour Selection</p>
+          <div class="flex flex-col gap-5">
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Double Apple</span>
+              <span class="menu-price">95</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Grape</span>
+              <span class="menu-price">95</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Mint</span>
+              <span class="menu-price">95</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Blueberry</span>
+              <span class="menu-price">95</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Watermelon</span>
+              <span class="menu-price">95</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Lemon Mint</span>
+              <span class="menu-price">95</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Grape Mint</span>
+              <span class="menu-price">95</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Blue Mist</span>
+              <span class="menu-price">95</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline pb-2">
+              <span class="text-lg">Love 66</span>
+              <span class="menu-price">95</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: PREMIUM, MIXES & EXTRA HEAD -->
+        <div class="flex flex-col gap-12">
           
-          <!-- LEFT / MENU CARDS (7 Cols) -->
-          <div class="lg:col-span-7 flex flex-col gap-5">
-            
-            <!-- Box 1: Classic Flavours -->
-            <div class="rounded-2xl border border-[#AA8243]/40 bg-black/40 backdrop-blur-sm p-6 sm:p-7 transition-all duration-300 hover:border-[#AA8243]">
-              <div class="flex items-baseline justify-between border-b border-[#AA8243]/20 pb-3 mb-4">
-                <h3 class="mora-serif text-2xl sm:text-3xl text-[#AA8243] tracking-wide">Classic Flavours</h3>
-                <span class="text-xl sm:text-2xl font-semibold text-[#f5e6c8]">AED 95</span>
-              </div>
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-2.5 gap-x-4 text-sm sm:text-base text-gray-200 font-light">
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Double Apple</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Grape</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Mint</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Blueberry</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Watermelon</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Lemon Mint</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Grape Mint</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Blue Mist</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#AA8243]"></span>Love 66</div>
+          <!-- Premium Flavour -->
+          <div class="menu-section">
+            <h2 class="mora-serif text-4xl mb-2">Premium Flavour</h2>
+            <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Signature Single Flavour</p>
+            <div class="flex flex-col gap-5">
+              <div class="menu-item flex justify-between items-baseline pb-2">
+                <span class="text-lg">Paan</span>
+                <span class="menu-price">100</span>
               </div>
             </div>
-
-            <!-- Box 2: Premium Flavour -->
-            <div class="rounded-2xl border border-[#AA8243]/40 bg-black/40 backdrop-blur-sm p-6 sm:p-7 transition-all duration-300 hover:border-[#AA8243]">
-              <div class="flex items-baseline justify-between">
-                <div>
-                  <h3 class="mora-serif text-2xl sm:text-3xl text-[#AA8243] tracking-wide">Premium Flavour</h3>
-                  <p class="text-base sm:text-lg text-gray-200 font-light mt-1">Paan</p>
-                </div>
-                <span class="text-xl sm:text-2xl font-semibold text-[#f5e6c8]">AED 100</span>
-              </div>
-            </div>
-
-            <!-- Box 3: Flavour Mixes -->
-            <div class="rounded-2xl border border-[#AA8243]/40 bg-black/40 backdrop-blur-sm p-6 sm:p-7 transition-all duration-300 hover:border-[#AA8243]">
-              <div class="border-b border-[#AA8243]/20 pb-3 mb-4">
-                <h3 class="mora-serif text-2xl sm:text-3xl text-[#AA8243] tracking-wide">Flavour Mixes</h3>
-              </div>
-              <div class="space-y-3">
-                <div class="flex justify-between items-baseline text-sm sm:text-base border-b border-white/5 pb-2">
-                  <span class="text-gray-200 font-light">Double Flavour + Mint</span>
-                  <span class="font-semibold text-[#f5e6c8] ml-4">AED 115</span>
-                </div>
-                <div class="flex justify-between items-baseline text-sm sm:text-base border-b border-white/5 pb-2">
-                  <span class="text-gray-200 font-light">Double Flavour + Paan</span>
-                  <span class="font-semibold text-[#f5e6c8] ml-4">AED 125</span>
-                </div>
-                <div class="flex justify-between items-baseline text-sm sm:text-base">
-                  <span class="text-gray-200 font-light">Triple Flavours</span>
-                  <span class="font-semibold text-[#f5e6c8] ml-4">AED 140</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Box 4: Extra Head -->
-            <div class="rounded-2xl border border-[#AA8243]/40 bg-black/40 backdrop-blur-sm p-6 sm:p-7 transition-all duration-300 hover:border-[#AA8243]">
-              <div class="border-b border-[#AA8243]/20 pb-3 mb-4">
-                <h3 class="mora-serif text-2xl sm:text-3xl text-[#AA8243] tracking-wide">Extra Head</h3>
-              </div>
-              <div class="space-y-3">
-                <div class="flex justify-between items-baseline text-sm sm:text-base border-b border-white/5 pb-2">
-                  <span class="text-gray-200 font-light">Single Flavour</span>
-                  <span class="font-semibold text-[#f5e6c8] ml-4">AED 45</span>
-                </div>
-                <div class="flex justify-between items-baseline text-sm sm:text-base">
-                  <span class="text-gray-200 font-light">Double Flavour</span>
-                  <span class="font-semibold text-[#f5e6c8] ml-4">AED 55</span>
-                </div>
-              </div>
-            </div>
-
           </div>
 
-          <!-- RIGHT / POSTER IMAGE (5 Cols) -->
-          <div class="lg:col-span-5 flex flex-col items-center">
-            <div class="relative rounded-2xl overflow-hidden border border-[#AA8243]/40 shadow-2xl group max-w-sm sm:max-w-md w-full">
-              <img src="gallery/shisha-menu.webp" alt="C HOUSE Shisha Menu" class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-                <a href="gallery/shisha-menu.webp" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-[#AA8243] px-6 py-2.5 text-xs uppercase tracking-widest text-white font-semibold hover:bg-white hover:text-black transition-colors shadow-lg">
-                  <i class="ti ti-zoom-in text-base"></i> View Full Poster
-                </a>
+          <!-- Flavour Mixes -->
+          <div class="menu-section">
+            <h2 class="mora-serif text-4xl mb-2">Flavour Mixes</h2>
+            <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Curated Combinations</p>
+            <div class="flex flex-col gap-5">
+              <div class="menu-item flex justify-between items-baseline pb-2">
+                <span class="text-lg">Double Flavour + Mint</span>
+                <span class="menu-price">115</span>
+              </div>
+              <div class="menu-item flex justify-between items-baseline pb-2">
+                <span class="text-lg">Double Flavour + Paan</span>
+                <span class="menu-price">125</span>
+              </div>
+              <div class="menu-item flex justify-between items-baseline pb-2">
+                <span class="text-lg">Triple Flavours</span>
+                <span class="menu-price">140</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Extra Head -->
+          <div class="menu-section">
+            <h2 class="mora-serif text-4xl mb-2">Extra Head</h2>
+            <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold">Fresh Head Replacement</p>
+            <div class="flex flex-col gap-5">
+              <div class="menu-item flex justify-between items-baseline pb-2">
+                <span class="text-lg">Single Flavour</span>
+                <span class="menu-price">45</span>
+              </div>
+              <div class="menu-item flex justify-between items-baseline pb-2">
+                <span class="text-lg">Double Flavour</span>
+                <span class="menu-price">55</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        <!-- Footer Disclaimer -->
-        <div class="mt-8 pt-6 border-t border-[#AA8243]/20 text-center text-xs tracking-widest uppercase text-gray-400">
-          All prices are in AED and inclusive of 5% VAT &amp; 7% Municipality Fee
-        </div>
+      </div>
 
+      <div class="mt-12 pt-8 border-t border-[var(--mora-espresso)]/20 text-center text-sm font-semibold opacity-70">
+        All prices are in AED and include 5% VAT and 7% Municipality Fee.
       </div>
     </section>
 
