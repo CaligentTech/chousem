@@ -691,7 +691,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             ?>
           </h1>
 
-          <div class="flex absolute bottom-[108px] sm:bottom-[116px] lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
+          <div class="flex absolute bottom-28 sm:bottom-32 lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
             <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-10">
               <?php $reviews_url = $s['google_reviews_url'] ?? $s['google_maps_url'] ?? ''; ?>
               <<?= $reviews_url ? 'a href="' . e($reviews_url) . '" target="_blank" rel="noopener" aria-label="Read our Google reviews"' : 'div' ?> class="flex items-center lg:flex-col gap-2 lg:gap-1 shrink-0 hover:opacity-80 transition-opacity">
@@ -705,11 +705,6 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               </div>
             </div>
             <div class="flex items-center gap-4 lg:gap-6 mt-1 lg:mt-0">
-              <a href="contact"
-                class="flex lg:hidden items-center justify-between w-full max-w-[340px] sm:max-w-[360px] bg-white text-black text-[13px] font-semibold rounded-full py-3 px-6 shadow-lg hover:bg-[#5C3D2E] hover:text-white transition-colors">
-                <span>Reserve a Table</span>
-                <i class="ti ti-arrow-right text-base"></i>
-              </a>
             </div>
           </div>
           <div class="hidden lg:flex absolute bottom-4 right-4 z-20 flex-col items-start gap-4">
@@ -732,8 +727,8 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             </div>
           </div>
 
-          <!-- Mobile Hero Food Card & Chevron (Mockup match) -->
-          <div class="block lg:hidden absolute bottom-3 left-1/2 -translate-x-1/2 z-20 w-[calc(100%-32px)] max-w-[340px] sm:max-w-[360px] flex flex-col items-center gap-2">
+          <!-- Mobile Hero Food Card -->
+          <div class="block lg:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-20 w-[calc(100%-32px)] max-w-[340px] sm:max-w-[360px]">
             <a href="menu" id="hero-mobile-food-card"
               class="relative block h-[68px] w-full select-none group"
               aria-label="<?= e($s['hero_food_card_title']) ?>">
@@ -757,10 +752,6 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   <i class="ti ti-arrow-right text-xs sm:text-sm"></i>
                 </div>
               </div>
-            </a>
-            <!-- Down Chevron indicator -->
-            <a href="#food" aria-label="Scroll down to food menu" class="text-white/70 hover:text-white transition-opacity">
-              <i class="ti ti-chevron-down text-lg"></i>
             </a>
           </div>
 
