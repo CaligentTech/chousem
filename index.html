@@ -669,7 +669,7 @@
             <span class="block mt-4 sm:mt-5 lg:inline lg:mt-0 lg:ml-4">Italian Bistro</span>
           </h1>
           <div
-            class="flex absolute bottom-14 lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
+            class="flex absolute bottom-[108px] sm:bottom-[116px] lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
             <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-10">
               <div class="flex items-center lg:flex-col gap-2 lg:gap-1 shrink-0">
                 <span class="text-white text-2xl lg:text-[32px] font-bold leading-none">4.9 <span
@@ -685,7 +685,12 @@
               </div>
             </div>
             <div class="flex items-center gap-4 lg:gap-6 mt-1 lg:mt-0">
-              <div class="flex items-center gap-2 lg:gap-3">
+              <a href="contact"
+                class="flex lg:hidden items-center justify-between w-full max-w-[340px] sm:max-w-[360px] bg-white text-black text-[13px] font-semibold rounded-full py-3 px-6 shadow-lg hover:bg-[#5C3D2E] hover:text-white transition-colors">
+                <span>Reserve a Table</span>
+                <i class="ti ti-arrow-right text-base"></i>
+              </a>
+              <div class="hidden lg:flex items-center gap-2 lg:gap-3">
                 <a href="contact"
                   class="bg-white text-black text-[11px] lg:text-[13px] font-semibold rounded-full py-2.5 px-5 lg:py-3 lg:px-6 hover:bg-[#5C3D2E] hover:text-white transition-colors whitespace-nowrap shadow-lg">
                   Reserve a Table
@@ -716,6 +721,38 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Mobile Hero Food Card & Chevron (Mockup match) -->
+          <div class="block lg:hidden absolute bottom-3 left-1/2 -translate-x-1/2 z-20 w-[calc(100%-32px)] max-w-[340px] sm:max-w-[360px] flex flex-col items-center gap-2">
+            <a href="menu" id="hero-mobile-food-card"
+              class="relative block h-[68px] w-full select-none group"
+              aria-label="Truffle Tagliatelle">
+              <!-- SVG Custom Capsule Silhouette Background -->
+              <svg class="absolute inset-0 w-full h-full pointer-events-none overflow-visible" style="filter: drop-shadow(0 10px 24px rgba(0,0,0,0.55));">
+                <path id="hero-mobile-food-card-path"
+                  d="M 74 7 L 313 7 A 27 27 0 0 1 313 61 L 74 61 C 64 61 62.3 62.3 57.3 57.3 A 33 33 0 1 1 57.3 10.7 C 62.3 5.7 64 7 74 7 Z"
+                  fill="rgba(28, 20, 16, 0.92)" stroke="rgba(255, 255, 255, 0.22)" stroke-width="1" />
+              </svg>
+              <!-- Food Dish Circular Thumbnail -->
+              <div class="absolute left-[7px] top-[7px] w-[54px] h-[54px] rounded-full overflow-hidden shadow-inner ring-1 ring-white/10">
+                <img src="gallery/food.webp" alt="Truffle Tagliatelle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <!-- Text & Arrow Action -->
+              <div class="relative h-full flex items-center justify-between pl-[72px] pr-3">
+                <div class="flex flex-col justify-center min-w-0 pr-2">
+                  <span class="text-[11px] font-normal text-gray-300 tracking-wide leading-tight">Chef's Pick</span>
+                  <span class="text-[14px] sm:text-[15px] font-semibold text-white tracking-wide truncate leading-tight mt-0.5">Truffle Tagliatelle</span>
+                </div>
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 flex items-center justify-center text-white shrink-0 group-hover:bg-white group-hover:text-black transition-colors">
+                  <i class="ti ti-arrow-right text-xs sm:text-sm"></i>
+                </div>
+              </div>
+            </a>
+            <!-- Down Chevron indicator -->
+            <a href="#food" aria-label="Scroll down to food menu" class="text-white/70 hover:text-white transition-opacity">
+              <i class="ti ti-chevron-down text-lg"></i>
+            </a>
           </div>
 
         </section>
@@ -1899,7 +1936,24 @@
       setTimeout(measure, 100);
       setTimeout(measure, 1000);
 
-      onScroll();
+      // Responsive dynamic path adjustment for mobile hero food card
+      (function() {
+        function updateMobileFoodCard() {
+          var card = document.getElementById('hero-mobile-food-card');
+          var path = document.getElementById('hero-mobile-food-card-path');
+          if (!card || !path) return;
+          var w = card.offsetWidth;
+          if (!w) return;
+          var r = 27;
+          var rightX = w - r;
+          path.setAttribute('d', 'M 74 7 L ' + rightX + ' 7 A ' + r + ' ' + r + ' 0 0 1 ' + rightX + ' 61 L 74 61 C 64 61 62.3 62.3 57.3 57.3 A 33 33 0 1 1 57.3 10.7 C 62.3 5.7 64 7 74 7 Z');
+        }
+        window.addEventListener('resize', updateMobileFoodCard);
+        window.addEventListener('orientationchange', updateMobileFoodCard);
+        document.addEventListener('DOMContentLoaded', updateMobileFoodCard);
+        updateMobileFoodCard();
+        setTimeout(updateMobileFoodCard, 100);
+      })();
     })();
   </script>
 </body>
