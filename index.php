@@ -687,12 +687,12 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             <div class="absolute inset-0 bg-black/20"></div>
           </div>
           <h1 id="hero-heading"
-            class="font-agraham absolute z-10 w-full top-[36%] sm:top-[37%] lg:top-[38%] -translate-y-1/2 text-center lg:text-left px-6 lg:px-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] text-white tracking-wide"
-            style="text-shadow: 0 10px 50px rgba(0,0,0,0.7); line-height: 1.4;">
+            class="font-agraham absolute z-10 w-full top-[36%] sm:top-[37%] lg:top-[38%] -translate-y-1/2 text-center lg:text-left px-6 lg:px-12 text-[2.6rem] sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4rem] text-white tracking-wide"
+            style="text-shadow: 0 10px 50px rgba(0,0,0,0.7); line-height: 1.35;">
             <?php
             $heading = $s['hero_heading'] ?? 'C HOUSE Italian Bistro';
             if (stripos($heading, 'C HOUSE') !== false && stripos($heading, 'Italian Bistro') !== false) {
-              echo '<span class="block">C HOUSE</span><span class="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.5rem] mt-5 sm:mt-7 lg:mt-9 text-white/90">Italian Bistro</span>';
+              echo '<span class="block">C HOUSE</span><span class="block text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-[2.5rem] mt-4 sm:mt-6 lg:mt-8 text-white/90">Italian Bistro</span>';
             } else {
               echo e($heading);
             }
