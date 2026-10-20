@@ -83,24 +83,28 @@
             border-color: #C76D4D;
         }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        #instagram-feed-iframe {
+            height: 380px;
+            background: transparent;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .ig-first-card {
-            margin-left: 1rem;
+        @media (min-width: 480px) {
+            #instagram-feed-iframe {
+                height: 440px;
+            }
         }
         @media (min-width: 640px) {
-            .ig-first-card {
-                margin-left: 1.5rem;
+            #instagram-feed-iframe {
+                height: 480px;
+            }
+        }
+        @media (min-width: 768px) {
+            #instagram-feed-iframe {
+                height: 980px;
             }
         }
         @media (min-width: 1024px) {
-            .ig-first-card {
-                margin-left: max(2rem, calc((100vw - 1360px) / 2 + 2rem));
+            #instagram-feed-iframe {
+                height: 1000px;
             }
         }
     </style>
@@ -538,112 +542,29 @@
 
     </main>
 
-    <!-- INSTAGRAM / FOLLOW US SECTION -->
-    <section class="w-full pt-8 sm:pt-12 pb-12 sm:pb-16 overflow-hidden">
-        <!-- Header: FOLLOW US & Instagram Profile Badge -->
-        <div class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
-            <div class="flex items-center justify-between gap-4">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#30201B] tracking-tight font-sans">
-                    FOLLOW US
-                </h2>
-                <a href="https://www.instagram.com/chouseuae/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center gap-2.5 sm:gap-3 group hover:opacity-85 transition-opacity">
-                    <!-- Instagram Gradient Icon -->
-                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-[12px] bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center text-white shadow-sm shrink-0">
-                        <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </div>
-                    <!-- Profile details -->
-                    <div class="flex flex-col text-left leading-tight">
-                        <span class="text-xs sm:text-sm font-bold text-[#30201B] tracking-tight group-hover:text-[#AA8243] transition-colors">
-                            C HOUSE Milano
-                        </span>
-                        <span class="text-[11px] sm:text-xs text-[#30201B]/70 font-medium">
-                            @chouseuae
-                        </span>
-                    </div>
-                </a>
-            </div>
+    <div class="pt-6 pb-2 text-center px-4">
+        <div class="inline-block relative">
+            <h1 class="cambria text-base sm:text-lg md:text-xl text-[#30201B] tracking-wider pb-0">
+                INSTAGRAM
+            </h1>
+            <div class="h-[2px] w-16 sm:w-20 bg-[#AA8243]/60 mx-auto"></div>
+            <h1 class="cambria text-2xl sm:text-3xl md:text-4xl text-[#30201B] tracking-tight pb-0"><b>
+                    @chouseuae
+                </b></h1>
+            <div class="h-[2px] w-16 sm:w-20 bg-[#AA8243]/60 mx-auto"></div>
         </div>
+    </div>
 
-        <!-- Carousel Container with Smooth Arrow Controls (Edge-to-Edge) -->
-        <div class="relative w-full group/carousel">
-            <!-- Left Arrow Button (Desktop) -->
-            <button id="ig-scroll-left" aria-label="Scroll left"
-                class="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/95 text-[#30201B] shadow-xl border border-black/10 items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-[#30201B] hover:text-white">
-                <i class="ti ti-chevron-left text-xl"></i>
-            </button>
-
-            <!-- Cards Track (Edge-to-Edge with padding on first card only) -->
-            <div id="ig-carousel-track"
-                class="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-2 w-full">
-
-                <!-- Post 1 -->
-                <a href="https://www.instagram.com/reel/DeqlmOsOQct/" target="_blank" rel="noopener noreferrer"
-                    class="ig-first-card relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900 border border-[#30201B]/10">
-                    <img src="https://scontent-cdg4-2.cdninstagram.com/v/t51.71878-15/852725471_4538923356345782_7863023545887054648_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=NLIwKNvuezIQ7kNvwGUEslw&_nc_oc=Adr4OoWSN9B2bmjq3rXGu3jJ2Ojpf9C121Iy0jLYmFZlUwGIZA5DL4acaDLdu3qTezglAL1DzZm3mdnIRmGUeX5s&_nc_zt=23&_nc_ht=scontent-cdg4-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=SXuLv_0QOKGvGt-GP5RcRw&_nc_tpa=Q5bMBQIH_kBt44MMfi6mf8StES2e-sb6UHXrXlSv8ZkycV-Oy1mS8PnPXP2l32zqMlAo_nq3WN5hQixOcA&oh=00_AQMv1Tg22XeSS1ubetlr_5TV3o0ewyGP-c4BQbvmPpKmOw&oe=6ADCBB51" alt="C HOUSE Milano - Flying Burgers"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
-                </a>
-
-                <!-- Post 2 -->
-                <a href="https://www.instagram.com/p/DeoXWEnDVle/" target="_blank" rel="noopener noreferrer"
-                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900 border border-[#30201B]/10">
-                    <img src="https://scontent-cdg4-2.cdninstagram.com/v/t39.30808-6/854712631_122130428157381623_4004513519184365506_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=llTJqvbHtKgQ7kNvwGWBlGP&_nc_oc=Ado9BqW-d-0ouzoiEJHVbgwEMkG3uwGlq8jasSeffLFNGO4EM5lVXZ5Y877XK8xgPDeHpIg_2vssRFub3RmcUO2e&_nc_zt=23&_nc_ht=scontent-cdg4-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=SXuLv_0QOKGvGt-GP5RcRw&_nc_tpa=Q5bMBQIw0faj_dukY4IEVuGXPwJxi7AXsuWf9Hwje3aSu87CkzaIrcaZU0dejhfgkLF2za4LOZDsBW2SqQ&oh=00_AQNtmA8hc69T9rJxtESuanUCwwFrVIQEQwHcnQn5jdJKwQ&oe=6ADC8F2E" alt="C HOUSE Milano - Classic Lasagna"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
-                </a>
-
-                <!-- Post 3 -->
-                <a href="https://www.instagram.com/p/DejtHY4lhkB/" target="_blank" rel="noopener noreferrer"
-                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900 border border-[#30201B]/10">
-                    <img src="https://scontent-cdg6-1.cdninstagram.com/v/t39.30808-6/853231502_122130135579381623_1241564370730763250_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=usYE7ItPLjsQ7kNvwFRmJpr&_nc_oc=AdqM39mn53c_84nfs_hYbPAW2TSTku3-Ok-Yd0MJHbcgutamxKj_TdEj0mc1GDYlCpzNSO2jiGS3wjYdKybQ82tx&_nc_zt=23&_nc_ht=scontent-cdg6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=SXuLv_0QOKGvGt-GP5RcRw&_nc_tpa=Q5bMBQKoqp9nJDuccRq5YKYJiGxhryxOcD706pBKSIB1ugQIQrui8LLEuStfEkWhc91OUqf_SRX9rag7Xg&oh=00_AQNQavOS5P8oKmSxLFK2K3xcbyoZeCJ2T43so4hd0ge1tg&oe=6ADCBCD9" alt="C HOUSE Milano - Stacked Burger"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
-                </a>
-
-                <!-- Post 4 -->
-                <a href="https://www.instagram.com/p/DeeqJh0G7Ee/" target="_blank" rel="noopener noreferrer"
-                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900 border border-[#30201B]/10">
-                    <img src="https://scontent-cdg4-3.cdninstagram.com/v/t39.30808-6/849605589_122129798913381623_5723555336399791931_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=xUMmfd7N-DYQ7kNvwGoNaVH&_nc_oc=AdrZ8Jo-LsLroMhxNLUn47UTWVg8yOsuz3VCRox2EeylLMScnZHtRWasx6Sq2NtYk0nNoLDhhZojkUPNl7CezZDA&_nc_zt=23&_nc_ht=scontent-cdg4-3.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=SXuLv_0QOKGvGt-GP5RcRw&_nc_tpa=Q5bMBQJhNQ2pfVtpWgWQfN1rM_dYBRf637kgXPEk1chEU2NQS2TN81QKb1L62LJSWt5iRrm-zGpRGekpgQ&oh=00_AQNHsPqw-j0ixUx-YzDeE7xZyrsEWgInhgEUY5qeyi99nA&oe=6ADCC391" alt="C HOUSE Milano - Evening Dining"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
-                </a>
-
-                <!-- Post 5 -->
-                <a href="https://www.instagram.com/p/DeZSoifAAUQ/" target="_blank" rel="noopener noreferrer"
-                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900 border border-[#30201B]/10">
-                    <img src="https://scontent-cdg4-2.cdninstagram.com/v/t39.30808-6/809876394_122124695721381623_891921924004349362_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=gYfXqgdfnJIQ7kNvwGc2a9D&_nc_oc=Adp3HPF7lPcyQeO8fdsx-wxtb9X4A3dG8pKc6Ayu01z6noNBmLZBTmCX64LusIOHEN8qfWmIEPYHVtCv5WFSgswT&_nc_zt=23&_nc_ht=scontent-cdg4-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=SXuLv_0QOKGvGt-GP5RcRw&_nc_tpa=Q5bMBQICKlQXMK3ZgAxkW_PkuJ2On1OcAYWHhrFBxzh7bnERnMsw8O6KADvVxiOlkeGggEwUqRHKqvzj7g&oh=00_AQPWHpufDlDvPb-Ysqu1_rtGeVf8fl3mNDcr8LBNoN8M3g&oe=6ADC8FC7" alt="C HOUSE Milano - Nachos Grande"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
-                </a>
-
-                <!-- Post 6 -->
-                <a href="https://www.instagram.com/reel/DeUJ8JTOLE5/" target="_blank" rel="noopener noreferrer"
-                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900 border border-[#30201B]/10">
-                    <img src="https://scontent-cdg6-1.cdninstagram.com/v/t51.71878-15/844394516_28930067916618114_4247661399530995559_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=hka4XwT217EQ7kNvwHXu4-Z&_nc_oc=AdqkNZJQn6Nq6xyrOuGBlY4hPsy4oYRB758gR31LEAwodJMeuIIlRCrur7usiKRAvKe31YGyemNILSdkPw8aqYm5&_nc_zt=23&_nc_ht=scontent-cdg6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=SXuLv_0QOKGvGt-GP5RcRw&_nc_tpa=Q5bMBQKCRigVh7uf_xKRb02gcqaLzPNjkrSPHTQmugeeNpL4LHlkjvfLhbBNQP-IYnK9fwoV_AwVNQhRBQ&oh=00_AQObctScbS2fUm1O80nlMxGeVk0c_m4Z4LtCJT2M6A3V6w&oe=6ADC8CD7" alt="C HOUSE Milano - Signature Cocktail"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
-                </a>
-
-                <!-- Post 7 -->
-                <a href="https://www.instagram.com/reel/DeO_hj2j1IL/" target="_blank" rel="noopener noreferrer"
-                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900 border border-[#30201B]/10">
-                    <img src="https://scontent-cdg4-1.cdninstagram.com/v/t51.82787-15/840873754_18140891644677997_5750442986992468663_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=j7dSchDUFPgQ7kNvwFdjx7B&_nc_oc=Adpty_C_eMCpl6jx1nPkH4dZvN58TSev_PUDXgyZiJaW7OlUMTHJ3eQnEW_wIh68sNYs2P58REV0LkpvnFRoX5xQ&_nc_zt=23&_nc_ht=scontent-cdg4-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=SXuLv_0QOKGvGt-GP5RcRw&_nc_tpa=Q5bMBQLDscbnKk4XtHjRrConMEA2DilDVoe_H3X4RB82_NJM_-tsEN73if3zA0x1zSOvzYanAzXOCYsBaA&oh=00_AQOfi2TA02Oa_8W4wX-VY9U7lZSOPz28ncmW8U2dtAA12w&oe=6ADC9076" alt="C HOUSE Milano - Mixology & Dining"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
-                </a>
-
-                <!-- Post 8 -->
-                <a href="https://www.instagram.com/reel/DeJ1sI3OFXu/" target="_blank" rel="noopener noreferrer"
-                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900 border border-[#30201B]/10 mr-4 sm:mr-6 lg:mr-8">
-                    <img src="https://scontent-cdg4-1.cdninstagram.com/v/t51.71878-15/838403591_1636731787812634_8896308091769563565_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=y8RPAaI6eq0Q7kNvwG_pnn1&_nc_oc=Adra08wSOa43dzRAqGVNNMfZrwi6-xlh7kuS3RGas0ZCO-ti4zR1oRQrhMvXoWeLU1xlKK5fFACq-Zwjg4nIVYW2&_nc_zt=23&_nc_ht=scontent-cdg4-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=SXuLv_0QOKGvGt-GP5RcRw&_nc_tpa=Q5bMBQJPTM4BksIwn7UywFNG1N6lFQx4MH29ZTyZ5LQUpOer97md99kr1u5BJzT6rpNTU30JdHU6rUdaPQ&oh=00_AQP7wDhBoQ3b0-gxoWhReGnuBubkFGTjzbTnyOpni28TOA&oe=6ADCAAC2" alt="C HOUSE Milano - Truffle Burger"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
-                </a>
-
-            </div>
-
-            <!-- Right Arrow Button (Desktop) -->
-            <button id="ig-scroll-right" aria-label="Scroll right"
-                class="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/95 text-[#30201B] shadow-xl border border-black/10 items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-[#30201B] hover:text-white">
-                <i class="ti ti-chevron-right text-xl"></i>
-            </button>
-        </div>
-    </section>
+    <!-- INSTAGRAM FEED IFRAME -->
+    <div class="w-full max-w-[1360px] mx-auto px-0 sm:px-6 lg:px-8 pb-8 pt-4">
+        <iframe id="instagram-feed-iframe"
+                src="https://feed.chouse.ae/?page_id=7&v=3" 
+                class="w-full border-0 overflow-hidden" 
+                loading="lazy"
+                scrolling="no" 
+                title="C HOUSE Instagram Feed">
+        </iframe>
+    </div>
 
     <!-- FOOTER -->
     <footer class="bg-black px-5 py-6 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-8" data-kid="2-3"
@@ -793,19 +714,6 @@
                     menu.classList.add('hidden');
                     menuButton.setAttribute('aria-expanded', 'false');
                 }));
-            }
-
-            // Instagram Carousel scroll controls
-            const igTrack = document.getElementById('ig-carousel-track');
-            const igPrev = document.getElementById('ig-scroll-left');
-            const igNext = document.getElementById('ig-scroll-right');
-            if (igTrack && igPrev && igNext) {
-                igPrev.addEventListener('click', () => {
-                    igTrack.scrollBy({ left: -320, behavior: 'smooth' });
-                });
-                igNext.addEventListener('click', () => {
-                    igTrack.scrollBy({ left: 320, behavior: 'smooth' });
-                });
             }
         });
 
