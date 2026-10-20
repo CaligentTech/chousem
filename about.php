@@ -218,7 +218,7 @@ $reviews = get_reviews($pdo);
       <div class="lg:col-span-6 w-full flex justify-center lg:justify-end">
         <div class="w-full overflow-hidden rounded-[24px] sm:rounded-[28px] shadow-xl">
           <img src="<?= e($about_content['story']['image']) ?>" alt="C HOUSE Night View"
-            class="w-full h-[320px] sm:h-[400px] lg:h-[440px] object-cover object-center" />
+            class="w-full h-auto sm:h-[400px] lg:h-[440px] object-cover object-center" />
         </div>
 
       </div>
