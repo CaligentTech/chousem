@@ -687,12 +687,12 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             <div class="absolute inset-0 bg-black/20"></div>
           </div>
           <h1 id="hero-heading"
-            class="font-agraham absolute z-10 w-full top-[34%] sm:top-[36%] lg:top-[38%] -translate-y-1/2 text-left px-6 lg:px-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] text-white tracking-wide"
-            style="text-shadow: 0 10px 50px rgba(0,0,0,0.7); line-height: 1.4;">
+            class="font-agraham absolute z-10 w-full top-[36%] sm:top-[38%] lg:top-[40%] -translate-y-1/2 text-left px-6 lg:px-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] text-white tracking-wide"
+            style="text-shadow: 0 10px 50px rgba(0,0,0,0.7); line-height: 1.35;">
             <?php
             $heading = $s['hero_heading'] ?? 'C HOUSE Italian Bistro';
             if (stripos($heading, 'C HOUSE') !== false && stripos($heading, 'Italian Bistro') !== false) {
-              echo '<span class="block">C HOUSE</span><span class="block mt-4 sm:mt-6 lg:mt-7">Italian Bistro</span>';
+              echo '<span class="block">C HOUSE</span><span class="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.5rem] mt-2 sm:mt-3 lg:mt-4 text-white/90">Italian Bistro</span>';
             } else {
               echo e($heading);
             }
