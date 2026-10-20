@@ -30,6 +30,17 @@ $reviews = get_reviews($pdo);
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    :root {
+      --mora-clay: #A84F37;
+      --mora-terracotta: #C76D4D;
+      --mora-olive: #29372D;
+      --mora-espresso: #30201B;
+      --mora-stone: #B7A48E;
+      --mora-parchment: #E7D8C0;
+      --mora-brass: #AA8243;
+      --mora-candle: #F2E7D4;
+    }
+
     body {
       font-family: 'Manrope', sans-serif;
       margin: 0;
@@ -38,18 +49,25 @@ $reviews = get_reviews($pdo);
       color: #fff;
     }
 
-    #mora-page .mora-text-action:hover {
-      color: var(--mora-clay);
-    }
-
-    #mora-page a:hover,
-    #mora-page button:hover {
-      text-decoration-color: #AA8243 !important;
-      color: #AA8243;
-    }
-
     .mora-serif {
       font-family: 'DM Serif Display', Georgia, serif;
+    }
+
+    .mora-kicker {
+      font-size: 10px;
+      line-height: 1;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .mora-menu-link {
+      transition: color .25s ease, border-color .25s ease;
+    }
+
+    .mora-menu-link:hover {
+      color: #C76D4D;
+      border-color: #C76D4D;
     }
 
     /* A-07: auto-scrolling review row */
@@ -84,11 +102,6 @@ $reviews = get_reviews($pdo);
       .review-marquee {
         overflow-x: auto;
       }
-    }
-
-    .mora-menu-link:hover {
-      color: #C76D4D;
-      border-color: #C76D4D;
     }
   </style>
 </head>

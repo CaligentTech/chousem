@@ -18,6 +18,27 @@ if (!function_exists('e')) {
 }
 ?>
 <!-- FOOTER (shared partial) -->
+<style>
+    :root {
+        --mora-brass: #AA8243;
+        --mora-candle: #F2E7D4;
+        --mora-espresso: #30201B;
+    }
+    .mora-kicker {
+        font-size: 10px;
+        line-height: 1;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    .mora-menu-link {
+        transition: color .25s ease, border-color .25s ease;
+    }
+    .mora-menu-link:hover {
+        color: #C76D4D !important;
+        border-color: #C76D4D !important;
+    }
+</style>
 <footer class="bg-black px-5 py-6 text-[var(--mora-candle)] sm:px-8 lg:px-10 lg:py-8" data-kid="2-3"
     data-name="main page footer">
     <div class="mx-auto max-w-[1360px]" data-kid="2-3-1" data-name="footer wrapper">
@@ -107,10 +128,9 @@ if (!function_exists('e')) {
                         <i aria-hidden="true" class="ti ti-instagram ml-1"></i>
                     </a>
                     <span class="inline-flex flex-wrap items-center gap-1">
-                        <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971522185569">+971 52 218 5569</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+971504603469">+971 50 460 3469</a> / <a class="border-b border-[var(--mora-espresso)]/50 pb-1 focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                            data-kid="2-2-8-1-1-3-3-2-1" data-name="phone link" href="tel:+97148803320">+971 4 880 3320</a>
+                        <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+971522185569">+971 52 218 5569</a> / 
+                        <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+971504603469">+971 50 460 3469</a> / 
+                        <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+97148803320">+971 4 880 3320</a>
                     </span>
                     <a class="mora-menu-link w-fit" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>"><?= e($s['email'] ?? 'hello@chouse.ae') ?></a>
                 </div>
