@@ -459,6 +459,14 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
       border-color: var(--mora-terracotta);
     }
 
+    @media (max-height: 720px) {
+      #hero-heading {
+        top: 36% !important;
+        font-size: clamp(1.75rem, 5vw, 2.75rem) !important;
+        line-height: 1.15 !important;
+      }
+    }
+
     @keyframes mora-hero-drift {
       from {
         transform: scale(1.02) translate3d(0, 0, 0);
@@ -671,7 +679,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
       </header>
       <main data-kid="2-2" data-name="main content area">
         <section aria-labelledby="hero-heading"
-          class="relative h-svh overflow-hidden bg-black text-[#f5e6c8] flex flex-col items-center justify-center"
+          class="relative min-h-[580px] sm:min-h-[640px] h-svh overflow-hidden bg-black text-[#f5e6c8] flex flex-col items-center justify-center"
           data-kid="2-2-1" data-name="hero section" id="home">
           <div class="absolute inset-0" data-kid="2-2-1-1" data-name="hero image background container">
             <img alt="C HOUSE dining room at night, warmly lit" class="absolute inset-0 h-full w-full object-cover" decoding="async"
@@ -679,19 +687,19 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             <div class="absolute inset-0 bg-black/20"></div>
           </div>
           <h1 id="hero-heading"
-            class="font-agraham absolute z-10 w-full top-1/2 -translate-y-1/2 mt-8 lg:mt-12 text-left px-6 lg:px-12 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4rem] text-white tracking-wide"
-            style="text-shadow: 0 10px 50px rgba(0,0,0,0.7); line-height: 1.5;">
+            class="font-agraham absolute z-10 w-full top-[38%] sm:top-[42%] lg:top-[44%] -translate-y-1/2 text-left px-6 lg:px-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] text-white tracking-wide"
+            style="text-shadow: 0 10px 50px rgba(0,0,0,0.7); line-height: 1.2;">
             <?php
             $heading = $s['hero_heading'] ?? 'C HOUSE Italian Bistro';
             if (stripos($heading, 'C HOUSE') !== false && stripos($heading, 'Italian Bistro') !== false) {
-              echo '<span class="block">C HOUSE</span><span class="block mt-4 sm:mt-5 lg:inline lg:mt-0 lg:ml-4">Italian Bistro</span>';
+              echo '<span class="block">C HOUSE</span><span class="block mt-1 sm:mt-2 lg:inline lg:mt-0 lg:ml-4">Italian Bistro</span>';
             } else {
               echo e($heading);
             }
             ?>
           </h1>
 
-          <div class="flex absolute bottom-28 sm:bottom-32 lg:bottom-12 left-5 lg:left-12 z-20 flex-col gap-3 lg:gap-7 w-[calc(100%-40px)] lg:max-w-[600px]">
+          <div class="flex absolute bottom-24 sm:bottom-28 lg:bottom-10 left-5 lg:left-12 z-20 flex-col gap-2 sm:gap-3 lg:gap-6 w-[calc(100%-40px)] lg:max-w-[600px]">
             <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-10">
               <?php $reviews_url = $s['google_reviews_url'] ?? $s['google_maps_url'] ?? ''; ?>
               <<?= $reviews_url ? 'a href="' . e($reviews_url) . '" target="_blank" rel="noopener" aria-label="Read our Google reviews"' : 'div' ?> class="flex items-center lg:flex-col gap-2 lg:gap-1 shrink-0 hover:opacity-80 transition-opacity">
