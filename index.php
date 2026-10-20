@@ -682,7 +682,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           class="relative min-h-[580px] sm:min-h-[640px] h-svh overflow-hidden bg-black text-[#f5e6c8] flex flex-col items-center justify-center"
           data-kid="2-2-1" data-name="hero section" id="home">
           <div class="absolute inset-0" data-kid="2-2-1-1" data-name="hero image background container">
-            <img alt="C HOUSE dining room at night, warmly lit" class="absolute inset-0 h-full w-full object-cover" decoding="async"
+            <img alt="C HOUSE dining room at night, warmly lit" class="absolute inset-0 h-full w-full object-cover object-[25%_center] lg:object-center" decoding="async"
               src="<?= e($s['hero_image']) ?>" />
             <div class="absolute inset-0 bg-black/20"></div>
           </div>
