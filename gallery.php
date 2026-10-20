@@ -92,29 +92,12 @@ function fix_image_path($path) {
             border-color: #C76D4D;
         }
 
-        #instagram-feed-iframe {
-            height: 380px;
-            background: transparent;
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        @media (min-width: 480px) {
-            #instagram-feed-iframe {
-                height: 440px;
-            }
-        }
-        @media (min-width: 640px) {
-            #instagram-feed-iframe {
-                height: 480px;
-            }
-        }
-        @media (min-width: 768px) {
-            #instagram-feed-iframe {
-                height: 980px;
-            }
-        }
-        @media (min-width: 1024px) {
-            #instagram-feed-iframe {
-                height: 1000px;
-            }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
@@ -363,34 +346,196 @@ function fix_image_path($path) {
 
     </main>
 
-    <div class="pt-6 pb-2 text-center px-4">
-        <div class="inline-block relative">
-            <h2 class="cambria text-base sm:text-lg md:text-xl text-[#30201B] tracking-wider pb-0">
-                INSTAGRAM
+    <!-- INSTAGRAM / FOLLOW US SECTION (Mockup match) -->
+    <section class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12 sm:pb-16 overflow-hidden">
+        <!-- Header: FOLLOW US & Instagram Profile Badge -->
+        <div class="flex items-center justify-between gap-4 mb-6 sm:mb-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#30201B] tracking-tight font-sans">
+                FOLLOW US
             </h2>
-            <div class="h-[2px] w-16 sm:w-20 bg-[#AA8243]/60 mx-auto"></div>
-            <h2 class="cambria text-2xl sm:text-3xl md:text-4xl text-[#30201B] tracking-tight pb-0"><b>
-                    @chouseuae
-                </b></h2>
-            <div class="h-[2px] w-16 sm:w-20 bg-[#AA8243]/60 mx-auto"></div>
+            <a href="https://www.instagram.com/chouseuae/" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-2.5 sm:gap-3 group hover:opacity-85 transition-opacity">
+                <!-- Instagram Gradient Icon -->
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-[12px] bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center text-white shadow-sm shrink-0">
+                    <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <!-- Profile details -->
+                <div class="flex flex-col text-left leading-tight">
+                    <span class="text-xs sm:text-sm font-bold text-[#30201B] tracking-tight group-hover:text-[#AA8243] transition-colors">
+                        C HOUSE Milano
+                    </span>
+                    <span class="text-[11px] sm:text-xs text-[#30201B]/70 font-medium">
+                        @chouseuae
+                    </span>
+                </div>
+            </a>
         </div>
-    </div>
 
-    <!-- INSTAGRAM FEED IFRAME -->
-    <div class="w-full max-w-[1360px] mx-auto px-0 sm:px-6 lg:px-8 pb-8 pt-4">
-        <iframe id="instagram-feed-iframe"
-                src="https://feed.chouse.ae/?page_id=7&v=3" 
-                class="w-full border-0 overflow-hidden" 
-                loading="lazy"
-                scrolling="no"
-                title="C HOUSE Instagram Feed">
-        </iframe>
-    </div>
+        <!-- Carousel Container with Smooth Arrow Controls -->
+        <div class="relative group/carousel">
+            <!-- Left Arrow Button (Desktop) -->
+            <button id="ig-scroll-left" aria-label="Scroll left"
+                class="hidden md:flex absolute -left-3 lg:-left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/95 text-[#30201B] shadow-xl border border-black/10 items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-[#30201B] hover:text-white">
+                <i class="ti ti-chevron-left text-xl"></i>
+            </button>
+
+            <!-- Cards Track -->
+            <div id="ig-carousel-track"
+                class="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-2 px-1">
+
+                <!-- Card 1 (Reels Style) -->
+                <a href="https://www.instagram.com/chouseuae/" target="_blank" rel="noopener noreferrer"
+                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900">
+                    <img src="gallery/ambience/ambience-6.webp" alt="C HOUSE Milano Evening Ambiance"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                    <!-- Gradient Scrims -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20 pointer-events-none"></div>
+                    <!-- Reels Badge (Top Right) -->
+                    <div class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-black/45 backdrop-blur-md flex items-center justify-center text-white shadow-sm">
+                        <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                            <path d="M16.5 3h-9C4.46 3 2 5.46 2 8.5v7c0 3.04 2.46 5.5 5.5 5.5h9c3.04 0 5.5-2.46 5.5-5.5v-7c0-3.04-2.46-5.5-5.5-5.5zm-6.5 12.5V8.5l6 3.5-6 3.5z"/>
+                        </svg>
+                    </div>
+                    <!-- Caption (Bottom) -->
+                    <div class="absolute bottom-5 inset-x-0 z-10 px-5 text-white">
+                        <p class="font-serif text-lg sm:text-xl font-medium leading-snug drop-shadow-md">Even true foodies know</p>
+                        <p class="text-xs sm:text-sm text-white/80 font-light mt-1 drop-shadow">when it's time to choose C HOUSE.</p>
+                    </div>
+                </a>
+
+                <!-- Card 2 (Metrics Style - Mockup Center Match) -->
+                <a href="https://www.instagram.com/chouseuae/" target="_blank" rel="noopener noreferrer"
+                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900">
+                    <img src="gallery/heronight.webp" alt="C HOUSE Waterfront Dining"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/30 pointer-events-none"></div>
+                    <!-- Brand Tag (Top Center) -->
+                    <div class="absolute top-5 inset-x-0 z-10 text-center px-4">
+                        <span class="text-[10px] tracking-[0.25em] uppercase text-white/85 font-medium block">C HOUSE</span>
+                        <span class="text-[11px] tracking-widest text-[#EBDDCB] font-light">MILANO</span>
+                    </div>
+                    <!-- Engagement Counts (Center Overlay) -->
+                    <div class="absolute inset-0 flex items-center justify-center gap-3 text-white text-xs font-semibold">
+                        <span class="flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
+                            <svg class="w-3.5 h-3.5 fill-[#ff3b5c]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            1.4k
+                        </span>
+                        <span class="flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
+                            <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                            240
+                        </span>
+                    </div>
+                    <!-- Caption (Bottom) -->
+                    <div class="absolute bottom-5 inset-x-0 z-10 px-5 text-white">
+                        <p class="font-serif text-lg sm:text-xl font-medium leading-snug drop-shadow-md">A Milanese Vision</p>
+                        <p class="text-xs sm:text-sm text-white/80 font-light mt-1 drop-shadow">Sculpted by Timeless Italian Flavors</p>
+                    </div>
+                </a>
+
+                <!-- Card 3 (Terrace / Skyline Lounge) -->
+                <a href="https://www.instagram.com/chouseuae/" target="_blank" rel="noopener noreferrer"
+                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900">
+                    <img src="gallery/special-terrace.webp" alt="C HOUSE Skyline Terrace Lounge"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20 pointer-events-none"></div>
+                    <!-- Brand Tag (Top Center) -->
+                    <div class="absolute top-5 inset-x-0 z-10 text-center px-4">
+                        <span class="text-[10px] tracking-[0.25em] uppercase text-white/85 font-medium block">C HOUSE</span>
+                        <span class="text-[11px] tracking-widest text-[#EBDDCB] font-light">SKYPARKS</span>
+                    </div>
+                    <!-- Caption (Bottom) -->
+                    <div class="absolute bottom-5 inset-x-0 z-10 px-5 text-white">
+                        <p class="font-serif text-lg sm:text-xl font-medium leading-snug drop-shadow-md">Nights Under the Stars</p>
+                        <p class="text-xs sm:text-sm text-white/80 font-light mt-1 drop-shadow">Signature Shisha & Skyline Views</p>
+                    </div>
+                </a>
+
+                <!-- Card 4 (Artisan Pasta / Reels Style) -->
+                <a href="https://www.instagram.com/chouseuae/" target="_blank" rel="noopener noreferrer"
+                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900">
+                    <img src="gallery/food.webp" alt="Artisan Truffle Tagliatelle"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/25 pointer-events-none"></div>
+                    <div class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-black/45 backdrop-blur-md flex items-center justify-center text-white shadow-sm">
+                        <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                            <path d="M16.5 3h-9C4.46 3 2 5.46 2 8.5v7c0 3.04 2.46 5.5 5.5 5.5h9c3.04 0 5.5-2.46 5.5-5.5v-7c0-3.04-2.46-5.5-5.5-5.5zm-6.5 12.5V8.5l6 3.5-6 3.5z"/>
+                        </svg>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-3 text-white text-xs font-semibold">
+                        <span class="flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
+                            <svg class="w-3.5 h-3.5 fill-[#ff3b5c]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            2.1k
+                        </span>
+                        <span class="flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
+                            <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                            185
+                        </span>
+                    </div>
+                    <div class="absolute bottom-5 inset-x-0 z-10 px-5 text-white">
+                        <p class="font-serif text-lg sm:text-xl font-medium leading-snug drop-shadow-md">Handmade Truffle Pasta</p>
+                        <p class="text-xs sm:text-sm text-white/80 font-light mt-1 drop-shadow">Fresh Italian craftsmanship every morning</p>
+                    </div>
+                </a>
+
+                <!-- Card 5 (Crafted Mixology) -->
+                <a href="https://www.instagram.com/chouseuae/" target="_blank" rel="noopener noreferrer"
+                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900">
+                    <img src="gallery/drinks/Beverage.webp" alt="C HOUSE Signature Mocktail Mixology"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20 pointer-events-none"></div>
+                    <div class="absolute top-5 inset-x-0 z-10 text-center px-4">
+                        <span class="text-[10px] tracking-[0.25em] uppercase text-white/85 font-medium block">C HOUSE</span>
+                        <span class="text-[11px] tracking-widest text-[#EBDDCB] font-light">MIXOLOGY</span>
+                    </div>
+                    <div class="absolute bottom-5 inset-x-0 z-10 px-5 text-white">
+                        <p class="font-serif text-lg sm:text-xl font-medium leading-snug drop-shadow-md">Crafted Mixology</p>
+                        <p class="text-xs sm:text-sm text-white/80 font-light mt-1 drop-shadow">Botanicals, infusions & bespoke mocktails</p>
+                    </div>
+                </a>
+
+                <!-- Card 6 (Artisanal Pizza / Reels Style) -->
+                <a href="https://www.instagram.com/chouseuae/" target="_blank" rel="noopener noreferrer"
+                    class="relative shrink-0 snap-start w-[240px] sm:w-[270px] md:w-[290px] h-[390px] sm:h-[440px] md:h-[470px] rounded-[22px] overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 select-none block bg-neutral-900">
+                    <img src="gallery/food/Diavola Pizza.webp" alt="Handcrafted Diavola Pizza"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/25 pointer-events-none"></div>
+                    <div class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-black/45 backdrop-blur-md flex items-center justify-center text-white shadow-sm">
+                        <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                            <path d="M16.5 3h-9C4.46 3 2 5.46 2 8.5v7c0 3.04 2.46 5.5 5.5 5.5h9c3.04 0 5.5-2.46 5.5-5.5v-7c0-3.04-2.46-5.5-5.5-5.5zm-6.5 12.5V8.5l6 3.5-6 3.5z"/>
+                        </svg>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-3 text-white text-xs font-semibold">
+                        <span class="flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
+                            <svg class="w-3.5 h-3.5 fill-[#ff3b5c]" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            3.5k
+                        </span>
+                        <span class="flex items-center gap-1.5 bg-black/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
+                            <svg class="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                            410
+                        </span>
+                    </div>
+                    <div class="absolute bottom-5 inset-x-0 z-10 px-5 text-white">
+                        <p class="font-serif text-lg sm:text-xl font-medium leading-snug drop-shadow-md">Wood-Fired Diavola</p>
+                        <p class="text-xs sm:text-sm text-white/80 font-light mt-1 drop-shadow">48-hour fermented dough & spicy Italian salami</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Right Arrow Button (Desktop) -->
+            <button id="ig-scroll-right" aria-label="Scroll right"
+                class="hidden md:flex absolute -right-3 lg:-right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/95 text-[#30201B] shadow-xl border border-black/10 items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-[#30201B] hover:text-white">
+                <i class="ti ti-chevron-right text-xl"></i>
+            </button>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <?php include __DIR__ . '/includes/footer.php'; ?>
 
-    <!-- SCRIPT FOR TABS & MOBILE MENU -->
+    <!-- SCRIPT FOR TABS, MOBILE MENU & CAROUSEL -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const siteHeader = document.getElementById('site-header');
@@ -418,6 +563,19 @@ function fix_image_path($path) {
                     menu.classList.add('hidden');
                     menuButton.setAttribute('aria-expanded', 'false');
                 }));
+            }
+
+            // Instagram Carousel scroll controls
+            const igTrack = document.getElementById('ig-carousel-track');
+            const igPrev = document.getElementById('ig-scroll-left');
+            const igNext = document.getElementById('ig-scroll-right');
+            if (igTrack && igPrev && igNext) {
+                igPrev.addEventListener('click', () => {
+                    igTrack.scrollBy({ left: -320, behavior: 'smooth' });
+                });
+                igNext.addEventListener('click', () => {
+                    igTrack.scrollBy({ left: 320, behavior: 'smooth' });
+                });
             }
         });
 
