@@ -953,8 +953,14 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                   const stack = document.getElementById('bar-image-stack');
                   if (!stack) return;
                   const images = Array.from(stack.querySelectorAll('img'));
+                  if (images.length < 2) return;
+
+                  let isAnimating = false;
 
                   setInterval(() => {
+                    if (document.hidden || isAnimating) return;
+
+                    // Find the topmost card
                     let maxZ = -1;
                     let topImg = null;
                     images.forEach(img => {
@@ -966,25 +972,42 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                     });
                     if (!topImg) return;
 
-                    // Fade out the front image
-                    topImg.style.opacity = '0';
-                    topImg.style.transform = 'scale(1.05)';
+                    isAnimating = true;
+
+                    // 1. Slide the top card smoothly out to the side
+                    topImg.style.transition = 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s ease';
+                    topImg.style.transform = 'translate(105%, -15px) rotate(14deg)';
+                    topImg.style.opacity = '0.85';
 
                     setTimeout(() => {
-                      // Send it to the back
+                      // 2. Once clear, send it behind the stack without animation
+                      topImg.style.transition = 'none';
                       topImg.style.zIndex = '0';
-                      // Bring all others forward
+
+                      // Bring all other cards forward by 1 level
                       images.forEach(img => {
                         if (img !== topImg) {
                           let z = parseInt(img.style.zIndex) || 0;
                           img.style.zIndex = (z + 1).toString();
                         }
                       });
-                      // Fade it back in at the back
-                      topImg.style.opacity = '1';
-                      topImg.style.transform = '';
-                    }, 500); // matches the 500ms duration-500 transition
-                  }, 3000); // shuffle every 3 seconds
+
+                      // Force browser to commit z-index: 0 before sliding back
+                      void topImg.offsetHeight;
+
+                      // 3. Slide smoothly back in behind the deck into resting position
+                      requestAnimationFrame(() => {
+                        topImg.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease';
+                        topImg.style.transform = '';
+                        topImg.style.opacity = '1';
+
+                        setTimeout(() => {
+                          topImg.style.transition = '';
+                          isAnimating = false;
+                        }, 500);
+                      });
+                    }, 450);
+                  }, 3500); // shuffle every 3.5 seconds
                 })();
               </script>
               <p class="mt-4 text-[10px] uppercase tracking-[.17em] text-[var(--mora-brass)] font-bold" data-kid="2-2-4-2-1-2"
