@@ -1266,10 +1266,10 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
         <!-- INSTAGRAM FEED SECTION -->
         <section aria-labelledby="instagram-heading" class="bg-[var(--mora-parchment)] pt-10 sm:pt-14 pb-2">
           <!-- Header: FOLLOW US & Instagram Profile Badge -->
-          <div class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-10 pb-2">
-            <div class="flex items-center justify-between gap-4">
-              <h2 id="instagram-heading" class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#30201B] tracking-tight font-sans">
-                FOLLOW US
+          <div class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-10 pb-4 sm:pb-6">
+            <div class="flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap">
+              <h2 id="instagram-heading" class="mora-serif text-[clamp(3.4rem,6.6vw,6.6rem)] leading-[.88] tracking-[-.045em] text-[#30201B]">
+                Follow us.
               </h2>
               <a href="<?= e($s['instagram_url'] ?? 'https://www.instagram.com/chouseuae/') ?>" 
                  target="_blank" 
