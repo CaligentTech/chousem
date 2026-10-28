@@ -569,6 +569,16 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
         transition: none;
       }
     }
+
+    #instagram-feed-iframe {
+      height: 430px;
+      background: transparent;
+    }
+    @media (min-width: 640px) {
+      #instagram-feed-iframe {
+        height: 490px;
+      }
+    }
   </style>
   <style>
     @media print {
@@ -1205,6 +1215,54 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           </div>
         </section>
 
+        <!-- INSTAGRAM FEED SECTION -->
+        <section aria-labelledby="instagram-heading" class="bg-[var(--mora-parchment)] pt-10 sm:pt-14 pb-2">
+          <!-- Header: FOLLOW US & Instagram Profile Badge -->
+          <div class="w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-10 pb-2">
+            <div class="flex items-center justify-between gap-4">
+              <h2 id="instagram-heading" class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#30201B] tracking-tight font-sans">
+                FOLLOW US
+              </h2>
+              <a href="<?= e($s['instagram_url'] ?? 'https://www.instagram.com/chouseuae/') ?>" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="flex items-center gap-2.5 sm:gap-3 group hover:opacity-85 transition-opacity"
+                 aria-label="Follow @chouseuae on Instagram">
+                <!-- Instagram Official Gradient Icon -->
+                <svg class="w-9 h-9 sm:w-10 sm:h-10 rounded-[10px] sm:rounded-[12px] shadow-sm shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="ig-grad-header" cx="19%" cy="100%" r="108%" fx="19%" fy="100%">
+                      <stop offset="0%" stop-color="#fdf497" />
+                      <stop offset="5%" stop-color="#fdf497" />
+                      <stop offset="45%" stop-color="#fd5949" />
+                      <stop offset="60%" stop-color="#d6249f" />
+                      <stop offset="90%" stop-color="#285AEB" />
+                    </radialGradient>
+                  </defs>
+                  <rect width="48" height="48" rx="12" fill="url(#ig-grad-header)" />
+                  <rect x="11" y="11" width="26" height="26" rx="7" stroke="white" stroke-width="2.8" fill="none" />
+                  <circle cx="24" cy="24" r="6.2" stroke="white" stroke-width="2.8" fill="none" />
+                  <circle cx="31.2" cy="16.8" r="1.6" fill="white" />
+                </svg>
+                <!-- Profile details -->
+                <span class="text-xs sm:text-sm font-bold text-[#30201B] group-hover:text-[#AA8243] transition-colors">
+                  @chouseuae
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- INSTAGRAM FEED IFRAME (Edge-to-Edge) -->
+          <div class="w-full overflow-hidden pb-4 pt-2">
+            <iframe id="instagram-feed-iframe"
+                    src="https://feed.chouse.ae/?page_id=7&v=3" 
+                    class="w-full border-0 overflow-hidden" 
+                    loading="lazy"
+                    scrolling="no" 
+                    title="C HOUSE Instagram Feed">
+            </iframe>
+          </div>
+        </section>
 
         <section aria-labelledby="contact-heading"
           class="bg-[var(--mora-parchment)] px-5 pt-8 pb-16 sm:pt-12 sm:pb-16 sm:px-8 lg:px-10 lg:pt-12 lg:pb-24" data-kid="2-2-8"
