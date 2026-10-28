@@ -592,12 +592,12 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
     }
 
     #instagram-feed-iframe {
-      height: 410px;
+      height: 395px;
       background: transparent;
     }
     @media (min-width: 640px) {
       #instagram-feed-iframe {
-        height: 490px;
+        height: 480px;
       }
     }
 
@@ -1290,7 +1290,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
           <!-- INSTAGRAM FEED IFRAME (Edge-to-Edge) -->
           <div class="w-full overflow-hidden pb-2 sm:pb-4 pt-2">
             <iframe id="instagram-feed-iframe"
-                    src="https://feed.chouse.ae/?page_id=7&v=4" 
+                    src="https://feed.chouse.ae/?page_id=7&v=5" 
                     class="w-full border-0 overflow-hidden" 
                     loading="lazy"
                     scrolling="no" 
