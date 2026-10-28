@@ -129,8 +129,7 @@ if (!function_exists('e')) {
                     </a>
                     <span class="inline-flex flex-wrap items-center gap-1">
                         <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+971522185569">+971 52 218 5569</a> / 
-                        <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+971504603469">+971 50 460 3469</a> / 
-                        <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+97148803320">+971 4 880 3320</a>
+                        <a class="mora-menu-link w-fit" data-kid="2-3-1-2-3-2-2" data-name="phone link" href="tel:+971504603469">+971 50 460 3469</a>
                     </span>
                     <a class="mora-menu-link w-fit" href="mailto:<?= e($s['email'] ?? 'hello@chouse.ae') ?>"><?= e($s['email'] ?? 'hello@chouse.ae') ?></a>
                 </div>

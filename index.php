@@ -1319,7 +1319,6 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
                       $phones = [
                         ['display' => '+971 52 218 5569', 'tel' => '+971522185569'],
                         ['display' => '+971 50 460 3469', 'tel' => '+971504603469'],
-                        ['display' => '+971 4 880 3320', 'tel' => '+97148803320'],
                       ];
                     }
                     ?>
@@ -1535,15 +1534,14 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             That time is full. Try another time, or call us for larger tables:
             <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
               href="tel:+971522185569">+971 52 218 5569</a> / <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
-              href="tel:+971504603469">+971 50 460 3469</a> / <a class="border-b border-[var(--mora-candle)]/45" data-kid="2-5-3-7-1" data-name="alternate phone link"
-              href="tel:+97148803320">+971 4 880 3320</a>
+              href="tel:+971504603469">+971 50 460 3469</a>
             .
           </div>
           <div
             class="hidden border-l-2 border-[var(--mora-terracotta)] pl-4 text-xs leading-5 text-[var(--mora-candle)]/72"
             data-dynamic="true" data-kid="2-5-3-8" data-name="reservation error message"
             data-reason="visibility toggled by script" id="reservation-error">
-            We couldn’t send that request. Please call +971 4 880 3320 and we’ll help.
+            We couldn’t send that request. Please call +971 52 218 5569 and we’ll help.
           </div>
           <div aria-hidden="true" class="mora-loading-rule h-px bg-[var(--mora-brass)]" data-dynamic="true"
             data-kid="2-5-3-9" data-name="loading progress rule" data-reason="animation state toggled by script"

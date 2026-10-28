@@ -99,7 +99,7 @@ function format_phones($raw)
     $out = [];
     foreach (explode('/', (string)$raw) as $p) {
         $p = trim($p);
-        if ($p === '') continue;
+        if ($p === '' || strpos($p, '880 3320') !== false || strpos($p, '8803320') !== false) continue;
         $digits = preg_replace('/\D+/', '', $p);
         if (strpos($digits, '971') === 0) {
             $digits = substr($digits, 3);          // already has country code
