@@ -190,20 +190,23 @@ $categories = get_categories($pdo, 'food');
               'Secondi'  => 'All served with a choice of Fries or House Wafers | Add on: Truffle fries: 15',
               'Griglia'  => 'Add-on: (S) Grilled prawns (3 pcs) for 25 | Upgrade to Truffle Mash for 10'
             ];
-            if (isset($category_images[$cat['name']])): ?>
-              <div class="relative mb-2 flex items-center justify-between">
-                <h2 class="mora-serif text-4xl mb-0"><?= e($cat['name']) ?></h2>
-                <img src="<?= e($category_images[$cat['name']]) ?>" alt="<?= e($cat['name']) ?>" class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
-              </div>
-            <?php else: ?>
-              <h2 class="mora-serif text-4xl mb-2"><?= e($cat['name']) ?></h2>
-            <?php endif; ?>
-            <?php if ($cat['subtitle']): ?>
-              <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] <?= isset($category_notes[$cat['name']]) ? 'mb-2' : 'mb-8' ?> font-bold"><?= e($cat['subtitle']) ?></p>
-            <?php endif; ?>
-            <?php if (isset($category_notes[$cat['name']])): ?>
-              <p class="text-xs italic text-[var(--mora-clay)] <?= $cat['subtitle'] ? 'mb-6' : '-mt-1 mb-6' ?> opacity-90"><?= e($category_notes[$cat['name']]) ?></p>
-            <?php endif; ?>
+            ?>
+            <div class="category-header lg:min-h-[110px] mb-6 flex flex-col justify-start">
+              <?php if (isset($category_images[$cat['name']])): ?>
+                <div class="relative mb-1 flex items-center justify-between">
+                  <h2 class="mora-serif text-4xl mb-0"><?= e($cat['name']) ?></h2>
+                  <img src="<?= e($category_images[$cat['name']]) ?>" alt="<?= e($cat['name']) ?>" class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
+                </div>
+              <?php else: ?>
+                <h2 class="mora-serif text-4xl mb-1"><?= e($cat['name']) ?></h2>
+              <?php endif; ?>
+              <?php if ($cat['subtitle']): ?>
+                <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-1 font-bold"><?= e($cat['subtitle']) ?></p>
+              <?php endif; ?>
+              <?php if (isset($category_notes[$cat['name']])): ?>
+                <p class="text-xs italic text-[var(--mora-clay)] opacity-90 leading-snug"><?= e($category_notes[$cat['name']]) ?></p>
+              <?php endif; ?>
+            </div>
             <div class="flex flex-col gap-5">
               <?php foreach ($items as $item): 
                 $clean_name = trim(str_replace(['★', '⭐'], '', $item['name']));
@@ -226,11 +229,11 @@ $categories = get_categories($pdo, 'food');
               ?>
                 <div class="menu-item flex justify-between items-baseline pb-2 gap-4">
                   <span class="text-lg leading-snug">
-                    <?php if ($is_sig): ?>
-                      <span class="text-[var(--mora-brass)] font-semibold mr-1.5 inline-block select-none" title="Chef's Signature">★</span>
-                    <?php endif; ?>
                     <?= e($clean_name) ?>
                     <?= $item['dietary_tag'] ? ' (' . e($item['dietary_tag']) . ')' : '' ?>
+                    <?php if ($is_sig): ?>
+                      <span class="text-[var(--mora-brass)] font-semibold ml-1.5 inline-block select-none" title="Chef's Signature">★</span>
+                    <?php endif; ?>
                   </span>
                   <span class="menu-price whitespace-nowrap shrink-0 text-right"><?= e($item['price']) ?></span>
                 </div>
