@@ -592,7 +592,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
     }
 
     #instagram-feed-iframe {
-      height: 430px;
+      height: 405px;
       background: transparent;
     }
     @media (min-width: 640px) {
@@ -1264,10 +1264,10 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
         </section>
 
         <!-- INSTAGRAM FEED SECTION -->
-        <section aria-labelledby="instagram-heading" class="bg-[var(--mora-parchment)] pt-10 sm:pt-14 pb-2">
+        <section aria-labelledby="instagram-heading" class="bg-[var(--mora-parchment)] pt-7 sm:pt-14 pb-0 sm:pb-2">
           <!-- Header: FOLLOW US & Instagram Profile Badge -->
           <div class="w-full px-5 sm:px-8 lg:px-10">
-            <div class="max-w-[1360px] mx-auto pb-4 sm:pb-6">
+            <div class="max-w-[1360px] mx-auto pb-3 sm:pb-6">
               <div class="flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap">
                 <h2 id="instagram-heading" class="mora-serif text-[clamp(3.4rem,6.6vw,6.6rem)] leading-[.88] tracking-[-.045em] text-[#30201B]">
                   Follow us.
@@ -1303,7 +1303,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
           </div>
 
           <!-- INSTAGRAM FEED IFRAME (Edge-to-Edge) -->
-          <div class="w-full overflow-hidden pb-4 pt-2">
+          <div class="w-full overflow-hidden pb-1 sm:pb-4 pt-2">
             <iframe id="instagram-feed-iframe"
                     src="https://feed.chouse.ae/?page_id=7&v=3" 
                     class="w-full border-0 overflow-hidden" 
@@ -1315,13 +1315,13 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
         </section>
 
         <section aria-labelledby="contact-heading"
-          class="bg-[var(--mora-parchment)] px-5 pt-8 pb-16 sm:pt-12 sm:pb-16 sm:px-8 lg:px-10 lg:pt-12 lg:pb-24" data-kid="2-2-8"
+          class="bg-[var(--mora-parchment)] px-5 pt-3 sm:pt-12 pb-16 sm:pb-16 sm:px-8 lg:px-10 lg:pt-12 lg:pb-24" data-kid="2-2-8"
           data-name="contact section" id="contact">
           <div class="mx-auto grid max-w-[1360px] gap-14 lg:grid-cols-[1.25fr_.75fr] lg:gap-16" data-kid="2-2-8-1"
             data-name="contact grid container">
             <div class="mora-reveal is-visible" data-kid="2-2-8-1-1" data-name="contact info block" data-reveal="">
 
-              <h2 class="mora-serif mt-4 lg:mt-4 text-[clamp(3.4rem,6.6vw,6.6rem)] leading-[.88] tracking-[-.045em]"
+              <h2 class="mora-serif mt-1 sm:mt-4 text-[clamp(3.4rem,6.6vw,6.6rem)] leading-[.88] tracking-[-.045em]"
                 data-kid="2-2-8-1-1-2" data-name="contact heading" id="contact-heading">
                 <?= e($s['home_contact_heading'] ?? 'Find the long table.') ?>
               </h2>
