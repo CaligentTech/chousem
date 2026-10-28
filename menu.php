@@ -200,9 +200,9 @@ $categories = get_categories($pdo, 'food');
               <?php else: ?>
                 <h2 class="mora-serif text-4xl mb-2"><?= e($cat['name']) ?></h2>
               <?php endif; ?>
-              <?php if ($cat['subtitle']): ?>
-                <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] font-bold"><?= e($cat['subtitle']) ?></p>
-              <?php endif; ?>
+              <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] font-bold <?= empty($cat['subtitle']) ? 'hidden lg:block lg:invisible select-none' : '' ?>">
+                <?= !empty($cat['subtitle']) ? e($cat['subtitle']) : '&nbsp;' ?>
+              </p>
             </div>
             <div class="flex flex-col gap-5">
               <?php foreach ($items as $item): 
@@ -248,7 +248,7 @@ $categories = get_categories($pdo, 'food');
       <div class="mt-12 pt-8 border-t border-[var(--mora-espresso)]/20 text-center text-sm font-semibold opacity-70">
         <p><?= e(get_content($pdo, 'menu', 'disclaimer', 'text')) ?></p> <br>
         <span class="font-normal text-gray-600 mt-2 block">(V) Vegetarian &nbsp;|&nbsp; (NV) Non-Vegetarian
-          &nbsp;|&nbsp; (S) Seafood &nbsp;|&nbsp; (P) Prawns &nbsp;|&nbsp; <span class="text-[var(--mora-brass)] font-semibold">★ Chef's Signature</span></span>
+          &nbsp;|&nbsp; (S) Seafood &nbsp;|&nbsp; (P) Prawns &nbsp;|&nbsp; <span class="text-[var(--mora-brass)]">★</span> Chef's Signature</span>
       </div>
     </section>
 
