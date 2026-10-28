@@ -191,20 +191,17 @@ $categories = get_categories($pdo, 'food');
               'Griglia'  => 'Add-on: (S) Grilled prawns (3 pcs) for 25 | Upgrade to Truffle Mash for 10'
             ];
             ?>
-            <div class="category-header lg:min-h-[110px] mb-6 flex flex-col justify-start">
+            <div class="category-header mb-6">
               <?php if (isset($category_images[$cat['name']])): ?>
-                <div class="relative mb-1 flex items-center justify-between">
+                <div class="relative mb-2 flex items-center justify-between">
                   <h2 class="mora-serif text-4xl mb-0"><?= e($cat['name']) ?></h2>
                   <img src="<?= e($category_images[$cat['name']]) ?>" alt="<?= e($cat['name']) ?>" class="absolute right-0 top-1/2 -translate-y-1/2 w-28 md:w-32 lg:w-40 object-contain pointer-events-none z-10">
                 </div>
               <?php else: ?>
-                <h2 class="mora-serif text-4xl mb-1"><?= e($cat['name']) ?></h2>
+                <h2 class="mora-serif text-4xl mb-2"><?= e($cat['name']) ?></h2>
               <?php endif; ?>
               <?php if ($cat['subtitle']): ?>
-                <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-1 font-bold"><?= e($cat['subtitle']) ?></p>
-              <?php endif; ?>
-              <?php if (isset($category_notes[$cat['name']])): ?>
-                <p class="text-xs italic text-[var(--mora-clay)] opacity-90 leading-snug"><?= e($category_notes[$cat['name']]) ?></p>
+                <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] font-bold"><?= e($cat['subtitle']) ?></p>
               <?php endif; ?>
             </div>
             <div class="flex flex-col gap-5">
@@ -239,6 +236,11 @@ $categories = get_categories($pdo, 'food');
                 </div>
               <?php endforeach; ?>
             </div>
+            <?php if (isset($category_notes[$cat['name']])): ?>
+              <p class="text-xs italic text-[var(--mora-clay)] opacity-90 mt-5 pt-3 border-t border-[var(--mora-espresso)]/15 leading-snug">
+                <?= e($category_notes[$cat['name']]) ?>
+              </p>
+            <?php endif; ?>
           </div>
         <?php endforeach; ?>
       </div>
