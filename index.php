@@ -9,6 +9,27 @@ $reviews = get_reviews($pdo);
 // Gallery sections used on the homepage
 $table_in_motion_images = get_gallery($pdo, 'home_table_in_motion');
 $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
+
+if (isset($pdo) && (!isset($s['hero_food_card_title']) || $s['hero_food_card_title'] === 'Truffle Tagliatelle')) {
+  try {
+    $stmt = $pdo->prepare("UPDATE site_settings SET setting_value = ? WHERE setting_key = ?");
+    $stmt->execute(['gallery/Gourmet Eggplant Parmesan with Basil.webp', 'hero_food_card_image']);
+    $stmt->execute(['Baked Eggplant Parmigiana', 'hero_food_card_title']);
+    $stmt->execute(['Layers of baked aubergine, rich tomato sauce, melted mozzarella and Parmesan.', 'hero_food_card_desc']);
+  } catch (Exception $e) {}
+}
+
+$hero_card_img = (!empty($s['hero_food_card_image']) && $s['hero_food_card_image'] !== 'gallery/food.webp') 
+    ? $s['hero_food_card_image'] 
+    : 'gallery/Gourmet Eggplant Parmesan with Basil.webp';
+
+$hero_card_title = (!empty($s['hero_food_card_title']) && $s['hero_food_card_title'] !== 'Truffle Tagliatelle') 
+    ? $s['hero_food_card_title'] 
+    : 'Baked Eggplant Parmigiana';
+
+$hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_card_desc'], 'truffle') === false) 
+    ? $s['hero_food_card_desc'] 
+    : 'Layers of baked aubergine, rich tomato sauce, melted mozzarella and Parmesan.';
 ?>
 
 <!DOCTYPE html>
@@ -729,11 +750,11 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
             <div class="flex gap-4">
               <div
                 class="flex-none flex items-center gap-4 p-3 rounded-[24px] bg-white/10 backdrop-blur-xl border border-white/20 w-[380px] shadow-2xl">
-                <img src="<?= e($s['hero_food_card_image']) ?>" class="w-[120px] h-[140px] rounded-[16px] object-cover"
-                  alt="<?= e($s['hero_food_card_title']) ?>">
+                <img src="<?= e($hero_card_img) ?>" class="w-[120px] h-[140px] rounded-[16px] object-cover"
+                  alt="<?= e($hero_card_title) ?>">
                 <div class="flex flex-col gap-2">
-                  <h3 class="text-white text-lg font-semibold leading-tight"><?= e($s['hero_food_card_title']) ?></h3>
-                  <p class="text-gray-300 text-[11px] leading-snug"><?= e($s['hero_food_card_desc']) ?></p>
+                  <h3 class="text-white text-lg font-semibold leading-tight"><?= e($hero_card_title) ?></h3>
+                  <p class="text-gray-300 text-[11px] leading-snug"><?= e($hero_card_desc) ?></p>
                   <a href="menu"
                     class="text-white text-[11px] font-bold rounded-full py-2 px-5 w-fit mt-1 hover:text-gray-200 transition-colors">
                     <button
@@ -749,7 +770,7 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
           <div class="block lg:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-20 w-[calc(100%-32px)] max-w-[340px] sm:max-w-[360px]">
             <a href="menu" id="hero-mobile-food-card"
               class="relative block h-[68px] w-full select-none group"
-              aria-label="<?= e($s['hero_food_card_title']) ?>">
+              aria-label="<?= e($hero_card_title) ?>">
               <!-- SVG Custom Capsule Silhouette Background -->
               <svg class="absolute inset-0 w-full h-full pointer-events-none overflow-visible" style="filter: drop-shadow(0 10px 24px rgba(0,0,0,0.55));">
                 <path id="hero-mobile-food-card-path"
@@ -758,13 +779,13 @@ $home_bar_drinks_images = get_gallery($pdo, 'home_bar_drinks');
               </svg>
               <!-- Food Dish Circular Thumbnail -->
               <div class="absolute left-[7px] top-[7px] w-[54px] h-[54px] rounded-full overflow-hidden shadow-inner ring-1 ring-white/10">
-                <img src="<?= e($s['hero_food_card_image']) ?>" alt="<?= e($s['hero_food_card_title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <img src="<?= e($hero_card_img) ?>" alt="<?= e($hero_card_title) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
               </div>
               <!-- Text & Arrow Action -->
               <div class="relative h-full flex items-center justify-between pl-[72px] pr-3">
                 <div class="flex flex-col justify-center min-w-0 pr-2">
                   <span class="text-[11px] font-normal text-gray-300 tracking-wide leading-tight">Chef's Pick</span>
-                  <span class="text-[14px] sm:text-[15px] font-semibold text-white tracking-wide truncate leading-tight mt-0.5"><?= e($s['hero_food_card_title']) ?></span>
+                  <span class="text-[14px] sm:text-[15px] font-semibold text-white tracking-wide truncate leading-tight mt-0.5"><?= e($hero_card_title) ?></span>
                 </div>
                 <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 flex items-center justify-center text-white shrink-0 group-hover:bg-white group-hover:text-black transition-colors">
                   <i class="ti ti-arrow-right text-xs sm:text-sm"></i>
