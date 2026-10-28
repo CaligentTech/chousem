@@ -1325,7 +1325,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
                 data-kid="2-2-8-1-1-2" data-name="contact heading" id="contact-heading">
                 <?= e($s['home_contact_heading'] ?? 'Find the long table.') ?>
               </h2>
-              <div class="mt-14 border-y border-[var(--mora-espresso)]/28 py-7 text-sm leading-7" data-kid="2-2-8-1-1-3"
+              <div class="mt-6 sm:mt-14 border-y border-[var(--mora-espresso)]/28 py-7 text-sm leading-7" data-kid="2-2-8-1-1-3"
                 data-name="contact details list">
                 <p class="flex items-start gap-3" data-kid="2-2-8-1-1-3-1" data-name="contact location">
                   <i aria-hidden="true" class="ti ti-map-pin mt-1 text-base text-[var(--mora-clay)]"
