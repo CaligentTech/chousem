@@ -840,7 +840,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
               <div aria-label="Food categories" class="mt-14" data-kid="2-2-3-1-2-3" data-name="food categories tablist"
                 role="tablist">
                 <button aria-selected="false"
-                  class="mora-food-row mora-reveal grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
+                  class="mora-food-row mora-reveal grid w-full grid-cols-[38px_1fr] items-center gap-x-3 sm:gap-x-4 py-5 sm:py-6 text-left is-visible"
                   data-food-index="0" data-kid="2-2-3-1-2-3-1" data-name="antipasti category row" data-reveal=""
                   role="tab" type="button">
                   <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-1-1"
@@ -857,12 +857,9 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
                       burrata · roasted tomatoes · olive oil
                     </span>
                   </span>
-                  <span class="mora-food-rule col-span-2 h-px w-0" data-kid="2-2-3-1-2-3-1-3"
-                    data-name="category accent rule">
-                  </span>
                 </button>
                 <button aria-selected="false"
-                  class="mora-food-row grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left is-visible"
+                  class="mora-food-row grid w-full grid-cols-[38px_1fr] items-center gap-x-3 sm:gap-x-4 py-5 sm:py-6 text-left is-visible"
                   data-food-index="1" data-kid="2-2-3-1-2-3-2" data-name="pasta category row" data-reveal="" role="tab"
                   style="--mora-delay:70ms" type="button">
                   <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-2-1"
@@ -879,12 +876,9 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
                       truffle tagliatelle · warm parmesan
                     </span>
                   </span>
-                  <span class="mora-food-rule col-span-2 h-px w-8" data-kid="2-2-3-1-2-3-2-3"
-                    data-name="category accent rule">
-                  </span>
                 </button>
                 <button aria-selected="false"
-                  class="mora-food-row grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left"
+                  class="mora-food-row grid w-full grid-cols-[38px_1fr] items-center gap-x-3 sm:gap-x-4 py-5 sm:py-6 text-left"
                   data-food-index="2" data-kid="2-2-3-1-2-3-3" data-name="pizza category row" role="tab" type="button">
                   <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-3-1"
                     data-name="number index text">
@@ -900,12 +894,9 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
                       blistered margherita · basil · shared hands
                     </span>
                   </span>
-                  <span class="mora-food-rule col-span-2 h-px w-0" data-kid="2-2-3-1-2-3-3-3"
-                    data-name="category accent rule">
-                  </span>
                 </button>
                 <button aria-selected="false"
-                  class="mora-food-row grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left"
+                  class="mora-food-row grid w-full grid-cols-[38px_1fr] items-center gap-x-3 sm:gap-x-4 py-5 sm:py-6 text-left"
                   data-food-index="3" data-kid="2-2-3-1-2-3-4" data-name="mains category row" role="tab" type="button">
                   <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-4-1"
                     data-name="number index text">
@@ -921,12 +912,9 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
                       grilled beef · seasonal vegetables · red wine
                     </span>
                   </span>
-                  <span class="mora-food-rule col-span-2 h-px w-0" data-kid="2-2-3-1-2-3-4-3"
-                    data-name="category accent rule">
-                  </span>
                 </button>
                 <button aria-selected="false"
-                  class="mora-food-row grid min-h-[66px] w-full grid-cols-[38px_1fr] items-center gap-3 text-left"
+                  class="mora-food-row grid w-full grid-cols-[38px_1fr] items-center gap-x-3 sm:gap-x-4 py-5 sm:py-6 text-left"
                   data-food-index="4" data-kid="2-2-3-1-2-3-5" data-name="desserts category row" role="tab"
                   type="button">
                   <span class="mora-food-number text-[11px] text-[var(--mora-espresso)]/45" data-kid="2-2-3-1-2-3-5-1"
@@ -942,9 +930,6 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
                       data-kid="2-2-3-1-2-3-5-2-2" data-name="category description text">
                       tiramisù · espresso · something to share
                     </span>
-                  </span>
-                  <span class="mora-food-rule col-span-2 h-px w-0" data-kid="2-2-3-1-2-3-5-3"
-                    data-name="category accent rule">
                   </span>
                 </button>
               </div>
