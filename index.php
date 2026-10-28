@@ -681,7 +681,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
               href="contact">Contact</a>
           </nav>
           <div class="hidden lg:flex items-center gap-4">
-            <a href="contact"
+            <a href="contact#reservation-form-container"
               class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
               <span>Reserve a Table</span>
               <i class="ti ti-arrow-up-right text-base"></i>
@@ -710,7 +710,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
               href="gallery">Gallery</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
               href="contact">Contact</a>
-            <a href="contact"
+            <a href="contact#reservation-form-container"
               class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
               Reserve a Table <i class="ti ti-arrow-up-right"></i>
             </a>
@@ -1290,7 +1290,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
           <!-- INSTAGRAM FEED IFRAME (Edge-to-Edge) -->
           <div class="w-full overflow-hidden pb-2 sm:pb-4 pt-2">
             <iframe id="instagram-feed-iframe"
-                    src="https://feed.chouse.ae/?page_id=7&v=3" 
+                    src="https://feed.chouse.ae/?page_id=7&v=4" 
                     class="w-full border-0 overflow-hidden" 
                     loading="lazy"
                     scrolling="no" 
@@ -1387,7 +1387,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
               ?>
               <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5 items-center" data-kid="2-2-8-1-1-4"
                 data-name="contact buttons container">
-                <a href="contact"
+                <a href="contact#reservation-form-container"
                   class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
                   data-kid="2-2-8-1-1-4-2" data-name="reserve button">
                   Reserve a table
@@ -1632,7 +1632,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
       </div>
       <div aria-hidden="false" class="mora-reserve-dock fixed inset-x-4 bottom-4 z-[55] md:hidden is-visible"
         data-kid="2-8" data-name="floating reserve dock button" id="reserve-dock">
-        <a href="contact"
+        <a href="contact#reservation-form-container"
           class="mora-fold mora-fold-candle flex w-full items-center justify-between bg-[var(--mora-clay)] px-5 py-4 text-left text-[var(--mora-espresso)] shadow-xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
           data-kid="2-8-1" data-name="dock reserve button">
           <span data-kid="2-8-1-1" data-name="button text container">

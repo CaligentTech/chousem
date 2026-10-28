@@ -132,7 +132,7 @@ if (empty($phones)) {
 
       <!-- Right: Reserve a Table Button -->
       <div class="hidden lg:flex items-center gap-4">
-        <a href="contact"
+        <a href="#reservation-form-container"
           class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
           <span>Reserve a Table</span>
           <i class="ti ti-arrow-up-right text-base"></i>
@@ -163,7 +163,7 @@ if (empty($phones)) {
           href="gallery">Gallery</a>
         <a class="text-[13px] tracking-widest uppercase text-white py-2 border-b border-white/10 font-semibold"
           href="contact">Contact</a>
-        <a href="contact"
+        <a href="#reservation-form-container"
           class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
           Reserve a Table <i class="ti ti-arrow-up-right"></i>
         </a>
@@ -286,7 +286,7 @@ if (empty($phones)) {
       </div>
 
       <!-- RIGHT: Floating form card (replaces the map) -->
-      <div class="bg-[#30201B] text-[#F2E7D4] rounded-2xl shadow-2xl p-8 sm:p-10">
+      <div id="reservation-form-container" class="bg-[#30201B] text-[#F2E7D4] rounded-2xl shadow-2xl p-8 sm:p-10 scroll-mt-28">
         <h2 class="mora-serif text-3xl mb-2">Reserve or Enquire</h2>
         <p class="text-[#F2E7D4]/60 text-sm mb-8">Tell us what you're looking for and we'll get back to you.</p>
 
@@ -383,6 +383,23 @@ if (empty($phones)) {
       // Check URL for form submission status
       const urlParams = new URLSearchParams(window.location.search);
       const status = urlParams.get('status');
+
+      // Auto-select Table Reservation if navigating to reservation form
+      function handleReservationFocus() {
+        const hash = window.location.hash;
+        if (hash === '#reservation-form-container' || hash === '#reservation' || hash === '#contactForm' || urlParams.get('service') === 'reservation') {
+          const serviceSelect = document.querySelector('select[name="service"]');
+          if (serviceSelect && (!serviceSelect.value || serviceSelect.value === '')) {
+            serviceSelect.value = 'reservation';
+          }
+          const formContainer = document.getElementById('reservation-form-container');
+          if (formContainer && hash) {
+            formContainer.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }
+      handleReservationFocus();
+      window.addEventListener('hashchange', handleReservationFocus);
 
       if (status === 'success') {
         const successEl = document.getElementById('form-success');

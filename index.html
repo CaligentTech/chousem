@@ -649,6 +649,13 @@
             <a class="flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] tracking-widest uppercase text-gray-200 transition-colors hover:bg-white/10 hover:text-white"
               href="contact">Contact</a>
           </nav>
+          <div class="hidden lg:flex items-center gap-4">
+            <a href="contact#reservation-form-container"
+              class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
+              <span>Reserve a Table</span>
+              <i class="ti ti-arrow-up-right text-base"></i>
+            </a>
+          </div>
           <button id="mobile-menu-button" aria-expanded="false"
             class="lg:hidden absolute right-0 flex items-center justify-center p-2 text-[#f5e6c8]">
             <i class="ti ti-menu-2 text-2xl"></i>
@@ -673,7 +680,7 @@
               href="gallery">Gallery</a>
             <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
               href="contact">Contact</a>
-            <a href="contact"
+            <a href="contact#reservation-form-container"
               class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
               Reserve a Table <i class="ti ti-arrow-up-right"></i>
             </a>
@@ -713,11 +720,11 @@
             </div>
             <div class="flex items-center gap-4 lg:gap-6 mt-1 lg:mt-0">
               <div class="hidden lg:flex items-center gap-2 lg:gap-3">
-                <a href="contact"
+                <a href="contact#reservation-form-container"
                   class="bg-white text-black text-[11px] lg:text-[13px] font-semibold rounded-full py-2.5 px-5 lg:py-3 lg:px-6 hover:bg-[#5C3D2E] hover:text-white transition-colors whitespace-nowrap shadow-lg">
                   Reserve a Table
                 </a>
-                <a href="contact"
+                <a href="contact#reservation-form-container"
                   class="flex items-center justify-center bg-[#EBDDCB] text-black w-9 h-9 lg:w-11 lg:h-11 rounded-full hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-lg">
                   <i class="ti ti-arrow-up-right text-base lg:text-lg"></i>
                 </a>
@@ -1235,7 +1242,7 @@
           <!-- INSTAGRAM FEED IFRAME (Edge-to-Edge) -->
           <div class="w-full overflow-hidden pb-2 sm:pb-4 pt-2">
             <iframe id="instagram-feed-iframe"
-                    src="https://feed.chouse.ae/?page_id=7&v=3" 
+                    src="https://feed.chouse.ae/?page_id=7&v=4" 
                     class="w-full border-0 overflow-hidden" 
                     loading="lazy"
                     scrolling="no" 
@@ -1303,14 +1310,14 @@
               </div>
               <div class="mt-8 flex flex-wrap gap-x-7 gap-y-5" data-kid="2-2-8-1-1-4"
                 data-name="contact buttons container">
-                <button
+                <a href="contact#reservation-form-container"
                   class="mora-text-action text-[10px] font-bold uppercase tracking-[.16em] focus-visible:outline-2 focus-visible:outline-[var(--mora-espresso)] focus-visible:outline-offset-4"
-                  data-kid="2-2-8-1-1-4-2" data-name="reserve button" data-open-reservation="" type="button">
+                  data-kid="2-2-8-1-1-4-2" data-name="reserve button">
                   Reserve a table
                   <i aria-hidden="true" class="ti ti-arrow-up-right text-sm" data-kid="2-2-8-1-1-4-2-1"
                     data-name="arrow-up-right icon">
                   </i>
-                </button>
+                </a>
               </div>
             </div>
             <div
@@ -1679,9 +1686,9 @@
       </div>
       <div aria-hidden="false" class="mora-reserve-dock fixed inset-x-4 bottom-4 z-[55] md:hidden is-visible"
         data-kid="2-8" data-name="floating reserve dock button" id="reserve-dock">
-        <button
+        <a href="contact#reservation-form-container"
           class="mora-fold mora-fold-candle flex w-full items-center justify-between bg-[var(--mora-clay)] px-5 py-4 text-left text-[var(--mora-espresso)] shadow-xl focus-visible:outline-2 focus-visible:outline-[var(--mora-candle)] focus-visible:outline-offset-4"
-          data-kid="2-8-1" data-name="dock reserve button" data-open-reservation="" type="button">
+          data-kid="2-8-1" data-name="dock reserve button">
           <span data-kid="2-8-1-1" data-name="button text container">
             <span class="block text-[10px] font-bold uppercase tracking-[.16em]" data-kid="2-8-1-1-1"
               data-name="dock title">
@@ -1693,7 +1700,7 @@
           </span>
           <i aria-hidden="true" class="ti ti-arrow-up-right text-lg" data-kid="2-8-1-2" data-name="arrow-up-right icon">
           </i>
-        </button>
+        </a>
       </div>
     </div>
 

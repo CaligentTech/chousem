@@ -115,7 +115,7 @@ $categories = get_categories($pdo, 'food');
       </nav>
 
       <div class="hidden lg:flex items-center gap-4">
-        <a href="contact"
+        <a href="contact#reservation-form-container"
           class="flex items-center gap-2.5 bg-white text-[#30201B] text-[13px] font-semibold tracking-wide rounded-full px-7 py-3 hover:bg-[#5C3D2E] hover:text-white transition-colors shadow-md border border-[#30201B]/10">
           <span>Reserve a Table</span>
           <i class="ti ti-arrow-up-right text-base"></i>
@@ -146,7 +146,7 @@ $categories = get_categories($pdo, 'food');
           href="gallery">Gallery</a>
         <a class="text-[13px] tracking-widest uppercase text-white/80 py-2 border-b border-white/10"
           href="contact">Contact</a>
-        <a href="contact"
+        <a href="contact#reservation-form-container"
           class="mt-2 flex items-center justify-center gap-2 bg-white text-black text-[13px] font-semibold rounded-full py-3">
           Reserve a Table <i class="ti ti-arrow-up-right"></i>
         </a>
