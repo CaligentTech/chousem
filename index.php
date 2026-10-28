@@ -987,13 +987,13 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
               ];
               ?>
               <div id="bar-image-stack"
-                class="relative h-[480px] w-full max-w-[400px] mx-auto lg:h-[600px] lg:w-full flex items-center justify-center"
+                class="relative h-[480px] w-full max-w-[400px] mx-auto lg:h-[600px] lg:w-full flex items-center justify-center cursor-pointer select-none"
                 data-kid="2-2-4-2-1-1" data-name="bar stacked images">
                 <?php foreach ($home_bar_drinks_images as $i => $img): ?>
                   <?php $style = $stack_styles[$i] ?? $stack_styles[count($stack_styles) - 1]; ?>
                   <img alt="<?= e($img['alt_text']) ?>"
-                    class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] <?= $style['rotate'] ?> <?= $style['translate'] ?> transition-all duration-500"
-                    style="z-index: <?= $style['z'] ?>" decoding="async" loading="lazy" src="<?= e($img['image_path']) ?>" />
+                    class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] <?= $style['rotate'] ?> <?= $style['translate'] ?> transition-all duration-500 pointer-events-none select-none"
+                    style="z-index: <?= $style['z'] ?>" decoding="async" loading="lazy" src="<?= e($img['image_path']) ?>" draggable="false" />
                 <?php endforeach; ?>
               </div>
               <script>
@@ -1004,9 +1004,10 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
                   if (images.length < 2) return;
 
                   let isAnimating = false;
+                  let timer = null;
 
-                  setInterval(() => {
-                    if (document.hidden || isAnimating) return;
+                  function cycleCard() {
+                    if (isAnimating) return;
 
                     // Find the topmost card
                     let maxZ = -1;
@@ -1055,7 +1056,24 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
                         }, 500);
                       });
                     }, 450);
-                  }, 3500); // shuffle every 3.5 seconds
+                  }
+
+                  function resetTimer() {
+                    if (timer) clearInterval(timer);
+                    timer = setInterval(() => {
+                      if (!document.hidden && !isAnimating) {
+                        cycleCard();
+                      }
+                    }, 3500); // shuffle every 3.5 seconds
+                  }
+
+                  stack.addEventListener('click', () => {
+                    if (isAnimating) return;
+                    cycleCard();
+                    resetTimer();
+                  });
+
+                  resetTimer();
                 })();
               </script>
               <p class="mt-4 text-[10px] uppercase tracking-[.17em] text-[var(--mora-brass)] font-bold" data-kid="2-2-4-2-1-2"

@@ -946,23 +946,23 @@
             <div class="mora-reveal lg:pt-5 is-visible" data-kid="2-2-4-2-1" data-name="bar image container"
               data-reveal="">
               <div id="bar-image-stack"
-                class="relative h-[480px] w-full max-w-[400px] mx-auto lg:h-[600px] lg:w-full flex items-center justify-center"
+                class="relative h-[480px] w-full max-w-[400px] mx-auto lg:h-[600px] lg:w-full flex items-center justify-center cursor-pointer select-none"
                 data-kid="2-2-4-2-1-1" data-name="bar stacked images">
                 <img alt="Dragonfruit Drink"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-12 -translate-x-6 transition-all duration-500"
-                  style="z-index: 5" decoding="async" loading="lazy" src="gallery/dragonfruitdrink.webp" />
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-12 -translate-x-6 transition-all duration-500 pointer-events-none select-none"
+                  style="z-index: 5" decoding="async" loading="lazy" src="gallery/dragonfruitdrink.webp" draggable="false" />
                 <img alt="Blueberry Drink"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-6 translate-x-6 transition-all duration-500"
-                  style="z-index: 4" decoding="async" loading="lazy" src="gallery/Blueberrydrink.webp" />
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-6 translate-x-6 transition-all duration-500 pointer-events-none select-none"
+                  style="z-index: 4" decoding="async" loading="lazy" src="gallery/Blueberrydrink.webp" draggable="false" />
                 <img alt="Orange Mocktail"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-6 -translate-x-8 transition-all duration-500"
-                  style="z-index: 3" decoding="async" loading="lazy" src="gallery/drinks/DSC05172.webp" />
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-6 -translate-x-8 transition-all duration-500 pointer-events-none select-none"
+                  style="z-index: 3" decoding="async" loading="lazy" src="gallery/drinks/DSC05172.webp" draggable="false" />
                 <img alt="Blue Mocktail"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-12 translate-x-8 transition-all duration-500"
-                  style="z-index: 2" decoding="async" loading="lazy" src="gallery/drinks/DSC05178.webp" />
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] rotate-12 translate-x-8 transition-all duration-500 pointer-events-none select-none"
+                  style="z-index: 2" decoding="async" loading="lazy" src="gallery/drinks/DSC05178.webp" draggable="false" />
                 <img alt="Yellow Mocktail"
-                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-3 translate-x-0 transition-all duration-500"
-                  style="z-index: 1" decoding="async" loading="lazy" src="gallery/drinks/DSC05189.webp" />
+                  class="absolute origin-bottom w-[80%] h-[85%] lg:w-[75%] lg:h-[80%] object-cover rounded-[2rem] border-4 lg:border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)] -rotate-3 translate-x-0 transition-all duration-500 pointer-events-none select-none"
+                  style="z-index: 1" decoding="async" loading="lazy" src="gallery/drinks/DSC05189.webp" draggable="false" />
               </div>
               <script>
                 (function () {
@@ -972,9 +972,10 @@
                   if (images.length < 2) return;
 
                   let isAnimating = false;
+                  let timer = null;
 
-                  setInterval(() => {
-                    if (document.hidden || isAnimating) return;
+                  function cycleCard() {
+                    if (isAnimating) return;
 
                     // Find the topmost card
                     let maxZ = -1;
@@ -1020,7 +1021,24 @@
                         }, 500);
                       });
                     }, 450);
-                  }, 3500); // shuffle every 3.5 seconds
+                  }
+
+                  function resetTimer() {
+                    if (timer) clearInterval(timer);
+                    timer = setInterval(() => {
+                      if (!document.hidden && !isAnimating) {
+                        cycleCard();
+                      }
+                    }, 3500); // shuffle every 3.5 seconds
+                  }
+
+                  stack.addEventListener('click', () => {
+                    if (isAnimating) return;
+                    cycleCard();
+                    resetTimer();
+                  });
+
+                  resetTimer();
                 })();
               </script>
               <p class="mt-4 text-[10px] uppercase tracking-[.17em] text-[var(--mora-brass)] font-bold"
