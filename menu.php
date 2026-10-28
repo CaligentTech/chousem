@@ -185,6 +185,11 @@ $categories = get_categories($pdo, 'food');
               'Antipasti' => 'gallery/calamari-fritti.webp',
               'Primi' => 'gallery/fettuccine-alfredo.webp'
             ];
+            $category_notes = [
+              'Le Pizze' => 'All our pizzas are served with our signature House Garlic Butter Confit to enjoy with the crust.',
+              'Secondi'  => 'All served with a choice of Fries or House Wafers | Add on: Truffle fries: 15',
+              'Griglia'  => 'Add-on: (S) Grilled prawns (3 pcs) for 25 | Upgrade to Truffle Mash for 10'
+            ];
             if (isset($category_images[$cat['name']])): ?>
               <div class="relative mb-2 flex items-center justify-between">
                 <h2 class="mora-serif text-4xl mb-0"><?= e($cat['name']) ?></h2>
@@ -194,13 +199,37 @@ $categories = get_categories($pdo, 'food');
               <h2 class="mora-serif text-4xl mb-2"><?= e($cat['name']) ?></h2>
             <?php endif; ?>
             <?php if ($cat['subtitle']): ?>
-              <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] mb-8 font-bold"><?= e($cat['subtitle']) ?></p>
+              <p class="text-[11px] uppercase tracking-[.15em] text-[var(--mora-clay)] <?= isset($category_notes[$cat['name']]) ? 'mb-2' : 'mb-8' ?> font-bold"><?= e($cat['subtitle']) ?></p>
+            <?php endif; ?>
+            <?php if (isset($category_notes[$cat['name']])): ?>
+              <p class="text-xs italic text-[var(--mora-clay)] <?= $cat['subtitle'] ? 'mb-6' : '-mt-1 mb-6' ?> opacity-90"><?= e($category_notes[$cat['name']]) ?></p>
             <?php endif; ?>
             <div class="flex flex-col gap-5">
-              <?php foreach ($items as $item): ?>
+              <?php foreach ($items as $item): 
+                $clean_name = trim(str_replace(['★', '⭐'], '', $item['name']));
+                $is_sig = false;
+                $signature_keywords = [
+                  'Dynamite Chicken',
+                  'Burrata & Rocket',
+                  'Star Pizza',
+                  'Lasagna Classica',
+                  'Seafood Risotto',
+                  'Lemon Herb Grilled Chicken',
+                  'Lamb Chops'
+                ];
+                foreach ($signature_keywords as $keyword) {
+                  if (stripos($clean_name, $keyword) !== false) {
+                    $is_sig = true;
+                    break;
+                  }
+                }
+              ?>
                 <div class="menu-item flex justify-between items-baseline pb-2 gap-4">
                   <span class="text-lg leading-snug">
-                    <?= e($item['name']) ?>
+                    <?php if ($is_sig): ?>
+                      <span class="text-[var(--mora-brass)] font-semibold mr-1.5 inline-block select-none" title="Chef's Signature">★</span>
+                    <?php endif; ?>
+                    <?= e($clean_name) ?>
                     <?= $item['dietary_tag'] ? ' (' . e($item['dietary_tag']) . ')' : '' ?>
                   </span>
                   <span class="menu-price whitespace-nowrap shrink-0 text-right"><?= e($item['price']) ?></span>
@@ -214,7 +243,7 @@ $categories = get_categories($pdo, 'food');
       <div class="mt-12 pt-8 border-t border-[var(--mora-espresso)]/20 text-center text-sm font-semibold opacity-70">
         <p><?= e(get_content($pdo, 'menu', 'disclaimer', 'text')) ?></p> <br>
         <span class="font-normal text-gray-600 mt-2 block">(V) Vegetarian &nbsp;|&nbsp; (NV) Non-Vegetarian
-          &nbsp;|&nbsp; (S) Seafood &nbsp;|&nbsp; (P) Prawns</span>
+          &nbsp;|&nbsp; (S) Seafood &nbsp;|&nbsp; (P) Prawns &nbsp;|&nbsp; <span class="text-[var(--mora-brass)] font-semibold">★ Chef's Signature</span></span>
       </div>
     </section>
 
