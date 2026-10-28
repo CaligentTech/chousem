@@ -600,6 +600,15 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
         height: 490px;
       }
     }
+
+    #hero-mobile-food-card img {
+      object-position: center bottom;
+      transform: scale(1.25);
+      transform-origin: center bottom;
+    }
+    #hero-mobile-food-card:hover img {
+      transform: scale(1.3);
+    }
   </style>
   <style>
     @media print {
@@ -779,7 +788,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
               </svg>
               <!-- Food Dish Circular Thumbnail -->
               <div class="absolute left-[7px] top-[7px] w-[54px] h-[54px] rounded-full overflow-hidden shadow-inner ring-1 ring-white/10">
-                <img src="<?= e($hero_card_img) ?>" alt="<?= e($hero_card_title) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <img src="<?= e($hero_card_img) ?>" alt="<?= e($hero_card_title) ?>" class="w-full h-full object-cover object-bottom scale-125 origin-bottom group-hover:scale-130 transition-transform duration-300">
               </div>
               <!-- Text & Arrow Action -->
               <div class="relative h-full flex items-center justify-between pl-[72px] pr-3">
