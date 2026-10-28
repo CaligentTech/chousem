@@ -1252,7 +1252,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
         <section aria-labelledby="instagram-heading" class="bg-[var(--mora-parchment)] pt-7 sm:pt-14 pb-0 sm:pb-2">
           <!-- Header: FOLLOW US & Instagram Profile Badge -->
           <div class="w-full px-5 sm:px-8 lg:px-10">
-            <div class="max-w-[1360px] mx-auto pb-3 sm:pb-6">
+            <div class="max-w-[1360px] mx-auto pb-4 sm:pb-6">
               <div class="flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap">
                 <h2 id="instagram-heading" class="mora-serif text-[clamp(3.4rem,6.6vw,6.6rem)] leading-[.88] tracking-[-.045em] text-[#30201B]">
                   Follow us.
@@ -1288,7 +1288,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
           </div>
 
           <!-- INSTAGRAM FEED IFRAME (Edge-to-Edge) -->
-          <div class="w-full overflow-hidden pb-2 sm:pb-4 pt-2">
+          <div class="w-full overflow-hidden pb-2 sm:pb-4 pt-5 sm:pt-2 mt-2 sm:mt-0">
             <iframe id="instagram-feed-iframe"
                     src="https://feed.chouse.ae/?page_id=7&v=5" 
                     class="w-full border-0 overflow-hidden" 
