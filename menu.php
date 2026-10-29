@@ -249,7 +249,7 @@ $categories = get_categories($pdo, 'food');
                     <span class="menu-price whitespace-nowrap shrink-0 text-right"><?= e($item['price']) ?></span>
                   </div>
                   <?php if ($is_ice_cream && $additional_scoop): ?>
-                    <div class="flex justify-between items-baseline gap-4 w-full pl-3 sm:pl-4 text-[13px] sm:text-sm text-[#30201B]/75 italic">
+                    <div class="flex justify-between items-baseline gap-4 w-full pl-3 sm:pl-4 text-[13px] sm:text-sm text-[#30201B]/75">
                       <span><?= e($additional_scoop['name']) ?></span>
                       <span class="font-semibold text-[#A84F37] whitespace-nowrap shrink-0 text-right"><?= e($additional_scoop['price']) ?></span>
                     </div>
