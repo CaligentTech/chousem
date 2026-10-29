@@ -157,7 +157,7 @@ $bundles = get_offers($pdo, 'bundle');
     <!-- Hero Header -->
     <section class="relative min-h-[480px] pt-24 pb-12 px-5 bg-black text-[#f5e6c8] flex flex-col items-center">
       <div class="absolute inset-0 z-0">
-        <img alt="Bar menu hero" class="h-full w-full object-cover object-[center_65%] opacity-50" style="object-position: center 65%;" decoding="async"
+        <img alt="Bar menu hero" class="h-full w-full object-cover object-[center_75%] opacity-50" style="object-position: center 75%;" decoding="async"
           src="gallery/drinks/DSC05172.webp" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
       </div>
