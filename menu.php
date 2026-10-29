@@ -205,7 +205,19 @@ $categories = get_categories($pdo, 'food');
               </p>
             </div>
             <div class="flex flex-col gap-5">
-              <?php foreach ($items as $item): 
+              <?php 
+              // Separate any sub-items (like Additional Scoop) to display under their parent item
+              $additional_scoop = null;
+              $display_items = [];
+              foreach ($items as $it) {
+                if (stripos($it['name'], 'Additional Scoop') !== false) {
+                  $additional_scoop = $it;
+                } else {
+                  $display_items[] = $it;
+                }
+              }
+
+              foreach ($display_items as $item): 
                 $clean_name = trim(str_replace(['★', '⭐'], '', $item['name']));
                 $is_sig = false;
                 $signature_keywords = [
@@ -223,16 +235,25 @@ $categories = get_categories($pdo, 'food');
                     break;
                   }
                 }
+                $is_ice_cream = (stripos($clean_name, 'Ice Cream') !== false);
               ?>
-                <div class="menu-item flex justify-between items-baseline pb-2 gap-4">
-                  <span class="text-lg leading-snug">
-                    <?= e($clean_name) ?>
-                    <?= $item['dietary_tag'] ? ' (' . e($item['dietary_tag']) . ')' : '' ?>
-                    <?php if ($is_sig): ?>
-                      <span class="text-[var(--mora-brass)] font-semibold ml-1.5 inline-block select-none" title="Chef's Signature">★</span>
-                    <?php endif; ?>
-                  </span>
-                  <span class="menu-price whitespace-nowrap shrink-0 text-right"><?= e($item['price']) ?></span>
+                <div class="menu-item flex <?= ($is_ice_cream && $additional_scoop) ? 'flex-col gap-1.5' : 'justify-between items-baseline gap-4' ?> pb-2">
+                  <div class="flex justify-between items-baseline gap-4 w-full">
+                    <span class="text-lg leading-snug">
+                      <?= e($clean_name) ?>
+                      <?= !empty($item['dietary_tag']) ? ' (' . e($item['dietary_tag']) . ')' : '' ?>
+                      <?php if ($is_sig): ?>
+                        <span class="text-[var(--mora-brass)] font-semibold ml-1.5 inline-block select-none" title="Chef's Signature">★</span>
+                      <?php endif; ?>
+                    </span>
+                    <span class="menu-price whitespace-nowrap shrink-0 text-right"><?= e($item['price']) ?></span>
+                  </div>
+                  <?php if ($is_ice_cream && $additional_scoop): ?>
+                    <div class="flex justify-between items-baseline gap-4 w-full pl-3 sm:pl-4 text-[13px] sm:text-sm text-[#30201B]/75 italic">
+                      <span><?= e($additional_scoop['name']) ?></span>
+                      <span class="font-semibold text-[#A84F37] whitespace-nowrap shrink-0 text-right"><?= e($additional_scoop['price']) ?></span>
+                    </div>
+                  <?php endif; ?>
                 </div>
               <?php endforeach; ?>
             </div>
