@@ -18,9 +18,11 @@ if (empty($phones)) {
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Contact Us &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
+  <title>Italian Restaurant Dubai Near Me | C HOUSE</title>
+  <meta name="description" content="Get in touch with C HOUSE Dubai for reservations, restaurant enquiries and details about our Italian cuisine, dining and lounge experience." />
+  <meta name="keywords" content="Italian restaurant dubai near me" />
+  <link rel="canonical" href="https://chouse.ae/contact" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
-  <meta name="description" content="Contacts of C HOUSE &mdash; Italian Bistro, Bar &amp; Lounge in Dubai Jebel Ali." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

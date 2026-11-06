@@ -39,7 +39,10 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>C HOUSE - Italian bistro · bar · lounge</title>
+  <title>Italian Restaurant in Dubai | C house Dubai</title>
+  <meta name="description" content="C House Dubai is an Italian restaurant in Dubai, serving delicious Italian food, flavourful pizza, pasta, and authentic Italian cuisine." />
+  <meta name="keywords" content="Italian Restaurant Dubai , Italian food dubai" />
+  <link rel="canonical" href="https://chouse.ae/" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <link rel="preload" as="image" href="<?= e($s['hero_image']) ?>" />
   <style>
@@ -1287,7 +1290,7 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
           <!-- INSTAGRAM FEED IFRAME (Edge-to-Edge) -->
           <div class="w-full overflow-hidden pb-2 sm:pb-4 pt-5 sm:pt-2 mt-2 sm:mt-0">
             <iframe id="instagram-feed-iframe"
-                    src="https://feed.chouse.ae/?page_id=7&v=6" 
+                    src="https://feed.chouse.ae/?page_id=7&v=10" 
                     class="w-full border-0 overflow-hidden" 
                     loading="lazy"
                     scrolling="no" 

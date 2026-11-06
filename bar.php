@@ -13,7 +13,10 @@ $bundles = get_offers($pdo, 'bundle');
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>C HOUSE - Bar Menu</title>
+  <title>Bar Jebel Ali, Dubai | Mocktails & Lounge at C HOUSE</title>
+  <meta name="description" content="Enjoy Italian cuisine, crafted mocktails and relaxed social dining at C HOUSE, a bar and lounge in Jebel Ali, Dubai." />
+  <meta name="keywords" content="Bar Jebel Ali, Dubai" />
+  <link rel="canonical" href="https://chouse.ae/bar" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <link rel="preload" as="image" href="gallery/drinks/DSC05172.webp" />
   <style>

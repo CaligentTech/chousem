@@ -12,9 +12,11 @@ $reviews = get_reviews($pdo);
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>About Us &mdash; C HOUSE &middot; Italian Bistro &middot; Bar &middot; Lounge</title>
+  <title>Italian Cuisine in Dubai | The Story of C House Dubai</title>
+  <meta name="description" content="Explore C HOUSE Dubai, an Italian bistro, bar and lounge in Jebel Ali offering Italian cuisine, Asian dishes, mocktails and outdoor dining." />
+  <meta name="keywords" content="italian cuisine dubai , best italian dubai" />
+  <link rel="canonical" href="https://chouse.ae/about" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
-  <meta name="description" content="About C HOUSE &mdash; Italian Bistro, Bar &amp; Lounge in Dubai Jebel Ali." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
