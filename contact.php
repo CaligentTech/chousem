@@ -20,7 +20,6 @@ if (empty($phones)) {
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Italian Restaurant Dubai Near Me | C HOUSE</title>
   <meta name="description" content="Get in touch with C HOUSE Dubai for reservations, restaurant enquiries and details about our Italian cuisine, dining and lounge experience." />
-  <meta name="keywords" content="Italian restaurant dubai near me" />
   <link rel="canonical" href="https://chouse.ae/contact" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
 

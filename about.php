@@ -14,7 +14,6 @@ $reviews = get_reviews($pdo);
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Italian Cuisine in Dubai | The Story of C House Dubai</title>
   <meta name="description" content="Explore C HOUSE Dubai, an Italian bistro, bar and lounge in Jebel Ali offering Italian cuisine, Asian dishes, mocktails and outdoor dining." />
-  <meta name="keywords" content="italian cuisine dubai , best italian dubai" />
   <link rel="canonical" href="https://chouse.ae/about" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
 

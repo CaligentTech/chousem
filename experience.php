@@ -13,7 +13,6 @@ $events = get_events($pdo);
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Restaurants in Dubai for Birthdays & Events | C HOUSE</title>
   <meta name="description" content="Celebrate special moments at C HOUSE , among the top Restaurants in Dubai for Birthdays & Events, with delicious Italian food and live music." />
-  <meta name="keywords" content="restaurants in dubai for birthdays" />
   <link rel="canonical" href="https://chouse.ae/experience" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
 

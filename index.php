@@ -41,7 +41,6 @@ $hero_card_desc = (!empty($s['hero_food_card_desc']) && stripos($s['hero_food_ca
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Italian Restaurant in Dubai | C house Dubai</title>
   <meta name="description" content="C House Dubai is an Italian restaurant in Dubai, serving delicious Italian food, flavourful pizza, pasta, and authentic Italian cuisine." />
-  <meta name="keywords" content="Italian Restaurant Dubai , Italian food dubai" />
   <link rel="canonical" href="https://chouse.ae/" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <link rel="preload" as="image" href="<?= e($s['hero_image']) ?>" />

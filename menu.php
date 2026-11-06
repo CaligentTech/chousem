@@ -12,7 +12,6 @@ $categories = get_categories($pdo, 'food');
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Best Italian restaurant in Dubai | Explore Our Menu | C HOUSE</title>
   <meta name="description" content="Explore the menu at C HOUSE, the Best Italian restaurant in Dubai, featuring Italian classics, signature pizzas and delicious pasta." />
-  <meta name="keywords" content="best italian restaurant in dubai" />
   <link rel="canonical" href="https://chouse.ae/menu" />
   <?php include __DIR__ . '/includes/head-icons.php'; ?>
   <link rel="preload" as="image" href="gallery/food.webp" />
