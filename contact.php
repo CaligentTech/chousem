@@ -16,6 +16,12 @@ if (empty($phones)) {
 <html lang="en" class="bg-[#EBDDCB] overscroll-none">
 
 <head>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PS3WQX26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Italian Restaurant Dubai Near Me | C HOUSE</title>

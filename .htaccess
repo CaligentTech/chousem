@@ -29,9 +29,11 @@
     # 3. External redirect: If a GET request explicitly requests a .php or .html file, redirect to clean URL
     # Exempt POST requests (e.g. form handlers like send-email.php) to preserve POST data
     # Exempt /admin/ directory
+    # Exempt Google site verification files so they serve directly without redirect
     RewriteCond %{REQUEST_METHOD} !POST
     RewriteCond %{THE_REQUEST} \s/+(.+?)\.(php|html)[\s?] [NC]
     RewriteCond %{REQUEST_URI} !^/admin/ [NC]
+    RewriteCond %{REQUEST_URI} !^/google.*\.html$ [NC]
     RewriteRule ^ %1 [R=301,L]
 
     # Prevent LiteSpeed from auto-redirecting /gallery to /gallery/
